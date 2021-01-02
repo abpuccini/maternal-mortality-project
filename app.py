@@ -1,9 +1,7 @@
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
-# from config import database_local
 from os import environ
 
-# from boto.s3.connection import S3Connection
 
 app = Flask(__name__)
 
@@ -12,7 +10,7 @@ app.config['JSON_SORT_KEYS'] = False
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
-    'DATABASE_URL')
+    'DATABASE_URL', 'sqlite:///maternal_mortality.sqlite')
 
 
 db = SQLAlchemy(app)
