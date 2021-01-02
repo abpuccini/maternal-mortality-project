@@ -30,6 +30,21 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/us')
+def us():
+    return render_template('us.html')
+
+
+@app.route('/methodology')
+def methodology():
+    return render_template('methodology.html')
+
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
+
 @app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)

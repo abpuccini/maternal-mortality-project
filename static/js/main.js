@@ -17,7 +17,7 @@ anychart.onDocumentReady(function () {
     // The data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json
     anychart.data.loadJsonFile(
-        'https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json',
+        'https://maternal-mortality-project.herokuapp.com/api/mmr-global',
         function (data) {
             var map = anychart.map();
 
@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
             map.padding(0);
 
             var dataSet = anychart.data.set(data);
-            var densityData = dataSet.mapAs({ value: 'density' });
+            var densityData = dataSet.mapAs({ value: 'mmr' });
             var series = map.choropleth(densityData);
 
             series.labels(false);
