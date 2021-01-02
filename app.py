@@ -1,9 +1,9 @@
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from config import database_local
+# from config import database_local
 from os import environ
 
-from boto.s3.connection import S3Connection
+# from boto.s3.connection import S3Connection
 
 app = Flask(__name__)
 
@@ -11,10 +11,8 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 
-database_local = S3Connection(environ['DATABASE_URL'])
-
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
-    'DATABASE_URL', database_local)
+    'DATABASE_URL')
 
 
 db = SQLAlchemy(app)
