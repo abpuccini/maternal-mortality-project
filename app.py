@@ -3,14 +3,19 @@ from flask_sqlalchemy import SQLAlchemy
 from config import database_local
 from os import environ
 
+from boto.s3.connection import S3Connection
+
 app = Flask(__name__)
 
 # To prevent app to to sort keys in json file
 app.config['JSON_SORT_KEYS'] = False
 
 
+database_local = S3Connection(environ['DATABASE_URL'])
+
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
     'DATABASE_URL', database_local)
+
 
 db = SQLAlchemy(app)
 
