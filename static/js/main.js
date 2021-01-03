@@ -32,9 +32,19 @@ anychart.onDocumentReady(function () {
     // The data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json
     anychart.data.loadJsonFile(
-        '/api/mmr-global',
+        'static/data/mmr_global.json',
         function (data) {
             var map = anychart.map();
+
+            map.geoData('anychart.maps.world');
+            map.interactivity().selectionMode('none');
+            map.padding(0);
+
+            var dataSet = anychart.data.set(data);
+            var Data = dataSet.mapAs({ value: 'mmr' });
+            var series = map.choropleth(Data);
+
+            series.labels(false);
 
             map
                 .title()
@@ -46,17 +56,6 @@ anychart.onDocumentReady(function () {
                     '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
                     '<span  style="color:#929292; font-size: 10px;">(Data source: Unicef, 2020)</span>'
                 );
-
-            map.geoData('anychart.maps.world');
-            map.interactivity().selectionMode('none');
-            map.padding(0);
-
-            var dataSet = anychart.data.set(data);
-            var mmrData = dataSet.mapAs({ value: 'density' });
-            console.log(mmrData);
-            var series = map.choropleth(mmrData);
-
-            series.labels(false);
 
             series
                 .hovered()
@@ -73,7 +72,7 @@ anychart.onDocumentReady(function () {
                 .useHtml(true)
                 .format(function () {
                     return (
-                        '<span style="color: #d9d9d9">Density</span>: ' +
+                        '<span style="color: #d9d9d9">MMR</span>: ' +
                         parseFloat(this.value).toLocaleString()
                     );
                 });
