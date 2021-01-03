@@ -3,19 +3,20 @@ from flask_sqlalchemy import SQLAlchemy
 from os import environ
 
 
+# Flask set up
 app = Flask(__name__)
 
 # To prevent app to to sort keys in json file
 app.config['JSON_SORT_KEYS'] = False
 
-
+# Database set up
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
     'DATABASE_URL', 'sqlite:///maternal_mortality.sqlite')
-
 
 db = SQLAlchemy(app)
 
 
+# Create table schema
 class Global(db.Model):
     __tablename__ = 'mmr_global'
     name = db.Column(db.String, primary_key=True)
@@ -51,11 +52,18 @@ def getGlobaldata():
     mmr_global_data = []
 
     for task in tasks:
+        location = task.location
+        lat_lng = location.split(" ")
+        lat = lat_lng[0]
+        lng = lat_lng[1]
         item = {
             'name': task.name,
             'mmr': task.mmr,
             'category': task.category,
-            'location': task.location,
+            'geometry': {
+                'lat': lat,
+                'lng': lng
+            },
             'country': task.country
         }
         mmr_global_data.append(item)

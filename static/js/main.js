@@ -11,13 +11,28 @@
 //         console.log(response.json());
 //     })
 
+// var mmr_data = []
+
+// function callData() {
+//     d3.json("/api/mmr-global").then((data) => {
+//         console.log(data);
+//         data.forEach(data => {
+//             var mmr = data.mmr;
+//             mmr_data.push(mmr);
+//         })
+//         console.log(mmr_data)
+//     })
+// }
+
+// callData();
+
 
 // Source: https://www.anychart.com/products/anymap/gallery/Maps_General_Features/World_Choropleth_Map.php
 anychart.onDocumentReady(function () {
     // The data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json
     anychart.data.loadJsonFile(
-        'https://maternal-mortality-project.herokuapp.com/api/mmr-global',
+        '/api/mmr-global',
         function (data) {
             var map = anychart.map();
 
@@ -37,8 +52,9 @@ anychart.onDocumentReady(function () {
             map.padding(0);
 
             var dataSet = anychart.data.set(data);
-            var densityData = dataSet.mapAs({ value: 'mmr' });
-            var series = map.choropleth(densityData);
+            var mmrData = dataSet.mapAs({ value: 'density' });
+            console.log(mmrData);
+            var series = map.choropleth(mmrData);
 
             series.labels(false);
 
@@ -58,14 +74,7 @@ anychart.onDocumentReady(function () {
                 .format(function () {
                     return (
                         '<span style="color: #d9d9d9">Density</span>: ' +
-                        parseFloat(this.value).toLocaleString() +
-                        ' pop./km² <br/>' +
-                        '<span style="color: #d9d9d9">Population</span>: ' +
-                        parseInt(this.getData('population')).toLocaleString() +
-                        '<br/>' +
-                        '<span style="color: #d9d9d9">Area</span>: ' +
-                        parseInt(this.getData('area')).toLocaleString() +
-                        ' km²'
+                        parseFloat(this.value).toLocaleString()
                     );
                 });
 
@@ -76,9 +85,7 @@ anychart.onDocumentReady(function () {
                 { from: 50, to: 100 },
                 { from: 100, to: 200 },
                 { from: 200, to: 300 },
-                { from: 300, to: 500 },
-                { from: 500, to: 1000 },
-                { greater: 1000 }
+                { greater: 300 }
             ]);
             scale.colors([
                 '#81d4fa',
@@ -87,8 +94,6 @@ anychart.onDocumentReady(function () {
                 '#039be5',
                 '#0288d1',
                 '#0277bd',
-                '#01579b',
-                '#014377',
                 '#000000'
             ]);
 
