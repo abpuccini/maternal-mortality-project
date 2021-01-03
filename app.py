@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
 
@@ -64,9 +64,15 @@ def getGlobaldata():
                 'lat': lat,
                 'lng': lng
             },
-            'country': task.country
         }
         mmr_global_data.append(item)
+
+    # Serializing json
+    mmr_global_json = json.dumps(mmr_global_data, indent=4)
+
+    # Writing to sample.json
+    with open("static/data/mmr_global.json", "w") as outfile:
+        outfile.write(mmr_global_json)
 
     return jsonify(mmr_global_data)
 
