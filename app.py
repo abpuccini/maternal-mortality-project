@@ -31,7 +31,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/us')
+@app.route('/usdata')
 def us():
     return render_template('us.html')
 
