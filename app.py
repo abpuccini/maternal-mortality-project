@@ -67,13 +67,6 @@ def getGlobaldata():
         }
         mmr_global_data.append(item)
 
-    # Serializing json
-    mmr_global_json = json.dumps(mmr_global_data, indent=4)
-
-    # Writing to sample.json
-    with open("static/data/mmr_global.json", "w") as outfile:
-        outfile.write(mmr_global_json)
-
     return jsonify(mmr_global_data)
 
 
