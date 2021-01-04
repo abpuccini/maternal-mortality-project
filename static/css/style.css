@@ -19,7 +19,7 @@
 
 #cite {
     text-align: right;
-    font-size: small;
+    font-size: smaller;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -34,8 +34,9 @@ li a {
     font-weight: bold;
 }
 
-#overview {
+div #overview {
     margin-bottom: 40px;
+    text-align: justify;
 }
 
 h1 {
