@@ -11,7 +11,7 @@ app.config['JSON_SORT_KEYS'] = False
 
 # Database set up
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
-    'DATABASE_URL', 'sqlite:///maternal_mortality.sqlite')
+    'DATABASE_URL', 'sqlite:///ETL/output_file/maternal_mortality.sqlite')
 
 db = SQLAlchemy(app)
 
