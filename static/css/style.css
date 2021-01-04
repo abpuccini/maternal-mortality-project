@@ -17,6 +17,15 @@
     margin-bottom: 0;
 }
 
+#cite {
+    text-align: right;
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2px;
+}
+
 li a {
     font-weight: bold;
 }
