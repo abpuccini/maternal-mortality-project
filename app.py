@@ -22,8 +22,8 @@ class Global(db.Model):
     name = db.Column(db.String, primary_key=True)
     mmr = db.Column(db.Integer)
     category = db.Column(db.String)
-    location = db.Column(db.String)
-    country = db.Column(db.String)
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
 
 
 @app.route('/')
@@ -52,17 +52,13 @@ def getGlobaldata():
     mmr_global_data = []
 
     for task in tasks:
-        location = task.location
-        lat_lng = location.split(" ")
-        lat = lat_lng[0]
-        lng = lat_lng[1]
         item = {
             'name': task.name,
             'mmr': task.mmr,
             'category': task.category,
             'geometry': {
-                'lat': lat,
-                'lng': lng
+                'lat': task.latitude,
+                'lng': task.longitude
             },
         }
         mmr_global_data.append(item)

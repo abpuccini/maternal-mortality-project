@@ -25,6 +25,10 @@ li a {
     font-weight: bold;
 }
 
+#overview {
+    margin-bottom: 40px;
+}
+
 h1 {
     margin-top: 20px;
     font-size: 3rem;
