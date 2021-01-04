@@ -33,7 +33,7 @@ def index():
 
 @app.route('/usdata')
 def us():
-    return render_template('us.html')
+    return render_template('usdata.html')
 
 
 @app.route('/methodology')
