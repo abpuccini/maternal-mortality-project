@@ -26,6 +26,32 @@ class Global(db.Model):
     longitude = db.Column(db.Integer)
 
 
+class CDC(db.Model):
+    __tablename__ = 'mmr_us'
+    id = db.Column(db.Integer, primary_key=True)
+    state = db.Column(db.String(255))
+    state_code = db.Column(db.Integer)
+    year = db.Column(db.Integer)
+    deaths = db.Column(db.Integer)
+    births = db.Column(db.Integer)
+    maternal_mortality_ratio = db.Column(db.Float)
+    population = db.Column(db.Integer)
+
+
+class Ins(db.Model):
+    __tablename__ = 'ins_us'
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(255))
+    year = db.Column(db.Integer)
+    employer = db.Column(db.Float)
+    non_group = db.Column(db.Float)
+    medicaid = db.Column(db.Float)
+    medicare = db.Column(db.Float)
+    military = db.Column(db.Float)
+    uninsured = db.Column(db.Float)
+    total = db.Column(db.Integer)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -64,6 +90,50 @@ def getGlobaldata():
         mmr_global_data.append(item)
 
     return jsonify(mmr_global_data)
+
+
+@app.route('/api/mmr-us')
+def getUSdata():
+    tasks = db.session.query(CDC)
+    mmr_us_data = []
+
+    for task in tasks:
+        item = {
+            'id': task.id,
+            'state': task.state,
+            'state_code': task.state_code,
+            'year': task.year,
+            'deaths': task.deaths,
+            'births': task.births,
+            'mmr': task.maternal_mortality_ratio,
+            'population': task.population
+        }
+        mmr_us_data.append(item)
+
+    return jsonify(mmr_us_data)
+
+
+@app.route('/api/ins-us')
+def getInsdata():
+    tasks = db.session.query(Ins)
+    ins_us_data = []
+
+    for task in tasks:
+        item = {
+            'id': task.id,
+            'location': task.location,
+            'year': task.year,
+            'employer': task.employer,
+            'non_group': task.non_group,
+            'medicaid': task.medicaid,
+            'medicare': task.medicare,
+            'military': task.military,
+            'uninsured': task.uninsured,
+            'total': task.total
+        }
+        ins_us_data.append(item)
+
+    return jsonify(ins_us_data)
 
 
 if __name__ == '__main__':
