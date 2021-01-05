@@ -1,0 +1,398 @@
+﻿State,State Code,Year,Deaths,Population,Crude Rate
+Alabama,1,2005,12,2356423,Unreliable
+Alabama,1,2006,10,2385480,Unreliable
+Alabama,1,2015,12,2505795,Unreliable
+Alabama,1,2016,35,2507714,1.4
+Alabama,1,2017,41,2514911,1.6
+Alabama,1,2018,31,2523756,1.2
+Alabama,1,2019,35,2533668,1.4
+Arizona,4,2008,11,3155278,Unreliable
+Arizona,4,2010,17,3216194,Unreliable
+Arizona,4,2011,15,3258634,Unreliable
+Arizona,4,2012,25,3294772,0.8
+Arizona,4,2013,23,3331505,0.7
+Arizona,4,2014,24,3387637,0.7
+Arizona,4,2015,20,3436575,0.6
+Arizona,4,2016,25,3488176,0.7
+Arizona,4,2017,24,3527969,0.7
+Arizona,4,2018,24,3606307,0.7
+Arizona,4,2019,32,3661420,0.9
+Arkansas,5,2008,24,1464220,1.6
+Arkansas,5,2009,20,1475013,1.4
+Arkansas,5,2010,13,1484281,Unreliable
+Arkansas,5,2011,10,1495200,Unreliable
+Arkansas,5,2012,18,1500641,Unreliable
+Arkansas,5,2013,15,1505782,Unreliable
+Arkansas,5,2014,23,1509053,1.5
+Arkansas,5,2015,16,1515348,Unreliable
+Arkansas,5,2016,17,1520375,Unreliable
+Arkansas,5,2017,14,1528215,Unreliable
+Arkansas,5,2018,23,1533682,1.5
+Arkansas,5,2019,14,1536188,Unreliable
+California,6,2005,119,17996230,0.7
+California,6,2006,122,18097471,0.7
+California,6,2007,97,18214926,0.5
+California,6,2008,102,18396972,0.6
+California,6,2009,107,18583075,0.6
+California,6,2010,82,18736126,0.4
+California,6,2011,71,18943585,0.4
+California,6,2012,81,19122866,0.4
+California,6,2013,77,19268325,0.4
+California,6,2014,88,19533596,0.5
+California,6,2015,84,19701750,0.4
+California,6,2016,91,19756656,0.5
+California,6,2017,90,19889100,0.5
+California,6,2018,81,19893468,0.4
+California,6,2019,71,19867369,0.4
+Colorado,8,2013,12,2621921,Unreliable
+Colorado,8,2014,16,2664707,Unreliable
+Colorado,8,2015,10,2712811,Unreliable
+Colorado,8,2016,16,2754727,Unreliable
+Colorado,8,2017,18,2784821,Unreliable
+Colorado,8,2019,15,2857388,Unreliable
+Connecticut,9,2011,14,1835893,Unreliable
+Connecticut,9,2017,11,1836384,Unreliable
+Florida,12,2005,59,9117950,0.6
+Florida,12,2006,45,9280080,0.5
+Florida,12,2007,52,9378587,0.6
+Florida,12,2008,36,9465279,0.4
+Florida,12,2009,71,9534289,0.7
+Florida,12,2010,47,9611955,0.5
+Florida,12,2011,50,9736166,0.5
+Florida,12,2012,64,9869741,0.6
+Florida,12,2013,83,9990213,0.8
+Florida,12,2014,62,10170011,0.6
+Florida,12,2015,68,10368733,0.7
+Florida,12,2016,50,10542288,0.5
+Florida,12,2017,48,10727581,0.4
+Florida,12,2018,54,10887548,0.5
+Florida,12,2019,69,10980681,0.6
+Georgia,13,2005,32,4555263,0.7
+Georgia,13,2006,27,4670606,0.6
+Georgia,13,2007,22,4777572,0.5
+Georgia,13,2008,23,4856984,0.5
+Georgia,13,2009,36,4917756,0.7
+Georgia,13,2010,38,4958482,0.8
+Georgia,13,2011,48,5012403,1
+Georgia,13,2012,40,5068921,0.8
+Georgia,13,2013,82,5110806,1.6
+Georgia,13,2014,104,5170356,2
+Georgia,13,2015,98,5234978,1.9
+Georgia,13,2016,73,5289906,1.4
+Georgia,13,2017,74,5353872,1.4
+Georgia,13,2018,62,5404059,1.1
+Georgia,13,2019,64,5456999,1.2
+Hawaii,15,2006,12,652351,Unreliable
+Idaho,16,2010,10,782258,Unreliable
+Illinois,17,2005,15,6423831,Unreliable
+Illinois,17,2006,33,6440022,0.5
+Illinois,17,2007,34,6467577,0.5
+Illinois,17,2008,31,6493537,0.5
+Illinois,17,2009,35,6520723,0.5
+Illinois,17,2010,29,6538356,0.4
+Illinois,17,2011,45,6555063,0.7
+Illinois,17,2012,35,6555800,0.5
+Illinois,17,2013,27,6555652,0.4
+Illinois,17,2014,32,6559694,0.5
+Illinois,17,2015,40,6545500,0.6
+Illinois,17,2016,28,6509748,0.4
+Illinois,17,2017,39,6509545,0.6
+Illinois,17,2018,22,6480179,0.3
+Illinois,17,2019,20,6445263,0.3
+Indiana,18,2008,14,3263963,Unreliable
+Indiana,18,2009,16,3281477,Unreliable
+Indiana,18,2010,14,3294065,Unreliable
+Indiana,18,2011,43,3309937,1.3
+Indiana,18,2012,36,3319144,1.1
+Indiana,18,2013,35,3334634,1
+Indiana,18,2014,38,3347411,1.1
+Indiana,18,2015,46,3357815,1.4
+Indiana,18,2016,50,3363491,1.5
+Indiana,18,2017,40,3379723,1.2
+Indiana,18,2018,23,3391576,0.7
+Indiana,18,2019,33,3411859,1
+Iowa,19,2014,11,1564081,Unreliable
+Iowa,19,2016,12,1575574,Unreliable
+Iowa,19,2017,12,1580978,Unreliable
+Kansas,20,2008,13,1415563,Unreliable
+Kansas,20,2009,13,1428139,Unreliable
+Kansas,20,2010,11,1437710,Unreliable
+Kansas,20,2013,15,1452009,Unreliable
+Kansas,20,2016,11,1459530,Unreliable
+Kansas,20,2017,10,1461167,Unreliable
+Kansas,20,2019,13,1461617,Unreliable
+Kentucky,21,2005,11,2129658,Unreliable
+Kentucky,21,2007,13,2164210,Unreliable
+Kentucky,21,2008,12,2183532,Unreliable
+Kentucky,21,2010,17,2204415,Unreliable
+Kentucky,21,2011,11,2219482,Unreliable
+Kentucky,21,2013,19,2231899,Unreliable
+Kentucky,21,2015,17,2245998,Unreliable
+Kentucky,21,2016,29,2250421,1.3
+Kentucky,21,2017,18,2259871,Unreliable
+Kentucky,21,2018,29,2266891,1.3
+Kentucky,21,2019,21,2266644,0.9
+Louisiana,22,2005,15,2349441,Unreliable
+Louisiana,22,2007,12,2239125,Unreliable
+Louisiana,22,2012,28,2349843,1.2
+Louisiana,22,2013,47,2361537,2
+Louisiana,22,2014,40,2375737,1.7
+Louisiana,22,2015,44,2386915,1.8
+Louisiana,22,2016,56,2392296,2.3
+Louisiana,22,2017,41,2394887,1.7
+Louisiana,22,2018,22,2385219,0.9
+Louisiana,22,2019,26,2381744,1.1
+Maryland,24,2005,19,2891761,Unreliable
+Maryland,24,2006,18,2907963,Unreliable
+Maryland,24,2007,20,2920109,0.7
+Maryland,24,2008,19,2935788,Unreliable
+Maryland,24,2009,18,2960001,Unreliable
+Maryland,24,2010,26,2981790,0.9
+Maryland,24,2011,24,3007715,0.8
+Maryland,24,2012,20,3034160,0.7
+Maryland,24,2013,15,3054052,Unreliable
+Maryland,24,2014,22,3079989,0.7
+Maryland,24,2015,16,3095316,Unreliable
+Maryland,24,2016,13,3101981,Unreliable
+Maryland,24,2017,25,3118023,0.8
+Maryland,24,2018,17,3113797,Unreliable
+Maryland,24,2019,22,3116815,0.7
+Massachusetts,25,2016,18,3506128,Unreliable
+Massachusetts,25,2017,14,3529454,Unreliable
+Massachusetts,25,2018,15,3551621,Unreliable
+Michigan,26,2005,52,5114320,1
+Michigan,26,2006,30,5106621,0.6
+Michigan,26,2007,32,5091035,0.6
+Michigan,26,2008,30,5065899,0.6
+Michigan,26,2009,34,5044338,0.7
+Michigan,26,2010,47,5035526,0.9
+Michigan,26,2011,33,5030242,0.7
+Michigan,26,2012,29,5032849,0.6
+Michigan,26,2013,36,5036338,0.7
+Michigan,26,2014,29,5041414,0.6
+Michigan,26,2015,27,5044428,0.5
+Michigan,26,2016,40,5043554,0.8
+Michigan,26,2017,24,5058559,0.5
+Michigan,26,2018,32,5073772,0.6
+Michigan,26,2019,34,5068329,0.7
+Minnesota,27,2009,11,2659958,Unreliable
+Minnesota,27,2011,13,2689958,Unreliable
+Minnesota,27,2012,15,2706970,Unreliable
+Minnesota,27,2013,11,2727081,Unreliable
+Minnesota,27,2014,10,2745132,Unreliable
+Minnesota,27,2016,14,2772322,Unreliable
+Minnesota,27,2017,18,2799760,Unreliable
+Minnesota,27,2018,10,2816378,Unreliable
+Minnesota,27,2019,11,2829821,Unreliable
+Mississippi,28,2005,13,1497962,Unreliable
+Mississippi,28,2006,15,1496313,Unreliable
+Mississippi,28,2007,11,1507071,Unreliable
+Mississippi,28,2008,14,1516955,Unreliable
+Mississippi,28,2009,14,1522000,Unreliable
+Mississippi,28,2010,12,1526057,Unreliable
+Mississippi,28,2011,18,1531968,Unreliable
+Mississippi,28,2012,15,1535635,Unreliable
+Mississippi,28,2013,13,1536620,Unreliable
+Mississippi,28,2016,14,1539934,Unreliable
+Mississippi,28,2017,12,1538222,Unreliable
+Mississippi,28,2018,15,1538795,Unreliable
+Mississippi,28,2019,22,1533857,1.4
+Missouri,29,2005,15,2962870,Unreliable
+Missouri,29,2006,14,2987563,Unreliable
+Missouri,29,2007,11,3007493,Unreliable
+Missouri,29,2008,16,3024837,Unreliable
+Missouri,29,2009,18,3042021,Unreliable
+Missouri,29,2010,12,3055450,Unreliable
+Missouri,29,2011,17,3066254,Unreliable
+Missouri,29,2012,34,3070952,1.1
+Missouri,29,2013,30,3080214,1
+Missouri,29,2014,34,3089367,1.1
+Missouri,29,2015,33,3098627,1.1
+Missouri,29,2016,27,3100965,0.9
+Missouri,29,2017,28,3111296,0.9
+Missouri,29,2018,24,3118889,0.8
+Missouri,29,2019,16,3124766,Unreliable
+Nevada,32,2017,11,1494290,Unreliable
+New Jersey,34,2005,23,4443545,0.5
+New Jersey,34,2006,32,4448099,0.7
+New Jersey,34,2007,36,4455148,0.8
+New Jersey,34,2008,28,4469901,0.6
+New Jersey,34,2009,37,4493506,0.8
+New Jersey,34,2010,30,4512294,0.7
+New Jersey,34,2011,48,4520963,1.1
+New Jersey,34,2012,36,4540905,0.8
+New Jersey,34,2013,57,4555374,1.3
+New Jersey,34,2014,55,4576223,1.2
+New Jersey,34,2015,39,4585897,0.9
+New Jersey,34,2016,43,4576725,0.9
+New Jersey,34,2017,44,4609070,1
+New Jersey,34,2018,35,4556326,0.8
+New Jersey,34,2019,36,4541603,0.8
+New Mexico,35,2007,10,1007922,Unreliable
+New Mexico,35,2008,13,1018578,Unreliable
+New Mexico,35,2011,12,1052114,Unreliable
+New Mexico,35,2017,10,1053926,Unreliable
+New York,36,2005,55,9887467,0.6
+New York,36,2006,68,9871401,0.7
+New York,36,2007,51,9881510,0.5
+New York,36,2008,73,9918841,0.7
+New York,36,2009,70,9966620,0.7
+New York,36,2010,67,10000955,0.7
+New York,36,2011,64,10033393,0.6
+New York,36,2012,58,10081044,0.6
+New York,36,2013,63,10114934,0.6
+New York,36,2014,61,10164966,0.6
+New York,36,2015,64,10184278,0.6
+New York,36,2016,65,10157924,0.6
+New York,36,2017,47,10211937,0.5
+New York,36,2018,66,10053779,0.7
+New York,36,2019,77,10005715,0.8
+North Carolina,37,2005,18,4457189,Unreliable
+North Carolina,37,2007,17,4677313,Unreliable
+North Carolina,37,2008,13,4771376,Unreliable
+North Carolina,37,2009,21,4846501,0.4
+North Carolina,37,2010,10,4889991,Unreliable
+North Carolina,37,2011,11,4952679,Unreliable
+North Carolina,37,2012,10,4999175,Unreliable
+North Carolina,37,2013,15,5047448,Unreliable
+North Carolina,37,2014,34,5099371,0.7
+North Carolina,37,2015,44,5150777,0.9
+North Carolina,37,2016,38,5213836,0.7
+North Carolina,37,2017,35,5271981,0.7
+North Carolina,37,2018,25,5332759,0.5
+North Carolina,37,2019,46,5387820,0.9
+Ohio,39,2005,13,5876703,Unreliable
+Ohio,39,2006,13,5883067,Unreliable
+Ohio,39,2007,31,5890965,0.5
+Ohio,39,2008,27,5896594,0.5
+Ohio,39,2009,57,5902018,1
+Ohio,39,2010,40,5904348,0.7
+Ohio,39,2011,35,5905599,0.6
+Ohio,39,2012,39,5901605,0.7
+Ohio,39,2013,30,5911149,0.5
+Ohio,39,2014,22,5919391,0.4
+Ohio,39,2015,41,5926893,0.7
+Ohio,39,2016,36,5922679,0.6
+Ohio,39,2017,42,5945509,0.7
+Ohio,39,2018,27,5958724,0.5
+Ohio,39,2019,47,5958538,0.8
+Oklahoma,40,2005,22,1796475,1.2
+Oklahoma,40,2006,14,1818693,Unreliable
+Oklahoma,40,2007,13,1837175,Unreliable
+Oklahoma,40,2008,15,1854771,Unreliable
+Oklahoma,40,2009,28,1878034,1.5
+Oklahoma,40,2010,20,1894374,1.1
+Oklahoma,40,2011,20,1913759,1
+Oklahoma,40,2012,15,1924995,Unreliable
+Oklahoma,40,2013,20,1943276,1
+Oklahoma,40,2014,13,1957903,Unreliable
+Oklahoma,40,2015,14,1974214,Unreliable
+Oklahoma,40,2016,20,1979658,1
+Oklahoma,40,2017,22,1983302,1.1
+Oklahoma,40,2018,17,1990033,Unreliable
+Oklahoma,40,2019,14,1996313,Unreliable
+Oregon,41,2007,10,1879347,Unreliable
+Oregon,41,2011,10,1955239,Unreliable
+Oregon,41,2013,12,1985655,Unreliable
+Oregon,41,2017,12,2089787,Unreliable
+Pennsylvania,42,2005,16,6405053,Unreliable
+Pennsylvania,42,2006,28,6429312,0.4
+Pennsylvania,42,2007,40,6452087,0.6
+Pennsylvania,42,2008,28,6473295,0.4
+Pennsylvania,42,2009,39,6497024,0.6
+Pennsylvania,42,2010,34,6512016,0.5
+Pennsylvania,42,2011,23,6528324,0.4
+Pennsylvania,42,2012,30,6533359,0.5
+Pennsylvania,42,2013,35,6531461,0.5
+Pennsylvania,42,2014,35,6533392,0.5
+Pennsylvania,42,2015,32,6538129,0.5
+Pennsylvania,42,2016,41,6523033,0.6
+Pennsylvania,42,2017,40,6534208,0.6
+Pennsylvania,42,2018,29,6532400,0.4
+Pennsylvania,42,2019,39,6527628,0.6
+South Carolina,45,2005,16,2192345,Unreliable
+South Carolina,45,2007,20,2280792,0.9
+South Carolina,45,2008,26,2325047,1.1
+South Carolina,45,2009,23,2357030,1
+South Carolina,45,2010,18,2375263,Unreliable
+South Carolina,45,2011,19,2402602,Unreliable
+South Carolina,45,2012,16,2426510,Unreliable
+South Carolina,45,2013,17,2451720,Unreliable
+South Carolina,45,2014,24,2483088,1
+South Carolina,45,2015,20,2517178,0.8
+South Carolina,45,2016,28,2553185,1.1
+South Carolina,45,2017,24,2586682,0.9
+South Carolina,45,2018,16,2620801,Unreliable
+South Carolina,45,2019,24,2655575,0.9
+Tennessee,47,2008,11,3203115,Unreliable
+Tennessee,47,2009,10,3231769,Unreliable
+Tennessee,47,2012,40,3307480,1.2
+Tennessee,47,2013,28,3328884,0.8
+Tennessee,47,2014,24,3357172,0.7
+Tennessee,47,2015,29,3382838,0.9
+Tennessee,47,2016,25,3408679,0.7
+Tennessee,47,2017,39,3440018,1.1
+Tennessee,47,2018,27,3467086,0.8
+Tennessee,47,2019,30,3496935,0.9
+Texas,48,2005,70,11470439,0.6
+Texas,48,2006,90,11771243,0.8
+Texas,48,2007,80,12010572,0.7
+Texas,48,2008,96,12249936,0.8
+Texas,48,2009,127,12500150,1
+Texas,48,2010,101,12673281,0.8
+Texas,48,2011,131,12932239,1
+Texas,48,2012,159,13111469,1.2
+Texas,48,2013,168,13301191,1.3
+Texas,48,2014,147,13574572,1.1
+Texas,48,2015,157,13831324,1.1
+Texas,48,2016,153,14031164,1.1
+Texas,48,2017,147,14242803,1
+Texas,48,2018,94,14441739,0.7
+Texas,48,2019,89,14593179,0.6
+Utah,49,2006,10,1257991,Unreliable
+Utah,49,2007,11,1292672,Unreliable
+Utah,49,2013,16,1441891,Unreliable
+Utah,49,2014,12,1463152,Unreliable
+Utah,49,2015,13,1488819,Unreliable
+Utah,49,2017,10,1540145,Unreliable
+Utah,49,2019,14,1591041,Unreliable
+Virginia,51,2005,14,3863646,Unreliable
+Virginia,51,2007,15,3947966,Unreliable
+Virginia,51,2009,11,4037895,Unreliable
+Virginia,51,2011,18,4120439,Unreliable
+Virginia,51,2012,14,4164342,Unreliable
+Virginia,51,2013,15,4198203,Unreliable
+Virginia,51,2014,18,4231045,Unreliable
+Virginia,51,2015,31,4258228,0.7
+Virginia,51,2016,47,4274994,1.1
+Virginia,51,2017,40,4303293,0.9
+Virginia,51,2018,23,4327037,0.5
+Virginia,51,2019,32,4335262,0.7
+Washington,53,2005,14,3145396,Unreliable
+Washington,53,2006,10,3200695,Unreliable
+Washington,53,2007,13,3247800,Unreliable
+Washington,53,2008,12,3293162,Unreliable
+Washington,53,2009,12,3343920,Unreliable
+Washington,53,2010,11,3374833,Unreliable
+Washington,53,2011,14,3420356,Unreliable
+Washington,53,2012,17,3455462,Unreliable
+Washington,53,2013,20,3488736,0.6
+Washington,53,2014,20,3531595,0.6
+Washington,53,2015,11,3585353,Unreliable
+Washington,53,2016,12,3646600,Unreliable
+Washington,53,2017,24,3702270,0.6
+Washington,53,2018,21,3765680,0.6
+Washington,53,2019,31,3802910,0.8
+West Virginia,54,2018,10,911492,Unreliable
+Wisconsin,55,2005,17,2797061,Unreliable
+Wisconsin,55,2006,14,2812276,Unreliable
+Wisconsin,55,2007,15,2827782,Unreliable
+Wisconsin,55,2009,13,2856103,Unreliable
+Wisconsin,55,2010,12,2864586,Unreliable
+Wisconsin,55,2011,15,2875675,Unreliable
+Wisconsin,55,2013,12,2890553,Unreliable
+Wisconsin,55,2014,16,2898057,Unreliable
+Wisconsin,55,2015,11,2903737,Unreliable
+Wisconsin,55,2016,15,2905282,Unreliable
+Wisconsin,55,2017,12,2912745,Unreliable
+Wisconsin,55,2019,13,2925225,Unreliable
