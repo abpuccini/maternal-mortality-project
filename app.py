@@ -55,7 +55,7 @@ class Ins(db.Model):
 class StateHealth(db.Model):
     __tablename__ = 'state_health_rankings'
     __table_args__ = {'extend_existing': True}
-    record_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.Integer)
     measure_name = db.Column(db.String(255))
     state = db.Column(db.String(255))
@@ -253,7 +253,7 @@ def getStateHealthRank():
 
     for task in tasks:
         item = {
-            'record_id': task.record_id,
+            'record_id': task.id,
             'year': task.year,
             'measure_name': task.measure_name,
             'state': task.state,
