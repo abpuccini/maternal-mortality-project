@@ -1,0 +1,21 @@
+measure_name,abbreviation,demographic_breakdown,source,source_year
+Adequate Health Insurance,ahi,False,"U.S. HHS, HRSA, Maternal and Child Health Bureau (MCHB), Child and Adolescent Health Measurement Initiative (CAHMI), National Survey of Children's Health Indicator Data Set, Data Resource Center for Child and Adolescent Health",2016-2017
+Adequate Insurance,ai,False,AHR Data,0
+Adequate Prenatal Care,apc,False,AHR Data,0
+Avoided Care due to Cost,ac,True,"CDC, Behavioral Risk Factor Surveillance System",2016-2017
+Dedicated Health Care Provider - Women,dhcp,True,"CDC, Behavioral Risk Factor Surveillance System",2016-2017
+Developmental Screening,ds,False,AHR Data,0
+Health Outcomes - Women,how,False,America's Health Rankings Composite Measure,2019
+Infant Mortality,im,True,"CDC WONDER Online Database, Linked Birth/Infant Death files",2015-2016
+Maternal Mortality,mm,True,"CDC WONDER Online Database, Underlying Cause of Death, Multiple Cause of Death files",2013-2017
+Maternity Practices in Infant Nutrition and Care,mpinc,False,"CDC, Breastfeeding Report Card",2016
+Mortality - Women,mow,True,AHR Data,0
+Policy - Women,pw,False,America's Health Rankings Composite Measure,2019
+Overall - Women,ow,False,America's Health Rankings Composite Measure,2019
+Postpartum Visit,ppv,False,"CDC, Pregnancy Risk Assessment Monitoring System or state equivalent",2017
+Prenatal Care Before Third Trimester,pctt,True,"CDC WONDER Online Database, Natality public-use data",2017
+Publicly-Funded Women's Health Services,pfhs,False,"Guttmacher Institute, Contraceptive Needs and Services Report",2014
+Receiving Public Assistance,rpa,False,AHR Data,0
+Uninsured Women,uw,False,"U.S. Census Bureau, American Community Survey",2017
+Well-Woman Visit,wwv,True,"CDC, Behavioral Risk Factor Surveillance System",2016-2017
+WIC Coverage,wic,False,AHR Data,0
