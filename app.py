@@ -17,15 +17,6 @@ db = SQLAlchemy(app)
 
 
 # Create table schema
-class Global(db.Model):
-    __tablename__ = 'mmr_global'
-    name = db.Column(db.String, primary_key=True)
-    mmr = db.Column(db.Integer)
-    category = db.Column(db.String)
-    latitude = db.Column(db.Integer)
-    longitude = db.Column(db.Integer)
-
-
 class CDC(db.Model):
     __tablename__ = 'mmr_us'
     id = db.Column(db.Integer, primary_key=True)
@@ -36,6 +27,27 @@ class CDC(db.Model):
     births = db.Column(db.Integer)
     maternal_mortality_ratio = db.Column(db.Float)
     population = db.Column(db.Integer)
+
+
+class Global(db.Model):
+    __tablename__ = 'mmr_global'
+    name = db.Column(db.String, primary_key=True)
+    mmr = db.Column(db.Integer)
+    category = db.Column(db.String)
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
+
+
+# class CDC(db.Model):
+#     __tablename__ = 'mmr_us'
+#     id = db.Column(db.Integer, primary_key=True)
+#     state = db.Column(db.String(255))
+#     state_code = db.Column(db.Integer)
+#     year = db.Column(db.Integer)
+#     deaths = db.Column(db.Integer)
+#     births = db.Column(db.Integer)
+#     maternal_mortality_ratio = db.Column(db.Float)
+#     population = db.Column(db.Integer)
 
 
 class Ins(db.Model):
