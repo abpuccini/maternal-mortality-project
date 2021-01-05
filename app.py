@@ -52,6 +52,26 @@ class Ins(db.Model):
     total = db.Column(db.Integer)
 
 
+class StateHealth(db.Model):
+    __tablename__ = 'state_health_rankings'
+    __table_args__ = {'extend_existing': True}
+    record_id = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.Integer)
+    measure_name = db.Column(db.String(255))
+    state = db.Column(db.String(255))
+    rank = db.Column(db.Integer)
+    value = db.Column(db.Float)
+
+
+class Key(db.Model):
+    __tablename__ = 'hwc_key'
+    measure_name = db.Column(db.String(255), primary_key=True)
+    abbreviation = db.Column(db.String(255))
+    demographic_breakdown = db.Column(db.String(255))
+    source = db.Column(db.String(255))
+    source_year = db.Column(db.String(255))
+
+
 class HWC(db.Model):
     __tablename__ = 'hwc_data'
     state_name = db.Column(db.String(255), primary_key=True)
@@ -142,15 +162,6 @@ class HWC(db.Model):
     wic_upper_ci = db.Column(db.Float)
 
 
-class Key(db.Model):
-    __tablename__ = 'hwc_key'
-    measure_name = db.Column(db.String(255), primary_key=True)
-    abbreviation = db.Column(db.String(255))
-    demographic_breakdown = db.Column(db.String(255))
-    source = db.Column(db.String(255))
-    source_year = db.Column(db.String(255))
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -233,6 +244,25 @@ def getInsdata():
         ins_us_data.append(item)
 
     return jsonify(ins_us_data)
+
+
+@app.route('/api/state-health-rank')
+def getStateHealthRank():
+    tasks = db.session.query(StateHealth)
+    state_health_rankings = []
+
+    for task in tasks:
+        item = {
+            'record_id': task.record_id,
+            'year': task.year,
+            'measure_name': task.measure_name,
+            'state': task.state,
+            'rank': task.rank,
+            'value': task.value
+        }
+        state_health_rankings.append(item)
+
+    return jsonify(state_health_rankings)
 
 
 @app.route('/api/hwc-key')
