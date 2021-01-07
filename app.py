@@ -253,7 +253,6 @@ def getStateHealthRank():
 
     for task in tasks:
         item = {
-            'record_id': task.id,
             'year': task.year,
             'measure_name': task.measure_name,
             'state': task.state,
