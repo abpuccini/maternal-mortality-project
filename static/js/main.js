@@ -225,9 +225,6 @@ function bubbleGlobal() {
         var layout = {
             title: `<b>MMR Among Developed Countries</b>`,
             showlegend: false,
-            xaxis: {
-                title: "<b>Country</b>"
-            },
             yaxis: {
                 title: "<b>MMR</b>"
             }
