@@ -1,60 +1,3 @@
-// var url = "api/mmr-us"
-// var mmrData = "sqlite:///output_file/maternal_mortality.sqlite"
-
-// var result = []; 
-
-// retrieve an array of state names for dropdown menu
-
-// var insData;
-
-// read in the data for states insurance
-// d3.json("/api/ins-us").then(function(data){
-//     insData = data;
-//     console.log(data);
-// });
-
-// console.log(insData);
-
-//function for filtering only states for 2009
-// function filterStates(state) {
-//     d3.json("/api/ins-us").then(function(data){
-//     var filterState = data.filter(event => event.year === 2009);
-//     return filterState
-// }
-// );
-
-// filterStates(state);
-
-// var filteredStates =  data.filter(filterStates);
-
-// console.log(filteredStates);
-
-// Initialize arrays to hold data
-// var state = [];
-// // Function to call data when the webpage loads
-// function init() {
-//     // Append options for users to select based on state
-//     d3.json("/api/ins-us").then(function (data) {
-//         // Retrieve data and store it into variables
-//         var filterState = data.filter(event => event.year === 2009);
-//         console.log(filterState);
-
-//         state = Object.values(filterState.location);
-//         console.log(state);
-//         // Append the options for users to select
-//         var selection = d3.select("#selDataset");
-//         state.forEach(element => {
-//             var options = selection.append("option");
-//             options.property("value", element);
-//             options.text(element);
-//         });
-//         // Call the visualization when the webpage first loads
-//         optionChanged(selection.property("value"));
-//     });
-// }
-// // Call init() function to render the page
-// init();
-
 // Initialize arrays to hold data
 var states = [];
 // Function to call data when the webpage loads
@@ -74,13 +17,16 @@ function init() {
             options.text(item);
         });
         buildPlot(selection.property("value"));
+        insChart(selection.property("value"));
     });
 };
+
 // Call init() function to render the page
 init();
 
 function optionChanged(state) {
     buildPlot(state);
+    insChart(state);
 };
 
 
@@ -94,16 +40,24 @@ function buildPlot(state) {
         var filterData = usData.filter(event => event.state === state);
         var mmrData = [];
         var yearData = [];
+        var birthData = [];
+        var deathData = [];
         filterData.forEach(item => {
             mmr = item.mmr;
             year = item.year;
+            birth = item.births;
+            death = item.deaths;
             mmrData.push(mmr);
             yearData.push(year);
+            birthData.push(birth);
+            deathData.push(death);
         });
 
         var trace = {
             x: yearData, 
             y: mmrData,
+            //text: birthData,
+            //text: `<b>Births: ${birthData}</b>`
         };
 
         var data = [trace];
@@ -122,10 +76,69 @@ function buildPlot(state) {
         Plotly.newPlot("plot", data, layout);
     };
 
-function buildChart() {
-    d3.json("/api/ins-us").then(function(data){
-        //console.log(data);
-    }
-)};
+// function buildChart() {
+//     d3.json("/api/ins-us").then(function(data){
+//         //console.log(data);
+//     }
+// )};
 
-buildChart();
+// buildChart();
+
+var insData = [];
+
+d3.json("/api/ins-us").then(function(data){
+    insData = data;
+    console.log(insData);
+});  
+
+function insChart(state) {
+    var filterData = insData.filter(choice => 
+        choice.state === state);
+    var employerData = [];
+    var medicaidData = [];
+    var medicareData = [];
+    var militaryData = [];
+    var nonGroupData = [];
+    var uninsuredData = [];
+    var yearData = [];
+    filterData.forEach(item => {
+        employer = item.employer;
+        medicaid = item.medicaid;
+        medicare = item.medicare;
+        military = item.military;
+        nonGroup = item.non_group;
+        uninsured = item.uninsured; 
+        year = item.year;
+        employerData.push(employer);
+        medicaidData.push(medicaid);
+        medicareData.push(medicare);
+        militaryData.push(military);
+        nonGroupData.push(non_group);
+        uninsuredData.push(uninsured);
+        yearData.push(yearData);    
+    });
+
+    var trace2 = {
+        x: yearData, 
+        y: employerData,
+        mode: "markers"
+    };
+
+    var data = [trace2];
+
+    var layout = {
+        title: `<b>${state} Insurance Coverage`,
+        yaxis: {
+            title: "<b>Health Insurance Coverage<br>Females 19-64</b><br>(Percentage)"
+        },
+        xaxis: {
+            title: "<b>Year</b>",
+            type: "date"
+        },
+
+    };
+
+    Plotly.newPlot("insChart", data, layout);
+};
+
+// insChart();
