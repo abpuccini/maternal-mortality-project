@@ -56,9 +56,16 @@ h3 {
     margin-bottom: 30px;
 }
 
+#profilepic {
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
 h6 {
     margin: 5px;
     font-weight: bold;
+    text-align: center;
 }
 
 a {
@@ -68,6 +75,7 @@ a {
 .aboutus {
     font-size: small;
     margin-left: 10px;
+    text-align: center;
 } 
 
 .footer {
