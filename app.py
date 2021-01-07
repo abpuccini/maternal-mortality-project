@@ -22,9 +22,10 @@ class Global(db.Model):
     name = db.Column(db.String)
     id = db.Column(db.String, primary_key=True)
     mmr = db.Column(db.Integer)
+    ranking = db.Column(db.Integer)
     category = db.Column(db.String)
-    latitude = db.Column(db.Integer)
-    longitude = db.Column(db.Integer)
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
 
 
 class CDC(db.Model):
@@ -193,6 +194,7 @@ def getGlobaldata():
             'name': task.name,
             'id': task.id,
             'mmr': task.mmr,
+            'ranking': task.ranking,
             'category': task.category,
             'geometry': {
                 'lat': task.latitude,

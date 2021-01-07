@@ -6,9 +6,8 @@ anychart.onDocumentReady(function () {
     // https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json
     anychart.data.loadJsonFile(
         "/api/mmr-global",
-        // 'https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json',
         function (data) {
-            console.log(data);
+            // console.log(data);
             var map = anychart.map();
 
             map
@@ -27,9 +26,8 @@ anychart.onDocumentReady(function () {
             map.padding(0);
 
             var dataSet = anychart.data.set(data);
-            console.log(dataSet);
-            var densityData = dataSet.mapAs({ value: 'mmr' });
-            var series = map.choropleth(densityData);
+            var mmrData = dataSet.mapAs({ value: 'mmr' });
+            var series = map.choropleth(mmrData);
 
             series.labels(false);
 
@@ -48,9 +46,9 @@ anychart.onDocumentReady(function () {
                 .useHtml(true)
                 .format(function () {
                     return (
-                        '<span style="color: #d9d9d9">Density</span>: ' +
+                        '<span style="color: #d9d9d9">MMR</span>: ' +
                         parseFloat(this.value).toLocaleString() +
-                        ' pop./km² <br/>' +
+                        '<br/>' +
                         '<span style="color: #d9d9d9">Population</span>: ' +
                         parseInt(this.getData('population')).toLocaleString() +
                         '<br/>' +
