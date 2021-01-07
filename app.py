@@ -55,6 +55,7 @@ class Ins(db.Model):
 class StateHealth(db.Model):
     __tablename__ = 'state_health_rankings'
     __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.Integer)
     measure_name = db.Column(db.String(255))
     state = db.Column(db.String(255))
