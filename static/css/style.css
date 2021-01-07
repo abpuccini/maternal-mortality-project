@@ -4,7 +4,7 @@
 
 .container {
     margin-top: 20px;
-    margin-bottom: 60x;
+    margin-bottom: 40px;
 }
 
 /* Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 */
@@ -13,7 +13,7 @@
     background-size: contain; 
     background-position: fixed;
     height: 230px;
-    opacity: 0.75;
+    opacity: 0.55;
     margin-bottom: 0;
 }
 
@@ -35,7 +35,7 @@ li a {
 }
 
 div #overview {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
