@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -16,6 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+    <!--bootstrap css-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -27,6 +30,9 @@
 
     <!-- d3 -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!--Plotly-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!--Bring in the css style sheet-->
     <link rel="stylesheet" href="static/css/style.css" />
@@ -65,17 +71,65 @@
         <div class="row">
             <!-- Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 -->
             <div class="col-md-12 text-center" id="header-bg">
-                <p id="cite">Sorce: UCLG ASPAC, <cite>How Central Java Reduces Maternal Mortality Rate 2020</cite></p>
+                <p id="cite">Source: UCLG ASPAC, <cite>How Central Java Reduces Maternal Mortality Rate 2020</cite></p>
             </div>
             <div class="col-md-12 text-center">
                 <h1>United States</h1>
                 <h6>Explore the website to find out more!</h6>
             </div>
+    
         </div>
     </div>
 
     <!-- Main Section -->
     <div class="container">
+        <!--div for selection box, demo box, chart-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="well">
+                  <h5>Select a State</h5>
+                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+                <!-- <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">State Info</h3>
+                  </div>
+                  <div id="sample-metadata" class="panel-body"></div>
+                </div> -->
+            </div>  
+            <div class="col-md-9">
+                <!--mmr plot-->
+                <div id="plot"></div>
+            </div>  
+        </div>
+
+        <div class="row">
+           <!-- empty div for spacing -->
+           <div class="col-md-3">
+                <!-- <div class="well">
+                  <h5>Select Insurance Type</h5>
+                  <select id="selInsurance" onchange="optionChanged(this.value)"></select>
+                </div> -->
+            </div>  
+            <div class="col-md-9">
+                <!--insurance plot-->
+                <div id="insChart"></div>
+            </div>  
+        </div>
+
+        <div class="row">
+            <!--left side-->
+            <div class="col-lg-8 col-md-12 text-left">
+                <h4>Notes on Data</h4>
+                <hr>
+                <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
+                <p>The maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000</p>
+                <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death certificates which affected the comparability of data between states. By 2018 all states had implemented a checkbox.</p>
+            </div>
+
+            <!--right side empty div for spacing-->
+            <div class="col-lg-4 col-md-12"></div>
+        </div>
 
     </div>
 
@@ -89,6 +143,7 @@
     <!-- JS file -->
     <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/main.js"></script>
+    <script type="text/javascript" src="static/js/us.js"></script>
 </body>
 
 </html>
