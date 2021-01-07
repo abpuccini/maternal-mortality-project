@@ -19,7 +19,8 @@ db = SQLAlchemy(app)
 # Create table schema
 class Global(db.Model):
     __tablename__ = 'mmr_global'
-    name = db.Column(db.String, primary_key=True)
+    name = db.Column(db.String)
+    id = db.Column(db.String, primary_key=True)
     mmr = db.Column(db.Integer)
     category = db.Column(db.String)
     latitude = db.Column(db.Integer)
@@ -190,6 +191,7 @@ def getGlobaldata():
     for task in tasks:
         item = {
             'name': task.name,
+            'id': task.id,
             'mmr': task.mmr,
             'category': task.category,
             'geometry': {
