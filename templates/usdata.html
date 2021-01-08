@@ -69,34 +69,45 @@
             </div>
             <div class="col-md-12 text-center">
                 <h1>United States</h1>
-                <h4>Does access to insurance coverage affect a state's maternal mortality ratio?<br>Select a state to
-                    explore the data.</h4>
+                <h6>Explore the website to find out more!</h6>
             </div>
-
         </div>
     </div>
 
     <!-- Main Section -->
     <div class="container">
+        <br>
         <!--div for selection box, demo box, chart-->
         <div class="row">
             <div class="col-md-3">
                 <div class="well">
-                    <h5>Select a State</h5>
+                    <h7 class="selection">Select a State</h7>
                     <select id="selDataset" onchange="optionChanged(this.value)"></select>
                 </div>
                 <!-- <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">State Info</h3>
-                  </div>
-                  <div id="sample-metadata" class="panel-body"></div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">State Info</h3>
+                    </div>
+                    <div id="sample-metadata" class="panel-body"></div>
                 </div> -->
             </div>
             <div class="col-md-9">
+                <h5>Does access to insurance coverage affect a state's maternal mortality ratio?</h5>
+                <!-- <br> -->
+                <!-- <h8> Select a state to explore the data.</h8> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <!--mmr plot-->
                 <div id="plot"></div>
             </div>
+            <div class="col-md-12">
+                <!--insurance plot-->
+                <div id="insChart"></div>
+            </div>
         </div>
+
 
         <div class="row">
             <!-- empty div for spacing -->
@@ -105,10 +116,6 @@
                   <h5>Select Insurance Type</h5>
                   <select id="selInsurance" onchange="optionChanged(this.value)"></select>
                 </div> -->
-            </div>
-            <div class="col-md-9">
-                <!--insurance plot-->
-                <div id="insChart"></div>
             </div>
         </div>
 
