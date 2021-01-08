@@ -67,7 +67,7 @@
         <div class="row">
             <!-- Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 -->
             <div class="col-md-12 text-center" id="header-bg">
-                <p id="cite">Sorce: UCLG ASPAC, <cite>How Central Java Reduces Maternal Mortality Rate 2020</cite></p>
+                <p id="cite">&copy;United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
             <div class="col-md-12 text-center">
                 <h1>United States</h1>
@@ -81,20 +81,20 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="well">
-                  <h5>Select a State</h5>
-                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    <h5>Select a State</h5>
+                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">State Info</h3>
-                  </div>
-                  <div id="sample-metadata" class="panel-body"></div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">State Info</h3>
+                    </div>
+                    <div id="sample-metadata" class="panel-body"></div>
                 </div>
-            </div>  
+            </div>
             <div class="col-md-9">
                 <!--adding a temp div for a test plot-->
                 <div id="plot"></div>
-            </div>  
+            </div>
         </div>
 
         <div class="row">
@@ -102,9 +102,14 @@
             <div class="col-lg-8 col-md-12 text-left">
                 <h4>Notes on Data</h4>
                 <hr>
-                <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
+                <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include
+                    maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well
+                    as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect
+                    obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
                 <p>The maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000</p>
-                <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death certificates which affected the comparability of data between states. By 2018 all states had implemented a checkbox.</p>
+                <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death
+                    certificates which affected the comparability of data between states. By 2018 all states had
+                    implemented a checkbox.</p>
             </div>
 
             <!--right side empty div for spacing-->
@@ -119,9 +124,12 @@
         </div>
     </footer>
 
+    <!-- Plot.ly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <!-- JS file -->
     <script type="text/javascript" src="static/js/config.js"></script>
-    <script type="text/javascript" src="static/js/main.js"></script>
     <script type="text/javascript" src="static/js/us1.js"></script>
 </body>
 
