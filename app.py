@@ -30,7 +30,7 @@ class Global(db.Model):
 
 class CDC(db.Model):
     __tablename__ = 'mmr_us'
-    recordId = db.Column(db.Integer, primary_key=True)
+    record_id = db.Column(db.Integer, primary_key=True)
     state = db.Column(db.String(255))
     id = db.Column(db.Integer)
     state_code = db.Column(db.Integer)
@@ -214,7 +214,7 @@ def getUSdata():
 
     for task in tasks:
         item = {
-            'record_id': task.id,
+            'record_id': task.record_id,
             'state': task.state,
             'id': task.id,
             'state_code': task.state_code,
