@@ -79,7 +79,7 @@
         <br>
         <!--div for selection box, demo box, chart-->
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="well">
                     <h7 class="selection">Select a State</h7>
                     <select id="selDataset" onchange="optionChanged(this.value)"></select>
@@ -91,10 +91,14 @@
                     <div id="sample-metadata" class="panel-body"></div>
                 </div> -->
             </div>
-            <div class="col-md-9">
-                <h5>"Does access to insurance coverage affect a state's maternal mortality ratio?"</h5>
-                <!-- <br> -->
-                <!-- <h8> Select a state to explore the data.</h8> -->
+            <div class="col-md-auto">
+                <div class="question" data-role="trigger">
+                    <p class="inline-block p-3 rounded">
+                        <img alt="question badge" class="question-badge"
+                            src="https://bs-assets.toptal.io/blackfish-assets/public/shared/images/icons/question_badge_bc30c7.png">
+                        How has access to insurance coverage changed after the Affordable Care Act?
+                    </p>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -121,21 +125,19 @@
 
         <div class="row">
             <!--left side-->
-            <div class="col-lg-8 col-md-12 text-justify">
+            <div class="col-md-12 text-justify">
                 <h3>Notes on Data</h3>
                 <hr>
                 <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include
                     maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well
                     as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect
                     obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
-                <p>The maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000</p>
+
                 <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death
                     certificates which affected the comparability of data between states. By 2018 all states had
                     implemented a checkbox.</p>
             </div>
 
-            <!--right side empty div for spacing-->
-            <div class="col-lg-4 col-md-12"></div>
         </div>
 
     </div>
