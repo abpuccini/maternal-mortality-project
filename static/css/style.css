@@ -51,6 +51,12 @@ h3 {
     font-weight: bolder;
 }
 
+.question {
+    text-align: left;
+    margin-left: 0;
+    font-weight: bolder;
+}
+
 .selection  {
     font-weight: bold;
 }
