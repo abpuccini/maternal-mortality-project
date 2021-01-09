@@ -1,6 +1,6 @@
-# Maternal-Mortality-Rates
+### Maternal-Mortality-Rates ###
 
-Project Overview:
+## Project Overview: ##
 
 
 For this project, we developed an interactive dashboard for users to explore maternal mortality data globally and within the United States. Users will be able to visualize maternal mortality data alongside data for potentially related factors, such as access to health insurance and Medicaid.
@@ -13,8 +13,8 @@ Purpose of Project:
 Data Sources Used:
 
 The data for this project was sourced from the following sources:
-Insurance Coverage Data showing changes in Insurance Policy over time: https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet
-Compilation of State Data on the Affordable Care Act: https://aspe.hhs.gov/compilation-state-data-affordable-care-act
+Insurance Coverage Data showing changes in Insurance Policy over time: [Insurance Coverage Data] (https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
+Compilation of State Data on the Affordable Care Act: [Affordalble Care Act: State Data] (https://aspe.hhs.gov/compilation-state-data-affordable-care-act)
 
 Data Processing & ETL:
 
