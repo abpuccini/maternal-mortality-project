@@ -3,13 +3,29 @@
     font-weight: bold;
 }
 
+.navbar-nav {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Header Section*/
 .container-fluid {
     margin-top: 55px;
 }
 
-.container {
-    margin-top: 30px;
-    margin-bottom: 40px;
+h1 {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-stretch: expanded;
+    font-weight: bolder;
+}
+
+h3 {
+    margin-top: 40px;
+    font-weight: bolder;
 }
 
 /* Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 */
@@ -31,29 +47,23 @@
     margin: 2px;
 }
 
-li a {
-    font-weight: bold;
+/* Main Section */
+.container {
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-#home {
-    font-weight: bold;
-}
-
+/* Content */
 div #overview {
     margin-bottom: 20px;
     text-align: justify;
 }
 
-h1 {
-    margin-top: 20px;
-    font-size: 3rem;
-    font-stretch: expanded;
-    font-weight: bolder;
-}
-
-h3 {
-    margin-top: 40px;
-    font-weight: bolder;
+/* Global */
+#global {
+    margin-top: 25px;
+    padding: 0;
+    height: 500px;
 }
 
 /* Affordable Care Act */
@@ -106,16 +116,14 @@ h6 {
     text-align: center;
 }
 
-a {
-    display: inline;
-}
-
 .aboutus {
     font-size: small;
     margin-left: 10px;
     text-align: center;
+    display: inline;
 } 
 
+/* Footer */
 .footer {
     background-color:  rgb(255, 255, 255); 
     text-align: center;
@@ -137,8 +145,8 @@ a {
     color: #545c63;
 }
 
-#global {
+/* #global {
     margin-top: 25px;
     padding: 0;
     height: 500px;
-}
+} */
