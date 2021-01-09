@@ -1,48 +1,91 @@
 // Initialize arrays to hold data
 var states = [];
-var measures = [];
+var measure_list = [];
 var extremeStates = [];
+var mmr_list = [];
 
 // Function to call data when the webpage loads
 function init() {
     // Append options for users to select based on ids
-    d3.json("/api/hwc").then(function (mes) {
-        d3.json("/api/mmr-us").then(function (data) {
-            usData = data;
-            measures = mes
+    d3.json("/api/hwc").then(function (data) {
+      d3.json("/api/hwc-key").then(function (mes) {
+        d3.json("/api/mmr-us").then(function (mmr) {
+            mmrData = mmr;
+            measures = mes;
+            rankedData = data;
             console.log(measures);
+            console.log(rankedData);
+            console.log(mmrData);
 
             // create list of states
-            var filterRecent = data.filter(event => event.year === 2019)
+            var filterRecent = mmrData.filter(event => event.year === 2019)
             filterRecent.forEach(element => {
               state = element.state;
+              mmr_2019 = element.mmr;
+              mmr_list.push({
+                key: state,
+                value: mmr_2019
+            });
               states.push(state);
             });
             
-            var filterMeasures = mes.filter(event => event.)
+            // function to sort my mmr_list object
+            function sort_object(obj) {
+              items = Object.keys(obj).map(function(key) {
+                  return [key, obj[key]];
+              });
+              items.sort(function(first, second) {
+                  return second[1] - first[1];
+              });
+              sorted_obj={}
+              $.each(items, function(k, v) {
+                  use_key = v[0]
+                  use_value = v[1]
+                  sorted_obj[use_key] = use_value
+              })
+              return(sorted_obj)
+            };
+            // sort the mmr
+            var sorted_mmr = sort_object(mmr_list);
+          
+            // Print the results to the console
+            console.log(sorted_mmr);
+            
+            // slice the top 5 results
+            var top_5_mmr = sorted_mmr.slice(0, 5);
+            console.log(top_5_mmr);
+
+            var bottom_5_mmr = sorted_mmr.slice()
+            
+            measures.forEach(element => {
+              measure = element.measure_name
+              measure_list.push(measure)
+            })
             var selection = d3.select("#selDataset");
 
-            states.forEach(item => {
-                var options = selection.append("option");
-                options.property("value", item);
-                options.text(item);
+            measures_list.forEach(item => {
+              var options = selection.append("option");
+              options.property("value", item);
+              options.text(item);
             });
 
             buildPlot(selection.property("value"));
             insChart(selection.property("value"));
-            state1Chart();
+            //state1Chart();
         });
-    });
+      });
+   });
+
 };
 
 // Call init() function to render the page
 init();
 
 // function to render charts upon a selection from dropdown
-function optionChanged(state) {
-    console.log(state);
-    buildPlot(state);
-    insChart(state);
+function optionChanged(measure) {
+    console.log(measure);
+    buildPlot(measure);
+    insChart(measure);
 };
 
 // building first plot for MMR data
