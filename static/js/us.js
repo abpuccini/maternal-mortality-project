@@ -26,6 +26,7 @@ function init() {
             buildPlot(selection.property("value"));
             insChart(selection.property("value"));
             state1Chart();
+            usMap();
         });
     });
 };
@@ -227,9 +228,17 @@ function state1Chart(state) {
     //MMR data for specific states in 2019    
     var filterMMRData = usData.filter(event =>
         (event.year === 2019 &&  event.state === "North Carolina") ||
+        (event.year === 2019 && event.state === "South Carolina") ||
+        (event.year === 2019 && event.state === "Georgia") ||
+        (event.year === 2019 && event.state === "Florida") ||
+        (event.year === 2019 && event.state === "Alabama") ||
+        (event.year === 2019 && event.state === "Mississippi") ||
+        (event.year === 2019 && event.state === "Tennessee") ||
         (event.year === 2019 && event.state === "Texas") ||
-        (event.year === 2019 && event.state === "New York") ||
-        (event.year === 2019 && event.state === "California") 
+        (event.year === 2019 && event.state === "Kansas") ||
+        (event.year === 2019 && event.state === "South Dakota") ||
+        (event.year === 2019 && event.state === "Wisconsin") ||
+        (event.year === 2019 && event.state === "Wyoming")
         );
     var mmrData = [];
     var mmrStates = [];
@@ -266,10 +275,10 @@ function state1Chart(state) {
     var data = [trace1];
 
     var layout = {
-        title: "<b>Maternal Mortality Ratio Among Selected States",
-        // yaxis: {
-            //title: "<b>Percentage</b>",
-        // },
+        title: "<b>2019 Maternal Mortality Ratio Among States<br>with No Medicaid Expansion",
+        yaxis: {
+            title: "<b>MMR</b>",
+        },
         //xaxis: {
         //     title: "<b>Year</b>",
         //     type: "date"
