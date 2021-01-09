@@ -18,7 +18,8 @@
         crossorigin="anonymous"></script>
 
     <!-- anychart.js -->
-    <script src="https://cdn.anychart.com/geodata/latest/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script
+        src="https://cdn.anychart.com/geodata/latest/countries/united_states_of_america/united_states_of_america.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
@@ -27,10 +28,11 @@
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-table.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
-    <link href="https://cdn.anychart.com/playground-css/maps_in_dashboard/USA_dashboard_multiselect/style.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/playground-css/maps_in_dashboard/USA_dashboard_multiselect/style.css"
+        type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
-    <!--<style type="text/css">--> 
+    <!--<style type="text/css">-->
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -62,8 +64,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/usdata">United States</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        United States
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
+                        <a class="dropdown-item" href="#">To be discussed</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/methodology">Methodology</a>
@@ -104,72 +113,78 @@
                 </div>
             </div>
             <div class="col-md-auto">
-                <div class="question" data-role="trigger">
-                    <p class="inline-block p-3 rounded">
-                        <img alt="question badge" class="question-badge"
-                            src="https://bs-assets.toptal.io/blackfish-assets/public/shared/images/icons/question_badge_bc30c7.png">
-                        How has access to insurance coverage changed after the Affordable Care Act?
-                        <br>
-                        Note: In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies took effect.
-                        <br>Medicaid expansion began in states that opted in.
-                    </p>
-
+                <div class="col-12">
+                    <div class="question" data-role="trigger">
+                        <p class="inline-block p-3 rounded">
+                            <img alt="question badge" class="question-badge"
+                                src="https://bs-assets.toptal.io/blackfish-assets/public/shared/images/icons/question_badge_bc30c7.png">
+                            How has access to insurance coverage changed after the Affordable Care Act?
+                        </p>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <!--mmr plot-->
-                <div id="plot"></div>
-            </div>
-            <div class="col-md-12">
-                <!--insurance plot-->
-                <div id="insChart"></div>
-            </div>
-        </div>
-
-        <!-- nested row and columns for 4 comparison charts -->
-        <div class="row">
-            
-            <div class="col-md-6">
-                <!-- state plot 1 -->
-                <div id="state1"></div>
-            </div>
-
-            <div class="col-md-6">
-                <!-- state plot 2-->
-                <div id="state2"></div>
-            </div>
-            
-            <div class="col-md-6">
-                <!-- state plot 3-->
-                <div id="state3"></div>
-            </div>
-
-            <div class="col-md-6">
-                <!-- state plot 4-->
-                <div id="state4"></div>
+                <div class="col-12">
+                    <p class="fs-6"><b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
+                        took
+                        effect.
+                        <br> Medicaid expansion began in states that opted in.
+                    </p>
+                </div>
             </div>
 
         </div>
-
-        <div class="row">
-            <!--left side-->
-            <div class="col-md-12 text-justify">
-                <h3>Notes on Data</h3>
-                <hr>
-                <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include
-                    maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well
-                    as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect
-                    obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
-
-                <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death
-                    certificates which affected the comparability of data between states. By 2018 all states had
-                    implemented a checkbox.</p>
-            </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--mmr plot-->
+            <div id="plot"></div>
         </div>
+        <div class="col-md-12">
+            <!--insurance plot-->
+            <div id="insChart"></div>
+        </div>
+    </div>
+
+    <!-- nested row and columns for 4 comparison charts -->
+    <div class="row">
+
+        <div class="col-md-6">
+            <!-- state plot 1 -->
+            <div id="state1"></div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- state plot 2-->
+            <div id="state2"></div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- state plot 3-->
+            <div id="state3"></div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- state plot 4-->
+            <div id="state4"></div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <!--left side-->
+        <div class="col-md-12 text-justify">
+            <h3>Notes on Data</h3>
+            <hr>
+            <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include
+                maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well
+                as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect
+                obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
+
+            <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death
+                certificates which affected the comparability of data between states. By 2018 all states had
+                implemented a checkbox.</p>
+        </div>
+
+    </div>
 
     </div>
 
