@@ -1,4 +1,4 @@
-### Maternal-Mortality-Rates ###
+# Maternal-Mortality-Rates #
 
 ## Project Overview: ##
 
@@ -20,7 +20,7 @@ Data Processing & ETL:
 
 
 
-Exploratory & Predictive Analysis (List Sources Used):
+Exploratory & Predictive Analysis (List Libraries Used):
 
 
 
