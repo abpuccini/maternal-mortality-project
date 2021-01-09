@@ -17,6 +17,21 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 
+    <!-- anychart.js -->
+    <script src="https://cdn.anychart.com/geodata/latest/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-circular-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <link href="https://cdn.anychart.com/playground-css/maps_in_dashboard/USA_dashboard_multiselect/style.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <!--<style type="text/css">--> 
+
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -77,6 +92,9 @@
     <!-- Main Section -->
     <div class="container">
         <br>
+        <div class="row">
+            <div id="container"></div>
+        </div>
         <!--div for selection box, demo box, chart-->
         <div class="row">
             <div class="col-md-2">
@@ -84,12 +102,6 @@
                     <h7 class="selection">Select a State</h7>
                     <select id="selDataset" onchange="optionChanged(this.value)"></select>
                 </div>
-                <!-- <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">State Info</h3>
-                    </div>
-                    <div id="sample-metadata" class="panel-body"></div>
-                </div> -->
             </div>
             <div class="col-md-auto">
                 <div class="question" data-role="trigger">
@@ -117,15 +129,29 @@
             </div>
         </div>
 
-
+        <!-- nested row and columns for 4 comparison charts -->
         <div class="row">
-            <!-- empty div for spacing -->
-            <div class="col-md-3">
-                <!-- <div class="well">
-                  <h5>Select Insurance Type</h5>
-                  <select id="selInsurance" onchange="optionChanged(this.value)"></select>
-                </div> -->
+            
+            <div class="col-md-6">
+                <!-- state plot 1 -->
+                <div id="state1"></div>
             </div>
+
+            <div class="col-md-6">
+                <!-- state plot 2-->
+                <div id="state2"></div>
+            </div>
+            
+            <div class="col-md-6">
+                <!-- state plot 3-->
+                <div id="state3"></div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- state plot 4-->
+                <div id="state4"></div>
+            </div>
+
         </div>
 
         <div class="row">
