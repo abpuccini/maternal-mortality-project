@@ -184,6 +184,10 @@ def methodology():
 def aboutus():
     return render_template('aboutus.html')
 
+@app.route('ranked')
+def ranked():
+    return render_template('ranked.html')
+
 
 @app.route('/api/mmr-global')
 def getGlobaldata():
