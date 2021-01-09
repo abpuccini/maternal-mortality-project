@@ -94,20 +94,19 @@
                 <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">Extract</div>
                     <div class="card-body">
-                        <h5 class="card-title">Data Source</h5>
                         <p class="card-text">
                         <ul>
                             <li>
-
+                                <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/">UNICEF</a><br>Downloaded latest data for maternal mortality worldwide (2017).
                             </li>
                             <li>
-
+                                <a href="http://wonder.cdc.gov">Centers for Disease Control Wonder</a><br>Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
                             </li>
                             <li>
-
+                                <a href="https://www.kff.org/other/state-indicator/health-insurance-coverage-of-nonelderly-adult-females/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D">Kaiser Family Foundation</a><br>Health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
                             </li>
                             <li>
-
+                                <a href="https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL">America's Health Rankings: United Health Foundation</a><br>Report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19. 
                             </li>
                         </ul>
                         </p>
@@ -116,22 +115,24 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Transfrom</div>
+                    <div class="card-header">Transform</div>
                     <div class="card-body">
-                        <h5 class="card-title">Sub Title here</h5>
                         <p class="card-text">
                         <ul>
                             <li>
-
+                                Using Jupyter Notebook/Pandas, read CSVs into dataframe format. 
                             </li>
                             <li>
-
+                                CDC: merged seperate year dataframes on shared columns, and added additional columnn comparing deaths to population.
                             </li>
                             <li>
-
+                                Kaiser Family: removed null vales, coverted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one. 
                             </li>
                             <li>
-
+                                America's Health Rankings: reviewed data for relevant measures and eliminated others, seperated demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.
+                            </li>
+                            <li>
+                                UNICEF: added columns in for latitude and longitude of the countries, based on location column, split item into two parts and updated, removed unneeded columns.
                             </li>
                         </ul>
                         </p>
@@ -142,20 +143,22 @@
                 <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">Load</div>
                     <div class="card-body">
-                        <h5 class="card-title">Sub Title here</h5>
                         <p class="card-text">
                         <ul>
                             <li>
-
+                                Within Jupyter Notebook, exported cleaned CSVs into PostGres as tables in a unified database.
                             </li>
                             <li>
-
+                                Set an object and declare base in SQLAlchemy.
                             </li>
                             <li>
-
+                                Created table schemes corresponding to the individual CSV files.
                             </li>
                             <li>
-
+                                Created an engine and connection to the Postgres database and created the tables.
+                            </li>
+                            <li>
+                                A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
                             </li>
                         </ul>
                         </p>
@@ -165,14 +168,74 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3>Library</h3>
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">Data Exploration</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <ul>
+                            <li>
+                                The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors.
+                            </li>
+                            <li>
+                                There are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
+                            </li>
+                            <li>
+                                It was hypothesized that insurance coverage could affect health, and specifically women's health.
+                            </li>
+                            <li>
+                                The period of 2009-19 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implented with expansion of Medicaid coverage made available to the states.
+                            </li>
+                            <li>
+                                Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.
+                            </li>
+                            <li>
+                                It is also important to remember there are some differences in reporting over time including between 2003 and 2017, states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2018.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">Flask Web Application</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <ul>
+                            <li>
+                                Web application is deployed on Heroku: <a href="https://maternal-mortality-project.herokuapp.com/">Maternal Mortality Heroku App</a>
+                            </li>
+                            <li>
+                                Source code is available on GitHub: <a href="https://github.com/abpuccini/project2-maternal-mortality">GitHub Source Code</a>
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Libraries and Tools</h3>
                 <hr>
             </div>
             <div class="col-md-12">
                 <p>
-                    <a>Python</a>
+                    <a href="http://www.python.org">Python</a>
                     <span> | </span>
-                    <a>Javascript</a>
+                    <a href="http://www.javascript.com">Javascript</a>
+                    <span> | </span>
+                    <a href="https://www.postgresql.org/">PostgreSQL</a>
+                    <span> | </span>
+                    <a href="https://pandas.pydata.org/">Pandas</a>
+                    <span> | </span>
+                    <a href="https://jupyter.org/">Jupyter Notebook</a>
+                    <span> | </span>
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>
+                    <span> | </span>
+                    <a href="https://plotly.com/">Plotly</a>
                 </p>
             </div>
         </div>
