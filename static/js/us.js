@@ -85,6 +85,10 @@ function buildPlot(state) {
         y: mmrData,
         name: "MMR",
         type: "scatter",
+        mode: "lines+markers",
+        line: {
+        color: 'rgb(60, 179, 113)',
+        }
         //range: [0,70],
         //text: birthData,
         //text: `<b>Births: ${birthData}</b>`
@@ -161,6 +165,10 @@ function insChart(state) {
         y: medicaidData,
         name: "Medicaid",
         type: "scatter",
+        mode: "lines+markers",
+        line: {
+        color: 'rgb(60, 179, 113)',
+        }
     }
 
     var trace6 = {
@@ -168,6 +176,10 @@ function insChart(state) {
         y: uninsuredData,
         name: "Uninsured",
         type: "scatter",
+        mode: "lines+markers",
+        line: {
+        color: 'rgb(25, 25, 112)',
+        }
     }
 
     var data = [trace3, trace6];
@@ -199,6 +211,13 @@ function insChart(state) {
     Plotly.newPlot("insChart", data, layout, { displayModeBar: false });
 };
 
+// Source (researched by AB Puccini): https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
+// Random color
+function random_rgba() {
+  var o = Math.round, r = Math.random, s = 255;
+  return 'rgb(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
+};
+
 // bubble chart for states that haven't expanded Medicaid
 function state1Chart(year) {
   year = parseInt(year);
@@ -218,39 +237,52 @@ function state1Chart(year) {
         (event.year === year && event.state === "Wisconsin") ||
         (event.year === year && event.state === "Wyoming")
         );
+
     var mmrData = [];
     var mmrStates = [];
+    var textList = [];
+
     filterMMRData.forEach(item => {
         mmr = item.mmr;
         state = item.state;
+        textHover = `State: ${state} <br> MMR: ${mmr}`
         mmrData.push(mmr);
         mmrStates.push(mmr);
+        textList.push(textHover);
         }); 
         
-    console.log(filterMMRData);    
+    console.log(mmrData, mmrStates, textList);    
     
-    // building the chart traces    
+    // building the chart traces  
+    
+    var colors = [];
+    for (var i = 0; i < textList.length; i++) {
+      var color = random_rgba();
+      colors.push(color);
+    };
+
     var trace1 = {
         x: mmrStates, 
         y: mmrData,
         mode: "markers",
         marker: {
             size: mmrData.map(mmr => mmr * 2),
+            color: colors,
+            colorscale: "Earth",
+            opacity: mmrData.map(id => 0.7)
         },
-        type: "scatter"
-    } 
+        type: "scatter",
+        text: textList
+    }; 
     
     var data = [trace1];
 
     var layout = {
         title: "<b>Maternal Mortality Ratio Among States<br>with No Medicaid Expansion",
+        showlegend: false,
         yaxis: {
             title: "<b>MMR</b>",
         },
-        //xaxis: {
-        //     title: "<b>Year</b>",
-        //     type: "date"
-        // },
     };
 
     Plotly.newPlot("state1", data, layout, { displayModeBar: false });
