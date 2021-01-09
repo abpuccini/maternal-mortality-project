@@ -100,11 +100,14 @@
 
     <!-- Main Section -->
     <div class="container">
-        <br>
         <div class="row">
-            <div id="container"></div>
+            <div class="col-md-12">
+                <!-- div for map -->
+
+                <div id="usMap" class="container"></div>
+            </div>
         </div>
-        <!--div for selection box, demo box, chart-->
+        <!--div for selection box, insurance charts-->
         <div class="row">
             <div class="col-md-2">
                 <div class="well">
@@ -148,11 +151,29 @@
     <!-- container, row and column for bubble chart -->
     <div class="container">
         <div class="row">
+            <div class="col-md-12 text-justify">
+                <h3>States with No Medicaid Expansion</h3>
+                <hr>
+                <p>As of 2019, 12 states have not expanded Medicaid. In the U.S. overall, TK% of births are financed by medicaid.</p>
+            </div>
 
             <div class="col-md-12">
+                <!-- year selector dropdown -->
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="well">
+                            <h7 class="selection2">Select a Year</h7>
+                            <select id="selYear" onchange="yearChanged(this.value)"></select>
+                        </div>
+                    </div> 
+                </div>       
                 <!-- bubble chart -->
-                <div id="state1"></div>
-            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="state1"></div>
+                    </div>
+                </div>
+            </div> 
 
         </div>
     </div>

@@ -1,5 +1,6 @@
 // Initialize arrays to hold data
 var states = [];
+var years = [];
 var usData = [];
 var insData = [];
 
@@ -16,6 +17,11 @@ function init() {
                 state = element.location;
                 states.push(state);
             });
+            var filterYear = ins.filter(event => event.location === "California");
+            filterYear.forEach(element => {
+              year = element.year;
+              years.push(year);
+            })
             var selection = d3.select("#selDataset");
 
             states.forEach(item => {
@@ -23,9 +29,20 @@ function init() {
                 options.property("value", item);
                 options.text(item);
             });
+
+            var selection2 = d3.select("#selYear")
+
+            years.forEach(item => {
+                var options2 = selection2.append("option");
+                options2.property("value", item);
+                options2.text(item);
+            });
+            
+
             buildPlot(selection.property("value"));
             insChart(selection.property("value"));
-            state1Chart();
+            state1Chart(selection2.property("value"));
+            //state1Chart();
             usMap();
         });
     });
@@ -38,7 +55,11 @@ init();
 function optionChanged(state) {
     console.log(state);
     buildPlot(state);
-    insChart(state);
+    insChart(state);    
+};
+
+function yearChanged(year) {
+  state1Chart(year);
 };
 
 // building first plot for MMR data
@@ -134,40 +155,11 @@ function insChart(state) {
         uninsuredData.push(uninsured);
         yearData.push(year);
     });
-    // missing years for MMR data is problematic for graphing alongside ins Data
-    // var trace1 = {
-    //     x: yearData, 
-    //     y: mmrData,
-    //     name: "Maternal Mortality Ratio",
-    //     type: "scatter",
-    // }
-
-    var trace2 = {
-        x: yearData,
-        y: employerData,
-        name: "Employer Plans",
-        // mode: "markers",
-        type: "scatter",
-    };
 
     var trace3 = {
         x: yearData,
         y: medicaidData,
         name: "Medicaid",
-        type: "scatter",
-    }
-
-    var trace4 = {
-        x: yearData,
-        y: nonGroupData,
-        name: "Non-Group Plans",
-        type: "scatter",
-    }
-
-    var trace5 = {
-        x: yearData,
-        y: militaryData,
-        name: "Military",
         type: "scatter",
     }
 
@@ -184,7 +176,6 @@ function insChart(state) {
         title: `<b>${state} Health Insurance Coverage<br>Females 19-64</b>`,
         yaxis: {
             title: "<b>Percentage</b>",
-            //range: [1,30],
         },
         xaxis: {
             title: "<b>Year</b>",
@@ -208,48 +199,32 @@ function insChart(state) {
     Plotly.newPlot("insChart", data, layout, { displayModeBar: false });
 };
 
-// building charts for four selected states
+// bubble chart for states that haven't expanded Medicaid
+function state1Chart(year) {
+  year = parseInt(year);
 
-function state1Chart(state) {
-    var filterData = insData.filter(item => item.location === "North Carolina");
-        var medicaidData = [];
-        var uninsuredData = [];
-        var yearData = [];
-        filterData.forEach(item => {
-            medicaid = item.medicaid;
-            uninsured = item.uninsured;
-            year = item.year;
-    
-            medicaidData.push(medicaid);
-            uninsuredData.push(uninsured);
-            yearData.push(year);
-        }); 
-
-    //MMR data for specific states in 2019    
+    //MMR data for specific states   
     var filterMMRData = usData.filter(event =>
-        (event.year === 2019 &&  event.state === "North Carolina") ||
-        (event.year === 2019 && event.state === "South Carolina") ||
-        (event.year === 2019 && event.state === "Georgia") ||
-        (event.year === 2019 && event.state === "Florida") ||
-        (event.year === 2019 && event.state === "Alabama") ||
-        (event.year === 2019 && event.state === "Mississippi") ||
-        (event.year === 2019 && event.state === "Tennessee") ||
-        (event.year === 2019 && event.state === "Texas") ||
-        (event.year === 2019 && event.state === "Kansas") ||
-        (event.year === 2019 && event.state === "South Dakota") ||
-        (event.year === 2019 && event.state === "Wisconsin") ||
-        (event.year === 2019 && event.state === "Wyoming")
+        (event.year === year && event.state === "North Carolina") ||
+        (event.year === year && event.state === "South Carolina") ||
+        (event.year === year && event.state === "Georgia") ||
+        (event.year === year && event.state === "Florida") ||
+        (event.year === year && event.state === "Alabama") ||
+        (event.year === year && event.state === "Mississippi") ||
+        (event.year === year && event.state === "Tennessee") ||
+        (event.year === year && event.state === "Texas") ||
+        (event.year === year && event.state === "Kansas") ||
+        (event.year === year && event.state === "South Dakota") ||
+        (event.year === year && event.state === "Wisconsin") ||
+        (event.year === year && event.state === "Wyoming")
         );
     var mmrData = [];
     var mmrStates = [];
-    //var yearMMRData = [];
     filterMMRData.forEach(item => {
         mmr = item.mmr;
         state = item.state;
-        //year = item.year;
         mmrData.push(mmr);
         mmrStates.push(mmr);
-        //yearMMRData.push(year);
         }); 
         
     console.log(filterMMRData);    
@@ -264,18 +239,11 @@ function state1Chart(state) {
         },
         type: "scatter"
     } 
-
-    // var trace2 = {
-    //     x: yearData,
-    //     y: medicaidData,
-    //     name: "Medicaid",
-    //     type: "scatter",
-    // }
     
     var data = [trace1];
 
     var layout = {
-        title: "<b>2019 Maternal Mortality Ratio Among States<br>with No Medicaid Expansion",
+        title: "<b>Maternal Mortality Ratio Among States<br>with No Medicaid Expansion",
         yaxis: {
             title: "<b>MMR</b>",
         },
@@ -306,9 +274,12 @@ anychart.onDocumentReady(function () {
   // The data used in this sample can be obtained from the CDN
   // https://cdn.anychart.com/samples/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.json
   anychart.data.loadJsonFile(
-    'https://cdn.anychart.com/samples/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.json',
-    function (data) {
+    "/api/mmr-us",
+    function (jsonData) {
       // pre-processing of the data
+      var data = jsonData.filter(event =>
+        (event.year === 2019)
+      );
       for (var i = 0; i < data.length; i++) {
         data[i].value = new Date(data[i].statehood).getUTCFullYear();
         data[i].short = data[i].id;
@@ -317,11 +288,12 @@ anychart.onDocumentReady(function () {
       tableChart = getTableChart();
       mapChart = drawMap();
       tableCharts = getTableCharts();
+      console.log(dataSet);
 
       // Setting layout table
       var layoutTable = anychart.standalones.table();
       layoutTable.cellBorder(null);
-      layoutTable.container('container');
+      layoutTable.container('usMap');
       layoutTable.draw();
 
       function getTableChart() {
@@ -462,11 +434,13 @@ anychart.onDocumentReady(function () {
         var population = 0;
         var area = 0;
         var seats = 0;
+        var mmr = 0;
         for (i = 0; i < ids.length; i++) {
-          var data = getDataId(ids[i]);
+          //var data = getDataId(ids[i]);
           population += parseInt(data.population);
-          area += parseInt(data.area);
-          seats += parseInt(data.house_seats);
+          mmr += parseInt(data.mmr);
+          // area += parseInt(data.area);
+          // seats += parseInt(data.house_seats);
 
           var label = anychart.standalones.label();
           label
@@ -690,13 +664,20 @@ anychart.onDocumentReady(function () {
         }
       };
 
+      
       function getDataId(id) {
+        var data = jsonData.filter(event =>
+          (event.year === 2019)
+        );
         for (var i = 0; i < data.length; i++) {
           if (data[i].id === id) return data[i];
         }
       }
 
       function getDataSum(field) {
+        var data = jsonData.filter(event =>
+          (event.year === 2019)
+        );
         var result = 0;
         for (var i = 0; i < data.length; i++) {
           result += parseInt(data[i][field]);

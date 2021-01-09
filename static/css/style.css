@@ -66,6 +66,23 @@ div #overview {
     height: 500px;
 }
 
+/* US map */
+#usMap {
+    margin-top: 25px;
+    padding: 0;
+    height: 500px;
+    width: auto;
+}
+
+/* remove table from US map */
+#ac_layer_45 {
+    display: none;
+}
+
+#ac_layer_4r {
+    display: none;
+}
+
 /* Affordable Care Act */
 .question {
     text-align: left;
