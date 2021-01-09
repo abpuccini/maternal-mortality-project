@@ -108,6 +108,21 @@ class HWC(db.Model):
     ds_score = db.Column(db.Float)
     ds_lower_ci = db.Column(db.Float)
     ds_upper_ci = db.Column(db.Float)
+    im_rank = db.Column(db.Float)
+    im_value = db.Column(db.Float)
+    im_score = db.Column(db.Float)
+    im_lower_ci = db.Column(db.Float)
+    im_upper_ci = db.Column(db.Float)
+    how_rank = db.Column(db.Float)
+    how_value = db.Column(db.Float)
+    how_score = db.Column(db.Float)
+    how_lower_ci = db.Column(db.Float)
+    how_upper_ci = db.Column(db.Float)
+    mm_rank = db.Column(db.Float)
+    mm_value = db.Column(db.Float)
+    mm_score = db.Column(db.Float)
+    mm_lower_ci = db.Column(db.Float)
+    mm_upper_ci = db.Column(db.Float)
     mpinc_rank = db.Column(db.Float)
     mpinc_value = db.Column(db.Float)
     mpinc_score = db.Column(db.Float)
@@ -343,6 +358,27 @@ def getHWCdata():
                 'score': task.ds_score,
                 'lower_ci': task.ds_lower_ci,
                 'upper_ci': task.ds_upper_ci
+            },
+            'im': {
+                'rank': task.im_rank,
+                'value': task.im_value,
+                'score': task.im_score,
+                'lower_ci': task.im_lower_ci,
+                'upper_ci': task.im_upper_ci
+            },
+            'how': {
+                'rank': task.how_rank,
+                'value': task.how_value,
+                'score': task.how_score,
+                'lower_ci': task.how_lower_ci,
+                'upper_ci': task.how_upper_ci
+            },
+            'mm': {
+                'rank': task.mm_rank,
+                'value': task.mm_value,
+                'score': task.mm_score,
+                'lower_ci': task.mm_lower_ci,
+                'upper_ci': task.mm_upper_ci
             },
             'mpinc': {
                 'rank': task.mpinc_rank,
