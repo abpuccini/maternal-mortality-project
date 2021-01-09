@@ -87,7 +87,7 @@ function buildPlot(state) {
         type: "scatter",
         mode: "lines+markers",
         line: {
-        color: 'rgb(60, 179, 113)',
+        color: 'rgb(210, 105, 30)',
         }
         //range: [0,70],
         //text: birthData,
