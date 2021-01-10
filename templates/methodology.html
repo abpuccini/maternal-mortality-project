@@ -85,37 +85,39 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>ETL Process</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Extract</div>
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">ETL - Extract</div>
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
                             <li>
-                                <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/">UNICEF</a><br>Downloaded latest data for maternal mortality worldwide (2017).
+                                <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/" target="_blank">UNICEF</a><br>Downloaded latest data for maternal mortality worldwide (2017).
                             </li>
                             <li>
-                                <a href="http://wonder.cdc.gov">Centers for Disease Control Wonder</a><br>Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+                                <a href="http://wonder.cdc.gov" target="_blank">Centers for Disease Control Wonder</a><br>Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
                             </li>
                             <li>
-                                <a href="https://www.kff.org/other/state-indicator/health-insurance-coverage-of-nonelderly-adult-females/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D">Kaiser Family Foundation</a><br>Health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+                                <a href="https://www.kff.org/other/state-indicator/health-insurance-coverage-of-nonelderly-adult-females/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D" target="_blank">Kaiser Family Foundation</a><br>Health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
                             </li>
                             <li>
-                                <a href="https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL">America's Health Rankings: United Health Foundation</a><br>Report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19. 
+                                <a href="https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL" target="_blank">America's Health Rankings: United Health Foundation</a><br>Report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19. 
+                            </li>
+                            <li>
+                                <a href="https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json" target="_blank">AnyChart Content Distribution Network: World</a><br>World choropleth map and data JSON. 
+                            </li>
+                            <li>
+                                <a href="https://cdn.anychart.com/samples/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.json" target="_blank">AnyChart Content Distribution Network: United States</a><br>United States choropleth map and data JSON.
                             </li>
                         </ul>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Transform</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">ETL - Transform</div>
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
@@ -123,7 +125,10 @@
                                 Using Jupyter Notebook/Pandas, read CSVs into dataframe format. 
                             </li>
                             <li>
-                                CDC: merged seperate year dataframes on shared columns, and added additional columnn comparing deaths to population.
+                                UNICEF: added columns in for latitude and longitude of the countries, based on location column, split item into two parts and updated, removed unneeded columns.
+                            </li>
+                            <li>
+                                CDC: merged seperate year dataframes on shared columns, and added additional columnn calculating the maternal mortality ratio: maternal deaths per 100,000 live births. 
                             </li>
                             <li>
                                 Kaiser Family: removed null values, coverted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one. 
@@ -131,17 +136,16 @@
                             <li>
                                 America's Health Rankings: reviewed data for relevant measures and eliminated others, seperated demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.
                             </li>
-                            <li>
-                                UNICEF: added columns in for latitude and longitude of the countries, based on location column, split item into two parts and updated, removed unneeded columns.
-                            </li>
                         </ul>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Load</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">ETL - Load</div>
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
@@ -189,7 +193,7 @@
                                 Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.
                             </li>
                             <li>
-                                It is also important to remember there are some differences in reporting over time including between 2003 and 2017, states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2018.
+                                It is also important to remember there are some differences in reporting over time including between 2003 and 2017, states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
                             </li>
                         </ul>
                         </p>
@@ -208,7 +212,7 @@
                                 Web application is deployed on Heroku: <a href="https://maternal-mortality-project.herokuapp.com/">Maternal Mortality Heroku App</a>
                             </li>
                             <li>
-                                Source code is available on GitHub: <a href="https://github.com/abpuccini/project2-maternal-mortality">GitHub Source Code</a>
+                                Source code is available on GitHub: <a href="https://github.com/abpuccini/project2-maternal-mortality" target="_blank">GitHub Source Code</a>
                             </li>
                         </ul>
                         </p>
@@ -223,19 +227,25 @@
             </div>
             <div class="col-md-12">
                 <p>
-                    <a href="http://www.python.org">Python</a>
+                    <a href="http://www.python.org" target="_blank">Python</a>
                     <span> | </span>
-                    <a href="http://www.javascript.com">Javascript</a>
+                    <a href="http://www.javascript.com" target="_blank">Javascript</a>
                     <span> | </span>
-                    <a href="https://www.postgresql.org/">PostgreSQL</a>
+                    <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
                     <span> | </span>
-                    <a href="https://pandas.pydata.org/">Pandas</a>
+                    <a href="https://pandas.pydata.org/" target="_blank">Pandas</a>
                     <span> | </span>
-                    <a href="https://jupyter.org/">Jupyter Notebook</a>
+                    <a href="https://jupyter.org/" target="_blank">Jupyter Notebook</a>
                     <span> | </span>
-                    <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a>
                     <span> | </span>
-                    <a href="https://plotly.com/">Plotly</a>
+                    <a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a>
+                    <span> | </span>
+                    <a href="https://plotly.com/" target="_blank">Plotly</a>
+                    <span> | </span>
+                    <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                    <span> | </span>
+                    <a href="https://www.anychart.com/products/anychart/overview/" target="_blank">AnyChart</a>
                 </p>
             </div>
         </div>
