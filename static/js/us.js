@@ -48,26 +48,15 @@ function init() {
   });
 };
 
-document.onreadystatechange = function () {
-  if (document.readyState == "complete") {
-    init();
-    function optionChanged(state) {
-      // console.log(state);
-      buildPlot(state);
-      insChart(state);
-    };
-  };
-};
-
 // Call init() function to render the page
-// init();
+init();
 
-// function to render charts upon a selection from dropdown
-// function optionChanged(state) {
-//     // console.log(state);
-//     buildPlot(state);
-//     insChart(state);
-// };
+//function to render charts upon a selection from dropdown
+function optionChanged(state) {
+    // console.log(state);
+    buildPlot(state);
+    insChart(state);
+};
 
 function yearChanged(year) {
   state1Chart(year);
@@ -95,7 +84,7 @@ function buildPlot(state) {
     x: yearData,
     y: mmrData,
     name: "MMR",
-    type: "scatter",
+    type: "line",
     mode: "lines+markers",
     line: {
       color: 'rgb(210, 105, 30)',
@@ -114,7 +103,9 @@ function buildPlot(state) {
     },
     xaxis: {
       title: "<b>Year</b>",
-      type: "date"
+      type: "date",
+      tickvals: years,
+      ticktext: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     },
     shapes: [
       {
@@ -202,7 +193,9 @@ function insChart(state) {
     },
     xaxis: {
       title: "<b>Year</b>",
-      type: "date"
+      type: "date",
+      tickvals: years,
+      ticktext: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     },
     shapes: [
       {
