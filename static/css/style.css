@@ -144,6 +144,12 @@ h6 {
     display: inline;
 } 
 
+/* Reference */
+.reference {
+    font-size: 15px;
+    text-align: justify
+}
+
 /* Footer */
 .footer {
     background-color:  rgb(255, 255, 255); 
