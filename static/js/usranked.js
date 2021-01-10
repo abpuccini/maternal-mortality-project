@@ -9,58 +9,62 @@ function init() {
     // Append options for users to select based on ids
     d3.json("/api/hwc").then(function (data) {
       d3.json("/api/hwc-key").then(function (mes) {
-        mmrData = mmr;
-        measures = mes;
+
+        measureData = mes;
         rankedData = data;
-        console.log(measures);
+
+        console.log(measureData);
         console.log(rankedData);
-        console.log(mmrData);
 
         // create list of states
-        var filterRecent = mmrData.filter(event => event.year === 2019)
-        filterRecent.forEach(element => {
+        rankedData.forEach(element => {
           state = element.state;
-          mmr_2019 = element.mmr;
+          mm_details = element.mm;
+          mm_2019 = mm_details.value;
           mmr_list.push({
             key: state,
-            value: mmr_2019
+            value: mm_2019
         });
           states.push(state);
         });
+    
         
-        // function to sort my mmr_list object
-        function sort_object(obj) {
-          items = Object.keys(obj).map(function(key) {
-              return [key, obj[key]];
-          });
-          items.sort(function(first, second) {
-              return second[1] - first[1];
-          });
-          sorted_obj={}
-          $.each(items, function(k, v) {
-              use_key = v[0]
-              use_value = v[1]
-              sorted_obj[use_key] = use_value
-          })
-          return(sorted_obj)
-        };
         // sort the mmr
-        var sorted_mmr = sort_object(mmr_list);
-      
-        // Print the results to the console
-        console.log(sorted_mmr);
-        
-        // slice the top 5 results
-        var top_5_mmr = sorted_mmr.slice(0, 5);
-        console.log(top_5_mmr);
+        mmr_list.sort((a, b) => (a.value > b.value) ? 1 : -1);
 
-        var bottom_5_mmr = sorted_mmr.slice();
-        console.log(bottom_5_mmr)
+        console.log(mmr_list);
         
-        measures.forEach(element => {
+        // slice the bottom 5 results
+        mmr_list.length = 52;
+        console.log(Array.prototype.slice.call(mmr_list, 5));
+
+
+        var bottom_5_mmr = [];
+        for (var i=0; i<5; i++)
+          bottom_5_mmr[i] = mmr_list[i];
+        console.log(bottom_5_mmr);  
+        
+        //slice the top 5 results
+        var reversed_mmr_list = mmr_list.reverse()
+        reversed_mmr_list.length = 52;
+
+        console.log(Array.prototype.slice.call(reversed_mmr_list, 5));
+
+        var top_5_mmr = [];
+        for (var i=0; i<5; i++)
+        top_5_mmr[i] = reversed_mmr_list[i];
+        console.log(top_5_mmr); 
+        
+
+        var filteredMeasures = measureData.filter(event => event.measure_name !== "Maternal Mortality");
+        console.log(filteredMeasures);
+
+        filteredMeasures.forEach(element => {
           measure = element.measure_name
           measure_list.push(measure)
-        })
+        });
+        console.log(measure_list);
+
         var selection = d3.select("#selDataset");
 
         measure_list.forEach(item => {
@@ -68,6 +72,8 @@ function init() {
           options.property("value", item);
           options.text(item);
         });
+
+
 
         //buildPlot(selection.property("value"));
         //insChart(selection.property("value"));
