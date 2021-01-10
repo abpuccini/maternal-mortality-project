@@ -221,7 +221,7 @@ function random_rgba() {
 // bubble chart for states that haven't expanded Medicaid
 function state1Chart(year) {
   year = parseInt(year);
-
+  console.log(year);
     //MMR data for specific states
     var filterMMRData = usData.filter(event =>
         (event.year === year && event.state === "North Carolina") ||
