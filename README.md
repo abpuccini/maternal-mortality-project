@@ -26,9 +26,13 @@ For example, Does health insurance coverage affect maternal mortality rates? Doe
 The data for this project was sourced from the following sources:
 
 1.UNICEF [Source](https://data.unicef.org/topic/maternal-health/maternal-mortality/)
+
 2.Insurance Coverage Data showing changes in Insurance Policy over time: [Insurance Coverage Data](https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
+
 3.Centers for Disease Control Wonder [source](https://wonder.cdc.gov/)
+
 4.American Health Rankings: United Health Foundation
+
 5.Medicaid Expansion [source](Data.Medicaid.gov state medicaid expansion and application data) 
 
 
