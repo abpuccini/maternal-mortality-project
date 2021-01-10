@@ -96,6 +96,10 @@ div #overview {
     font-weight: bold;
 }
 
+.selection2 {
+    font-weight: bold;
+}
+
 .question-badge {
     width: 45px;
 }
@@ -139,6 +143,12 @@ h6 {
     text-align: center;
     display: inline;
 } 
+
+/* Reference */
+.reference {
+    font-size: 15px;
+    text-align: justify
+}
 
 /* Footer */
 .footer {

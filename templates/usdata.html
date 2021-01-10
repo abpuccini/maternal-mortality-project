@@ -71,7 +71,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
-                        <a class="dropdown-item" href="#">To be discussed</a>
+                        <a class="dropdown-item" href="/usranked">Ranked Measure Comparison</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -107,6 +107,30 @@
                 <div id="usMap" class="container"></div>
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        <div class="row" id="overview">
+            <div class="col-md-12 text-justify">
+                <h3>Overview</h3>
+                <hr>
+                <p>The National Center for Health Statistics mortality data on maternal deaths in the U.S. from
+                    2009-2019 was collected from the CDC Wonder site. </p>
+                <p>Total maternal mortality included maternal deaths owing to obstetrical tetanus, maternal deaths up to
+                    42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a woman
+                    from direct or indirect obstetric causes, more than 42 days but less than one year after termination
+                    of pregnancy).</p>
+                <p>The maternal mortality ratio was calculated as the number of maternal deaths per 100,000 live births,
+                    using The National Center for Health Statistics natality data collected from the CDC Wonder site.
+                </p>
+                <p>Several states did not provide data on maternal deaths between 2009-2019. Between 2003 and 2017,
+                    states were incrementally implementing a pregnancy status checkbox on death certificates which
+                    affected the comparability of data between states (Hoyert, Uddin, Minino, 2020). By 2017 all states
+                    had implemented a checkbox (National Center for Health Statistics, 2020).</p>
+
+            </div>
+        </div>
+
         <!--div for selection box, insurance charts-->
         <div class="row">
             <div class="col-md-2">
@@ -133,8 +157,8 @@
                     </p>
                 </div>
             </div>
-
         </div>
+
     </div>
     <div class="container">
         <div class="row">
@@ -152,9 +176,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-justify">
-                <h3>States with No Medicaid Expansion</h3>
+                <h3>States With No Medicaid Expansion</h3>
                 <hr>
-                <p>As of 2019, 12 states have not expanded Medicaid. In the U.S. overall, TK% of births are financed by medicaid.</p>
+                <p>As of 2017, Medicaid coverage was responsible for financing 43% of U.S. births (Martin, Hamilton,
+                    Osterman, Driscoll, & Drake, 2018). A study published in February 2020 found that Medicaid expansion
+                    was significantly associated with lower maternal mortality when compared to states that had not
+                    expanded medicaid (Eliason, 2020).</p>
+                <p>As of December 2020, twelve states in the U.S. have no ACA Medicaid Expansion: Alabama, Florida,
+                    Georgia, Kansas, Mississippi, North Carolina, South Carolina, South Dakota, Tennessee, Texas,
+                    Wisconsin, and Wyoming.</p>
             </div>
 
             <div class="col-md-12">
@@ -165,15 +195,15 @@
                             <h7 class="selection2">Select a Year</h7>
                             <select id="selYear" onchange="yearChanged(this.value)"></select>
                         </div>
-                    </div> 
-                </div>       
+                    </div>
+                </div>
                 <!-- bubble chart -->
                 <div class="row">
                     <div class="col-md-12">
                         <div id="state1"></div>
                     </div>
                 </div>
-            </div> 
+            </div>
 
         </div>
     </div>
@@ -184,16 +214,45 @@
             <div class="col-md-12 text-justify">
                 <h3>Summary</h3>
                 <hr>
-                <p>Data on maternal deaths in the U.S. was collected from the CDC Wonder site. Death counts include
-                    maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, as well
-                    as late maternal deaths (defined by the WHO as the death of a woman from direct or indirect
-                    obstetric causes, more than 42 days but less than one year after termination of pregnancy).</p>
-
-                <p>Between 2003 and 2017, states were incrementally implementing a pregnancy status checkbox on death
-                    certificates which affected the comparability of data between states. By 2018 all states had
-                    implemented a checkbox.</p>
+                <p>The U.S. has the worst maternal mortality ratio among high-income nations (Eliason, 2020). Within the
+                    U.S. there is a disparity in maternal mortality ratios among states, and access to insurance and
+                    medicaid coverage is an important factor. State decisions affect women's access to prenatal and
+                    postpartum care, and the resulting outcomes of pregnancy.</p>
             </div>
 
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-justify">
+                <h3>References</h3>
+                <hr>
+                <div id="reference">
+                    <p>Hoyert, Uddin, and Minino. (2020, January) <a
+                            href="https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf"
+                            target="_blank"><em>Evaluation of
+                                the Pregnancy Status Checkbox on the Identification of Maternal Deaths</em></a>.
+                        National
+                        Vital
+                        Statistics Reports. 2020 https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf</p>
+                    <p>National Center for Health Statistics. (2020) <a
+                            href="https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm"
+                            target="_blank"><em>Detailed
+                                Evaluation of Changes in Data Collection Methods</em>.</a>
+                        https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm</p>
+                    <p>Martin, Hamilton, Osterman, Driscoll, and Drake. (2018, November) <a
+                            href="https://stacks.cdc.gov/view/cdc/60432" target="_blank"><em>Births: Final data for
+                                2017.</em></a>
+                        National Vital Statistics Reports. 2018; 67: 1-50 https://stacks.cdc.gov/view/cdc/60432
+                    </p>
+                    <p>Eliason. (2020, February) <a
+                            href="https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16"
+                            target="_blank"><em>Adoption of Medicaid Expansion Is Associated with Lower Maternal
+                                Mortality</em></a>.
+                        Women’s Health Issues: Official Publication of the Jacobs Institute of Women’s Health.
+                        https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
