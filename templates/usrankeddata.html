@@ -71,8 +71,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
-                        <a class="dropdown-item" href="#">To be discussed</a>
-                        <a class="dropdown-item" href="/ranked">Ranked Measure Comparisons</a>
+                        <a class="dropdown-item" href="/usranked">Ranked Measure Comparison</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -86,7 +85,7 @@
     </nav>
 
     <!-- Top Section -->
-    <div class="container-fluid" id="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 -->
             <div class="col-md-12 text-center" id="header-bg">
@@ -101,21 +100,12 @@
 
     <!-- Main Section -->
     <div class="container">
-        <br>
-        <div class="row">
-            <div id="container"></div>
-        </div>
+
         <!--div for selection box, demo box, chart-->
         <div class="row">
-            <div class="col-md-2">
-                <div class="well">
-                    <h7 class="selection">Select a Measure</h7>
-                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                </div>
-            </div>
-            <div class="col-md-auto">
-                <div class="col-12">
-                    <div class="question" data-role="trigger">
+            <div class="col-12">
+                <div class="row">
+                    <div class="question2" data-role="trigger">
                         <p class="inline-block p-3 rounded">
                             <img alt="question badge" class="question-badge"
                                 src="https://bs-assets.toptal.io/blackfish-assets/public/shared/images/icons/question_badge_bc30c7.png">
@@ -124,13 +114,19 @@
                         </p>
                     </div>
                 </div>
-
             </div>
+            <div class="col-md-12">
+                <div class="well">
+                    <h7 class="selection">Select a Measure</h7>
+                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graph will go here -->
+        <div class="row">
 
         </div>
-    </div>
-    <div class="container">
-
     </div>
 
 
@@ -148,12 +144,9 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- JS file -->
-<<<<<<< HEAD
     <script type="text/javascript" src="static/js/config.js"></script>
-    <script type="text/javascript" src="static/js/us.js"></script>
-=======
     <script type="text/javascript" src="static/js/usranked.js"></script>
->>>>>>> 247e1e861448a49b25d2234a2417ef8cb8860124
+
 </body>
 
 </html>
