@@ -251,7 +251,7 @@ function state1Chart(year) {
         textList.push(textHover);
         });
 
-    console.log(mmrData, mmrStates, textList);
+    // console.log(mmrData, mmrStates, textList);
 
     // building the chart traces
 
@@ -278,7 +278,7 @@ function state1Chart(year) {
     var data = [trace1];
 
     var layout = {
-        title: "<b>Maternal Mortality Ratio Among States<br>with No Medicaid Expansion",
+        title: "<b>Maternal Mortality Ratio Among States<br>With No Medicaid Expansion",
         showlegend: false,
         yaxis: {
             title: "<b>MMR</b>",
