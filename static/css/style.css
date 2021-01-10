@@ -109,6 +109,14 @@ div #overview {
     margin-left: 80px;
 }
 
+/* Comparison */
+.question2 {
+    text-align: left;
+    font-weight: bolder;
+    background-color: #F2F5F3;
+    border-radius: 15px;
+}
+
 /* Methodology */
 .card-header {
     font-size: larger;
