@@ -50,7 +50,7 @@ function init() {
         });
 
 
-        //buildPlot(selection.property("value"));
+        buildPlot(selection.property("value"));
     
       });
    });
@@ -96,6 +96,7 @@ function buildPlot(measure) {
 
       //get the abbreviation for the measure called by the dropdown menu
       called_measure = filteredMeasure[0].abbreviation;
+      full_called_measure = filteredMeasure[0].measure_name;
 
     rankedData.forEach(element => {
 
@@ -373,40 +374,53 @@ function buildPlot(measure) {
       };
 
 
-     
+     console.log(mmr_list);
     
     // show chosen measure compared to 5 best MMR states
       var trace1 = {
         x: getTopmmr(),
         y:  getTop(),
-        name: "Top 5 States",
+        name: "States with Highest Maternal Mortality",
         type: "scatter",
-        mode: "lines+markers",
+        mode: "markers",
         line: {
         color: 'rgb(210, 105, 30)',
-        }
-    
+        },
+        marker: { size: 12},
+        text: ["Louisiana", "Georgia", "Indiana", "New Jersey", "West Virginia", "Arkansas"],
     };
+
     // show chosen measure compared to 5 worst MMR states
       var trace2 = {
         x: getBottommmr(),
         y: getBottom(),
-        name: "Bottom 5 States",
+        name: "States with Lowest Maternal Mortality",
         type: "scatter",
-        mode: "lines+markers",
+        mode: "markers",
         line: {
         color: 'rgb(100, 120, 50)',
-        }
+        },
+        marker: { size: 12},
+        text: ["Alaska", "Massachusetts", "Nevada", "Delaware", "West Virginia"],
   
     };
 
     var data = [trace1, trace2];
 
     var layout = {
-        grid: {rows: 1, columns: 2, pattern: 'independent'},
+      autosize: false,
+      width: 1000,
+      height: 500,
+      yaxis:{
+        title: `${full_called_measure}`
+      },
+      xaxis:{
+        title: "Maternal Mortality"
+      },
+       title: `${full_called_measure} compared with Maternal Mortality`,
       };
 
     Plotly.newPlot('rankedplot', data, layout);
 
 
-   };
+  };
