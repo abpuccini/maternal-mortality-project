@@ -86,7 +86,7 @@ div #overview {
 /* Affordable Care Act */
 .question {
     text-align: left;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     font-weight: bolder;
     background-color: #F2F5F3;
     border-radius: 15px;
@@ -111,7 +111,7 @@ div #overview {
 
 /* Comparison */
 .question2 {
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
     background-color: #F2F5F3;
     border-radius: 15px;
