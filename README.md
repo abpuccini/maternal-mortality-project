@@ -1,23 +1,23 @@
 # Maternal-Mortality-Rates #
 
-## Project Overview ##
-
-
-For this project, we developed an interactive dashboard for users to explore maternal mortality data globally and within the United States. Users will be able to visualize maternal mortality data alongside data for potentially related factors, such as access to health insurance and Medicaid.
-We’re focusing on factors at the state level because maternal mortality rates and healthcare policies and access vary widely between states.
 
 ## Purpose of Project ##
 
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but, covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
+## Project Overview ##
+
+
+For this project, we developed an interactive dashboard for users to explore maternal mortality data globally and within the United States. Users will be able to visualize maternal mortality data alongside data for potentially related factors, such as access to health insurance and Medicaid.
+We are focusing on factors at the state level because maternal mortality rates and healthcare policies and access vary widely between states.
 
 ## Obectives ##
 
 
 Our obejective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
-For example, Does health insurance coverage affect maternal mortality rates? Does a state’s medicaid expansion affect maternal mortality rates?
+For example, Does health insurance coverage affect maternal mortality rates? Does a state’s election of the medicaid expansion affect maternal mortality rates?  Are there any other ractors that might affect the maternal mortality?
 
 
 ## Data Sources Used ##
@@ -53,16 +53,28 @@ Pulled report for overall health of women and children for 2019 as well as overa
 
 **Transform**
 
-- Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.  
+- Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  
+![Example]()
+
+-Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.
+![Example]()
 
 - We then reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
-
-**Analysis**
+![Example]()
 
 
 **Load**
 
-Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table scheme were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
+Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
+
+- Created database diagram via QuickDatabase
+![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
+
+- 
+
+
+**Statistical Analysis**
+Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
 
 ## Data Exploration ##
 
@@ -77,9 +89,29 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 **Heroku Landing Page**
 
-Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking and 
+Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map!](/ETL/Screenshots/Global-Map.jpg)
+![Global Mortality Ratio Map](/ETL/Resources/Global-Map.jpg)
+
+**United States: Affordable Care Act Page**
+
+Created a state wide map(?) showing...
+
+- Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
+![State Mortality Rates](/ETL/Resources/State-Comparison.png)
+
+- Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
+![State Mortality Rates](/ETL/Resources/Comparison-of-Medicaid-Coverage.png)
+
+- Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
+![State Mortality Rates](/ETL/Resources/QuickDBD_ERD.png)
+
+**Ranked Measured Comparisons**
+
+-Visulized how the states with the highest and lowest mortality rates compared against related health care measures
+![Ranked Healthcare Measures](/ETL/Resources/MMR-Plot_Map.png)
+
+**Methodology Page**
 
 
 
@@ -88,11 +120,16 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 Source code is available on GitHub: [GitHub Source Code](https://github.com/abpuccini/project2-maternal-mortality)
 
 
- ## Libraries & Tools Used: ##
- Python Version 3.6
- Juypter Notebook
- Pandas
- PostgresSQL
- Flask
- Plotly
+ ## Libraries & Tools Used: ## |
+ ----------------------------- |
+ Python Version 3 |
+ Juypter Notebook |
+ Pandas |
+ PostgreSQL |
+ Flask |
+ SQLAlchemy |
+ Plotly |
+ Bootstrap |
+ Anychart |
+ Chrome Table Capture |
 
