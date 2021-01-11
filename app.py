@@ -46,6 +46,11 @@ def aboutus():
     return render_template('aboutus.html')
 
 
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
+
 @app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)
