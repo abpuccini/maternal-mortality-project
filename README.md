@@ -27,13 +27,13 @@ The data for this project was sourced from the following sources:
 
 1.UNICEF [Source](https://data.unicef.org/topic/maternal-health/maternal-mortality/)
 
-2.Insurance Coverage Data showing changes in Insurance Policy over time: [Insurance Coverage Data](https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
+2.Insurance Coverage Data showing changes in Insurance Policy over time: [Source](https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
 
-3.Centers for Disease Control Wonder [source](https://wonder.cdc.gov/)
+3.Centers for Disease Control Wonder [Source](https://wonder.cdc.gov/)
 
-4.American Health Rankings: United Health Foundation
+4.American Health Rankings: United Health Foundation [Source](https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL)
 
-5.Medicaid Expansion [source](Data.Medicaid.gov state medicaid expansion and application data) 
+5.Medicaid Expansion [Source](Data.Medicaid.gov state medicaid expansion and application data) 
 
 
 ## Data Processing & ETL: ##
@@ -61,17 +61,23 @@ Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe form
 
 **Load**
 
-Within Jupyter Notebook, exported cleaned CSVs into PostGres as tables in a unified database.
-Set an object and declare base in SQLAlchemy.
-Created table schemes corresponding to the individual CSV files.
-Created an engine and connection to the Postgres database and created the tables.
-A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
+Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table scheme were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
-## 
+## Data Exploration ##
+
+The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors.
+There are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
+It was hypothesized that insurance coverage could affect health, and specifically women's health.
+The period of 2009-19 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implented with expansion of Medicaid coverage made available to the states.
+Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.
+It is also important to remember there are some differences in reporting over time including between 2003 and 2017, states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
 
 ## Flask Web Application: ##
+
+
 Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://maternal-mortality-project.herokuapp.com/)
+
 Source code is available on GitHub: [GitHub Source Code](https://github.com/abpuccini/project2-maternal-mortality)
 
 
