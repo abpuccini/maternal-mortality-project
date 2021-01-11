@@ -129,7 +129,7 @@ function buildPlot(state) {
 // building chart for insurance data
 function insChart(state) {
   var filterData = insData.filter(choice =>
-    choice.location === state);
+    choice.location.trim() === state);
   var employerData = [];
   var medicaidData = [];
   var medicareData = [];
