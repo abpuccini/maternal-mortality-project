@@ -28,6 +28,20 @@ class Global(db.Model):
     longitude = db.Column(db.Float)
 
 
+class Causes(db.Model):
+    __tablename__ = 'causes_of_deaths'
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    region = db.Column(db.String(255))
+    abortion = db.Column(db.Integer)
+    embolism = db.Column(db.Integer)
+    haemorrhage = db.Column(db.Integer)
+    hypertension = db.Column(db.Integer)
+    sepsis = db.Column(db.Integer)
+    other_direct_causes = db.Column(db.Integer)
+    indirect_causes = db.Column(db.Integer)
+
+
 class CDC(db.Model):
     __tablename__ = 'mmr_us'
     record_id = db.Column(db.Integer, primary_key=True)
@@ -225,6 +239,28 @@ def getGlobaldata():
         mmr_global_data.append(item)
 
     return jsonify(mmr_global_data)
+
+
+@app.route('/api/causesofdeaths')
+def getCausesdata():
+    tasks = db.session.query(Causes)
+    causes_data = []
+
+    for task in tasks:
+        item = {
+            'id': task.id,
+            'region': task.region,
+            'abortion': task.abortion,
+            'embolism': task.embolism,
+            'haemorrhage': task.haemorrhage,
+            'hypertension': task.hypertension,
+            'sepsis': task.sepsis,
+            'other_direct_causes': task.other_direct_causes,
+            'indirect_causes': task.indirect_causes
+        }
+        causes_data.append(item)
+
+    return jsonify(causes_data)
 
 
 @app.route('/api/mmr-us')
