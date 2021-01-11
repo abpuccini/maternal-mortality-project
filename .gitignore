@@ -133,3 +133,5 @@ dmypy.json
 
 #user&pass
 config.py
+ETL/output_file/maternal_mortality.sqlite
+app.py
