@@ -18,9 +18,9 @@ slider.oninput = function() {
 
   currentId = "us-map-" + this.value;
   console.log(currentId);
-  document.getElementById(currentId).style.display = "block";
-
+  document.getElementById(currentId).style.display = "block"; // make currently selected year map visible
 }
+
 
 function drawMap(year, mapContainer) {
   anychart.data.loadJsonFile(
@@ -183,6 +183,17 @@ $(document).ready(function() {
   drawMap(2013, 'us-map-2017');
   drawMap(2010, 'us-map-2018');
   drawMap(2011, 'us-map-2019');
-
 })
 
+$(window).on('load', function() {
+  document.getElementById("us-map-2010").style.display = "none";
+  document.getElementById("us-map-2011").style.display = "none";
+  document.getElementById("us-map-2012").style.display = "none";
+  document.getElementById("us-map-2013").style.display = "none";
+  document.getElementById("us-map-2014").style.display = "none";
+  document.getElementById("us-map-2015").style.display = "none";
+  document.getElementById("us-map-2016").style.display = "none";
+  document.getElementById("us-map-2017").style.display = "none";
+  document.getElementById("us-map-2018").style.display = "none";
+  document.getElementById("us-map-2019").style.display = "none"; // need elements loaded first otherwise map will flash when changing year
+})
