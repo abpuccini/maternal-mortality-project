@@ -22,7 +22,7 @@ function init() {
         state = element.location;
         states.push(state);
       });
-      var filterYear = ins.filter(event => event.location === "California");
+      var filterYear = ins.filter(event => event.location.trim() === "California");
       filterYear.forEach(element => {
         year = element.year;
         years.push(year);
