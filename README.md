@@ -9,9 +9,8 @@ We’re focusing on factors at the state level because maternal mortality rates 
 ## Purpose of Project ##
 
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births. 
-Covered medical services and income eligibility for Medicaid varies by state.
-Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+
 
 
 ## Obectives ##
@@ -54,7 +53,9 @@ Pulled report for overall health of women and children for 2019 as well as overa
 
 **Transform**
 
-Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.  Then we reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
+- Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.  
+
+- We then reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
 
 **Analysis**
 
@@ -65,15 +66,21 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Data Exploration ##
 
-The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors.
-There are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
-It was hypothesized that insurance coverage could affect health, and specifically women's health.
-The period of 2009-19 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implented with expansion of Medicaid coverage made available to the states.
-Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.
-It is also important to remember there are some differences in reporting over time including between 2003 and 2017, states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
+- The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
+
+- It was hypothesized that insurance coverage could affect health, and specifically women's health.  The period of 2009-19 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implented with expansion of Medicaid coverage made available to the states.
+
+- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
 
 ## Flask Web Application: ##
+
+**Heroku Landing Page**
+
+Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking and 
+
+![Global Mortality Ration Map!](/ETL/Screenshots/Global Map.jpg "Global Mortality Ratio")
+
 
 
 Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://maternal-mortality-project.herokuapp.com/)
