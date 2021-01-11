@@ -79,7 +79,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking and 
 
-![Global Mortality Ration Map!](/ETL/Screenshots/Global Map.jpg "Global Mortality Ratio")
+![Global Mortality Ratio Map!](/ETL/Screenshots/Global-Map.jpg)
 
 
 
