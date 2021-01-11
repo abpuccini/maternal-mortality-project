@@ -13,6 +13,10 @@ function init() {
       insData = ins
       // console.log(insData);
 
+      // test
+      const filtertest = ins.filter(event => event.year === 2019);
+      console.log(filtertest);
+
       var filterState = ins.filter(event => event.year === 2009);
       filterState.forEach(element => {
         state = element.location;
@@ -53,9 +57,9 @@ init();
 
 //function to render charts upon a selection from dropdown
 function optionChanged(state) {
-    // console.log(state);
-    buildPlot(state);
-    insChart(state);
+  // console.log(state);
+  buildPlot(state);
+  insChart(state);
 };
 
 function yearChanged(year) {
@@ -79,7 +83,7 @@ function buildPlot(state) {
     birthData.push(birth);
     deathData.push(death);
   });
-// console.log(yearData);
+  // console.log(yearData);
   var trace = {
     x: yearData,
     y: mmrData,
@@ -158,7 +162,7 @@ function insChart(state) {
     uninsuredData.push(uninsured);
     yearData.push(year);
   });
-// console.log(yearData);
+  // console.log(yearData);
 
   var trace3 = {
     x: yearData,
