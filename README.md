@@ -1,12 +1,12 @@
 # Maternal-Mortality-Rates #
 
-## Project Overview: ##
+## Project Overview ##
 
 
 For this project, we developed an interactive dashboard for users to explore maternal mortality data globally and within the United States. Users will be able to visualize maternal mortality data alongside data for potentially related factors, such as access to health insurance and Medicaid.
 We’re focusing on factors at the state level because maternal mortality rates and healthcare policies and access vary widely between states.
 
-## Purpose of Project: ##
+## Purpose of Project ##
 
 
 The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births. 
@@ -21,7 +21,7 @@ Our obejective is for this dashboard to function in a way that allows for users 
 For example, Does health insurance coverage affect maternal mortality rates? Does a state’s medicaid expansion affect maternal mortality rates?
 
 
-## Data Sources Used: ##
+## Data Sources Used ##
 
 The data for this project was sourced from the following sources:
 
@@ -33,23 +33,23 @@ The data for this project was sourced from the following sources:
 
 4.American Health Rankings: United Health Foundation [Source](https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL)
 
-5.Medicaid Expansion [Source](Data.Medicaid.gov state medicaid expansion and application data) 
+5.Medicaid Expansion [Source](https://data.medicaid.gov/Enrollment/State-Medicaid-and-CHIP-Applications-Eligibility-D/n5ce-jxme/data) 
 
 
 ## Data Processing & ETL: ##
 
 **Extract**
 
--UNICEF
+- UNICEF
 Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
--Centers for Disease Control Wonder
+- Centers for Disease Control Wonder
 Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
--Kaiser Family Foundation
+- Kaiser Family Foundation
 Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
--America's Health Rankings: United Health Foundation
+- America's Health Rankings: United Health Foundation
 Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
 
 **Transform**
