@@ -86,7 +86,6 @@ div #overview {
 /* Affordable Care Act */
 .question {
     text-align: left;
-    /* margin-left: 50px; */
     font-weight: bolder;
     background-color: #F2F5F3;
     border-radius: 15px;
@@ -155,7 +154,7 @@ h6 {
 /* Reference */
 .reference {
     font-size: 15px;
-    text-align: justify
+    text-align: justify;
 }
 
 /* Footer */
@@ -179,9 +178,3 @@ h6 {
 .footer a {
     color: #545c63;
 }
-
-/* #global {
-    margin-top: 25px;
-    padding: 0;
-    height: 500px;
-} */
