@@ -3,6 +3,7 @@ var states = [];
 var measure_list = [];
 var extremeStates = [];
 var mmr_list = [];
+var abbreviation_list = [];
 
 // Function to call data when the webpage loads
 function init() {
@@ -28,29 +29,29 @@ function init() {
           states.push(state);
         });
     
-
+      
         var filteredMeasures = measureData.filter(event => event.measure_name !== "Maternal Mortality");
         console.log(filteredMeasures);
 
         filteredMeasures.forEach(element => {
-          measure = element.measure_name
-          measure_list.push(measure)
+          measure = element.measure_name;
+          abbreviation = element.abbreviation;
+          measure_list.push(measure);
+          abbreviation_list.push(abbreviation);
         });
         console.log(measure_list);
 
         var selection = d3.select("#selDataset");
 
-        measure_list.forEach(item => {
+        measure_list.forEach(val => {
           var options = selection.append("option");
-          options.property("value", item);
-          options.text(item);
+          options.property("value", val);
+          options.text(val);
         });
 
 
 
         buildPlot(selection.property("value"));
-        //insChart(selection.property("value"));
-        //state1Chart();
     
       });
    });
@@ -69,8 +70,10 @@ function optionChanged(measure) {
 
 // building plot for measure data
 function buildPlot(measure) {
-     var filteredData = rankedData.filter(event => event.measure === measure);
+    var filteredMeasure = measureData.filter(event => event.measure_name === measure);
 
+      console.log(filteredMeasure[0].abbreviation)
+      
       var ahi_data = [];
       var ai_data = [];
       var apc_data = [];
@@ -92,52 +95,62 @@ function buildPlot(measure) {
       var wwv_data = [];
       var wic_data = [];
 
-      function getMeasure(measure){
-          switch (true){
-            case measure = "Adequate Health Insurance":
-                return "ahi_data";
-            case measure = "Adequate Insurance":
-                return "ai_data";
-            case measure = "Adequate Prenatal Care":
-                return "apc_data";
-            case measure = "Avoided Care due to Cost":
-                return "ac_data";
-            case measure = "Dedicated Health Care Provider - Women":
-                return "dhcp_data";
-            case measure = "Developmental Screening":
-                return "ds_data";
-            case measure = "Health Outcomes - Women":
-                return "how_data";
-            case measure = "Infant Mortality":
-                return "im_data";
-            case measure = "Maternity Practices in Infant Nutrition and Care":
-                return "mpinc_data";
-            case measure = "Mortality - Women":
-                return "mow_data";
-            case measure = "Policy - Women":
-                return "pw_data";
-            case measure = "Overall - Women":
-                return "ow_data";
-            case measure = "Postpartum Visit":
-                return "ppv_data";
-            case measure = "Prenatal Care Before Third Trimester":
-                return "pctt_data";
-            case measure = "Publicly-Funded Women's Health Services":
-                return "pfhs_data";
-            case measure = "Receiving Public Assistance":
-                return "rpa_data";
-            case measure = "Uninsured Women":
-                return "uw_data";
-            case measure = "Well-Woman Visit":
-                return "wwv_data";
-            case measure = "WIC Coverage":
-                return "wic_data";         
-            default:
-                return "measure not found";
-        };
-      };
+
+      called_measure = filteredMeasure[0].abbreviation;
+      console.log(called_measure)
+      // console.log(ahi_data)
+
+      // // function getMeasure(measure){
+      //     switch (measure){
+      //       case "ahi":
+      //           return "ahi_data";
+      //         break;
+      //       case "ai":
+      //           return "ai_data";
+      //       case "apc":
+      //           return "apc_data";
+      //       case "ac":
+      //           return "ac_data";
+      //       case "dhcp":
+      //           return "dhcp_data";
+      //       case "ds":
+      //           return "ds_data";
+      //       case "how":
+      //           return "how_data";
+      //       case "im":
+      //           return "im_data";
+      //       case "mpinc":
+      //           return "mpinc_data";
+      //       case "mow":
+      //           return "mow_data";
+      //       case measure = "pw":
+      //           return "pw_data";
+      //       case measure = "ow":
+      //           return "ow_data";
+      //       case measure = "ppv":
+      //           return "ppv_data";
+      //       case measure = "pctt":
+      //           return "pctt_data";
+      //       case measure = "pfhs":
+      //           return "pfhs_data";
+      //       case measure = "rpa":
+      //           return "rpa_data";
+      //       case measure = "uw":
+      //           return "uw_data";
+      //       case measure = "wwv":
+      //           return "wwv_data";
+      //       case measure = "wic":
+      //           return "wic_data";         
+      //       default:
+      //           return "measure not found";
+      //    };
+      // // };
     
-      filteredData.forEach(element => {
+      // final_m = getMeasure(called_measure)
+
+      // console.log(final_m)
+
+    rankedData.forEach(element => {
 
         state = element.state;
         
@@ -266,8 +279,6 @@ function buildPlot(measure) {
         // sort the mmr
         mmr_list.sort((a, b) => (a.value > b.value) ? 1 : -1);
 
-        console.log(mmr_list);
-        
         // slice the bottom 5 results
         mmr_list.length = 52;
         console.log(Array.prototype.slice.call(mmr_list, 5));
@@ -276,26 +287,89 @@ function buildPlot(measure) {
         var bottom_5_mmr = [];
         for (var i=0; i<5; i++)
           bottom_5_mmr[i] = mmr_list[i];
-        console.log(bottom_5_mmr);  
         
         //slice the top 5 results
         var reversed_mmr_list = mmr_list.reverse()
         reversed_mmr_list.length = 52;
-
         console.log(Array.prototype.slice.call(reversed_mmr_list, 5));
 
         var top_5_mmr = [];
         for (var i=0; i<5; i++)
         top_5_mmr[i] = reversed_mmr_list[i];
-        console.log(top_5_mmr); 
 
-      var graph_measure = getMeasure(measure);
+      var sought_measure = `${called_measure}_data`;
 
-      console.log(graph_measure);
+      console.log(sought_measure);
+      // console.log(graph_measure.value);
+      // console.log(graph_measure.key);
+
+      if (sought_measure === "ahi_data"){
+        var graph_measure = ahi_data;
+        console.log(graph_measure);
+      } else if (sought_measure === "ai_data"){
+        var graph_measure = ai_data;
+        console.log(graph_measure);
+      } else if (sought_measure === "apc_data"){
+        var graph_measure = apc_data;
+        console.log(apc_data);
+      }else if (sought_measure === "ac_data"){
+        var graph_measure = ac_data;
+        console.log(graph_measure);
+      }else if (sought_measure === "dhcp_data"){
+        var graph_measure = dhcp_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "ds_data"){
+        var graph_measure = ds_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "how_data"){
+        var graph_measure = how_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "im_data"){
+        var graph_measure = im_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "mpinc_data"){
+        var graph_measure = mpinc_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "mow_data"){
+        var graph_measure = mow_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "pw_data"){
+        var graph_measure = pw_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "ow_data"){
+        var graph_measure = ow_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "ppv_data"){
+        var graph_measure = ppv_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "pctt_data"){
+        var graph_measure = pctt_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "pfhs_data"){
+        var graph_measure = pfhs_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "rpa_data"){
+        var graph_measure = rpa_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "uw_data"){
+        var graph_measure = uw_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "wwv_data"){
+        var graph_measure = wwv_data;
+        console.log(graph_measure)
+      }else if (sought_measure === "wic_data"){
+        var graph_measure = wic_data;
+        console.log(graph_measure)
+      }else{
+        console.log('error')
+      }
+      // console.log(ahi_data[1].value);
+
+      
 
       var trace1 = {
         x: top_5_mmr,
-        y: graph_measure.value,
+        y: graph_measure[1].value,
         name: "Top 5 States",
         type: "scatter",
         mode: "lines+markers",
@@ -306,7 +380,7 @@ function buildPlot(measure) {
     };
       var trace2 = {
         x: bottom_5_mmr,
-        y: graph_measure.value,
+        y: graph_measure[1].value,
         name: "Bottom 5 States",
         type: "scatter",
         mode: "lines+markers",
@@ -346,4 +420,4 @@ function buildPlot(measure) {
 
 // Plotly.newPlot('myDiv', data, layout);
 
-    };
+   };
