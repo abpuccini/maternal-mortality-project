@@ -79,7 +79,7 @@ function buildPlot(state) {
     birthData.push(birth);
     deathData.push(death);
   });
-
+// console.log(yearData);
   var trace = {
     x: yearData,
     y: mmrData,
@@ -89,9 +89,6 @@ function buildPlot(state) {
     line: {
       color: 'rgb(210, 105, 30)',
     }
-    //range: [0,70],
-    //text: birthData,
-    //text: `<b>Births: ${birthData}</b>`
   };
 
   var data = [trace];
@@ -161,6 +158,7 @@ function insChart(state) {
     uninsuredData.push(uninsured);
     yearData.push(year);
   });
+// console.log(yearData);
 
   var trace3 = {
     x: yearData,
