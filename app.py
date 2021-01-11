@@ -25,6 +25,7 @@ class Global(db.Model):
     latitude = db.Column(db.Integer)
     longitude = db.Column(db.Integer)
 
+    state_code = db.Column(db.Integer)
 
 @app.route('/')
 def index():

@@ -177,12 +177,12 @@ $(document).ready(function() {
   drawMap(2011, 'us-map-2011');
   drawMap(2012, 'us-map-2012');
   drawMap(2013, 'us-map-2013');
-  drawMap(2010, 'us-map-2014');
-  drawMap(2011, 'us-map-2015');
-  drawMap(2012, 'us-map-2016');
-  drawMap(2013, 'us-map-2017');
-  drawMap(2010, 'us-map-2018');
-  drawMap(2011, 'us-map-2019');
+  drawMap(2014, 'us-map-2014');
+  drawMap(2015, 'us-map-2015');
+  drawMap(2016, 'us-map-2016');
+  drawMap(2017, 'us-map-2017');
+  drawMap(2018, 'us-map-2018');
+  drawMap(2019, 'us-map-2019');
 })
 
 $(window).on('load', function() {
