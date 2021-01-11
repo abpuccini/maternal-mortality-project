@@ -97,6 +97,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="global"></div>
+                <p id="caption">
+                    <b>Note:</b>Maternal Mortality Ratio (MMR) is the number of deaths due to complications of pregnancy
+                    or
+                    childbirth per 100,000 live births.
+                </p>
             </div>
         </div>
         <div class="row">
@@ -104,10 +109,7 @@
                 <h3>Overview</h3>
                 <hr>
                 <div id="overview">
-                    <p>
-                        Maternal Mortality Ratio (MMR) is the number of deaths due to complications of pregnancy or
-                        childbirth per 100,000 live births.
-                    </p>
+
                     <p>
                         According to the World Health Organization (WHO), maternal mortality is defined as “the death of
                         a woman while pregnant or within 42 days of termination of pregnancy, irrespective of the
@@ -157,15 +159,26 @@
             <div class="col-md-12">
                 <h3>Causes of Maternal Death</h3>
                 <hr>
+
             </div>
             <div class="col-md-5">
-                <div id='pie-global'>
-
+                <div class="well">
+                    <h7 class='selection'>Select Region</h7>
+                    <select id="selDataset" onchange="regionChanged(this.value)"></select>
                 </div>
+                <div id='pie-global'></div>
+                <p id="caption"><b>Notes:</b> *Nearly all (99 per cent) of abortion deaths are due to unsafe abortions.
+                    **Includes deaths due to obstructed labour or anaemia.</p>
             </div>
-            <div class="col-md-7">
-                <p>
-
+            <div class="col-7 col-sm-6 align-middle">
+                <p id='pieoverview'>
+                    "The complications leading to maternal death can occur without warning at any time during pregnancy
+                    and childbirth. Most maternal deaths can be prevented if births are attended by skilled health
+                    personnel – doctors, nurses or midwives – who are regularly supervised, have the proper equipment
+                    and supplies, and can refer women in a timely manner to emergency obstetric care when complications
+                    are diagnosed. Complications require prompt access to quality obstetric services equipped with
+                    life-saving drugs, including antibiotics, and the ability to provide blood transfusions needed to
+                    perform Caesarean sections or other surgical interventions (Unicef, 2019)."
                 </p>
             </div>
         </div>
@@ -175,12 +188,19 @@
                 <hr>
                 <div id="reference">
                     <p>
+                        Say, L., Chou, D., Gemmill, A., Tunçalp, Ö., Moller, A.-B., Daniels, J., … Alkema, L. (2014, May
+                        5).<a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
+                            target="_blank"><cite> Global causes of maternal death: a WHO systematic
+                                analysis.</cite></a>
+                        https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext.
+                    </p>
+                    <p>
                         Tikkanen, Gunja, FitzGerald, & Zephyrin. (2020, November 18). <a
                             href="https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries"
                             target="_blank"><cite>Maternal
                                 mortality and maternity care in the United States compared to 10 other developed
                                 countries.</cite></a> Commonwealth Fund.
-                        https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries
+                        https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries.
                     </p>
 
                     <p>
@@ -188,7 +208,7 @@
                             href="https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/"
                             target="_blank"><cite>Trends
                                 in maternal mortality.</cite></a>
-                        https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/
+                        https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/.
                     </p>
 
                     <p>
@@ -196,7 +216,7 @@
                             href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
                             target="_blank"><cite>Maternal
                                 mortality.</cite></a>
-                        https://data.unicef.org/topic/maternal-health/maternal-mortality/
+                        https://data.unicef.org/topic/maternal-health/maternal-mortality/.
                     </p>
                 </div>
             </div>

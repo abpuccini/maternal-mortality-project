@@ -6,10 +6,11 @@ document.onreadystatechange = function () {
     if (document.readyState == "complete") {
         GlobalMap();
         bubbleGlobal();
+        init();
     };
 };
 
-
+// Global map based on MMR
 function GlobalMap() {
 
     // Source: https://www.anychart.com/products/anymap/gallery/Maps_General_Features/World_Choropleth_Map.php
@@ -155,6 +156,7 @@ function random_rgba() {
     return 'rgb(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
 };
 
+// (Bubble Chart for Developed Countries)
 function bubbleGlobal() {
 
     // Call data data
@@ -232,4 +234,88 @@ function bubbleGlobal() {
         // Render the plot to the div tag with id "bubble"
         Plotly.newPlot('global-bubble', data, layout);
     });
+};
+
+function regionChanged(region) {
+    pieCause(region);
+};
+
+// Initialize arrays to hold data
+var regions = [];
+var causes_data = [];
+var causes = [];
+
+function init() {
+    // Call data data
+    d3.json('/api/causesofdeaths').then(function (data) {
+        // console.log(data);
+
+        // Get region
+        data.forEach(item => {
+            causes_data.push(item);
+            continent = item.region;
+            regions.push(continent);
+        });
+        // console.log(causes_data);
+
+        // Create Drop down
+        var selection = d3.select("#selDataset");
+
+        regions.forEach(item => {
+            var options = selection.append("option");
+            options.property("value", item);
+            options.text(item);
+        });
+        regionChanged(selection.property("value"));
+    });
+
+};
+
+
+// Causes of Death (Pie chart)
+function pieCause(region) {
+
+    // Get data by region
+    var filteredData = causes_data.filter(event => event.region === region);
+    // console.log(filteredData);
+
+    var pieData = filteredData[0];
+    // console.log(pieData);
+
+    // Get data for each region
+    var abortion = pieData.abortion;
+    var embolism = pieData.embolism;
+    var haemorrhage = pieData.haemorrhage;
+    var hypertension = pieData.hypertension;
+    var sepsis = pieData.sepsis;
+    var other_direct_causes = pieData.other_direct_causes;
+    var indirect_causes = pieData.indirect_causes;
+    var pieDatalist = [abortion, embolism, haemorrhage, hypertension, sepsis, other_direct_causes, indirect_causes]
+    // console.log(abortion, embolism, haemorrhage, hypertension, sepsis, other_direct_causes, indirect_causes);
+
+    // trace for pie chart
+    // Get random color
+    var colors = ['rgb(229, 152, 102)', 'rgb(247, 220, 111)',
+        'rgb(69, 179, 157)', 'rgb(205, 97, 85 )',
+        'rgb(210, 180, 222)', 'rgb(27, 79, 114)', 'rgb(170, 183, 184)'];
+
+    var data = [{
+        values: pieDatalist,
+        labels: ['Abortion', 'Embolism', 'Haemorrhage', 'Hypertension', 'Sepsis', 'Other Direct Causes', 'Indirect Causes'],
+        type: 'pie',
+        name: pieData.region,
+        marker: {
+            colors: colors,
+            colorscale: 'earth'
+        },
+        automargin: true
+    }];
+
+    var layout = {
+        height: 400,
+        width: 600,
+    };
+
+    Plotly.newPlot('pie-global', data, layout);
+
 };

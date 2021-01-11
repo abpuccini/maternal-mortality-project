@@ -62,9 +62,28 @@ div #overview {
 /* Global */
 #global {
     margin-top: 25px;
+    margin-bottom: 25px;
     padding: 0;
     height: 500px;
 }
+
+#pieoverview {
+    margin-left: 200px;
+    margin-top: 100px;
+    text-align: justify;
+    width: 430px;
+    background-color: #F2F3F4;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* Caption */
+#caption {
+    font-size: 12px;
+    text-align: center;
+
+}
+
 
 /* US map */
 #usMap {
