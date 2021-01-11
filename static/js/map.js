@@ -1,11 +1,35 @@
-anychart.onDocumentReady(function () {
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  document.getElementById("us-map-2009").style.display = "none";
+  document.getElementById("us-map-2010").style.display = "none";
+  document.getElementById("us-map-2011").style.display = "none";
+  document.getElementById("us-map-2012").style.display = "none";
+  document.getElementById("us-map-2013").style.display = "none";
+  document.getElementById("us-map-2014").style.display = "none";
+  document.getElementById("us-map-2015").style.display = "none";
+  document.getElementById("us-map-2016").style.display = "none";
+  document.getElementById("us-map-2017").style.display = "none";
+  document.getElementById("us-map-2018").style.display = "none";
+  document.getElementById("us-map-2019").style.display = "none";
+
+  currentId = "us-map-" + this.value;
+  console.log(currentId);
+  document.getElementById(currentId).style.display = "block";
+
+}
+
+function drawMap(year, mapContainer) {
   anychart.data.loadJsonFile(
     '/api/mmr-us',
     function (data) {
       var map = anychart.map();
 
       console.log(data);
-      data = data.filter(a => a.year == "2019"); //filter by year
+      data = data.filter(a => a.year == year); //filter by year
       console.log(data);
 
       var dataSet = anychart.data.set(data);
@@ -22,7 +46,7 @@ anychart.onDocumentReady(function () {
         .hAlign('center')
         .fontFamily('\'Verdana\', Helvetica, Arial, sans-serif')
         .text(
-          '<b style="color:#696969">United States Maternal Mortality Ratio</b><br/>' +
+          '<b style="color:#696969">' + year + ' United States Maternal Mortality Ratio</b><br/>' +
           '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
           '<span  style="color:#929292; font-size: 10px;">(Data source: )</span>' //todo: enter data source
         );
@@ -50,10 +74,10 @@ anychart.onDocumentReady(function () {
           .fill('#18618d')
           .stroke(anychart.color.darken('#18618d'));
 
-      // series
-          // .selected()
-          // .fill('#c2185b')
-          // .stroke(anychart.color.darken('#c2185b'));
+      series
+          .selected()
+          .fill('#18618d')
+          .stroke(anychart.color.darken('#18618d'));
 
       series
           .tooltip()
@@ -139,9 +163,26 @@ anychart.onDocumentReady(function () {
       zoomController.render(map);
 
       // set container id for the chart
-      map.container('us-map');
+      map.container(mapContainer);
       // initiate chart drawing
       map.draw();
     }
   );
-});
+}
+
+$(document).ready(function() {
+  console.log("test");
+  drawMap(2009, 'us-map-2009');
+  drawMap(2010, 'us-map-2010');
+  drawMap(2011, 'us-map-2011');
+  drawMap(2012, 'us-map-2012');
+  drawMap(2013, 'us-map-2013');
+  drawMap(2010, 'us-map-2014');
+  drawMap(2011, 'us-map-2015');
+  drawMap(2012, 'us-map-2016');
+  drawMap(2013, 'us-map-2017');
+  drawMap(2010, 'us-map-2018');
+  drawMap(2011, 'us-map-2019');
+
+})
+
