@@ -13,12 +13,13 @@ function init() {
       insData = ins
       // console.log(insData);
 
+
       var filterState = ins.filter(event => event.year === 2009);
       filterState.forEach(element => {
         state = element.location;
         states.push(state);
       });
-      var filterYear = ins.filter(event => event.location === "California");
+      var filterYear = ins.filter(event => event.location.trim() === "California");
       filterYear.forEach(element => {
         year = element.year;
         years.push(year);
@@ -53,9 +54,9 @@ init();
 
 //function to render charts upon a selection from dropdown
 function optionChanged(state) {
-    // console.log(state);
-    buildPlot(state);
-    insChart(state);
+  // console.log(state);
+  buildPlot(state);
+  insChart(state);
 };
 
 function yearChanged(year) {
@@ -79,7 +80,7 @@ function buildPlot(state) {
     birthData.push(birth);
     deathData.push(death);
   });
-// console.log(yearData);
+  // console.log(yearData);
   var trace = {
     x: yearData,
     y: mmrData,
@@ -125,7 +126,7 @@ function buildPlot(state) {
 // building chart for insurance data
 function insChart(state) {
   var filterData = insData.filter(choice =>
-    choice.location === state);
+    choice.location.trim() === state);
   var employerData = [];
   var medicaidData = [];
   var medicareData = [];
@@ -158,7 +159,7 @@ function insChart(state) {
     uninsuredData.push(uninsured);
     yearData.push(year);
   });
-// console.log(yearData);
+  // console.log(yearData);
 
   var trace3 = {
     x: yearData,
@@ -223,7 +224,7 @@ function random_rgba() {
 // bubble chart for states that haven't expanded Medicaid
 function state1Chart(year) {
   year = parseInt(year);
-  console.log(year);
+  // console.log(year);
   //MMR data for specific states
   var filterMMRData = usData.filter(event =>
     (event.year === year && event.state === "North Carolina") ||
