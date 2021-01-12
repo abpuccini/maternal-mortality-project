@@ -70,9 +70,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 - Created database diagram via QuickDatabase
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
-- 
-
-
+ 
 **Statistical Analysis**
 Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
 
