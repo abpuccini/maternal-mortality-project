@@ -409,8 +409,8 @@ function buildPlot(measure) {
 
     var layout = {
       autosize: false,
-      width: 1000,
-      height: 500,
+      width: 1200,
+      height: 600,
       yaxis:{
         title: `${full_called_measure}`
       },
