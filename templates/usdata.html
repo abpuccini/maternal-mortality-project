@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap and JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -32,9 +32,11 @@
     <!-- d3 -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
-    <!--Bring in the css style sheet-->
-    <link rel="stylesheet" href="static/css/style.css" />
-    <link rel="stylesheet" href="static/css/map-style.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link rel="stylesheet" href="static/css/map.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+
 
     <!-- Title -->
     <title>US: Affordable Care Act</title>
@@ -104,16 +106,16 @@
     </div>
 
     <div id="aca-info" class="container">
-        <div class="row">
+        <div class="map-controls row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-1">
-                <button type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-play"></span>
-                </button>
+            <div class="play-pause col-sm-1">
+                <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
+                    <i class="fa fa-play"></i>
+                  </button>
             </div>
-            <div class="slidecontainer col-sm-9">
+            <div class="slide-container col-sm-9">
                 <input type="range" min="2009" max="2019" value="2009" class="slider" id="myRange">
-                <p>Year: <span id="demo"></span></p>
+                <p>Year: <span id="year"></span></p>
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -287,6 +289,7 @@
     <!-- JS file -->
     <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/map.js"></script>
+    <script type="text/javascript" src="static/js/play-pause.js"></script>
     <script type="text/javascript" src="static/js/us.js"></script>
 </body>
 

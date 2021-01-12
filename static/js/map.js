@@ -1,6 +1,6 @@
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+var output = document.getElementById("year");
+output.innerHTML = slider.value; // year slider
 
 slider.oninput = function() {
   output.innerHTML = this.value;
