@@ -90,7 +90,7 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
+![Global Mortality Ratio Map](/ETL/Resources/Global_Map.jpg)
 
 **United States: Affordable Care Act Page**
 
@@ -111,6 +111,7 @@ Created the intial landing page to showcase global mortality ratio per 100,000 b
 
 ![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
+
 **Ranked Measured Comparisons**
 
 -Visulized how the states with the highest and lowest mortality rates compared against related health care measures
@@ -127,6 +128,7 @@ Source code is available on GitHub: [GitHub Source Code](https://github.com/abpu
 
 
  ## Libraries & Tools Used: ## 
+
  Python Version 3 |
  Juypter Notebook |
  Pandas |
