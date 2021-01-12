@@ -88,9 +88,14 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 **Heroku Landing Page**
 
-Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
+- Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
 ![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
+
+- Visulized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.
+
+![Maternal Deaths](/ETL/Resources/MD_Causes.JPG)
+
 
 **United States: Affordable Care Act Page**
 
