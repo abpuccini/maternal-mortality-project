@@ -135,6 +135,11 @@ div #overview {
     border-radius: 15px;
 }
 
+#rankedplot {
+    margin-top: 20px;
+}
+
+
 /* Methodology */
 .card-header {
     font-size: larger;
