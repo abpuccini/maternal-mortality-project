@@ -1,4 +1,4 @@
-# Maternal-Mortality-Rates #
+# Maternal Mortality Rates #
 
 
 ## Purpose of Project ##
@@ -70,9 +70,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 - Created database diagram via QuickDatabase
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
-- 
-
-
+ 
 **Statistical Analysis**
 Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
 
@@ -91,25 +89,25 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global-Map.jpg)
+![Global Mortality Ratio Map](/ETL/Resources/Global_Map.jpg)
 
 **United States: Affordable Care Act Page**
 
 Created a state wide map(?) showing...
 
 - Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
-![State Mortality Rates](/ETL/Resources/State-Comparison.png)
+![State Mortality Rates](/ETL/Resources/State_Comparison.png)
 
 - Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
-![State Mortality Rates](/ETL/Resources/Comparison-of-Medicaid-Coverage.png)
+![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.png)
 
 - Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
-![State Mortality Rates](/ETL/Resources/QuickDBD_ERD.png)
+![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.jpg)
 
 **Ranked Measured Comparisons**
 
 -Visulized how the states with the highest and lowest mortality rates compared against related health care measures
-![Ranked Healthcare Measures](/ETL/Resources/MMR-Plot_Map.png)
+![Ranked Healthcare Measures]()
 
 **Methodology Page**
 
@@ -121,7 +119,6 @@ Source code is available on GitHub: [GitHub Source Code](https://github.com/abpu
 
 
  ## Libraries & Tools Used: ## |
- ----------------------------- |
  Python Version 3 |
  Juypter Notebook |
  Pandas |
