@@ -1,7 +1,59 @@
+#us-map-2009 {
+    z-index: 11
+}
+#us-map-2010 {
+    z-index: 10
+}
+#us-map-2011 {
+    z-index: 9
+}
+#us-map-2012 {
+    z-index: 8
+}
+#us-map-2013 {
+    z-index: 7
+}
+#us-map-2014 {
+    z-index: 6
+}
+#us-map-2015 {
+    z-index: 5
+}
+#us-map-2016 {
+    z-index: 4
+}
+#us-map-2017 {
+    z-index: 3
+}
+#us-map-2018 {
+    z-index: 2
+}
+#us-map-2019 {
+    z-index: 1
+}
+
+.slidecontainer {
+    padding-top: 5px;
+}
+
+#aca-info {
+    margin-top: 680px;
+    
+}
+
+#us-mmr-map {
+    position: relative;
+}
+
 .map-container {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 650px;
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
 }
 
@@ -43,6 +95,6 @@
     cursor: pointer;
 }
 
-/* .anychart-credits {
+.anychart-credits {
     display: none !important;
-} */
+}

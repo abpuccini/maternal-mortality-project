@@ -17,7 +17,6 @@ slider.oninput = function() {
   document.getElementById("us-map-2019").style.display = "none";
 
   currentId = "us-map-" + this.value;
-  console.log(currentId);
   document.getElementById(currentId).style.display = "block"; // make currently selected year map visible
 }
 
@@ -28,16 +27,13 @@ function drawMap(year, mapContainer) {
     function (data) {
       var map = anychart.map();
 
-      console.log(data);
-      data = data.filter(a => a.year == year); //filter by year
-      console.log(data);
+      data = data.filter(a => a.year == year); // filter by year
 
       var dataSet = anychart.data.set(data);
       var mmrData = dataSet.mapAs({value: 'mmr'});
-
-      console.log(data);
       
-      //set map title settings using html
+
+      // set map title settings using html
       map
         .title()
         .enabled(true)
@@ -48,37 +44,21 @@ function drawMap(year, mapContainer) {
         .text(
           '<b style="color:#696969">' + year + ' United States Maternal Mortality Ratio</b><br/>' +
           '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
-          '<span  style="color:#929292; font-size: 10px;">(Data source: NCHS - CDC WONDER)</span>' //todo: enter data source
+          '<span  style="color:#929292; font-size: 10px;">(Data source: NCHS - CDC WONDER)</span>'
         );
 
-      // map
-        // .credits()
-        // .enabled(true)
-        // .url(
-        //   'https://www.businessinsider.com/wine-consumption-map-united-states-2014-3'
-        // )
-        // .text(
-        //   'Data source: https://www.businessinsider.com/wine-consumption-map-united-states-2014-3'
-        // )
-        // .logoSrc(
-        //   'https://static.anychart.com/images/maps_samples/USA_Map_with_Linear_Scale/favicon.ico'
-        // );
-
-      map.geoData('anychart.maps.united_states_of_america'); //set map Geo data
+      map.geoData('anychart.maps.united_states_of_america'); // set map Geo data
 
       var series = map.choropleth(mmrData);
 
-      // When user hovers over each state
       series
-          .hovered()
+          .hovered() // hover over us state
           .fill('#18618d')
           .stroke(anychart.color.darken('#18618d'));
-
       series
           .selected()
           .fill('#18618d')
           .stroke(anychart.color.darken('#18618d'));
-
       series
           .tooltip()
           .useHtml(true)
@@ -163,29 +143,16 @@ function drawMap(year, mapContainer) {
 }
 
 $(document).ready(function() {
-  console.log("test");
-  drawMap(2009, 'us-map-2009');
-  drawMap(2010, 'us-map-2010');
-  drawMap(2011, 'us-map-2011');
-  drawMap(2012, 'us-map-2012');
-  drawMap(2013, 'us-map-2013');
-  drawMap(2014, 'us-map-2014');
-  drawMap(2015, 'us-map-2015');
-  drawMap(2016, 'us-map-2016');
-  drawMap(2017, 'us-map-2017');
-  drawMap(2018, 'us-map-2018');
   drawMap(2019, 'us-map-2019');
+  drawMap(2018, 'us-map-2018');
+  drawMap(2017, 'us-map-2017');
+  drawMap(2016, 'us-map-2016');
+  drawMap(2015, 'us-map-2015');
+  drawMap(2014, 'us-map-2014');
+  drawMap(2013, 'us-map-2013');
+  drawMap(2012, 'us-map-2012');
+  drawMap(2011, 'us-map-2011');
+  drawMap(2010, 'us-map-2010');
+  drawMap(2009, 'us-map-2009');
 })
 
-$(window).on('load', function() {
-  document.getElementById("us-map-2010").style.display = "none";
-  document.getElementById("us-map-2011").style.display = "none";
-  document.getElementById("us-map-2012").style.display = "none";
-  document.getElementById("us-map-2013").style.display = "none";
-  document.getElementById("us-map-2014").style.display = "none";
-  document.getElementById("us-map-2015").style.display = "none";
-  document.getElementById("us-map-2016").style.display = "none";
-  document.getElementById("us-map-2017").style.display = "none";
-  document.getElementById("us-map-2018").style.display = "none";
-  document.getElementById("us-map-2019").style.display = "none"; // need elements loaded first otherwise map will flash when changing year
-})
