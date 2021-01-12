@@ -94,7 +94,10 @@ Created the intial landing page to showcase global mortality ratio per 100,000 b
 
 **United States: Affordable Care Act Page**
 
-Created a state wide map(?) showing...
+- Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 2009-2019.
+
+![US Map 2009](/ETL/Resources/US_2009.PNG)
+![US Map 2019](/ETL/Resources/US_2019.PNG)
 
 - Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
