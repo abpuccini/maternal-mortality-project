@@ -39,27 +39,26 @@ The data for this project was sourced from the following sources:
 
 **Extract**
 
-- UNICEF
-Downloaded the latest data for Maternal Mortality Worldwide (2017).
+- UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-- Centers for Disease Control Wonder
-Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Kaiser Family Foundation
-Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-- America's Health Rankings: United Health Foundation
-Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
+- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
 
 **Transform**
 
 - Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  
+
 ![Example]()
 
 -Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.
+
 ![Example]()
 
 - We then reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
+
 ![Example]()
 
 
@@ -68,10 +67,12 @@ Pulled report for overall health of women and children for 2019 as well as overa
 Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
 - Created database diagram via QuickDatabase
+
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
  
 **Statistical Analysis**
+
 Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
 
 ## Data Exploration ##
@@ -93,20 +94,28 @@ Created the intial landing page to showcase global mortality ratio per 100,000 b
 
 **United States: Affordable Care Act Page**
 
-Created a state wide map(?) showing...
+- Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 2009-2019.  This map was created using the Javascript Library AnyChart
+
+![US Map 2009](/ETL/Resources/US_2009.JPG)
+![US Map 2019](/ETL/Resources/US_2019.JPG)
 
 - Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
-![State Mortality Rates](/ETL/Resources/State_Comparison.png)
+
+![State Mortality Rates](/ETL/Resources/State_Comparison.PNG)
 
 - Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
-![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.png)
+
+![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.PNG)
 
 - Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
-![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.jpg)
+
+![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
+
 
 **Ranked Measured Comparisons**
 
 -Visulized how the states with the highest and lowest mortality rates compared against related health care measures
+
 ![Ranked Healthcare Measures]()
 
 **Methodology Page**
@@ -118,7 +127,8 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 Source code is available on GitHub: [GitHub Source Code](https://github.com/abpuccini/project2-maternal-mortality)
 
 
- ## Libraries & Tools Used: ## |
+ ## Libraries & Tools Used: ## 
+
  Python Version 3 |
  Juypter Notebook |
  Pandas |
@@ -129,4 +139,5 @@ Source code is available on GitHub: [GitHub Source Code](https://github.com/abpu
  Bootstrap |
  Anychart |
  Chrome Table Capture |
+
 
