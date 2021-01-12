@@ -30,8 +30,8 @@ function init() {
         });
     
       
-        var filteredMeasures = measureData.filter(event => event.measure_name !== "Maternal Mortality");
-
+        var filteredMeasures1 = measureData.filter(event => event.measure_name !== "Maternal Mortality");
+        var filteredMeasures = filteredMeasures1.filter(event => event.measure_name !== "Postpartum Visit");
 
         filteredMeasures.forEach(element => {
           measure = element.measure_name;
@@ -105,121 +105,121 @@ function buildPlot(measure) {
         ahi = element.ahi;
         ahi_data.push({
           key : state, 
-          value: ahi.value
+          value: ahi.rank
         });
 
         ai = element.ai;
         ai_data.push({
           key : state, 
-          value: ai.value
+          value: ai.rank
         });
 
         apc = element.apc;
         apc_data.push({
           key : state, 
-          value: apc.value
+          value: apc.rank
         });
 
         ac = element.ac;
         ac_data.push({
           key : state, 
-          value: ac.value
+          value: ac.rank
         });
 
         dhcp = element.dhcp;
         dhcp_data.push({
           key : state, 
-          value: dhcp.value
+          value: dhcp.rank
         });
 
         ds = element.ds;
         ds_data.push({
           key : state, 
-          value: ds.value
+          value: ds.rank
         });
 
         how = element.how;
         how_data.push({
           key : state, 
-          value: how.value
+          value: how.rank
         });
 
         im = element.im;
         im_data.push({
           key : state, 
-          value: im.value
+          value: im.rank
         });
 
         mm = element.mm;
         mm_data.push({
           key : state, 
-          value: mm.value
+          value: mm.rank
         });
 
         mpinc = element.mpinc;
         mpinc_data.push({
           key : state, 
-          value: mpinc.value
+          value: mpinc.rank
         });
 
         mow = element.mow;
         mow_data.push({
           key : state, 
-          value: mow.value
+          value: mow.rank
         });
 
         pw = element.pw;
         pw_data.push({
           key : state, 
-          value: pw.value
+          value: pw.rank
         });
 
         ow = element.ow;
         ow_data.push({
           key : state, 
-          value: ow.value
+          value: ow.rank
         });
 
         ppv = element.ppv;
         ppv_data.push({
           key : state, 
-          value: ppv.value
+          value: ppv.rank
         });
 
         pctt = element.pctt;
         pctt_data.push({
           key : state, 
-          value: pctt.value
+          value: pctt.rank
         });
 
         pfhs = element.pfhs;
         pfhs_data.push({
           key : state, 
-          value: pfhs.value
+          value: pfhs.rank
         });
 
         rpa = element.rpa;
         rpa_data.push({
           key : state, 
-          value: rpa.value
+          value: rpa.rank
         });
 
         uw = element.uw;
         uw_data.push({
           key : state, 
-          value: uw.value
+          value: uw.rank
         });
 
         wwv = element.wwv;
         wwv_data.push({
           key : state, 
-          value: wwv.value
+          value: wwv.rank
         });
 
         wic = element.wic;
         wic_data.push({
           key : state, 
-          value: wic.value
+          value: wic.rank
         });
         
       });
@@ -380,21 +380,21 @@ function buildPlot(measure) {
       var trace1 = {
         x: getTopmmr(),
         y:  getTop(),
-        name: "States with Highest Maternal Mortality",
+        name: "States with Highest Maternal Mortality Rates",
         type: "scatter",
         mode: "markers",
         line: {
         color: 'rgb(210, 105, 30)',
         },
         marker: { size: 12},
-        text: ["Louisiana", "Georgia", "Indiana", "New Jersey", "West Virginia", "Arkansas"],
+        text: ["Louisiana", "Georgia", "Indiana", "New Jersey", "Arkansas"],
     };
 
     // show chosen measure compared to 5 worst MMR states
       var trace2 = {
         x: getBottommmr(),
         y: getBottom(),
-        name: "States with Lowest Maternal Mortality",
+        name: "States with Lowest Maternal Mortality Rates",
         type: "scatter",
         mode: "markers",
         line: {
@@ -409,15 +409,15 @@ function buildPlot(measure) {
 
     var layout = {
       autosize: false,
-      width: 1000,
-      height: 500,
+      width: 1200,
+      height: 600,
       yaxis:{
         title: `${full_called_measure}`
       },
       xaxis:{
         title: "Maternal Mortality"
       },
-       title: `${full_called_measure} compared with Maternal Mortality`,
+       title: `${full_called_measure} compared with Maternal Mortality Rates`,
       };
 
     Plotly.newPlot('rankedplot', data, layout);
