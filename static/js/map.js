@@ -1,4 +1,4 @@
-var slider = document.getElementById("myRange");
+var slider = document.getElementById("yearRange");
 var output = document.getElementById("year");
 output.innerHTML = slider.value; // year slider
 
