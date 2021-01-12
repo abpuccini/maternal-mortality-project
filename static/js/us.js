@@ -13,9 +13,6 @@ function init() {
       insData = ins
       // console.log(insData);
 
-      // test
-      const filtertest = ins.filter(event => event.year === 2019);
-      console.log(filtertest);
 
       var filterState = ins.filter(event => event.year === 2009);
       filterState.forEach(element => {
@@ -227,7 +224,7 @@ function random_rgba() {
 // bubble chart for states that haven't expanded Medicaid
 function state1Chart(year) {
   year = parseInt(year);
-  console.log(year);
+  // console.log(year);
   //MMR data for specific states
   var filterMMRData = usData.filter(event =>
     (event.year === year && event.state === "North Carolina") ||
