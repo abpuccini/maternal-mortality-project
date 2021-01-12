@@ -39,13 +39,13 @@ The data for this project was sourced from the following sources:
 
 **Extract**
 
-- UNICEF:  Downloaded the latest data for Maternal Mortality Worldwide (2017).
+- UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-- Centers for Disease Control Wonder:  Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Kaiser Family Foundation:  Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-- America's Health Rankings United Health Foundation:  Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
+- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
 
 **Transform**
 
@@ -72,7 +72,6 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
  
 **Statistical Analysis**
-
 
 Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
 
