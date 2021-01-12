@@ -302,6 +302,8 @@ function pieCause(region) {
     var data = [{
         values: pieDatalist,
         labels: ['Abortion', 'Embolism', 'Haemorrhage', 'Hypertension', 'Sepsis', 'Other Direct Causes', 'Indirect Causes'],
+        textinfo: "label+percent",
+        textposition: "outside",
         type: 'pie',
         name: pieData.region,
         marker: {
@@ -314,6 +316,7 @@ function pieCause(region) {
     var layout = {
         height: 400,
         width: 600,
+        showlegend: false
     };
 
     Plotly.newPlot('pie-global', data, layout);
