@@ -39,21 +39,13 @@ The data for this project was sourced from the following sources:
 
 **Extract**
 
-- UNICEF
+- UNICEF:  Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-Downloaded the latest data for Maternal Mortality Worldwide (2017).
+- Centers for Disease Control Wonder:  Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Centers for Disease Control Wonder
+- Kaiser Family Foundation:  Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
-
-- Kaiser Family Foundation
-
-Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
-
-- America's Health Rankings: United Health Foundation
-
-Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
+- America's Health Rankings United Health Foundation:  Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
 
 **Transform**
 
@@ -99,7 +91,7 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global_Map.jpg)
+![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
 
 **United States: Affordable Care Act Page**
 
@@ -107,15 +99,15 @@ Created a state wide map(?) showing...
 
 - Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
-![State Mortality Rates](/ETL/Resources/State_Comparison.png)
+![State Mortality Rates](/ETL/Resources/State_Comparison.PNG)
 
 - Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
 
-![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.png)
+![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.PNG)
 
 - Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
 
-![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.jpg)
+![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
 **Ranked Measured Comparisons**
 
