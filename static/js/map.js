@@ -48,7 +48,7 @@ function drawMap(year, mapContainer) {
         .text(
           '<b style="color:#696969">' + year + ' United States Maternal Mortality Ratio</b><br/>' +
           '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
-          '<span  style="color:#929292; font-size: 10px;">(Data source: )</span>' //todo: enter data source
+          '<span  style="color:#929292; font-size: 10px;">(Data source: NCHS - CDC WONDER)</span>' //todo: enter data source
         );
 
       // map
@@ -99,23 +99,17 @@ function drawMap(year, mapContainer) {
           });
 
       var scale = anychart.scales.ordinalColor([
-          { less: 10 },
-          { from: 10, to: 20 },
-          { from: 20, to: 40 },
-          { from: 40, to: 60 },
-          { from: 60, to: 90 },
-          { from: 90, to: 150 },
-          { from: 150, to: 250 },
-          { from: 250, to: 350 },
-          { from: 350, to: 450 },
-          { from: 450, to: 600 },
-          { from: 600, to: 800 },
-          { from: 800, to: 1000 },
-          { greater: 1000 }
+        { less: 10 },
+        { from: 10, to: 20 },
+        { from: 20, to: 30 },
+        { from: 30, to: 40 },
+        { from: 40, to: 50 },
+        { from: 50, to: 60 },
+        { from: 60, to: 70 },
+        { from: 70, to: 80 },
+        { greater: 80 }
       ]);
       scale.colors([
-          '#e7e7e1',
-          '#cfcfca',
           '#fcfcce',
           '#f6f76c',
           '#d3f6d3',
@@ -124,9 +118,7 @@ function drawMap(year, mapContainer) {
           '#64b5f6',
           '#f4c884',
           '#ea910a',
-          '#f06353',
           '#ea210a',
-          '#a31707'
       ]);
 
       var colorRange = map.colorRange();
