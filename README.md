@@ -104,12 +104,12 @@ Created a state wide map(?) showing...
 ![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.png)
 
 - Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
-![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.png)
+![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.jpg)
 
 **Ranked Measured Comparisons**
 
 -Visulized how the states with the highest and lowest mortality rates compared against related health care measures
-![Ranked Healthcare Measures](/ETL/Resources/MMR-Plot_Map.png)
+![Ranked Healthcare Measures]()
 
 **Methodology Page**
 
