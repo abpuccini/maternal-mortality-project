@@ -111,7 +111,7 @@ Created the intial landing page to showcase global mortality ratio per 100,000 b
 
 ![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
-**Ranked Measured Comparisons**
+**United States: Ranked Measured Comparisons**
 
 -Visulized how the states with the highest and lowest mortality rates compared against related health care measures
 
