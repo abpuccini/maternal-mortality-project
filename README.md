@@ -73,13 +73,13 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
  
 **Statistical Analysis**
 
-- Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.  We isolated various years to view what the mortality rate looked like across the states.
+- Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created and to explore further the information that was cleaned.  We questioned which that might have the highest MMR per some of the years identified. We isolated various years to view what the mortality rate looked like across the states.
 
 ![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
 
 ![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png) | ![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
 
-- We also explored which states have the highest and lowest mortality ratio's within the United States.  
+- We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
 
 - 
 
@@ -100,9 +100,14 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global_Map.jpg)
+![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
 
-- Visulized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.
+-Visualized the Mortality Ratio amongst the developed countries in the world.  Graph shows that the United States has the highest Rate of Maternal Mortality among the dveloped countries.
+
+![MMR Plot Graph](/ETL/Resources/MMR_Plot_Map.PNG)
+
+- Visualized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.  The pie graph highlghts
+the many complications that could lead to death during pregnancy and/or childbirth.
 
 ![Maternal Deaths](/ETL/Resources/MD_Causes.JPG)
 
