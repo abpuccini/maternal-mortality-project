@@ -91,17 +91,14 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
  
 **Statistical Analysis**
 
-- Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created and to explore further the information that was cleaned.  We questioned which that might have the highest MMR per some of the years identified. We isolated various years to view what the mortality rate looked like across the states.
+- Overall statistical anaylsis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
 
 ![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
 
-![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png) | ![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
+![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png)|![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
 
 - We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
 
-- 
-
-- 
 
 ## Data Exploration ##
 
