@@ -35,6 +35,18 @@
 .map-controls {
     padding-top: 10px;
 }
+.play-pause {
+    min-width: 55px;
+    display: block;
+}
+@media (max-width: 380px) {
+    .play-pause {
+        display: none;
+    }
+}
+#button_play {
+    width: 38px;
+}
 
 #aca-info {
     margin-top: 650px;
@@ -83,13 +95,13 @@
         height: 400px;
     }
     #aca-info {
-        margin-top: 650px;
+        margin-top: 400px;
     }
 }
 
 
 .slidecontainer {
-    width: 100%;
+    /* padding-left: 25px; */
 }
 
 .slider {
