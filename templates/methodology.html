@@ -2,351 +2,334 @@
 
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+        <!-- BootStrap CSS -->
+        <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css"/>
 
-    <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="static/css/style.css"/>
+        
+        <!-- Title -->
+        <title>Methodology</title>
+    </head>
 
-    <!-- d3 -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <body>
+        <!--Navigator-->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <a class="navbar-brand btn btn-outline-secondary" href="/" id="home">Home</a>
 
-    <!--Bring in the css style sheet-->
-    <link rel="stylesheet" href="static/css/style.css" />
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Title -->
-    <title>Methodology: Maternal Mortality</title>
-</head>
-
-<body>
-    <!--Navigator-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-        <a class="navbar-brand btn btn-outline-secondary" href="/" id="home">Home</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        United States
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
-                        <a class="dropdown-item" href="/usranked">Ranked Health Measure Comparisons</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/methodology">Methodology</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/aboutus">About Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Top Section -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 -->
-            <div class="col-md-12 text-center" id="header-bg">
-                <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            United States
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
+                            <a class="dropdown-item" href="/usranked">Ranked Health Measure Comparisons</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/methodology">Methodology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/aboutus">About Us</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-12 text-center">
-                <h1>Methodology</h1>
-                <h6>Explore the website to find out more!</h6>
-            </div>
-        </div>
-    </div>
+        </nav>
 
-    <!-- Main Section -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">ETL - Extract</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <ul>
-                            <li>
-                                <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
-                                    target="_blank">UNICEF</a><br>Downloaded latest data for maternal mortality
-                                worldwide (2017).
-                            </li>
-                            <li>
-                                <a href="http://wonder.cdc.gov" target="_blank">Centers for Disease Control
-                                    Wonder</a><br>Data on maternal deaths from 2009-19 in the US: death counts were
-                                queried on specific ICD codes for maternal deaths up to 42 days after delivery and late
-                                maternal deaths (defined by the WHO as death of a woman from direct or indirect
-                                obstetric causes).
-                            </li>
-                            <li>
-                                <a href="https://www.kff.org/other/state-indicator/health-insurance-coverage-of-nonelderly-adult-females/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D"
-                                    target="_blank">Kaiser Family Foundation</a><br>Health insurance coverage in the US
-                                for females aged 19-64 in the years 2009-2019.
-                            </li>
-                            <li>
-                                <a href="https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL"
-                                    target="_blank">America's Health Rankings: United Health Foundation</a><br>Report
-                                for overall health of women and children for 2019 as well as overall health outcomes by
-                                US state for years 2009-19.
-                            </li>
-                            <li>
-                                <a href="https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json"
-                                    target="_blank">AnyChart Content Distribution Network: World</a><br>World choropleth
-                                map and data JSON.
-                            </li>
-                            <li>
-                                <a href="https://cdn.anychart.com/samples/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.json"
-                                    target="_blank">AnyChart Content Distribution Network: United States</a><br>United
-                                States choropleth map and data JSON.
-                            </li>
-                            <li>
-                                <a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
-                                    target="_blank">The Lancet: Global Health</a><br>Global causes of maternal death:
-                                a World Health Organization systematic analysis.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
+        <!-- Top Section -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 -->
+                <div class="col-md-12 text-center" id="header-bg">
+                    <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
+                </div>
+                <div class="col-md-12 text-center">
+                    <h1>Methodology</h1>
+                    <h6>Explore the website to find out more!</h6>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">ETL - Transform</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <ul>
-                            <li>
-                                Using Jupyter Notebook/Pandas, read CSVs into dataframe format.
-                            </li>
-                            <li>
-                                UNICEF: added columns in for latitude and longitude of the countries, based on location
-                                column, split item into two parts and updated, removed unneeded columns.
-                            </li>
-                            <li>
-                                CDC: merged seperate year dataframes on shared columns, and added additional columnn
-                                calculating the maternal mortality ratio: maternal deaths per 100,000 live births.
-                            </li>
-                            <li>
-                                Kaiser Family: removed null values, coverted needed values to percentages, built new
-                                dataframes with an added column for years, and concatenated seperate dataframes into
-                                one.
-                            </li>
-                            <li>
-                                America's Health Rankings: reviewed data for relevant measures and eliminated others,
-                                seperated demographic breakdowns where available into indiviudal CSVs, modified column
-                                names to better load into PostGres.
-                            </li>
-                            <li>
-                                The Lancet: Global Health: used Chrome table capture extension in order to capture the
-                                table due to web permission which does not allow Chrome driver, removed space between
-                                number in Excel and read in using Jupyter Notebook.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">ETL - Load</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <ul>
-                            <li>
-                                Within Jupyter Notebook, exported cleaned CSVs into PostGres as tables in a unified
-                                database.
-                            </li>
-                            <li>
-                                Set an object and declare base in SQLAlchemy.
-                            </li>
-                            <li>
-                                Created table schemes corresponding to the individual CSV files.
-                            </li>
-                            <li>
-                                Created an engine and connection to the Postgres database and created the tables.
-                            </li>
-                            <li>
-                                A similar process was followed to create a local database: connection was made to SQLite
-                                file, tables were specified to be loaded, created, and binded to the local database.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">Data Exploration</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <ul>
-                            <li>
-                                The US has a unique place within peer countries for outcomes of women's overall and
-                                maternal health due to a variety of factors.
-                            </li>
-                            <li>
-                                There are specific challenges related to the US's healthcare system that could lead to
-                                difficulties caring for its population, particularly women.
-                            </li>
-                            <li>
-                                It was hypothesized that insurance coverage could affect health, and specifically
-                                women's health.
-                            </li>
-                            <li>
-                                The period of 2009-19 was selected due to two specific changes in policy during this
-                                time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the
-                                Affordable Care Act was implented with expansion of Medicaid coverage made available to
-                                the states.
-                            </li>
-                            <li>
-                                Other health factors were also considered and investigated in order to evaluate
-                                insurance coverage's relative importance within the US health system.
-                            </li>
-                            <li>
-                                It is also important to remember there are some differences in reporting over time
-                                including between 2003 and 2017, states were incrementally implementing pregnancy
-                                checkbox on death certificates with universal implementation by 2017.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">APIs</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <li>
-                                <a href="/api/mmr-global" target="_blank">Maternal Mortality Rate: Global</a>
-                            </li>
-                            <li>
-                                <a href="/api/mmr-us" target="_blank">Maternal Mortality Rate: United States</a>
-                            </li>
-                            <li>
-                                <a href="/api/causesofdeaths" target="_blank">WHO: Cause of Death</a>
-                            </li>
-                            <li>
-                                <a href="/api/ins-us" target="_blank">United States Insurance Type Percentages</a>
-                            </li>
-                            <li>
-                                <a href="/api/state-health-rank" target="_blank">State Health Rankings 2009-19</a>
-                            </li>
-                            <li>
-                                <a href="/api/hwc" target="_blank">Health of Women and Children</a>
-                            </li>
-                            <li>
-                                <a href="/api/hwc-key" target="_blank">Health of Women and Children Key</a>
-                            </li>
+
+        <!-- Main Section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">ETL - Extract</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <ul>
+                                <li>
+                                    <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
+                                        target="_blank">UNICEF</a><br>Downloaded latest data for maternal mortality
+                                    worldwide (2017).
+                                </li>
+                                <li>
+                                    <a href="http://wonder.cdc.gov" target="_blank">Centers for Disease Control
+                                        Wonder</a><br>Data on maternal deaths from 2009-19 in the US: death counts were
+                                    queried on specific ICD codes for maternal deaths up to 42 days after delivery and late
+                                    maternal deaths (defined by the WHO as death of a woman from direct or indirect
+                                    obstetric causes).
+                                </li>
+                                <li>
+                                    <a href="https://www.kff.org/other/state-indicator/health-insurance-coverage-of-nonelderly-adult-females/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D"
+                                        target="_blank">Kaiser Family Foundation</a><br>Health insurance coverage in the US
+                                    for females aged 19-64 in the years 2009-2019.
+                                </li>
+                                <li>
+                                    <a href="https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL"
+                                        target="_blank">America's Health Rankings: United Health Foundation</a><br>Report
+                                    for overall health of women and children for 2019 as well as overall health outcomes by
+                                    US state for years 2009-19.
+                                </li>
+                                <li>
+                                    <a href="https://cdn.anychart.com/samples/maps-general-features/world-choropleth-map/data.json"
+                                        target="_blank">AnyChart Content Distribution Network: World</a><br>World choropleth
+                                    map and data JSON.
+                                </li>
+                                <li>
+                                    <a href="https://cdn.anychart.com/samples/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.json"
+                                        target="_blank">AnyChart Content Distribution Network: United States</a><br>United
+                                    States choropleth map and data JSON.
+                                </li>
+                                <li>
+                                    <a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
+                                        target="_blank">The Lancet: Global Health</a><br>Global causes of maternal death:
+                                    a World Health Organization systematic analysis.
+                                </li>
                             </ul>
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">Flask Web Application</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <ul>
-                            <li>
-                                Web application is deployed on Heroku: <a
-                                    href="https://maternal-mortality-project.herokuapp.com/">Maternal Mortality Heroku
-                                    App</a>
-                            </li>
-                            <li>
-                                Source code is available on GitHub: <a
-                                    href="https://github.com/abpuccini/project2-maternal-mortality"
-                                    target="_blank">GitHub Source Code</a>
-                            </li>
-                        </ul>
-                        </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">ETL - Transform</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <ul>
+                                <li>
+                                    Using Jupyter Notebook/Pandas, read CSVs into dataframe format.
+                                </li>
+                                <li>
+                                    UNICEF: added columns in for latitude and longitude of the countries, based on location
+                                    column, split item into two parts and updated, removed unneeded columns.
+                                </li>
+                                <li>
+                                    CDC: merged seperate year dataframes on shared columns, and added additional columnn
+                                    calculating the maternal mortality ratio: maternal deaths per 100,000 live births.
+                                </li>
+                                <li>
+                                    Kaiser Family: removed null values, coverted needed values to percentages, built new
+                                    dataframes with an added column for years, and concatenated seperate dataframes into
+                                    one.
+                                </li>
+                                <li>
+                                    America's Health Rankings: reviewed data for relevant measures and eliminated others,
+                                    seperated demographic breakdowns where available into indiviudal CSVs, modified column
+                                    names to better load into PostGres.
+                                </li>
+                                <li>
+                                    The Lancet: Global Health: used Chrome table capture extension in order to capture the
+                                    table due to web permission which does not allow Chrome driver, removed space between
+                                    number in Excel and read in using Jupyter Notebook.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">Libraries and Tools</div>
-                    <div class="card-body">
-
-                        <p>
-                            <a href="http://www.python.org" target="_blank">Python</a>
-                            <span> | </span>
-                            <a href="http://www.javascript.com" target="_blank">Javascript</a>
-                            <span> | </span>
-                            <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
-                            <span> | </span>
-                            <a href="https://pandas.pydata.org/" target="_blank">Pandas</a>
-                            <span> | </span>
-                            <a href="https://jupyter.org/" target="_blank">Jupyter Notebook</a>
-                            <span> | </span>
-                            <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a>
-                            <span> | </span>
-                            <a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a>
-                            <span> | </span>
-                            <a href="https://plotly.com/" target="_blank">Plotly</a>
-                            <span> | </span>
-                            <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
-                            <span> | </span>
-                            <a href="https://www.anychart.com/products/anychart/overview/" target="_blank">AnyChart</a>
-                            <span> | </span>
-                            <a href="https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en"
-                                target="_blank">Chrome Table Capture</a>
-                        </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">ETL - Load</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <ul>
+                                <li>
+                                    Within Jupyter Notebook, exported cleaned CSVs into PostGres as tables in a unified
+                                    database.
+                                </li>
+                                <li>
+                                    Set an object and declare base in SQLAlchemy.
+                                </li>
+                                <li>
+                                    Created table schemes corresponding to the individual CSV files.
+                                </li>
+                                <li>
+                                    Created an engine and connection to the Postgres database and created the tables.
+                                </li>
+                                <li>
+                                    A similar process was followed to create a local database: connection was made to SQLite
+                                    file, tables were specified to be loaded, created, and binded to the local database.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">Data Exploration</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <ul>
+                                <li>
+                                    The US has a unique place within peer countries for outcomes of women's overall and
+                                    maternal health due to a variety of factors.
+                                </li>
+                                <li>
+                                    There are specific challenges related to the US's healthcare system that could lead to
+                                    difficulties caring for its population, particularly women.
+                                </li>
+                                <li>
+                                    It was hypothesized that insurance coverage could affect health, and specifically
+                                    women's health.
+                                </li>
+                                <li>
+                                    The period of 2009-19 was selected due to two specific changes in policy during this
+                                    time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the
+                                    Affordable Care Act was implented with expansion of Medicaid coverage made available to
+                                    the states.
+                                </li>
+                                <li>
+                                    Other health factors were also considered and investigated in order to evaluate
+                                    insurance coverage's relative importance within the US health system.
+                                </li>
+                                <li>
+                                    It is also important to remember there are some differences in reporting over time
+                                    including between 2003 and 2017, states were incrementally implementing pregnancy
+                                    checkbox on death certificates with universal implementation by 2017.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">APIs</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <li>
+                                    <a href="/api/mmr-global" target="_blank">Maternal Mortality Rate: Global</a>
+                                </li>
+                                <li>
+                                    <a href="/api/mmr-us" target="_blank">Maternal Mortality Rate: United States</a>
+                                </li>
+                                <li>
+                                    <a href="/api/causesofdeaths" target="_blank">WHO: Cause of Death</a>
+                                </li>
+                                <li>
+                                    <a href="/api/ins-us" target="_blank">United States Insurance Type Percentages</a>
+                                </li>
+                                <li>
+                                    <a href="/api/state-health-rank" target="_blank">State Health Rankings 2009-19</a>
+                                </li>
+                                <li>
+                                    <a href="/api/hwc" target="_blank">Health of Women and Children</a>
+                                </li>
+                                <li>
+                                    <a href="/api/hwc-key" target="_blank">Health of Women and Children Key</a>
+                                </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">Flask Web Application</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <ul>
+                                <li>
+                                    Web application is deployed on Heroku: <a
+                                        href="https://maternal-mortality-project.herokuapp.com/">Maternal Mortality Heroku
+                                        App</a>
+                                </li>
+                                <li>
+                                    Source code is available on GitHub: <a
+                                        href="https://github.com/abpuccini/project2-maternal-mortality"
+                                        target="_blank">GitHub Source Code</a>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-dark bg-light mb-3">
+                        <div class="card-header">Libraries and Tools</div>
+                        <div class="card-body">
 
+                            <p>
+                                <a href="http://www.python.org" target="_blank">Python</a>
+                                <span> | </span>
+                                <a href="http://www.javascript.com" target="_blank">Javascript</a>
+                                <span> | </span>
+                                <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
+                                <span> | </span>
+                                <a href="https://pandas.pydata.org/" target="_blank">Pandas</a>
+                                <span> | </span>
+                                <a href="https://jupyter.org/" target="_blank">Jupyter Notebook</a>
+                                <span> | </span>
+                                <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a>
+                                <span> | </span>
+                                <a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a>
+                                <span> | </span>
+                                <a href="https://plotly.com/" target="_blank">Plotly</a>
+                                <span> | </span>
+                                <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                                <span> | </span>
+                                <a href="https://www.anychart.com/products/anychart/overview/" target="_blank">AnyChart</a>
+                                <span> | </span>
+                                <a href="https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en"
+                                    target="_blank">Chrome Table Capture</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-    </div>
-
-    <!--Footer-->
-    <footer>
-        <div class="footer">
-            &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
         </div>
-    </footer>
 
-    <!-- JS file -->
-    <!-- <script type="text/javascript" src="static/js/config.js"></script>
-    <script type="text/javascript" src="static/js/main.js"></script> -->
-</body>
+        <!--Footer-->
+        <footer>
+            <div class="footer">
+                &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+            </div>
+        </footer>
+
+        <!-- BootStrap JS -->
+        <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
+        <script src="static/js/popper/popper.min.js"></script>
+        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    </body>
 
 </html>
