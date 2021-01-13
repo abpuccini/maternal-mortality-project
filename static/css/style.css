@@ -202,3 +202,7 @@ h6 {
 .footer a {
     color: #545c63;
 }
+
+.anychart-credits {
+    display: none !important;
+}

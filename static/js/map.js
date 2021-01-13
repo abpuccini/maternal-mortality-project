@@ -25,6 +25,7 @@ function drawMap(year, mapContainer) {
         );
 
       map.geoData('anychart.maps.united_states_of_america'); // set map Geo data
+      map.interactivity().selectionMode('none');
 
       var series = map.choropleth(mmrData);
 
@@ -36,6 +37,7 @@ function drawMap(year, mapContainer) {
           .selected()
           .fill('#18618d')
           .stroke(anychart.color.darken('#18618d'));
+      
       series
           .tooltip()
           .useHtml(true)
