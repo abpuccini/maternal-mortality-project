@@ -73,7 +73,17 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
  
 **Statistical Analysis**
 
-Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
+- Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.  We isolated various years to view what the mortality rate looked like across the states.
+
+![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
+
+![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png) | ![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
+
+- We also explored which states have the highest and lowest mortality ratio's within the United States.  
+
+- 
+
+- 
 
 ## Data Exploration ##
 
@@ -116,18 +126,12 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 ![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
-<<<<<<< HEAD
 
-**Ranked Measured Comparisons**
-=======
 **United States: Ranked Measured Comparisons**
->>>>>>> c3b2e14d93da2e0c34eb3432aa3f5c03e5db91f2
 
--Visulized how the states with the highest and lowest mortality rates compared against related health care measures
+-Visulized how the states with the highest and lowest mortality rates compared against related health care measures.
 
-![Ranked Healthcare Measures]()
-
-**Methodology Page**
+![Ranked Healthcare Measures](/ETL/Resources/Infant_Mortality_RHM.JPG)
 
 
 
