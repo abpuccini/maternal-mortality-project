@@ -17,7 +17,7 @@ function init() {
       measureData = mes;
       rankedData = data;
 
-      // create list of states
+      // create object with just mmr by state
       rankedData.forEach(element => {
         state = element.state;
         mm_details = element.mm;
@@ -29,10 +29,11 @@ function init() {
         states.push(state);
       });
 
-
+      // remove unused measures from data
       var filteredMeasures1 = measureData.filter(event => event.measure_name !== "Maternal Mortality");
       var filteredMeasures = filteredMeasures1.filter(event => event.measure_name !== "Postpartum Visit");
 
+      // create lists of measures and abbreviations
       filteredMeasures.forEach(element => {
         measure = element.measure_name;
         abbreviation = element.abbreviation;
@@ -40,16 +41,17 @@ function init() {
         abbreviation_list.push(abbreviation);
       });
 
-
+      // link to html for uilding the dropdown menu
       var selection = d3.select("#selDataset");
 
+      // build dropdown menu with measures
       measure_list.forEach(val => {
         var options = selection.append("option");
         options.property("value", val);
         options.text(val);
       });
 
-
+      // build initial plot for the page
       buildPlot(selection.property("value"));
 
     });
@@ -98,6 +100,7 @@ function buildPlot(measure) {
   called_measure = filteredMeasure[0].abbreviation;
   full_called_measure = filteredMeasure[0].measure_name;
 
+  // select data to fill the lists
   rankedData.forEach(element => {
 
     state = element.state;
@@ -236,12 +239,6 @@ function buildPlot(measure) {
   for (var i = 0; i < 5; i++)
     bottom_5_mmr[i] = mmr_list[i];
 
-  // bottom_5_mmr.forEach(element =>{
-  //   state = element.key;
-  //   bottomStates.push(state);
-  //   extremeStates.push(state);
-  // });
-
 
   //slice the top 5 results
   var reversed_mmr_list = mmr_list.reverse()
@@ -252,78 +249,72 @@ function buildPlot(measure) {
   for (var i = 0; i < 5; i++)
     top_5_mmr[i] = reversed_mmr_list[i];
 
-  // top_5_mmr.forEach(element =>{
-  //   state = element.key;
-  //   topStates.push(state);
-  //   extremeStates.push(state);
-  // });
-
   // use f string to create wanted dataset name
   var sought_measure = `${called_measure}_data`;
 
   // use dropdown measure to choose dataset for plot
   if (sought_measure === "ahi_data") {
     var graph_measure = ahi_data;
-    // console.log(graph_measure);
+    
   } else if (sought_measure === "ai_data") {
     var graph_measure = ai_data;
-    // console.log(graph_measure);
+    
   } else if (sought_measure === "apc_data") {
     var graph_measure = apc_data;
-    // console.log(apc_data);
+    
   } else if (sought_measure === "ac_data") {
     var graph_measure = ac_data;
-    // console.log(graph_measure);
+    
   } else if (sought_measure === "dhcp_data") {
     var graph_measure = dhcp_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "ds_data") {
     var graph_measure = ds_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "how_data") {
     var graph_measure = how_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "im_data") {
     var graph_measure = im_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "mpinc_data") {
     var graph_measure = mpinc_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "mow_data") {
     var graph_measure = mow_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "pw_data") {
     var graph_measure = pw_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "ow_data") {
     var graph_measure = ow_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "ppv_data") {
     var graph_measure = ppv_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "pctt_data") {
     var graph_measure = pctt_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "pfhs_data") {
     var graph_measure = pfhs_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "rpa_data") {
     var graph_measure = rpa_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "uw_data") {
     var graph_measure = uw_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "wwv_data") {
     var graph_measure = wwv_data;
-    // console.log(graph_measure)
+    
   } else if (sought_measure === "wic_data") {
     var graph_measure = wic_data;
-    // console.log(graph_measure)
+    
   } else {
     console.log('error')
   }
 
-
+  //create lists for building the plots
   var top_5_measure_list = [];
   var top_5_mmr_values = [];
   var top_5_mmr_states = [];
@@ -331,7 +322,7 @@ function buildPlot(measure) {
   var bottom_5_mmr_values = [];
   var bottom_5_mmr_states = [];
 
-  // get the values for the measure being compared for the bottom 5 states
+  // get the values for the measure being compared for the top 5 states
   function getTop() {
     for (i = 0; i < graph_measure.length; i++) {
 
@@ -343,7 +334,7 @@ function buildPlot(measure) {
     return top_5_measure_list
 
   };
-  // get the actual mmr value for best 5 states
+  // get the actual mmr value for top 5 states
   function getTopmmr() {
     for (i = 0; i < top_5_mmr.length; i++) {
 
@@ -365,7 +356,7 @@ function buildPlot(measure) {
     return bottom_5_measure_list
   };
 
-  // get the actual mmr value for worts 5 states
+  // get the actual mmr value for bottom 5 states
   function getBottommmr() {
     for (i = 0; i < bottom_5_mmr.length; i++) {
 
@@ -376,9 +367,8 @@ function buildPlot(measure) {
   };
 
 
-  //  console.log(mmr_list);
 
-  // show chosen measure compared to 5 best MMR states
+  // show chosen measure compared to 5 top MMR states
   var trace1 = {
     x: getTopmmr(),
     y: getTop(),
@@ -392,7 +382,7 @@ function buildPlot(measure) {
     text: ["Louisiana", "Georgia", "Indiana", "New Jersey", "Arkansas"],
   };
 
-  // show chosen measure compared to 5 worst MMR states
+  // show chosen measure compared to 5 bottom MMR states
   var trace2 = {
     x: getBottommmr(),
     y: getBottom(),
@@ -407,8 +397,10 @@ function buildPlot(measure) {
 
   };
 
+  // get traces in a list
   var data = [trace1, trace2];
 
+  // set the layout
   var layout = {
     autosize: false,
     width: 1200,
@@ -422,9 +414,14 @@ function buildPlot(measure) {
     title: `<b>${full_called_measure} compared with Maternal Mortality Rates</b>`,
   };
 
+
+  // build the plot!
+  Plotly.newPlot('rankedplot', data, layout);
+  
   var config = {responsive: true, displayModeBar: false };
 
   Plotly.newPlot('rankedplot', data, layout, config);
+
 
 
 };
