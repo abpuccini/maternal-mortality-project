@@ -148,4 +148,4 @@ $(window).load(function() {
   document.getElementById("us-map-2018").style.display = "none";
   document.getElementById("us-map-2019").style.display = "none";
   // disable hidden divs for performance
- });
+ })

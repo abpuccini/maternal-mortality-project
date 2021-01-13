@@ -109,69 +109,70 @@
                 </div>
     
                 <div class="row" id="overview">
-                    <div class="col-md-12 text-justify">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <h3>Overview</h3>
                         <hr>
-                        <p>The National Center for Health Statistics mortality data on maternal deaths in the U.S. from
-                            2009-2019 was collected from the CDC Wonder site. </p>
-                        <p>Total maternal mortality included maternal deaths owing to obstetrical tetanus, maternal deaths up to
+                        <p>
+                            The National Center for Health Statistics mortality data on maternal deaths in the U.S. from
+                            2009-2019 was collected from the CDC Wonder site.
+                        </p>
+                        <p>
+                            Total maternal mortality included maternal deaths owing to obstetrical tetanus, maternal deaths up to
                             42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a woman
                             from direct or indirect obstetric causes, more than 42 days but less than one year after termination
-                            of pregnancy).</p>
-                        <p>The maternal mortality ratio was calculated as the number of maternal deaths per 100,000 live births,
+                            of pregnancy).
+                        </p>
+                        <p>
+                            The maternal mortality ratio was calculated as the number of maternal deaths per 100,000 live births,
                             using The National Center for Health Statistics natality data collected from the CDC Wonder site.
                         </p>
-                        <p>Several states did not provide data on maternal deaths between 2009-2019. Between 2003 and 2017,
+                        <p>
+                            Several states did not provide data on maternal deaths between 2009-2019. Between 2003 and 2017,
                             states were incrementally implementing a pregnancy status checkbox on death certificates which
                             affected the comparability of data between states (Hoyert, Uddin, Minino, 2020). By 2017 all states
-                            had implemented a checkbox (National Center for Health Statistics, 2020).</p>
-    
+                            had implemented a checkbox (National Center for Health Statistics, 2020).
+                        </p>
                     </div>
                 </div>
     
-                <!--div for selection box, insurance charts-->
-                <div class="row">
-                    <div class="col-md-2">
+                <div class="row d-flex justify-content-center">  
+
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
+                                <div class="d-flex align-items-center justify-content-center"><img alt="question-badge" class="question-badge" 
+                                    src="static/img/question-badge.png"></div>
+                                <div class="d-flex align-items-center justify-content-center text-center">How has access to insurance coverage changed after the Affordable Care Act?</div>
+                            </div>
+                        
+                        <div class="row">
+                            <span id="medicaid-caption" class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
+                                took effect. Medicaid expansion began in states that opted in.
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-center">
                         <div class="well">
                             <h7 class="selection">Select a State</h7>
                             <select id="selDataset" onchange="optionChanged(this.value)"></select>
                         </div>
                     </div>
-                    <div class="col-md-auto">
-                        <div class="col-12">
-                            <div class="question" data-role="trigger">
-                                <p class="inline-block p-3 rounded">
-                                    <img alt="question badge" class="question-badge"
-                                        src="https://bs-assets.toptal.io/blackfish-assets/public/shared/images/icons/question_badge_bc30c7.png">
-                                    How has access to insurance coverage changed after the Affordable Care Act?
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <p class="fs-6"><b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
-                                took
-                                effect.
-                                <br> Medicaid expansion began in states that opted in.
-                            </p>
-                        </div>
-                    </div>
                 </div>
     
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <!--mmr plot-->
                         <div id="plot"></div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <!--insurance plot-->
                         <div id="insChart"></div>
                     </div>
                 </div>
     
-                <!-- row and column for bubble chart -->
-    
                 <div class="row">
-                    <div class="col-md-12 text-justify">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <h3>States With No Medicaid Expansion</h3>
                         <hr>
                         <p>As of 2017, Medicaid coverage was responsible for financing 43% of U.S. births (Martin, Hamilton,
@@ -182,30 +183,24 @@
                             Georgia, Kansas, Mississippi, North Carolina, South Carolina, South Dakota, Tennessee, Texas,
                             Wisconsin, and Wyoming.</p>
                     </div>
-    
-                    <div class="col-md-12">
-                        <!-- year selector dropdown -->
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="well">
-                                    <h7 class="selection2">Select a Year</h7>
-                                    <select id="selYear" onchange="yearChanged(this.value)"></select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- bubble chart -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div id="state1"></div>
-                            </div>
+                </div>
+
+                <div class="row">
+                    <!-- year selector dropdown -->
+                    <div id="year-selector" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+                        <div class="well">
+                            <h7 class="selection2">Select a Year</h7>
+                            <select id="selYear" onchange="yearChanged(this.value)"></select>
                         </div>
                     </div>
-    
+                    <!-- bubble chart -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <div id="state1"></div>
+                    </div>  
                 </div>
-    
+
                 <div class="row">
-                    <!--left side-->
-                    <div class="col-md-12 text-justify">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <h3>Summary</h3>
                         <hr>
                         <p>The U.S. has the worst maternal mortality ratio among high-income nations (Eliason, 2020). Within the
@@ -216,7 +211,7 @@
                 </div>
     
                 <div class="row">
-                    <div class="col-md-12 text-justify">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <h3>Reference</h3>
                         <hr>
                         <div id="reference">
@@ -249,9 +244,6 @@
                 </div>
             </div>
         </div>
-
-
-        
 
         <!--Footer-->
         <footer>

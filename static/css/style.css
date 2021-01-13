@@ -13,7 +13,7 @@
 
 /* Image Source: https://i0.wp.com/uclg-aspac.org/wp-content/uploads/2020/02/200224-1.jpg?resize=624%2C372&ssl=1 */
 #header-bg {
-    background-image: url("../images/mmr-01.png"); 
+    background-image: url("../img/mmr-01.png"); 
     background-size: contain; 
     background-position: fixed;
     height: 230px;
