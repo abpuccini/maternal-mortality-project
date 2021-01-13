@@ -63,8 +63,8 @@ The data for this project was sourced from the following sources:
 - Exported cleaned data to a csv. 
 
 
-*Cleaning Health of Women and Children Data from https://www.americashealthrankings.org/*
-- Download CSV of report data for 2019 
+*Cleaning Health of Women and Children Data* 
+- Downloaded CSV of report data for 2019 
 - Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
 - Merged into one big CSV and Exported combined csv
 
@@ -75,7 +75,7 @@ The data for this project was sourced from the following sources:
 - Output dataframes to CSV
 
 *Cleaning Maternal Mortality Global* 
-- Download the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
+- Downloaded the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
 - Added columns (latitude, longitude) and based on location column, split item into 2 part and updated latitude and longitude columns
 - Selected only columns that will be used and exported the final data to csv file in order to store in database
 
