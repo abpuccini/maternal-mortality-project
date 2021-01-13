@@ -174,8 +174,8 @@ h6 {
 
 /* Reference */
 #reference {
-    font-size: 15px;
-    text-align: justify;
+    font-size: 12px;
+    /* text-align: justify; */
 }
 
 /* Footer */
