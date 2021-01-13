@@ -53,7 +53,7 @@ The data for this project was sourced from the following sources:
 
 ![Example]()
 
--Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.
+-Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concentrated seperate dataframes into one.
 
 ![Example]()
 
@@ -119,22 +119,22 @@ the many complications that could lead to death during pregnancy and/or childbir
 ![US Map 2009](/ETL/Resources/US_2009.JPG)
 ![US Map 2019](/ETL/Resources/US_2019.JPG)
 
-- Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
+- Visualized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
 ![State Mortality Rates](/ETL/Resources/State_Comparison.PNG)
 
-- Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
+- Visualizedthe comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
 
 ![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.PNG)
 
-- Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
+- Visualized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
 
 ![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
 
 **United States: Ranked Measured Comparisons**
 
--Visulized how the states with the highest and lowest mortality rates compared against related health care measures.
+-Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
 
 ![Ranked Healthcare Measures](/ETL/Resources/Infant_Mortality_RHM.JPG)
 
