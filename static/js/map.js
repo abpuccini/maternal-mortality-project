@@ -136,3 +136,16 @@ $(document).ready(function() {
   // need to load and render all map divs otherwise there will be delay and the map with flash white when animating
 })
 
+$(window).load(function() {
+  document.getElementById("us-map-2010").style.display = "none";
+  document.getElementById("us-map-2011").style.display = "none";
+  document.getElementById("us-map-2012").style.display = "none";
+  document.getElementById("us-map-2013").style.display = "none";
+  document.getElementById("us-map-2014").style.display = "none";
+  document.getElementById("us-map-2015").style.display = "none";
+  document.getElementById("us-map-2016").style.display = "none";
+  document.getElementById("us-map-2017").style.display = "none";
+  document.getElementById("us-map-2018").style.display = "none";
+  document.getElementById("us-map-2019").style.display = "none";
+  // disable hidden divs for performance
+ });
