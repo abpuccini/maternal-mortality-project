@@ -419,7 +419,7 @@ function buildPlot(measure) {
   var config = {responsive: true, displayModeBar: false };
   Plotly.newPlot('rankedplot', data, layout, config);
   
-  var config = {responsive: true, displayModeBar: false };
+  // var config = {responsive: true, displayModeBar: false };
 
-  Plotly.newPlot('rankedplot', data, layout, config);
+  // Plotly.newPlot('rankedplot', data, layout, config);
 };
