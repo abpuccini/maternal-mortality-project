@@ -47,8 +47,6 @@ h3 {
     font-weight: bolder;
 }
 
-
-
 /* Main Section */
 #main-container {
     margin-top: 30px;
@@ -70,20 +68,17 @@ div #overview {
 }
 
 #pieoverview {
-    text-align: justify;
     background-color: #F2F3F4;
     border-radius: 15px;
     padding: 15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 /* Caption */
 .caption {
     font-size: 12px;
-    text-align: justify;
-
 }
-
-
 
 /* Affordable Care Act */
 .question {
@@ -135,15 +130,21 @@ div #overview {
 }
 
 /* About us */
-.card {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-#profilepic {
+.profilepic {
     align-items: center;
     width: 200px;
     height: 200px;
+    margin: auto;
+    margin-top: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 h6 {

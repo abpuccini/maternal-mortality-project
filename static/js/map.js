@@ -21,7 +21,7 @@ function drawMap(year, mapContainer) {
         .text(
           '<b style="color:#696969">' + year + ' United States Maternal Mortality Ratio</b><br/>' +
           '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
-          '<span  style="color:#929292; font-size: 10px;">(Data source: NCHS - CDC WONDER)</span>'
+          '<span style="color:#929292; font-size: 10px;">(Data source: NCHS - CDC WONDER)</span>'
         );
 
       map.geoData('anychart.maps.united_states_of_america'); // set map Geo data
