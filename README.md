@@ -95,6 +95,8 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
 
+**Top 5 MMR** | **Bottom 5 MMR**
+--------------------- | ---------------------
 ![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png)|![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
 
 - We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
