@@ -231,8 +231,11 @@ function bubbleGlobal() {
                 title: "<b>MMR</b>"
             }
         };
+
+        var config = {responsive: true, displayModeBar: false };
+
         // Render the plot to the div tag with id "bubble"
-        Plotly.newPlot('global-bubble', data, layout);
+        Plotly.newPlot('global-bubble', data, layout, config);
     });
 };
 
@@ -317,6 +320,8 @@ function pieCause(region) {
         showlegend: false
     };
 
-    Plotly.newPlot('pie-global', data, layout);
+    var config = {responsive: true, displayModeBar: false };
+
+    Plotly.newPlot('pie-global', data, layout, config);
 
 };

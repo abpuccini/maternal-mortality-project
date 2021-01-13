@@ -54,7 +54,7 @@
         </nav>
 
         <!-- Top Section -->
-        <div class="container-fluid">
+        <div id="header" class="container-fluid">
             <div class="row">
                 <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
                 <div class="col-md-12" id="header-bg">
@@ -68,20 +68,18 @@
         </div>
 
         <!-- Main Section -->
-        <div class="container">
+        <div id="main-container" class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div id="global"></div>
-                    <p id="caption">
-                        <b>Note:</b> *Maternal Mortality Ratio (MMR) is the number of deaths due to complications of
-                        pregnancy
-                        or
-                        childbirth per 100,000 live births.<br>**According to UNICEF, MMR &lt; 100 classified as "Very Low",
-                        MMR 100 - 299, classified as "Low", MMR 300 - 499 classified as "High", <br>MMR 500 - 999 classified
-                        as
-                        "Very High", MMR &gt; 1000 classified as "Extremely High"
-                    </p>
                 </div>
+            </div>
+            <div class="row">
+                <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <b>Note:</b> Maternal Mortality Ratio (MMR) is the number of deaths due to complications of
+                    pregnancy or childbirth per 100,000 live births. According to UNICEF: MMR < 100 is classified as "Very Low", MMR 100 - 299 classified "Low", MMR 300 - 499 classified "High",
+                    MMR 500 - 999 classified "Very High", MMR > 1000 classified "Extremely High".
+                </span>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -107,7 +105,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div id="global-bubble"></div>
                 </div>
             </div>
@@ -117,14 +115,12 @@
                 <div class="col-md-12">
                     <h3>Developed Countries</h3>
                     <hr>
-                </div>
-                <div class="col-md-12">
-                    <div id="overview">
+                    <div class="overview">
                         <p>The U.S. has the highest maternal mortality rate among developed countries.
-                            Obstetrician-gynecologists (ob-gyns) are overrepresented in its maternity care workforce
+                            Obstetrician-gynecologists (OB-GYNs) are overrepresented in its maternity care workforce
                             relative to midwives, and there is an overall shortage of maternity care providers (both
-                            ob-gyns and midwives) relative to births. In most other countries, midwives outnumber
-                            ob-gyns by severalfold, and primary care plays a central role in the health system.
+                            OB-GYNs and midwives) relative to births. In most other countries, midwives outnumber
+                            OB-GYNs by severalfold, and primary care plays a central role in the health system.
                             Although a large share of its maternal deaths occur postbirth, the U.S. is the only
                             country not to guarantee access to provider home visits or paid parental leave in the
                             postpartum period (Tikkanen et al., 2020).
@@ -145,10 +141,11 @@
                         <h7 class='selection'>Select Region</h7>
                         <select id="selDataset" onchange="regionChanged(this.value)"></select>
                     </div>
+
                     <div id='pie-global'></div>
-                    <p id="caption"><b>Notes:</b> *Nearly all (99 percent) of <b>abortion</b> deaths are due to unsafe
-                        abortions.
-                        **<b>Other direct</b> includes deaths due to obstructed labour or anaemia.</p>
+                    <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <b>Note:</b> Nearly all (99%) of abortion deaths are due to unsafe abortions. Other direct causes of maternal deaths include obstructed labor and anaemia.
+                    </span>
                 </div>
                 <div class="col-md-7 col-sm-12 align-middle">
                     <p id='pieoverview'>
