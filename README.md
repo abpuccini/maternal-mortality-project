@@ -49,31 +49,59 @@ The data for this project was sourced from the following sources:
 
 **Transform**
 
-- Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  
+*Cleaning CDC data on maternal deaths and births in the U.S.*
+- Pulled CDC data on maternal deaths according to causes of death listed above for years 2009-2019 as well as births (not all states reported each year).  We then merged separate deaths and births DataFrames with an inner join on the shared keys “State,” “State Code,” and “Year.” 
+- Calculated the Maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000, and added the ratio as a new column in the final DataFrame. 
+- Exported cleaned data to a csv. 
 
-![Example]()
 
--Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concatenated seperate dataframes into one.
+*Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:*
+- Collected data from the Kaiser Family Foundation site for years 2009-2019.
+- Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
+- Built new Dataframes with an added column for the year.
+- Used pd.concat to combine DataFrames from each year from 2009-2019 and Sorted final dataframe by year and location. 
+- Exported cleaned data to a csv. 
 
-![Example]()
 
-- We then reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
+*Cleaning Health of Women and Children Data* 
+- Downloaded CSV of report data for 2019 
+- Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
+- Merged into one big CSV and Exported combined csv
 
-![Example]()
+*Cleaning overall Health Outcomes*
+- Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
+- Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
+- Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
+- Output dataframes to CSV
+
+*Cleaning Maternal Mortality Global* 
+- Downloaded the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
+- Added columns (latitude, longitude) and based on location column, split item into 2 part and updated latitude and longitude columns
+- Selected only columns that will be used and exported the final data to csv file in order to store in database
 
 
 **Load**
 
 Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
-- Created database diagram via QuickDatabase
+- To help visualize connections, we created a database diagram via QuickDatabase
 
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
  
 **Statistical Analysis**
 
-Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created.
+- Overall statistical anaylsis was performed for selected data sets to visulize the dataframes created and to explore further the information that was cleaned.  We questioned which that might have the highest MMR per some of the years identified. We isolated various years to view what the mortality rate looked like across the states.
+
+![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
+
+![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png) | ![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
+
+- We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
+
+- 
+
+- 
 
 ## Data Exploration ##
 
@@ -90,9 +118,14 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 
 - Created the intial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global_Map.jpg)
+![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
 
-- Visulized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.
+-Visualized the Mortality Ratio amongst the developed countries in the world.  Graph shows that the United States has the highest Rate of Maternal Mortality among the dveloped countries.
+
+![MMR Plot Graph](/ETL/Resources/MMR_Plot_Map.PNG)
+
+- Visualized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.  The pie graph highlghts
+the many complications that could lead to death during pregnancy and/or childbirth.
 
 ![Maternal Deaths](/ETL/Resources/MD_Causes.JPG)
 
@@ -104,30 +137,24 @@ Overall statistical anaylsis was performed for selected data sets to visulize th
 ![US Map 2009](/ETL/Resources/US_2009.JPG)
 ![US Map 2019](/ETL/Resources/US_2019.JPG)
 
-- Visulized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
+- Visualized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
 ![State Mortality Rates](/ETL/Resources/State_Comparison.PNG)
 
-- Visulized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
+- Visualizedthe comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
 
 ![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.PNG)
 
-- Visulized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
+- Visualized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
 
 ![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
 
-<<<<<<< HEAD
 
-**Ranked Measured Comparisons**
-=======
 **United States: Ranked Measured Comparisons**
->>>>>>> c3b2e14d93da2e0c34eb3432aa3f5c03e5db91f2
 
--Visulized how the states with the highest and lowest mortality rates compared against related health care measures
+-Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
 
-![Ranked Healthcare Measures]()
-
-**Methodology Page**
+![Ranked Healthcare Measures](/ETL/Resources/Infant_Mortality_RHM.JPG)
 
 
 
