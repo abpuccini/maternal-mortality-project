@@ -68,10 +68,7 @@ div #overview {
 }
 
 #pieoverview {
-    margin-left: 200px;
-    margin-top: 100px;
     text-align: justify;
-    width: 430px;
     background-color: #F2F3F4;
     border-radius: 15px;
     padding: 15px;
@@ -177,8 +174,8 @@ h6 {
 
 /* Reference */
 #reference {
-    font-size: 15px;
-    text-align: justify;
+    font-size: 12px;
+    /* text-align: justify; */
 }
 
 /* Footer */

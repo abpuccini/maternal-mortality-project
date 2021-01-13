@@ -314,8 +314,6 @@ function pieCause(region) {
     }];
 
     var layout = {
-        height: 400,
-        width: 600,
         showlegend: false
     };
 
