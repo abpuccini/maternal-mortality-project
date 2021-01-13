@@ -1,43 +1,37 @@
-# Maternal Mortality Rates #
+# Maternal Mortality: US and Global Perspectives
 
-
-## Purpose of Project ##
-
+## Purpose of Project
 
 The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but, covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
-## Project Overview ##
-
+## Project Overview
 
 For this project, we developed an interactive dashboard for users to explore maternal mortality data globally and within the United States. Users will be able to visualize maternal mortality data alongside data for potentially related factors, such as access to health insurance and Medicaid.
 We are focusing on factors at the state level because maternal mortality rates and healthcare policies and access vary widely between states.
 
-## Obectives ##
-
+## Obectives
 
 Our obejective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
 For example, Does health insurance coverage affect maternal mortality rates? Does a state’s election of the medicaid expansion affect maternal mortality rates?  Are there any other ractors that might affect the maternal mortality?
 
-
-## Data Sources Used ##
+## Data Sources Used
 
 The data for this project was sourced from the following sources:
 
-1.UNICEF [Source](https://data.unicef.org/topic/maternal-health/maternal-mortality/)
+- UNICEF [Source](https://data.unicef.org/topic/maternal-health/maternal-mortality/)
 
-2.Insurance Coverage Data showing changes in Insurance Policy over time: [Source](https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
+- Insurance Coverage Data showing changes in Insurance Policy over time: [Source](https://www.kff.org/womens-health-policy/fact-sheet/womens-health-insurance-coverage-fact-sheet)
 
-3.Centers for Disease Control Wonder [Source](https://wonder.cdc.gov/)
+- Centers for Disease Control Wonder [Source](https://wonder.cdc.gov/)
 
-4.American Health Rankings: United Health Foundation [Source](https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL)
+- American Health Rankings: United Health Foundation [Source](https://www.americashealthrankings.org/explore/annual/measure/Outcomes/state/ALL)
 
-5.Medicaid Expansion [Source](https://data.medicaid.gov/Enrollment/State-Medicaid-and-CHIP-Applications-Eligibility-D/n5ce-jxme/data) 
+- Medicaid Expansion [Source](https://data.medicaid.gov/Enrollment/State-Medicaid-and-CHIP-Applications-Eligibility-D/n5ce-jxme/data) 
 
+## Data Processing & ETL
 
-## Data Processing & ETL: ##
-
-**Extract**
+### **Extract**
 
 - UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
@@ -47,15 +41,15 @@ The data for this project was sourced from the following sources:
 
 - America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
 
-**Transform**
+### **Transform**
 
-*Cleaning CDC data on maternal deaths and births in the U.S.*
+**Cleaning CDC data on maternal deaths and births in the U.S.**
 - Pulled CDC data on maternal deaths according to causes of death listed above for years 2009-2019 as well as births (not all states reported each year).  We then merged separate deaths and births DataFrames with an inner join on the shared keys “State,” “State Code,” and “Year.” 
 - Calculated the Maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000, and added the ratio as a new column in the final DataFrame. 
 - Exported cleaned data to a csv. 
 
 
-*Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:*
+**Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:**
 - Collected data from the Kaiser Family Foundation site for years 2009-2019.
 - Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
 - Built new Dataframes with an added column for the year.
@@ -63,24 +57,24 @@ The data for this project was sourced from the following sources:
 - Exported cleaned data to a csv. 
 
 
-*Cleaning Health of Women and Children Data* 
+**Cleaning Health of Women and Children Data**
 - Downloaded CSV of report data for 2019 
 - Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
 - Merged into one big CSV and Exported combined csv
 
-*Cleaning overall Health Outcomes*
+**Cleaning overall Health Outcomes**
 - Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
 - Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
 - Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
 - Output dataframes to CSV
 
-*Cleaning Maternal Mortality Global* 
+**Cleaning Maternal Mortality Global**
 - Downloaded the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
 - Added columns (latitude, longitude) and based on location column, split item into 2 part and updated latitude and longitude columns
 - Selected only columns that will be used and exported the final data to csv file in order to store in database
 
 
-**Load**
+### **Load**
 
 Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
@@ -89,19 +83,6 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
  
-**Statistical Analysis**
-
-- Overall statistical anaylsis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
-
-![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
-
-**Top 5 MMR** | **Bottom 5 MMR**
---------------------- | ---------------------
-![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png)|![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
-
-- We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
-
-
 ## Data Exploration ##
 
 - The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
@@ -110,8 +91,34 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
+### Statistical Analysis
 
-## Flask Web Application: ##
+#### Global
+
+- South Sudan has the highest number of MMR and Belarus has the lowest number of MMR.
+
+**Top 10 MMR** | **Bottom 10 MMR**
+--------------------- | ---------------------
+![Highest MMR](/ETL/Resources/globaltopten.png)|![Lowest_MMR](/ETL/Resources/globalbottomten.png)
+
+- Causes of Maternal Death
+
+
+
+#### United States
+
+- Overall statistical anaylsis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
+
+![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
+
+- We also explored which states have the highest and lowest mortality ratio's overall within the United States.  
+
+**Top 10 MMR** | **Bottom 10 MMR**
+--------------------- | ---------------------
+![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png)|![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
+
+
+## Flask Web Application
 
 **Heroku Landing Page**
 
@@ -162,17 +169,8 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 Source code is available on GitHub: [GitHub Source Code](https://github.com/abpuccini/project2-maternal-mortality)
 
 
- ## Libraries & Tools Used: ## 
+## Libraries & Tools Used
 
- Python Version 3 |
- Juypter Notebook |
- Pandas |
- PostgreSQL |
- Flask |
- SQLAlchemy |
- Plotly |
- Bootstrap |
- Anychart |
- Chrome Table Capture |
+Python Version 3 | Juypter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
 
 
