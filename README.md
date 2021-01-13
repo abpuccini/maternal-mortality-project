@@ -49,24 +49,42 @@ The data for this project was sourced from the following sources:
 
 **Transform**
 
-- Using Jupyter Notebook/Pandas, we read the downloaded CSVs into a dataframe format.  We then merged the CDC dataframes from different years together on shared columns, and added an additional columnn comparing deaths to number of births.  
+*Cleaning CDC data on maternal deaths and births in the U.S.*
+- Pulled CDC data on maternal deaths according to causes of death listed above for years 2009-2019 as well as births (not all states reported each year).  We then merged separate deaths and births DataFrames with an inner join on the shared keys “State,” “State Code,” and “Year.” 
+- Calculated the Maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000, and added the ratio as a new column in the final DataFrame. 
+- Exported cleaned data to a csv. 
 
-![Example]()
 
--Next we cleaned the Kaiser Family data by removing null values, converted needed values to percentages, built new dataframes with an added column for years, and concentrated seperate dataframes into one.
+*Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:*
+- Collected data from the Kaiser Family Foundation site for years 2009-2019.
+- Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
+- Built new Dataframes with an added column for the year.
+- Used pd.concat to combine DataFrames from each year from 2009-2019 and Sorted final dataframe by year and location. 
+- Exported cleaned data to a csv. 
 
-![Example]()
 
-- We then reviewed the data of the America's Health Rankings for relevant measures and eliminated others, seperating demographic breakdowns where available into indiviudal CSVs, modified column names to better load into PostGres.  Lastly, we cleaned the UNICEF data by adding columns in for latitude and longitude of the countries, based on location column, split item into two parts and then removed unneeded columns.
+*Cleaning Health of Women and Children Data from https://www.americashealthrankings.org/*
+- Download CSV of report data for 2019 
+- Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
+- Merged into one big CSV and Exported combined csv
 
-![Example]()
+*Cleaning overall Health Outcomes*
+- Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
+- Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
+- Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
+- Output dataframes to CSV
+
+*Cleaning Maternal Mortality Global* 
+- Download the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
+- Added columns (latitude, longitude) and based on location column, split item into 2 part and updated latitude and longitude columns
+- Selected only columns that will be used and exported the final data to csv file in order to store in database
 
 
 **Load**
 
 Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
-- Created database diagram via QuickDatabase
+- To help visualize connections, we created a database diagram via QuickDatabase
 
 ![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
 
