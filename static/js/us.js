@@ -120,7 +120,9 @@ function buildPlot(state) {
     ]
   };
 
-  Plotly.newPlot("plot", data, layout, { displayModeBar: false });
+  var config = {responsive: true, displayModeBar: false };
+
+  Plotly.newPlot("plot", data, layout, config);
 };
 
 // building chart for insurance data
@@ -211,7 +213,9 @@ function insChart(state) {
     ]
   };
 
-  Plotly.newPlot("insChart", data, layout, { displayModeBar: false });
+  var config = {responsive: true, displayModeBar: false };
+
+  Plotly.newPlot("insChart", data, layout, config);
 };
 
 // Source (researched by AB Puccini): https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
@@ -288,7 +292,9 @@ function state1Chart(year) {
     },
   };
 
-  Plotly.newPlot("state1", data, layout, { displayModeBar: false });
+  var config = {responsive: true, displayModeBar: false };
+
+  Plotly.newPlot("state1", data, layout, config);
 };
 
 state1Chart();

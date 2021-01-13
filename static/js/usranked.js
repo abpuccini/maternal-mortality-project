@@ -414,8 +414,14 @@ function buildPlot(measure) {
     title: `<b>${full_called_measure} compared with Maternal Mortality Rates</b>`,
   };
 
+
   // build the plot!
   Plotly.newPlot('rankedplot', data, layout);
+  
+  var config = {responsive: true, displayModeBar: false };
+
+  Plotly.newPlot('rankedplot', data, layout, config);
+
 
 
 };
