@@ -101,9 +101,6 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 --------------------- | ---------------------
 ![Highest MMR](/ETL/Resources/globaltopten.png)|![Lowest_MMR](/ETL/Resources/globalbottomten.png)
 
-- Causes of Maternal Death
-
-
 
 #### United States
 
