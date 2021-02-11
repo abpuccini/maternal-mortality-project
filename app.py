@@ -199,9 +199,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/usdata')
+@app.route('/us-data')
 def us():
-    return render_template('usdata.html')
+    return render_template('us-data.html')
+
+@app.route('/machine-learning')
+def machinelearning():
+    return render_template('machine-learning.html')
 
 
 @app.route('/methodology')
@@ -209,14 +213,14 @@ def methodology():
     return render_template('methodology.html')
 
 
-@app.route('/aboutus')
+@app.route('/about-us')
 def aboutus():
-    return render_template('aboutus.html')
+    return render_template('about-us.html')
 
 
-@app.route('/usranked')
+@app.route('/us-ranked')
 def ranked():
-    return render_template('usrankeddata.html')
+    return render_template('us-ranked-data.html')
 
 
 @app.route('/api/mmr-global')
