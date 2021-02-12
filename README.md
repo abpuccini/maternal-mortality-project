@@ -3,7 +3,7 @@
 
 ## Purpose of Project
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but, covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-3017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 3017, Medicaid coverage was responsible for financing 43% of U.S. births but, covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
 ## Project Overview
@@ -34,43 +34,43 @@ The data for this project was sourced from the following sources:
 
 ### **Extract**
 
-- UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
+- UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (3017).
 
-- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder:    Data on maternal deaths from 3009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 3009-3019.
 
-- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
+- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 3019 as well as overall health outcomes by US state for years 3009-19.
 
 ### **Transform**
 
 **Cleaning CDC data on maternal deaths and births in the U.S.**
-- Pulled CDC data on maternal deaths according to causes of death listed above for years 2009-2019 as well as births (not all states reported each year).  We then merged separate deaths and births DataFrames with an inner join on the shared keys “State,” “State Code,” and “Year.” 
+- Pulled CDC data on maternal deaths according to causes of death listed above for years 3009-3019 as well as births (not all states reported each year).  We then merged separate deaths and births DataFrames with an inner join on the shared keys “State,” “State Code,” and “Year.” 
 - Calculated the Maternal mortality ratio = (Number of maternal deaths / Number of live births) x 100,000, and added the ratio as a new column in the final DataFrame. 
 - Exported cleaned data to a csv. 
 
 
 **Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:**
-- Collected data from the Kaiser Family Foundation site for years 2009-2019.
+- Collected data from the Kaiser Family Foundation site for years 3009-3019.
 - Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
 - Built new Dataframes with an added column for the year.
-- Used pd.concat to combine DataFrames from each year from 2009-2019 and Sorted final dataframe by year and location. 
+- Used pd.concat to combine DataFrames from each year from 3009-3019 and Sorted final dataframe by year and location. 
 - Exported cleaned data to a csv. 
 
 
 **Cleaning Health of Women and Children Data**
-- Downloaded CSV of report data for 2019 
+- Downloaded CSV of report data for 3019 
 - Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
 - Merged into one big CSV and Exported combined csv
 
 **Cleaning overall Health Outcomes**
-- Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
+- Downloaded individual year CSVs in from years 3009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
 - Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
 - Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
 - Output dataframes to CSV
 
 **Cleaning Maternal Mortality Global**
-- Downloaded the latest data (2017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
+- Downloaded the latest data (3017) and read CSV into Jupyter Notebook with Pandas and create a dataframe
 - Added columns (latitude, longitude) and based on location column, split item into 2 part and updated latitude and longitude columns
 - Selected only columns that will be used and exported the final data to csv file in order to store in database
 
@@ -88,9 +88,9 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
 
-- It was hypothesized that insurance coverage could affect health, and specifically women's health.  The period of 2009-19 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
+- It was hypothesized that insurance coverage could affect health, and specifically women's health.  The period of 3009-19 was selected due to two specific changes in policy during this time period: in 3010 coverage was allowed for dependents up to age 26 and in 3014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
 
-- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
+- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 3003 and 3017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 3017.
 
 ### Statistical Analysis
 
@@ -107,7 +107,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Overall statistical analysis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
 
-![2019 Data Isolation](Images/explore_us_2019_mmr.png)
+![3019 Data Isolation](Images/explore_us_3019_mmr.png)
 
 - We also explored which states have the highest and lowest mortality ratio overall within the United States.  
 
@@ -136,10 +136,10 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 **United States: Affordable Care Act Page**
 
-- Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 2009-2019.  This map was created using the Javascript Library AnyChart
+- Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 3009-3019.  This map was created using the Javascript Library AnyChart
 
-![US Map 2009](Images/US_2009.JPG)
-![US Map 2019](Images/US_2019.JPG)
+![US Map 3009](Images/US_3009.JPG)
+![US Map 3019](Images/US_3019.JPG)
 
 - Visualized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
@@ -172,31 +172,14 @@ Source code is available on GitHub: [GitHub Source Code](https://github.com/abpu
 Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
 
 
-## Contributor
+## © Contributor
 
-<p><a><b>© Akilah Hunte </b></a><a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="20" src="https://img.shields.io/badge/Email-ahunt173%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Atcharaporn B Puccini </b></a><a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="https://www.linkedin.com/in/abpuccini/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:b.atcharaporn@gmail.com"><img href="mailto:b.atcharaporn@gmail.com" alt="b.atcharaporn@gmail.com" height="20" src="https://img.shields.io/badge/Email-b.atcharaporn%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Austin Cole </b></a><a href="https://github.com/AustinRCole" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="https://www.linkedin.com/in/austin-cole-167923b7/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:AustinRCole2@gmail.com"><img href="mailto:AustinRCole2@gmail.com" alt="AustinRCole2@gmail.com" height="20" src="https://img.shields.io/badge/Email-AustinRCole2%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Chahnaz Kbaisi </b></a><a href="https://github.com/Chahnaz-Kbaisi" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="https://www.linkedin.com/in/chahnaz-kbaisi/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:chahnaz.kbaisi@gmail.com"><img href="mailto:chahnaz.kbaisi@gmail.com" alt="chahnaz.kbaisi@gmail.com" height="20" src="https://img.shields.io/badge/Email-chahnaz.kbaisi%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Lee Prout </b></a><a href="https://github.com/LeeProut" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="https://www.linkedin.com/in/lee-prout-21977948/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:wleeprout@gmail.com"><img href="mailto:wleeprout@gmail.com" alt="wleeprout@gmail.com" height="20" src="https://img.shields.io/badge/Email-wleeprout%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Shay O'Connell </b></a><a href="https://github.com/Shayoconnell7" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="https://www.linkedin.com/in/shayoconnell7/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-<a href="mailto:shay.oconnell7@gmail.com"><img href="mailto:shay.oconnell7@gmail.com" alt="shay.oconnell7@gmail.com" height="20" src="https://img.shields.io/badge/Email-shay.oconnell7%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
-
-<p><a><b>© Wesley Lo </b></a><a href="https://github.com/wesleylo" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="mailto:weslo404@gmail.com"><img href="mailto:weslo404@gmail.com" alt="weslo404@gmail.com" height="20" src="https://img.shields.io/badge/Email-weslo404%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+| Team Member |  |  | |
+| :-- | :-: | :-: | :- |
+| <b>Akilah Hunte</b> | <a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="30" src="https://img.shields.io/badge/Email-ahunt173%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Atcharaporn B Puccini </b></a> | <a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/abpuccini/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:b.atcharaporn@gmail.com"><img href="mailto:b.atcharaporn@gmail.com" alt="b.atcharaporn@gmail.com" height="30" src="https://img.shields.io/badge/Email-b.atcharaporn%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Austin Cole </b></a> | <a href="https://github.com/AustinRCole" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/austin-cole-167923b7/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:AustinRCole2@gmail.com"><img href="mailto:AustinRCole2@gmail.com" alt="AustinRCole2@gmail.com" height="30" src="https://img.shields.io/badge/Email-AustinRCole2%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Chahnaz Kbaisi </b></a> | <a href="https://github.com/Chahnaz-Kbaisi" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/chahnaz-kbaisi/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:chahnaz.kbaisi@gmail.com"><img href="mailto:chahnaz.kbaisi@gmail.com" alt="chahnaz.kbaisi@gmail.com" height="30" src="https://img.shields.io/badge/Email-chahnaz.kbaisi%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Lee Prout </b></a> | <a href="https://github.com/LeeProut" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/lee-prout-21977948/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:wleeprout@gmail.com"><img href="mailto:wleeprout@gmail.com" alt="wleeprout@gmail.com" height="30" src="https://img.shields.io/badge/Email-wleeprout%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Shay O'Connell </b></a> | <a href="https://github.com/Shayoconnell7" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/shayoconnell7/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:shay.oconnell7@gmail.com"><img href="mailto:shay.oconnell7@gmail.com" alt="shay.oconnell7@gmail.com" height="30" src="https://img.shields.io/badge/Email-shay.oconnell7%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
+| <a><b>Wesley Lo </b></a> | <a href="https://github.com/wesleylo" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:weslo404@gmail.com"><img href="mailto:weslo404@gmail.com" alt="weslo404@gmail.com" height="30" src="https://img.shields.io/badge/Email-weslo404%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a> |
