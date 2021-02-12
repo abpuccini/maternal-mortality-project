@@ -81,7 +81,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - To help visualize connections, we created a database diagram via QuickDatabase
 
-![Database Visual](/ETL/Resources/QuickDBD_ERD.png)
+![Database Visual](Images/QuickDBD_ERD.png)
 
  
 ## Data Exploration ##
@@ -100,20 +100,20 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 **Top 10 MMR** | **Bottom 10 MMR**
 --------------------- | ---------------------
-![Highest MMR](/ETL/Resources/globaltopten.png)|![Lowest_MMR](/ETL/Resources/globalbottomten.png)
+![Highest MMR](Images/globaltopten.png)|![Lowest_MMR](Images/globalbottomten.png)
 
 
 #### United States
 
 - Overall statistical analysis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
 
-![2019 Data Isolation](/ETL/Resources/explore_us_2019_mmr.png)
+![2019 Data Isolation](Images/explore_us_2019_mmr.png)
 
 - We also explored which states have the highest and lowest mortality ratio overall within the United States.  
 
 **Top 10 MMR** | **Bottom 10 MMR**
 --------------------- | ---------------------
-![Highest MMR](/ETL/Resources/explore_us_highest_mmr.png)|![Lowest_MMR](/ETL/Resources/explore_us_lowest_mmr.png)
+![Highest MMR](Images/explore_us_highest_mmr.png)|![Lowest_MMR](Images/explore_us_lowest_mmr.png)
 
 
 ## Flask Web Application
@@ -122,43 +122,43 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Created the initial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
 
-![Global Mortality Ratio Map](/ETL/Resources/Global_Map.JPG)
+![Global Mortality Ratio Map](Images/Global_Map.JPG)
 
 -Visualized the Mortality Ratio amongst the developed countries in the world.  Graph shows that the United States has the highest Rate of Maternal Mortality among the developed countries.
 
-![MMR Plot Graph](/ETL/Resources/MMR_Plot_Map.PNG)
+![MMR Plot Graph](Images/MMR_Plot_Map.PNG)
 
 - Visualized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.  The pie graph highlights
 the many complications that could lead to death during pregnancy and/or childbirth.
 
-![Maternal Deaths](/ETL/Resources/MD_Causes.JPG)
+![Maternal Deaths](Images/MD_Causes.JPG)
 
 
 **United States: Affordable Care Act Page**
 
 - Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 2009-2019.  This map was created using the Javascript Library AnyChart
 
-![US Map 2009](/ETL/Resources/US_2009.JPG)
-![US Map 2019](/ETL/Resources/US_2019.JPG)
+![US Map 2009](Images/US_2009.JPG)
+![US Map 2019](Images/US_2019.JPG)
 
 - Visualized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
-![State Mortality Rates](/ETL/Resources/State_Comparison.PNG)
+![State Mortality Rates](Images/State_Comparison.PNG)
 
 - Visualized the comparison of insured and uninsured females by state, specifically focusing on medicaid insurance coverage.  Drop down selection was included to allow for exploration of data for all states.
 
-![State Mortality Rates](/ETL/Resources/Comparison_of_Medicaid_Coverage.PNG)
+![State Mortality Rates](Images/Comparison_of_Medicaid_Coverage.PNG)
 
 - Visualized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
 
-![State Mortality Rates](/ETL/Resources/MMR_No_Expansion.JPG)
+![State Mortality Rates](Images/MMR_No_Expansion.JPG)
 
 
 **United States: Ranked Measured Comparisons**
 
 -Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
 
-![Ranked Healthcare Measures](/ETL/Resources/Infant_Mortality_RHM.JPG)
+![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
 
 
@@ -172,3 +172,31 @@ Source code is available on GitHub: [GitHub Source Code](https://github.com/abpu
 Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
 
 
+## Contributor
+
+<p><a><b>© Akilah Hunte </b></a><a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="20" src="https://img.shields.io/badge/Email-ahunt173%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Atcharaporn B Puccini </b></a><a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/abpuccini/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:b.atcharaporn@gmail.com"><img href="mailto:b.atcharaporn@gmail.com" alt="b.atcharaporn@gmail.com" height="20" src="https://img.shields.io/badge/Email-b.atcharaporn%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Austin Cole </b></a><a href="https://github.com/AustinRCole" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/austin-cole-167923b7/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:AustinRCole2@gmail.com"><img href="mailto:AustinRCole2@gmail.com" alt="AustinRCole2@gmail.com" height="20" src="https://img.shields.io/badge/Email-AustinRCole2%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Chahnaz Kbaisi </b></a><a href="https://github.com/Chahnaz-Kbaisi" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/chahnaz-kbaisi/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:chahnaz.kbaisi@gmail.com"><img href="mailto:chahnaz.kbaisi@gmail.com" alt="chahnaz.kbaisi@gmail.com" height="20" src="https://img.shields.io/badge/Email-chahnaz.kbaisi%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Lee Prout </b></a><a href="https://github.com/LeeProut" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/lee-prout-21977948/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:wleeprout@gmail.com"><img href="mailto:wleeprout@gmail.com" alt="wleeprout@gmail.com" height="20" src="https://img.shields.io/badge/Email-wleeprout%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Shay O'Connell </b></a><a href="https://github.com/Shayoconnell7" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/shayoconnell7/" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="mailto:shay.oconnell7@gmail.com"><img href="mailto:shay.oconnell7@gmail.com" alt="shay.oconnell7@gmail.com" height="20" src="https://img.shields.io/badge/Email-shay.oconnell7%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
+
+<p><a><b>© Wesley Lo </b></a><a href="https://github.com/wesleylo" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
+<a href="mailto:weslo404@gmail.com"><img href="mailto:weslo404@gmail.com" alt="weslo404@gmail.com" height="20" src="https://img.shields.io/badge/Email-weslo404%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
