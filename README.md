@@ -174,8 +174,12 @@ Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy |
 
 ## Contributor
 
+Team Member | <img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /> | <img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /> | <a alt="email" height="20" src="https://img.shields.io/badge/Email--yellowgreen?style=for-the-badge&logo=Gmail"/></a>
+-- | :-: | :-: | :-:
+<b>© Akilah Hunte </b> | <a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> | <a href="https://www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> | <a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="20" src="https://img.shields.io/badge/Email-ahunt173%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a>
+
 <p><a><b>© Akilah Hunte </b></a><a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
-<a href="www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
+<a href="https://www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
 <a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="20" src="https://img.shields.io/badge/Email-ahunt173%40gmail.com-yellowgreen?style=for-the-badge&logo=Gmail"/></a></p>
 
 <p><a><b>© Atcharaporn B Puccini </b></a><a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="20" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> 
