@@ -1,0 +1,389 @@
+,state,state_code,year,race,hispanic_origin,births_by_race,deaths_by_race,mmr_by_race,population_by_race
+0,Alabama,1,2016,Black or African American,Not Hispanic or Latino,17989,14,77.83,0
+1,Alabama,1,2016,White,Not Hispanic or Latino,35319,18,50.96,0
+2,Alabama,1,2017,Black or African American,Not Hispanic or Latino,18354,25,136.21,704201
+3,Alabama,1,2017,White,Not Hispanic or Latino,34784,15,43.12,1655605
+4,Alabama,1,2018,Black or African American,Not Hispanic or Latino,17939,14,78.04,706754
+5,Alabama,1,2018,White,Not Hispanic or Latino,34194,16,46.79,1657262
+6,Alabama,1,2019,Black or African American,Not Hispanic or Latino,18620,15,80.56,709544
+7,Alabama,1,2019,White,Not Hispanic or Latino,33892,17,50.16,1660160
+8,Arizona,4,2013,White,Not Hispanic or Latino,38360,13,33.89,0
+9,Arizona,4,2014,White,Not Hispanic or Latino,38608,12,31.08,1947854
+10,Arizona,4,2016,White,Not Hispanic or Latino,36049,11,30.51,0
+11,Arizona,4,2017,White,Not Hispanic or Latino,34480,12,34.8,1982444
+12,Arizona,4,2018,White,Hispanic or Latino,32739,10,30.54,1025281
+13,Arizona,4,2018,White,Not Hispanic or Latino,33618,10,29.75,2010606
+14,Arizona,4,2019,White,Hispanic or Latino,32235,10,31.02,1045722
+15,Arkansas,5,2009,White,Not Hispanic or Latino,26973,12,44.49,0
+16,Arkansas,5,2012,White,Not Hispanic or Latino,25925,11,42.43,0
+17,Arkansas,5,2014,White,Not Hispanic or Latino,25940,17,65.54,0
+18,Arkansas,5,2016,White,Not Hispanic or Latino,25273,12,47.48,0
+19,Arkansas,5,2018,White,Not Hispanic or Latino,23968,10,41.72,1125656
+20,California,6,2009,Black or African American,Not Hispanic or Latino,31090,17,54.68,1192173
+21,California,6,2009,White,Hispanic or Latino,266073,54,20.3,0
+22,California,6,2009,White,Not Hispanic or Latino,146402,28,19.13,0
+23,California,6,2010,Asian or Pacific Islander,Not Hispanic or Latino,65379,11,16.82,2720149
+24,California,6,2010,Black or African American,Not Hispanic or Latino,30336,15,49.45,0
+25,California,6,2010,White,Hispanic or Latino,253281,37,14.61,0
+26,California,6,2010,White,Not Hispanic or Latino,145931,18,12.33,0
+27,California,6,2011,Black or African American,Not Hispanic or Latino,29902,17,56.85,0
+28,California,6,2011,White,Hispanic or Latino,245614,21,8.55,0
+29,California,6,2011,White,Not Hispanic or Latino,144584,23,15.91,7757084
+30,California,6,2012,Black or African American,Not Hispanic or Latino,29438,14,47.56,0
+31,California,6,2012,White,Hispanic or Latino,240454,34,14.14,0
+32,California,6,2012,White,Not Hispanic or Latino,142697,25,17.52,0
+33,California,6,2013,Asian or Pacific Islander,Not Hispanic or Latino,72708,10,13.75,0
+34,California,6,2013,Black or African American,Not Hispanic or Latino,28931,19,65.67,0
+35,California,6,2013,White,Hispanic or Latino,233714,23,9.84,0
+36,California,6,2013,White,Not Hispanic or Latino,143531,25,17.42,7743548
+37,California,6,2014,Asian or Pacific Islander,Not Hispanic or Latino,79561,11,13.83,0
+38,California,6,2014,Black or African American,Not Hispanic or Latino,28312,20,70.64,1223144
+39,California,6,2014,White,Hispanic or Latino,232620,32,13.76,0
+40,California,6,2014,White,Not Hispanic or Latino,144318,24,16.63,7734375
+41,California,6,2015,Black or African American,Not Hispanic or Latino,27035,18,66.58,0
+42,California,6,2015,White,Hispanic or Latino,229067,29,12.66,0
+43,California,6,2015,White,Not Hispanic or Latino,141592,28,19.78,7714126
+44,California,6,2016,Asian or Pacific Islander,Not Hispanic or Latino,78187,16,20.46,0
+45,California,6,2016,Black or African American,Not Hispanic or Latino,26985,12,44.47,0
+46,California,6,2016,White,Hispanic or Latino,221704,42,18.94,0
+47,California,6,2016,White,Not Hispanic or Latino,138319,21,15.18,7677407
+48,California,6,2017,Black or African American,Not Hispanic or Latino,26440,19,71.86,1228739
+49,California,6,2017,White,Hispanic or Latino,212753,41,19.27,7021336
+50,California,6,2017,White,Not Hispanic or Latino,133165,21,15.77,7621430
+51,California,6,2018,Asian or Pacific Islander,Not Hispanic or Latino,72747,14,19.24,3278357
+52,California,6,2018,Black or African American,Not Hispanic or Latino,25370,12,47.3,1229255
+53,California,6,2018,White,Hispanic or Latino,206047,31,15.05,7048159
+54,California,6,2018,White,Not Hispanic or Latino,128477,22,17.12,7557495
+55,California,6,2019,Asian or Pacific Islander,Not Hispanic or Latino,71741,13,18.12,3304759
+56,California,6,2019,Black or African American,Not Hispanic or Latino,25417,11,43.28,1228618
+57,California,6,2019,White,Hispanic or Latino,198104,26,13.12,7070429
+58,California,6,2019,White,Not Hispanic or Latino,125951,19,15.09,7486232
+59,Colorado,8,2014,White,Not Hispanic or Latino,40629,12,29.54,0
+60,Florida,12,2009,Black or African American,Not Hispanic or Latino,50723,24,47.32,0
+61,Florida,12,2009,White,Hispanic or Latino,56147,17,30.28,0
+62,Florida,12,2009,White,Not Hispanic or Latino,100577,29,28.83,0
+63,Florida,12,2010,Black or African American,Not Hispanic or Latino,49489,20,40.41,0
+64,Florida,12,2010,White,Not Hispanic or Latino,97984,18,18.37,0
+65,Florida,12,2011,Black or African American,Not Hispanic or Latino,49084,25,50.93,1562242
+66,Florida,12,2011,White,Not Hispanic or Latino,97304,17,17.47,0
+67,Florida,12,2012,Black or African American,Not Hispanic or Latino,49374,31,62.79,0
+68,Florida,12,2012,White,Not Hispanic or Latino,97042,26,26.79,0
+69,Florida,12,2013,Black or African American,Not Hispanic or Latino,49113,27,54.98,0
+70,Florida,12,2013,White,Hispanic or Latino,55045,22,39.97,0
+71,Florida,12,2013,White,Not Hispanic or Latino,98586,31,31.44,0
+72,Florida,12,2014,Black or African American,Not Hispanic or Latino,49313,25,50.7,1656077
+73,Florida,12,2014,White,Not Hispanic or Latino,100837,24,23.8,0
+74,Florida,12,2015,Black or African American,Not Hispanic or Latino,49609,24,48.38,0
+75,Florida,12,2015,White,Not Hispanic or Latino,102549,33,32.18,5800614
+76,Florida,12,2016,Black or African American,Not Hispanic or Latino,49788,16,32.14,1716677
+77,Florida,12,2016,White,Not Hispanic or Latino,100621,25,24.85,0
+78,Florida,12,2017,Black or African American,Not Hispanic or Latino,50385,21,41.68,1750334
+79,Florida,12,2017,White,Hispanic or Latino,58002,11,18.96,2519258
+80,Florida,12,2017,White,Not Hispanic or Latino,97704,15,15.35,5873116
+81,Florida,12,2018,Black or African American,Not Hispanic or Latino,49101,17,34.62,1771878
+82,Florida,12,2018,White,Hispanic or Latino,62197,10,16.08,2605269
+83,Florida,12,2018,White,Not Hispanic or Latino,97290,22,22.61,5905899
+84,Florida,12,2019,Black or African American,Not Hispanic or Latino,48761,28,57.42,1788071
+85,Florida,12,2019,White,Not Hispanic or Latino,95061,30,31.56,5929560
+86,Georgia,13,2009,Black or African American,Not Hispanic or Latino,46235,26,56.23,0
+87,Georgia,13,2010,Black or African American,Not Hispanic or Latino,44824,23,51.31,0
+88,Georgia,13,2010,White,Not Hispanic or Latino,59700,11,18.43,2793451
+89,Georgia,13,2011,Black or African American,Not Hispanic or Latino,44649,28,62.71,0
+90,Georgia,13,2011,White,Not Hispanic or Latino,60622,16,26.39,0
+91,Georgia,13,2012,Black or African American,Not Hispanic or Latino,44293,24,54.18,0
+92,Georgia,13,2012,White,Not Hispanic or Latino,60311,13,21.55,0
+93,Georgia,13,2013,Black or African American,Not Hispanic or Latino,44381,38,85.62,0
+94,Georgia,13,2013,White,Not Hispanic or Latino,59379,39,65.68,0
+95,Georgia,13,2014,Black or African American,Not Hispanic or Latino,45022,46,102.17,0
+96,Georgia,13,2014,White,Not Hispanic or Latino,60104,47,78.2,0
+97,Georgia,13,2015,Black or African American,Not Hispanic or Latino,45461,48,105.59,0
+98,Georgia,13,2015,White,Not Hispanic or Latino,60328,44,72.93,2834092
+99,Georgia,13,2016,Black or African American,Not Hispanic or Latino,45457,40,88.0,0
+100,Georgia,13,2016,White,Not Hispanic or Latino,58885,24,40.76,0
+101,Georgia,13,2017,Black or African American,Not Hispanic or Latino,45579,44,96.54,1780258
+102,Georgia,13,2017,White,Not Hispanic or Latino,57948,23,39.69,2843140
+103,Georgia,13,2018,Black or African American,Not Hispanic or Latino,44873,35,78.0,1806836
+104,Georgia,13,2018,White,Not Hispanic or Latino,56693,23,40.57,2847605
+105,Georgia,13,2019,Black or African American,Not Hispanic or Latino,44918,44,97.96,1833387
+106,Georgia,13,2019,White,Not Hispanic or Latino,55840,16,28.65,2856063
+107,Illinois,17,2009,Black or African American,Not Hispanic or Latino,29925,19,63.49,0
+108,Illinois,17,2009,White,Not Hispanic or Latino,90930,12,13.2,4227138
+109,Illinois,17,2010,White,Not Hispanic or Latino,89165,15,16.82,0
+110,Illinois,17,2011,Black or African American,Not Hispanic or Latino,27183,15,55.18,0
+111,Illinois,17,2011,White,Not Hispanic or Latino,87952,20,22.74,0
+112,Illinois,17,2012,Black or African American,Not Hispanic or Latino,27274,15,55.0,0
+113,Illinois,17,2012,White,Not Hispanic or Latino,86194,11,12.76,0
+114,Illinois,17,2013,White,Not Hispanic or Latino,85866,14,16.3,0
+115,Illinois,17,2014,Black or African American,Not Hispanic or Latino,27187,10,36.78,0
+116,Illinois,17,2014,White,Not Hispanic or Latino,86227,14,16.24,4133362
+117,Illinois,17,2015,Black or African American,Not Hispanic or Latino,27160,18,66.27,997787
+118,Illinois,17,2015,White,Not Hispanic or Latino,85424,17,19.9,0
+119,Illinois,17,2016,Black or African American,Not Hispanic or Latino,26359,13,49.32,0
+120,Illinois,17,2016,White,Not Hispanic or Latino,83153,11,13.23,0
+121,Illinois,17,2017,Black or African American,Not Hispanic or Latino,26506,15,56.59,989756
+122,Illinois,17,2017,White,Not Hispanic or Latino,79784,14,17.55,4040793
+123,Illinois,17,2018,White,Not Hispanic or Latino,78102,13,16.64,4002831
+124,Illinois,17,2019,White,Not Hispanic or Latino,75290,12,15.94,3966684
+125,Indiana,18,2009,White,Not Hispanic or Latino,66325,12,18.09,2718402
+126,Indiana,18,2011,White,Not Hispanic or Latino,64482,34,52.73,0
+127,Indiana,18,2012,White,Not Hispanic or Latino,63801,30,47.02,2719519
+128,Indiana,18,2013,White,Not Hispanic or Latino,63820,22,34.47,0
+129,Indiana,18,2014,White,Not Hispanic or Latino,64076,29,45.26,2720820
+130,Indiana,18,2015,White,Not Hispanic or Latino,63472,37,58.29,0
+131,Indiana,18,2016,White,Not Hispanic or Latino,62528,39,62.37,2712509
+132,Indiana,18,2017,White,Not Hispanic or Latino,61050,30,49.14,2712102
+133,Indiana,18,2018,White,Not Hispanic or Latino,60060,17,28.31,2710703
+134,Indiana,18,2019,White,Not Hispanic or Latino,58801,27,45.92,2713014
+135,Kansas,20,2013,White,Not Hispanic or Latino,28281,10,35.36,1146863
+136,Kentucky,21,2010,White,Not Hispanic or Latino,46607,13,27.89,0
+137,Kentucky,21,2013,White,Not Hispanic or Latino,46612,18,38.62,0
+138,Kentucky,21,2015,White,Not Hispanic or Latino,46344,12,25.89,0
+139,Kentucky,21,2016,White,Not Hispanic or Latino,45587,22,48.26,1943890
+140,Kentucky,21,2017,White,Not Hispanic or Latino,44728,16,35.77,1944441
+141,Kentucky,21,2018,White,Not Hispanic or Latino,43838,23,52.47,1943695
+142,Kentucky,21,2019,White,Not Hispanic or Latino,42720,16,37.45,1941173
+143,Louisiana,22,2012,Black or African American,Not Hispanic or Latino,23846,18,75.48,0
+144,Louisiana,22,2013,Black or African American,Not Hispanic or Latino,24031,28,116.52,0
+145,Louisiana,22,2013,White,Not Hispanic or Latino,33583,16,47.64,0
+146,Louisiana,22,2014,Black or African American,Not Hispanic or Latino,24222,27,111.47,0
+147,Louisiana,22,2014,White,Not Hispanic or Latino,34264,11,32.1,1416174
+148,Louisiana,22,2015,Black or African American,Not Hispanic or Latino,24064,23,95.58,0
+149,Louisiana,22,2015,White,Not Hispanic or Latino,34047,16,46.99,0
+150,Louisiana,22,2016,Black or African American,Not Hispanic or Latino,23428,35,149.39,803237
+151,Louisiana,22,2016,White,Not Hispanic or Latino,33267,18,54.11,1417028
+152,Louisiana,22,2017,Black or African American,Not Hispanic or Latino,22797,20,87.73,805564
+153,Louisiana,22,2017,White,Not Hispanic or Latino,31835,19,59.68,1411908
+154,Louisiana,22,2018,Black or African American,Not Hispanic or Latino,22455,15,66.8,805195
+155,Louisiana,22,2019,Black or African American,Not Hispanic or Latino,22425,15,66.89,805404
+156,Maryland,24,2009,Black or African American,Not Hispanic or Latino,24986,10,40.02,0
+157,Maryland,24,2010,Black or African American,Not Hispanic or Latino,24432,16,65.49,0
+158,Maryland,24,2011,White,Not Hispanic or Latino,33265,11,33.07,0
+159,Maryland,24,2012,Black or African American,Not Hispanic or Latino,23870,14,58.65,0
+160,Maryland,24,2014,Black or African American,Not Hispanic or Latino,23968,16,66.76,0
+161,Maryland,24,2017,Black or African American,Not Hispanic or Latino,23079,14,60.66,988067
+162,Maryland,24,2019,Black or African American,Not Hispanic or Latino,22291,12,53.83,996064
+163,Massachusetts,25,2016,White,Not Hispanic or Latino,42871,12,27.99,2598971
+164,Massachusetts,25,2017,White,Not Hispanic or Latino,41554,11,26.47,2589523
+165,Michigan,26,2009,Black or African American,Not Hispanic or Latino,22145,11,49.67,0
+166,Michigan,26,2009,White,Not Hispanic or Latino,82093,22,26.8,0
+167,Michigan,26,2010,Black or African American,Not Hispanic or Latino,22133,17,76.81,0
+168,Michigan,26,2010,White,Not Hispanic or Latino,79979,27,33.76,3891872
+169,Michigan,26,2011,Black or African American,Not Hispanic or Latino,21775,13,59.7,0
+170,Michigan,26,2011,White,Not Hispanic or Latino,79607,18,22.61,0
+171,Michigan,26,2012,Black or African American,Not Hispanic or Latino,21543,11,51.06,0
+172,Michigan,26,2012,White,Not Hispanic or Latino,79044,18,22.77,0
+173,Michigan,26,2013,Black or African American,Not Hispanic or Latino,22057,14,63.47,0
+174,Michigan,26,2013,White,Not Hispanic or Latino,79107,21,26.55,3862897
+175,Michigan,26,2014,Black or African American,Not Hispanic or Latino,21650,13,60.05,0
+176,Michigan,26,2014,White,Not Hispanic or Latino,80304,15,18.68,0
+177,Michigan,26,2015,White,Not Hispanic or Latino,78960,18,22.8,3845460
+178,Michigan,26,2016,Black or African American,Not Hispanic or Latino,21416,12,56.03,759300
+179,Michigan,26,2016,White,Not Hispanic or Latino,79070,25,31.62,3838575
+180,Michigan,26,2017,White,Not Hispanic or Latino,76788,14,18.23,3838383
+181,Michigan,26,2018,Black or African American,Not Hispanic or Latino,21490,10,46.53,762991
+182,Michigan,26,2018,White,Not Hispanic or Latino,75978,20,26.32,3837454
+183,Michigan,26,2019,Black or African American,Not Hispanic or Latino,21305,11,51.63,764067
+184,Michigan,26,2019,White,Not Hispanic or Latino,74128,20,26.98,3826315
+185,Minnesota,27,2011,White,Not Hispanic or Latino,50297,10,19.88,0
+186,Minnesota,27,2016,White,Not Hispanic or Latino,49338,10,20.27,2273781
+187,Minnesota,27,2017,White,Not Hispanic or Latino,47828,13,27.18,2277129
+188,Mississippi,28,2011,Black or African American,Not Hispanic or Latino,17304,12,69.35,0
+189,Mississippi,28,2019,Black or African American,Not Hispanic or Latino,15813,16,101.18,598833
+190,Missouri,29,2011,White,Not Hispanic or Latino,57815,14,24.22,0
+191,Missouri,29,2012,Black or African American,Not Hispanic or Latino,11319,12,106.02,0
+192,Missouri,29,2012,White,Not Hispanic or Latino,57350,21,36.62,0
+193,Missouri,29,2013,White,Not Hispanic or Latino,57361,22,38.35,0
+194,Missouri,29,2014,Black or African American,Not Hispanic or Latino,11453,10,87.31,0
+195,Missouri,29,2014,White,Not Hispanic or Latino,57150,22,38.5,2500910
+196,Missouri,29,2015,Black or African American,Not Hispanic or Latino,11304,13,115.0,389878
+197,Missouri,29,2015,White,Not Hispanic or Latino,57092,18,31.53,0
+198,Missouri,29,2016,Black or African American,Not Hispanic or Latino,11182,13,116.26,391685
+199,Missouri,29,2016,White,Not Hispanic or Latino,56547,13,22.99,2499876
+200,Missouri,29,2017,White,Not Hispanic or Latino,54835,18,32.83,2501554
+201,Missouri,29,2018,White,Not Hispanic or Latino,54802,17,31.02,2501974
+202,New Jersey,34,2009,Black or African American,Not Hispanic or Latino,17135,12,70.03,0
+203,New Jersey,34,2009,White,Not Hispanic or Latino,52163,15,28.76,0
+204,New Jersey,34,2010,Black or African American,Not Hispanic or Latino,16332,14,85.72,0
+205,New Jersey,34,2011,Black or African American,Not Hispanic or Latino,16047,20,124.63,0
+206,New Jersey,34,2011,White,Not Hispanic or Latino,49661,17,34.23,2696212
+207,New Jersey,34,2012,Black or African American,Not Hispanic or Latino,16183,15,92.69,0
+208,New Jersey,34,2012,White,Not Hispanic or Latino,47944,15,31.29,0
+209,New Jersey,34,2013,Black or African American,Not Hispanic or Latino,15570,30,192.68,0
+210,New Jersey,34,2013,White,Not Hispanic or Latino,48018,16,33.32,2657962
+211,New Jersey,34,2014,Black or African American,Not Hispanic or Latino,15528,26,167.44,0
+212,New Jersey,34,2014,White,Not Hispanic or Latino,48196,18,37.35,2634637
+213,New Jersey,34,2015,White,Not Hispanic or Latino,47425,21,44.28,0
+214,New Jersey,34,2016,Black or African American,Not Hispanic or Latino,14274,20,140.11,633557
+215,New Jersey,34,2016,White,Hispanic or Latino,23617,11,46.58,753308
+216,New Jersey,34,2016,White,Not Hispanic or Latino,46545,11,23.63,2586923
+217,New Jersey,34,2017,Black or African American,Not Hispanic or Latino,14111,14,99.21,635622
+218,New Jersey,34,2017,White,Not Hispanic or Latino,46338,16,34.53,2573370
+219,New Jersey,34,2018,Black or African American,Not Hispanic or Latino,14320,16,111.73,629466
+220,New Jersey,34,2018,White,Not Hispanic or Latino,45966,11,23.93,2536967
+221,New Jersey,34,2019,Black or African American,Not Hispanic or Latino,13841,14,101.15,628787
+222,New Jersey,34,2019,White,Hispanic or Latino,23683,11,46.45,783764
+223,New York,36,2009,Black or African American,Not Hispanic or Latino,40970,35,85.43,0
+224,New York,36,2009,White,Hispanic or Latino,52030,13,24.99,0
+225,New York,36,2009,White,Not Hispanic or Latino,119526,18,15.06,5900136
+226,New York,36,2010,Black or African American,Not Hispanic or Latino,39266,27,68.76,0
+227,New York,36,2010,White,Hispanic or Latino,50737,14,27.59,0
+228,New York,36,2010,White,Not Hispanic or Latino,118223,18,15.23,5882534
+229,New York,36,2011,Black or African American,Not Hispanic or Latino,39157,19,48.52,0
+230,New York,36,2011,White,Hispanic or Latino,45510,15,32.96,0
+231,New York,36,2011,White,Not Hispanic or Latino,117201,22,18.77,0
+232,New York,36,2012,Black or African American,Not Hispanic or Latino,38479,24,62.37,0
+233,New York,36,2012,White,Hispanic or Latino,44406,11,24.77,0
+234,New York,36,2012,White,Not Hispanic or Latino,116153,19,16.36,5838748
+235,New York,36,2013,Black or African American,Not Hispanic or Latino,37613,22,58.49,1588409
+236,New York,36,2013,White,Not Hispanic or Latino,115505,27,23.38,5817668
+237,New York,36,2014,Black or African American,Not Hispanic or Latino,36958,28,75.76,0
+238,New York,36,2014,White,Not Hispanic or Latino,116013,21,18.1,5780651
+239,New York,36,2015,Black or African American,Not Hispanic or Latino,36392,27,74.19,0
+240,New York,36,2015,White,Hispanic or Latino,45765,11,24.04,0
+241,New York,36,2015,White,Not Hispanic or Latino,114643,18,15.7,5741512
+242,New York,36,2016,Black or African American,Not Hispanic or Latino,35308,21,59.48,1597508
+243,New York,36,2016,White,Hispanic or Latino,41001,11,26.83,1432414
+244,New York,36,2016,White,Not Hispanic or Latino,112843,25,22.15,5697456
+245,New York,36,2017,Black or African American,Not Hispanic or Latino,35189,21,59.68,1605392
+246,New York,36,2017,White,Hispanic or Latino,40545,10,24.66,1456828
+247,New York,36,2017,White,Not Hispanic or Latino,113152,14,12.37,5679233
+248,New York,36,2018,Black or African American,Not Hispanic or Latino,34277,29,84.6,1575061
+249,New York,36,2018,White,Not Hispanic or Latino,112317,28,24.93,5607214
+250,New York,36,2019,Black or African American,Not Hispanic or Latino,33332,33,99.0,1564675
+251,New York,36,2019,White,Hispanic or Latino,39089,16,40.93,1439112
+252,New York,36,2019,White,Not Hispanic or Latino,110792,23,20.76,5569219
+253,North Carolina,37,2009,Black or African American,Not Hispanic or Latino,30314,10,32.99,0
+254,North Carolina,37,2014,Black or African American,Not Hispanic or Latino,29017,21,72.37,1164077
+255,North Carolina,37,2014,White,Not Hispanic or Latino,67551,10,14.8,0
+256,North Carolina,37,2015,Black or African American,Not Hispanic or Latino,28866,17,58.89,0
+257,North Carolina,37,2015,White,Not Hispanic or Latino,67122,20,29.8,0
+258,North Carolina,37,2016,Black or African American,Not Hispanic or Latino,28503,16,56.13,1194060
+259,North Carolina,37,2016,White,Not Hispanic or Latino,66924,18,26.9,3347791
+260,North Carolina,37,2017,Black or African American,Not Hispanic or Latino,29073,21,72.23,1207429
+261,North Carolina,37,2017,White,Not Hispanic or Latino,65534,12,18.31,3365391
+262,North Carolina,37,2018,Black or African American,Not Hispanic or Latino,28857,11,38.12,1221722
+263,North Carolina,37,2018,White,Not Hispanic or Latino,64798,12,18.52,3388147
+264,North Carolina,37,2019,Black or African American,Not Hispanic or Latino,29088,22,75.63,1234730
+265,North Carolina,37,2019,White,Not Hispanic or Latino,63612,16,25.15,3411460
+266,Ohio,39,2009,Black or African American,Not Hispanic or Latino,23837,15,62.93,766387
+267,Ohio,39,2009,White,Not Hispanic or Latino,109760,40,36.44,4846035
+268,Ohio,39,2010,White,Not Hispanic or Latino,105356,30,28.47,0
+269,Ohio,39,2011,White,Not Hispanic or Latino,104506,26,24.88,0
+270,Ohio,39,2012,Black or African American,Not Hispanic or Latino,23268,17,73.06,778183
+271,Ohio,39,2012,White,Not Hispanic or Latino,104116,20,19.21,0
+272,Ohio,39,2013,Black or African American,Not Hispanic or Latino,23772,13,54.69,783941
+273,Ohio,39,2013,White,Not Hispanic or Latino,104059,16,15.38,0
+274,Ohio,39,2014,White,Not Hispanic or Latino,104102,14,13.45,0
+275,Ohio,39,2015,Black or African American,Not Hispanic or Latino,23739,17,71.61,798519
+276,Ohio,39,2015,White,Not Hispanic or Latino,103586,21,20.27,0
+277,Ohio,39,2016,White,Not Hispanic or Latino,101564,23,22.65,4755008
+278,Ohio,39,2017,Black or African American,Not Hispanic or Latino,24097,11,45.65,813260
+279,Ohio,39,2017,White,Not Hispanic or Latino,100151,30,29.95,4750701
+280,Ohio,39,2018,White,Not Hispanic or Latino,98834,18,18.21,4740025
+281,Ohio,39,2019,Black or African American,Not Hispanic or Latino,24477,14,57.2,825306
+282,Ohio,39,2019,White,Not Hispanic or Latino,97126,32,32.95,4726696
+283,Oklahoma,40,2009,White,Not Hispanic or Latino,34720,18,51.84,1362631
+284,Oklahoma,40,2010,White,Not Hispanic or Latino,34096,15,43.99,0
+285,Oklahoma,40,2011,White,Not Hispanic or Latino,33358,12,35.97,1372293
+286,Oklahoma,40,2012,White,Not Hispanic or Latino,33536,11,32.8,1373909
+287,Oklahoma,40,2013,White,Not Hispanic or Latino,33978,13,38.26,1379661
+288,Oklahoma,40,2016,White,Not Hispanic or Latino,32438,10,30.83,1380130
+289,Oklahoma,40,2017,White,Not Hispanic or Latino,30901,14,45.31,1373135
+290,Oklahoma,40,2018,White,Not Hispanic or Latino,30315,13,42.88,1371395
+291,Pennsylvania,42,2009,Black or African American,Not Hispanic or Latino,21480,14,65.18,725071
+292,Pennsylvania,42,2009,White,Not Hispanic or Latino,103297,21,20.33,5236153
+293,Pennsylvania,42,2010,Black or African American,Not Hispanic or Latino,21025,13,61.83,0
+294,Pennsylvania,42,2010,White,Not Hispanic or Latino,101136,19,18.79,0
+295,Pennsylvania,42,2011,White,Not Hispanic or Latino,100790,15,14.88,0
+296,Pennsylvania,42,2012,White,Not Hispanic or Latino,99531,19,19.09,0
+297,Pennsylvania,42,2013,Black or African American,Not Hispanic or Latino,20626,11,53.33,0
+298,Pennsylvania,42,2013,White,Not Hispanic or Latino,98751,20,20.25,0
+299,Pennsylvania,42,2014,White,Not Hispanic or Latino,99306,23,23.16,5140778
+300,Pennsylvania,42,2015,White,Not Hispanic or Latino,97845,15,15.33,0
+301,Pennsylvania,42,2016,Black or African American,Not Hispanic or Latino,19680,15,76.22,752829
+302,Pennsylvania,42,2016,White,Not Hispanic or Latino,96053,22,22.9,5080444
+303,Pennsylvania,42,2017,Black or African American,Not Hispanic or Latino,19809,10,50.48,759276
+304,Pennsylvania,42,2017,White,Not Hispanic or Latino,93865,28,29.83,5054614
+305,Pennsylvania,42,2018,Black or African American,Not Hispanic or Latino,19155,10,52.21,761949
+306,Pennsylvania,42,2018,White,Not Hispanic or Latino,92376,15,16.24,5026742
+307,Pennsylvania,42,2019,Black or African American,Not Hispanic or Latino,18989,14,73.73,765686
+308,Pennsylvania,42,2019,White,Not Hispanic or Latino,90229,21,23.27,5001829
+309,South Carolina,45,2009,Black or African American,Not Hispanic or Latino,19478,10,51.34,689887
+310,South Carolina,45,2009,White,Not Hispanic or Latino,33978,10,29.43,0
+311,South Carolina,45,2011,Black or African American,Not Hispanic or Latino,18288,18,98.43,0
+312,South Carolina,45,2013,Black or African American,Not Hispanic or Latino,17815,14,78.59,0
+313,South Carolina,45,2014,Black or African American,Not Hispanic or Latino,17878,17,95.09,716223
+314,South Carolina,45,2015,White,Not Hispanic or Latino,33927,11,32.42,0
+315,South Carolina,45,2016,Black or African American,Not Hispanic or Latino,17071,14,82.01,728010
+316,South Carolina,45,2016,White,Not Hispanic or Latino,33522,13,38.78,1640592
+317,South Carolina,45,2017,Black or African American,Not Hispanic or Latino,17384,15,86.29,734227
+318,South Carolina,45,2019,Black or African American,Not Hispanic or Latino,17444,13,74.52,744682
+319,South Carolina,45,2019,White,Not Hispanic or Latino,32243,10,31.01,1701347
+320,Tennessee,47,2012,Black or African American,Not Hispanic or Latino,16645,16,96.12,0
+321,Tennessee,47,2012,White,Not Hispanic or Latino,54712,23,42.04,0
+322,Tennessee,47,2013,White,Not Hispanic or Latino,54377,18,33.1,2520172
+323,Tennessee,47,2014,White,Not Hispanic or Latino,55499,15,27.03,2532642
+324,Tennessee,47,2015,Black or African American,Not Hispanic or Latino,16792,13,77.42,0
+325,Tennessee,47,2015,White,Not Hispanic or Latino,55420,14,25.26,0
+326,Tennessee,47,2016,White,Not Hispanic or Latino,54508,13,23.85,2558371
+327,Tennessee,47,2017,Black or African American,Not Hispanic or Latino,16663,10,60.01,613639
+328,Tennessee,47,2017,White,Not Hispanic or Latino,54377,25,45.98,2572069
+329,Tennessee,47,2018,Black or African American,Not Hispanic or Latino,16580,14,84.44,618282
+330,Tennessee,47,2018,White,Not Hispanic or Latino,53962,12,22.24,2586269
+331,Tennessee,47,2019,Black or African American,Not Hispanic or Latino,16624,11,66.17,623876
+332,Tennessee,47,2019,White,Not Hispanic or Latino,52899,11,20.79,2601080
+333,Texas,48,2009,Black or African American,Not Hispanic or Latino,45482,35,76.95,0
+334,Texas,48,2009,White,Hispanic or Latino,196547,41,20.86,0
+335,Texas,48,2009,White,Not Hispanic or Latino,137594,44,31.98,0
+336,Texas,48,2010,Black or African American,Not Hispanic or Latino,44560,25,56.1,0
+337,Texas,48,2010,White,Hispanic or Latino,185357,33,17.8,4481858
+338,Texas,48,2010,White,Not Hispanic or Latino,134920,41,30.39,0
+339,Texas,48,2011,Black or African American,Not Hispanic or Latino,43212,41,94.88,1568577
+340,Texas,48,2011,White,Hispanic or Latino,178768,25,13.98,0
+341,Texas,48,2011,White,Not Hispanic or Latino,133894,60,44.81,0
+342,Texas,48,2012,Black or African American,Not Hispanic or Latino,44530,50,112.28,0
+343,Texas,48,2012,White,Hispanic or Latino,178859,49,27.4,4704348
+344,Texas,48,2012,White,Not Hispanic or Latino,135573,55,40.57,0
+345,Texas,48,2013,Black or African American,Not Hispanic or Latino,45825,42,91.65,1638960
+346,Texas,48,2013,White,Hispanic or Latino,181346,55,30.33,4788569
+347,Texas,48,2013,White,Not Hispanic or Latino,136608,64,46.85,0
+348,Texas,48,2014,Black or African American,Not Hispanic or Latino,47983,37,77.11,1677410
+349,Texas,48,2014,White,Hispanic or Latino,185220,50,26.99,4927137
+350,Texas,48,2014,White,Not Hispanic or Latino,140992,58,41.14,0
+351,Texas,48,2015,Black or African American,Not Hispanic or Latino,49662,54,108.74,0
+352,Texas,48,2015,White,Hispanic or Latino,186593,41,21.97,5049228
+353,Texas,48,2015,White,Not Hispanic or Latino,140553,58,41.27,0
+354,Texas,48,2016,Black or African American,Not Hispanic or Latino,49748,49,98.5,1751635
+355,Texas,48,2016,White,Hispanic or Latino,179517,49,27.3,5149588
+356,Texas,48,2016,White,Not Hispanic or Latino,136623,51,37.33,6105304
+357,Texas,48,2017,Black or African American,Not Hispanic or Latino,49423,44,89.03,1789529
+358,Texas,48,2017,White,Hispanic or Latino,171106,54,31.56,5269793
+359,Texas,48,2017,White,Not Hispanic or Latino,129760,47,36.22,6115217
+360,Texas,48,2018,Black or African American,Not Hispanic or Latino,49396,24,48.59,1829475
+361,Texas,48,2018,White,Hispanic or Latino,174455,36,20.64,5367475
+362,Texas,48,2018,White,Not Hispanic or Latino,127819,31,24.25,6130564
+363,Texas,48,2019,Black or African American,Not Hispanic or Latino,48653,22,45.22,1863476
+364,Texas,48,2019,White,Hispanic or Latino,174974,33,18.86,5442167
+365,Texas,48,2019,White,Not Hispanic or Latino,126924,31,24.42,6153011
+366,Utah,49,2013,White,Not Hispanic or Latino,39401,13,32.99,1170954
+367,Utah,49,2015,White,Not Hispanic or Latino,38473,11,28.59,1197984
+368,Utah,49,2019,White,Not Hispanic or Latino,33982,10,29.43,1262201
+369,Virginia,51,2015,Black or African American,Not Hispanic or Latino,21777,13,59.7,0
+370,Virginia,51,2015,White,Not Hispanic or Latino,59244,13,21.94,2709251
+371,Virginia,51,2016,Black or African American,Not Hispanic or Latino,21288,19,89.25,871315
+372,Virginia,51,2016,White,Not Hispanic or Latino,58130,27,46.45,2708821
+373,Virginia,51,2017,Black or African American,Not Hispanic or Latino,21670,10,46.15,878415
+374,Virginia,51,2017,White,Not Hispanic or Latino,56219,27,48.03,2704481
+375,Virginia,51,2019,Black or African American,Not Hispanic or Latino,20997,15,71.44,886772
+376,Virginia,51,2019,White,Not Hispanic or Latino,53743,11,20.47,2700611
+377,Washington,53,2011,White,Not Hispanic or Latino,55084,11,19.97,0
+378,Washington,53,2013,White,Not Hispanic or Latino,54779,14,25.56,0
+379,Washington,53,2014,White,Not Hispanic or Latino,55872,11,19.69,0
+380,Washington,53,2017,White,Not Hispanic or Latino,52368,13,24.82,2629260
+381,Washington,53,2018,White,Not Hispanic or Latino,50821,13,25.58,2648026
+382,Washington,53,2019,White,Not Hispanic or Latino,49198,17,34.55,2655936
+383,West Virginia,54,2018,White,Not Hispanic or Latino,16785,10,59.58,853052
+384,Wisconsin,55,2009,White,Not Hispanic or Latino,52462,10,19.06,0
+385,Wisconsin,55,2011,White,Not Hispanic or Latino,50500,10,19.8,0
+386,Wisconsin,55,2014,White,Not Hispanic or Latino,49440,13,26.29,2409803
+387,Wisconsin,55,2015,White,Not Hispanic or Latino,49024,10,20.4,0
