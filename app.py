@@ -193,13 +193,77 @@ class HWC(db.Model):
     wic_lower_ci = db.Column(db.Float)
     wic_upper_ci = db.Column(db.Float)
 
+class Race(db.Model):
+    __tablename__ = 'race_data'
+    __table_args__ = {'extend_existing': True}
+    state = db.Column(db.String(255))
+    state_code = db.Column(db.Integer)
+    year = db.Column(db.Integer, primary_key=True)
+    race = db.Column(db.String(255), primary_key=True)
+    hispanic_origin = db.Column(db.String(255), primary_key=True)
+    births_by_race = db.Column(db.Integer)
+    deaths_by_race = db.Column(db.Integer)        
+    mmr_by_race = db.Column(db.Float)         
+    population_by_race = db.Column(db.Integer)     
+    id = db.Column(db.String(255))                   
+    state_abbv = db.Column(db.String(255), primary_key=True)          
+    latitude = db.Column(db.Float)            
+    longitude = db.Column(db.Float)
+
+
+class NonRace(db.Model):
+    __tablename__ = 'non_race_data'
+    __table_args__ = {'extend_existing': True}
+    year = db.Column(db.Integer, primary_key=True)  
+    state = db.Column(db.String(255)) 
+    id = db.Column(db.String(255))
+    state_code = db.Column(db.String(255), primary_key=True)
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
+    deaths = db.Column(db.Float)
+    births = db.Column(db.Float)
+    maternal_mortality_ratio = db.Column(db.Float)
+    population = db.Column(db.Float)
+    employer = db.Column(db.Float)
+    non_group = db.Column(db.Float)
+    medicaid = db.Column(db.Float)
+    medicare = db.Column(db.Float)
+    military = db.Column(db.Float)
+    uninsured = db.Column(db.Float)
+    air_pollution_val = db.Column(db.Float)
+    cancer_death_val = db.Column(db.Float)
+    cardio_death_val = db.Column(db.Float)
+    child_pov_val = db.Column(db.Float)   
+    choles_check_val = db.Column(db.Float) 
+    dent_vis_val = db.Column(db.Float)    
+    dentists_val = db.Column(db.Float)    
+    diabetes_val = db.Column(db.Float)    
+    drug_deaths_val = db.Column(db.Float)  
+    health_stat_fem_val = db.Column(db.Float)       
+    immun_child_val = db.Column(db.Float)  
+    income_ineq_val = db.Column(db.Float)  
+    infant_mort_val = db.Column(db.Float)  
+    infect_dis_val = db.Column(db.Float)   
+    obesity_val = db.Column(db.Float)      
+    phys_inac_val = db.Column(db.Float)    
+    prem_death_val = db.Column(db.Float)   
+    smoking_val = db.Column(db.Float)      
+    uninsured_val = db.Column(db.Float)    
+    all_determs_val = db.Column(db.Float)  
+    all_outcomes_val = db.Column(db.Float) 
+    chlamydia_val = db.Column(db.Float)    
+    prem_death_ri_val = db.Column(db.Float)
+    teen_birth_val = db.Column(db.Float)   
+    primary_care_val = db.Column(db.Float) 
+    low_birthweight_val = db.Column(db.Float)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/us-data')
+@app.route('/usdata')
 def us():
     return render_template('us-data.html')
 
@@ -213,17 +277,17 @@ def methodology():
     return render_template('methodology.html')
 
 
-@app.route('/about-us')
+@app.route('/aboutus')
 def aboutus():
     return render_template('about-us.html')
 
 
-@app.route('/us-ranked')
+@app.route('/usranked')
 def ranked():
     return render_template('us-ranked-data.html')
 
 
-@app.route('/api/mmr-global')
+@app.route('/api/mmrglobal')
 def getGlobaldata():
     tasks = db.session.query(Global)
     mmr_global_data = []
@@ -501,6 +565,87 @@ def getHWCdata():
         hwc_data.append(item)
 
     return jsonify(hwc_data)
+
+
+@app.route('/api/race-data')
+def getRaceData():
+    tasks = db.session.query(Race)
+    race_data = []
+
+    for task in tasks:
+        item = {
+            'state': task.state,
+            'state_code': task.state_code,
+            'year': task.year,
+            'race': task.race,
+            'hispanic_origin': task.hispanic_origin,
+            'births_by_race': task.births_by_race,
+            'deaths_by_race': task.deaths_by_race,       
+            'mmr_by_race': task.mmr_by_race,       
+            'population_by_race': task.population_by_race,
+            'id': task.id,                  
+            'state_abbv': task.state_abbv,       
+            'latitude': task.latitude,
+            'longitude': task.longitude
+        }
+        race_data.append(item)
+
+    return jsonify(race_data)
+
+
+@app.route('/api/non-race-data')
+def getNonRaceData():
+    tasks = db.session.query(NonRace)
+    non_race_data = []
+
+    for task in tasks:
+        item = {
+            'year': task.year,  
+            'state': task.state,
+            'id': task.id,
+            'state_code': task.state_code,
+            'latitude': task.latitude,
+            'longitude': task.longitude,
+            'deaths': task.deaths,
+            'births': task.births,
+            'maternal_mortality_ratio': task.maternal_mortality_ratio,
+            'population': task.population,
+            'employer': task.employer,
+            'non_group': task.non_group,
+            'medicaid': task.medicaid,
+            'medicare': task.medicare,
+            'military': task.military,
+            'uninsured': task.uninsured,
+            'air_pollution_val': task.air_pollution_val,
+            'cancer_death_val': task.cancer_death_val,
+            'cardio_death_val': task.cardio_death_val,
+            'child_pov_val': task.child_pov_val,
+            'choles_check_val': task.choles_check_val,
+            'dent_vis_val': task.dent_vis_val,   
+            'dentists_val': task.dentists_val,
+            'diabetes_val': task.diabetes_val,
+            'drug_deaths_val': task.drug_deaths_val,
+            'health_stat_fem_val': task.health_stat_fem_val,     
+            'immun_child_val': task.immun_child_val,
+            'income_ineq_val': task.income_ineq_val,
+            'infant_mort_val': task.infant_mort_val,
+            'infect_dis_val': task.infect_dis_val,
+            'obesity_val': task.obesity_val,
+            'phys_inac_val': task.phys_inac_val,
+            'prem_death_val': task.prem_death_val,
+            'smoking_val': task.smoking_val,
+            'uninsured_val': task.uninsured_val,  
+            'all_determs_val': task.all_determs_val,
+            'all_outcomes_val': task.all_outcomes_val,
+            'chlamydia_val': task.chlamydia_val,
+            'prem_death_ri_val': task.prem_death_ri_val,
+            'teen_birth_val': task.teen_birth_val,
+            'primary_care_val': task.primary_care_val,
+            'low_birthweight_val': task.low_birthweight_val
+        }
+        non_race_data.append(item)
+
+    return jsonify(non_race_data)
 
 
 if __name__ == '__main__':
