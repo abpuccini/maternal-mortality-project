@@ -32,15 +32,33 @@ def index():
     return render_template('index.html')
 
 
+<<<<<<< Updated upstream
 @app.route('/usdata')
 def us():
     return render_template('usdata.html')
+=======
+@app.route('/united-states-maternal-mortality-data')
+def us_mmr_data():
+    return render_template('united-states-maternal-mortality-data.html')
 
+@app.route('/united-states-ranked-health-measure-comparison')
+def us_ranked_health_measure():
+    return render_template('united-states-ranked-health-measure-comparison.html')
+>>>>>>> Stashed changes
+
+@app.route('/machine-learning-model')
+def ml_model():
+    return render_template('machine-learning-model.html')
+
+@app.route('/machine-learning-forecast')
+def ml_forecast():
+    return render_template('machine-learning-forecast.html')
 
 @app.route('/methodology')
 def methodology():
     return render_template('methodology.html')
 
+<<<<<<< Updated upstream
 
 @app.route('/aboutus')
 def aboutus():
@@ -50,6 +68,13 @@ def aboutus():
 @app.route('/map')
 def map():
     return render_template('map.html')
+=======
+@app.route('/about-us')
+def about_us():
+    return render_template('about-us.html')
+
+
+>>>>>>> Stashed changes
 
 
 @app.route('/api/mmr-global')
