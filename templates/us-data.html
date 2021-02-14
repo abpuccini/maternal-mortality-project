@@ -2,282 +2,307 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- BootStrap CSS -->
-        <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css"/>
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css" />
 
-        <!-- AnyChart CSS -->
-        <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css"/>
-        <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"/>
+    <!-- AnyChart CSS -->
+    <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="static/css/style.css"/>
-        <link rel="stylesheet" href="static/css/map.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/> 
-        
-        <!-- Title -->
-        <title>US - Affordable Care Act</title>
-    </head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/map.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
-    <body>
-        <!--Navigator-->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-            <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
+    <!-- Title -->
+    <title>US - Affordable Care Act</title>
+</head>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body>
+    <!--Navigator-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            United States
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/usdata">Affordable Care Act</a>
-                            <a class="dropdown-item" href="/usranked">Ranked Health Measure Comparisons</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/methodology">Methodology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/aboutus">About Us</a>
-                    </li>
-                </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        United States
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/us-data">Affordable Care Act</a>
+                        <a class="dropdown-item" href="/us-ranked">Ranked Health Measure Comparisons</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Machine Learning
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/ml-models">ML Models</a>
+                        <a class="dropdown-item" href="/machine-learning">ML Playground</a>
+                        <a class="dropdown-item" href="/mmr-forecast">10-Year Forecast</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/news-articles">News and Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/methodology">Methodology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about-us">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Section -->
+    <div id="header" class="container-fluid">
+        <div class="row">
+            <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
+                <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
-        </nav>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                <h1>United States</h1>
+                <h5>Affordable Care Act</h5>
+            </div>
+        </div>
+    </div>
 
-        <!-- Top Section -->
-        <div id="header" class="container-fluid">
-            <div class="row">
-                <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
-                    <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                    <h1>Maternal Mortality</h1>
-                    <h6>Explore the website to find out more!</h6>
+    <!-- Main Section -->
+    <div id="main-container" class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 map-container">
+                <div id="us-mmr-map" class="col-md-12">
+                    <div id="us-map-2009" class="container map-container"></div>
+                    <div id="us-map-2010" class="container map-container"></div>
+                    <div id="us-map-2011" class="container map-container"></div>
+                    <div id="us-map-2012" class="container map-container"></div>
+                    <div id="us-map-2013" class="container map-container"></div>
+                    <div id="us-map-2014" class="container map-container"></div>
+                    <div id="us-map-2015" class="container map-container"></div>
+                    <div id="us-map-2016" class="container map-container"></div>
+                    <div id="us-map-2017" class="container map-container"></div>
+                    <div id="us-map-2018" class="container map-container"></div>
+                    <div id="us-map-2019" class="container map-container"></div>
                 </div>
             </div>
         </div>
-
-        <!-- Main Section -->
-        <div id="main-container" class="container">
+        <div id="aca-info" class="container">
+            <div class="map-controls row d-flex justify-content-center">
+                <!-- <div class="col-sm-1"></div> -->
+                <div class="play-pause col-1">
+                    <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
+                        <i class="fa fa-play"></i>
+                    </button>
+                </div>
+                <div class="slide-container col-10">
+                    <input type="range" min="2009" max="2019" value="2009" class="slider" id="yearRange">
+                    <p>Year: <span id="year"></span></p>
+                </div>
+                <!-- <div class="col-sm-1"></div> -->
+            </div>
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 map-container">
-                    <div id="us-mmr-map" class="col-md-12">
-                        <div id="us-map-2009" class="container map-container"></div>
-                        <div id="us-map-2010" class="container map-container"></div>
-                        <div id="us-map-2011" class="container map-container"></div>
-                        <div id="us-map-2012" class="container map-container"></div>
-                        <div id="us-map-2013" class="container map-container"></div>
-                        <div id="us-map-2014" class="container map-container"></div>
-                        <div id="us-map-2015" class="container map-container"></div>
-                        <div id="us-map-2016" class="container map-container"></div>
-                        <div id="us-map-2017" class="container map-container"></div>
-                        <div id="us-map-2018" class="container map-container"></div>
-                        <div id="us-map-2019" class="container map-container"></div>
+                <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <b>Note:</b> States that are grayed out do not provide data on maternal deaths for the selected
+                    timeframe.
+                </span>
+            </div>
+
+            <div class="row" id="overview">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h3>Overview</h3>
+                    <hr>
+                    <p>
+                        The National Center for Health Statistics mortality data on maternal deaths in the U.S. from
+                        2009-2019 was collected from the CDC Wonder site.
+                    </p>
+                    <p>
+                        Total maternal mortality included maternal deaths owing to obstetrical tetanus, maternal deaths
+                        up to
+                        42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a
+                        woman
+                        from direct or indirect obstetric causes, more than 42 days but less than one year after
+                        termination
+                        of pregnancy).
+                    </p>
+                    <p>
+                        The maternal mortality ratio was calculated as the number of maternal deaths per 100,000 live
+                        births,
+                        using The National Center for Health Statistics natality data collected from the CDC Wonder
+                        site.
+                    </p>
+                    <p>
+                        Several states did not provide data on maternal deaths between 2009-2019. Between 2003 and 2017,
+                        states were incrementally implementing a pregnancy status checkbox on death certificates which
+                        affected the comparability of data between states (Hoyert, Uddin, Minino, 2020). By 2017 all
+                        states
+                        had implemented a checkbox (National Center for Health Statistics, 2020).
+                    </p>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                    <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
+                        <div class="d-flex align-items-center justify-content-center"><img alt="question-badge"
+                                class="question-badge" src="static/img/question-badge.png"></div>
+                        <div class="d-flex align-items-center justify-content-center text-center">How has access to
+                            insurance coverage changed after the Affordable Care Act?</div>
+                    </div>
+
+                    <div class="row">
+                        <span id="medicaid-caption"
+                            class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
+                            took effect. Medicaid expansion began in states that opted in.
+                        </span>
+                    </div>
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-center">
+                    <div class="well">
+                        <h7 class="selection">Select a State</h7>
+                        <select id="selDataset" onchange="optionChanged(this.value)"></select>
                     </div>
                 </div>
             </div>
-            <div id="aca-info" class="container">
-                <div class="map-controls row d-flex justify-content-center">
-                    <!-- <div class="col-sm-1"></div> -->
-                    <div class="play-pause col-1">
-                        <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
-                            <i class="fa fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="slide-container col-10">
-                        <input type="range" min="2009" max="2019" value="2009" class="slider" id="yearRange">
-                        <p>Year: <span id="year"></span></p>
-                    </div>
-                    <!-- <div class="col-sm-1"></div> -->
-                </div>
-                <div class="row">
-                    <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <b>Note:</b> States that are grayed out do not provide data on maternal deaths for the selected timeframe.
-                    </span>
-                </div>
-    
-                <div class="row" id="overview">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <h3>Overview</h3>
-                        <hr>
-                        <p>
-                            The National Center for Health Statistics mortality data on maternal deaths in the U.S. from
-                            2009-2019 was collected from the CDC Wonder site.
-                        </p>
-                        <p>
-                            Total maternal mortality included maternal deaths owing to obstetrical tetanus, maternal deaths up to
-                            42 days after delivery, as well as late maternal deaths (defined by the WHO as the death of a woman
-                            from direct or indirect obstetric causes, more than 42 days but less than one year after termination
-                            of pregnancy).
-                        </p>
-                        <p>
-                            The maternal mortality ratio was calculated as the number of maternal deaths per 100,000 live births,
-                            using The National Center for Health Statistics natality data collected from the CDC Wonder site.
-                        </p>
-                        <p>
-                            Several states did not provide data on maternal deaths between 2009-2019. Between 2003 and 2017,
-                            states were incrementally implementing a pregnancy status checkbox on death certificates which
-                            affected the comparability of data between states (Hoyert, Uddin, Minino, 2020). By 2017 all states
-                            had implemented a checkbox (National Center for Health Statistics, 2020).
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="row d-flex justify-content-center">  
 
-                    <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
-                            <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
-                                <div class="d-flex align-items-center justify-content-center"><img alt="question-badge" class="question-badge" 
-                                    src="static/img/question-badge.png"></div>
-                                <div class="d-flex align-items-center justify-content-center text-center">How has access to insurance coverage changed after the Affordable Care Act?</div>
-                            </div>
-                        
-                        <div class="row">
-                            <span id="medicaid-caption" class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
-                                took effect. Medicaid expansion began in states that opted in.
-                            </span>
-                        </div>
-                        
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-center">
-                        <div class="well">
-                            <h7 class="selection">Select a State</h7>
-                            <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <!--mmr plot-->
+                    <div id="plot"></div>
                 </div>
-    
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <!--mmr plot-->
-                        <div id="plot"></div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <!--insurance plot-->
-                        <div id="insChart"></div>
-                    </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <!--insurance plot-->
+                    <div id="insChart"></div>
                 </div>
-    
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <h3>States With No Medicaid Expansion</h3>
-                        <hr>
-                        <p>As of 2017, Medicaid coverage was responsible for financing 43% of U.S. births (Martin, Hamilton,
-                            Osterman, Driscoll, & Drake, 2018). A study published in February 2020 found that Medicaid expansion
-                            was significantly associated with lower maternal mortality when compared to states that had not
-                            expanded medicaid (Eliason, 2020).</p>
-                        <p>As of December 2020, twelve states in the U.S. have no ACA Medicaid Expansion: Alabama, Florida,
-                            Georgia, Kansas, Mississippi, North Carolina, South Carolina, South Dakota, Tennessee, Texas,
-                            Wisconsin, and Wyoming.</p>
-                    </div>
-                </div>
+            </div>
 
-                <div class="row">
-                    <!-- year selector dropdown -->
-                    <div id="year-selector" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                        <div class="well">
-                            <h7 class="selection2">Select a Year</h7>
-                            <select id="selYear" onchange="yearChanged(this.value)"></select>
-                        </div>
-                    </div>
-                    <!-- bubble chart -->
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <div id="state1"></div>
-                    </div>  
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h3>States With No Medicaid Expansion</h3>
+                    <hr>
+                    <p>As of 2017, Medicaid coverage was responsible for financing 43% of U.S. births (Martin, Hamilton,
+                        Osterman, Driscoll, & Drake, 2018). A study published in February 2020 found that Medicaid
+                        expansion
+                        was significantly associated with lower maternal mortality when compared to states that had not
+                        expanded medicaid (Eliason, 2020).</p>
+                    <p>As of December 2020, twelve states in the U.S. have no ACA Medicaid Expansion: Alabama, Florida,
+                        Georgia, Kansas, Mississippi, North Carolina, South Carolina, South Dakota, Tennessee, Texas,
+                        Wisconsin, and Wyoming.</p>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <h3>Summary</h3>
-                        <hr>
-                        <p>The U.S. has the worst maternal mortality ratio among high-income nations (Eliason, 2020). Within the
-                            U.S. there is a disparity in maternal mortality ratios among states, and access to insurance and
-                            medicaid coverage is an important factor. State decisions affect women's access to prenatal and
-                            postpartum care, and the resulting outcomes of pregnancy.</p>
+            <div class="row">
+                <!-- year selector dropdown -->
+                <div id="year-selector" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+                    <div class="well">
+                        <h7 class="selection2">Select a Year</h7>
+                        <select id="selYear" onchange="yearChanged(this.value)"></select>
                     </div>
                 </div>
-    
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <h3>Reference</h3>
-                        <hr>
-                        <div class="reference">
-                            <p>Hoyert, Uddin, and Minino. (2020, January) <a
-                                    href="https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf"
-                                    target="_blank"><em>Evaluation of
-                                        the Pregnancy Status Checkbox on the Identification of Maternal Deaths</em></a>.
-                                National
-                                Vital
-                                Statistics Reports. 2020 https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf</p>
-                            <p>National Center for Health Statistics. (2020) <a
-                                    href="https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm"
-                                    target="_blank"><em>Detailed
-                                        Evaluation of Changes in Data Collection Methods</em>.</a>
-                                https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm</p>
-                            <p>Martin, Hamilton, Osterman, Driscoll, and Drake. (2018, November) <a
-                                    href="https://stacks.cdc.gov/view/cdc/60432" target="_blank"><em>Births: Final data for
-                                        2017.</em></a>
-                                National Vital Statistics Reports. 2018; 67: 1-50 https://stacks.cdc.gov/view/cdc/60432
-                            </p>
-                            <p>Eliason. (2020, February) <a
-                                    href="https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16"
-                                    target="_blank"><em>Adoption of Medicaid Expansion Is Associated with Lower Maternal
-                                        Mortality</em></a>.
-                                Women’s Health Issues: Official Publication of the Jacobs Institute of Women’s Health.
-                                https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16
-                            </p>
-                        </div>
+                <!-- bubble chart -->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div id="state1"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h3>Summary</h3>
+                    <hr>
+                    <p>The U.S. has the worst maternal mortality ratio among high-income nations (Eliason, 2020). Within
+                        the
+                        U.S. there is a disparity in maternal mortality ratios among states, and access to insurance and
+                        medicaid coverage is an important factor. State decisions affect women's access to prenatal and
+                        postpartum care, and the resulting outcomes of pregnancy.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h3>Reference</h3>
+                    <hr>
+                    <div class="reference">
+                        <p>Hoyert, Uddin, and Minino. (2020, January) <a
+                                href="https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf"
+                                target="_blank"><em>Evaluation of
+                                    the Pregnancy Status Checkbox on the Identification of Maternal Deaths</em></a>.
+                            National
+                            Vital
+                            Statistics Reports. 2020 https://www.cdc.gov/nchs/data/nvsr/nvsr69/nvsr69_01-508.pdf</p>
+                        <p>National Center for Health Statistics. (2020) <a
+                                href="https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm"
+                                target="_blank"><em>Detailed
+                                    Evaluation of Changes in Data Collection Methods</em>.</a>
+                            https://www.cdc.gov/nchs/maternal-mortality/evaluation.htm</p>
+                        <p>Martin, Hamilton, Osterman, Driscoll, and Drake. (2018, November) <a
+                                href="https://stacks.cdc.gov/view/cdc/60432" target="_blank"><em>Births: Final data for
+                                    2017.</em></a>
+                            National Vital Statistics Reports. 2018; 67: 1-50 https://stacks.cdc.gov/view/cdc/60432
+                        </p>
+                        <p>Eliason. (2020, February) <a
+                                href="https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16"
+                                target="_blank"><em>Adoption of Medicaid Expansion Is Associated with Lower Maternal
+                                    Mortality</em></a>.
+                            Women’s Health Issues: Official Publication of the Jacobs Institute of Women’s Health.
+                            https://www.whijournal.com/article/S1049-3867(20)30005-0/fulltext#bib16
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--Footer-->
-        <footer>
-            <div class="footer">
-                &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
-            </div>
-        </footer>
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+        </div>
+    </footer>
 
-        <!-- BootStrap JS -->
-        <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
-        <script src="static/js/popper/popper.min.js"></script>
-        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- BootStrap JS -->
+    <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="static/js/popper/popper.min.js"></script>
+    <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
 
-        <!-- AnyChart -->
-        <script src="static/js/anychart/united_states_of_america.js"></script>
-        <script src="static/js/anychart/anychart-base.min.js"></script>
-        <script src="static/js/anychart/anychart-ui.min.js"></script>
-        <script src="static/js/anychart/anychart-exports.min.js"></script>
-        <script src="static/js/anychart/anychart-map.min.js"></script>
-        <script src="static/js/anychart/anychart-data-adapter.min.js"></script>
-        <script src="static/js/anychart/proj4.js"></script>
+    <!-- AnyChart -->
+    <script src="static/js/anychart/united_states_of_america.js"></script>
+    <script src="static/js/anychart/anychart-base.min.js"></script>
+    <script src="static/js/anychart/anychart-ui.min.js"></script>
+    <script src="static/js/anychart/anychart-exports.min.js"></script>
+    <script src="static/js/anychart/anychart-map.min.js"></script>
+    <script src="static/js/anychart/anychart-data-adapter.min.js"></script>
+    <script src="static/js/anychart/proj4.js"></script>
 
-        <!-- D3 JS -->
-        <script src="static/js/d3/d3.v6.min.js"></script>
+    <!-- D3 JS -->
+    <script src="static/js/d3/d3.v6.min.js"></script>
 
-        <!-- Plot.ly -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
-        <!-- JS -->
-        <script type="text/javascript" src="static/js/map.js"></script>
-        <script type="text/javascript" src="static/js/slider.js"></script>
-        <script type="text/javascript" src="static/js/play-pause.js"></script>
-        <script type="text/javascript" src="static/js/us.js"></script>
-    </body>
+    <!-- Plot.ly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/map.js"></script>
+    <script type="text/javascript" src="static/js/slider.js"></script>
+    <script type="text/javascript" src="static/js/play-pause.js"></script>
+    <script type="text/javascript" src="static/js/us.js"></script>
+</body>
 
 </html>
