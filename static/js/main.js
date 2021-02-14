@@ -232,7 +232,7 @@ function bubbleGlobal() {
             }
         };
 
-        var config = {responsive: true, displayModeBar: false };
+        var config = { responsive: true, displayModeBar: false };
 
         // Render the plot to the div tag with id "bubble"
         Plotly.newPlot('global-bubble', data, layout, config);
@@ -250,7 +250,7 @@ var causes = [];
 
 function init() {
     // Call data data
-    d3.json('/api/causesofdeaths').then(function (data) {
+    d3.json('/api/causes-of-deaths').then(function (data) {
         // console.log(data);
 
         // Get region
@@ -320,7 +320,7 @@ function pieCause(region) {
         showlegend: false
     };
 
-    var config = {responsive: true, displayModeBar: false };
+    var config = { responsive: true, displayModeBar: false };
 
     Plotly.newPlot('pie-global', data, layout, config);
 
