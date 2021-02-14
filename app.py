@@ -267,9 +267,28 @@ def index():
 def us():
     return render_template('us-data.html')
 
-@app.route('/machine-learning')
-def machinelearning():
-    return render_template('machine-learning.html')
+
+@app.route('/us-ranked')
+def ranked():
+    return render_template('us-ranked-data.html')
+
+@app.route('/ml-models')
+def mlmodels():
+    return render_template('ml-models.html')
+
+@app.route('/ml-playground')
+def mlplayground():
+    return render_template('ml-playground.html')
+
+
+@app.route('/ml-forecast')
+def mlforcast():
+    return render_template('ml-forecast.html')
+
+
+@app.route('/news-articles')
+def newsarticles():
+    return render_template('news-articles.html')
 
 
 @app.route('/methodology')
@@ -280,11 +299,6 @@ def methodology():
 @app.route('/about-us')
 def aboutus():
     return render_template('about-us.html')
-
-
-@app.route('/us-ranked')
-def ranked():
-    return render_template('us-ranked-data.html')
 
 
 @app.route('/api/mmr-global')
