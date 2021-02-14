@@ -263,7 +263,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/usdata')
+@app.route('/us-data')
 def us():
     return render_template('us-data.html')
 
@@ -277,17 +277,17 @@ def methodology():
     return render_template('methodology.html')
 
 
-@app.route('/aboutus')
+@app.route('/about-us')
 def aboutus():
     return render_template('about-us.html')
 
 
-@app.route('/usranked')
+@app.route('/us-ranked')
 def ranked():
     return render_template('us-ranked-data.html')
 
 
-@app.route('/api/mmrglobal')
+@app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)
     mmr_global_data = []
@@ -309,7 +309,7 @@ def getGlobaldata():
     return jsonify(mmr_global_data)
 
 
-@app.route('/api/causesofdeaths')
+@app.route('/api/causes-of-deaths')
 def getCausesdata():
     tasks = db.session.query(Causes)
     causes_data = []
