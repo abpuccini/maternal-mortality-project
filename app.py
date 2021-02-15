@@ -263,25 +263,30 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/united-states-maternal-mortality-data')
-def us_mmr_data():
-    return render_template('united-states-maternal-mortality-data.html')
+@app.route('/united-states-mmr-affordable-care-act')
+def us_ins_data():
+    return render_template('united-states-mmr-afordable-care-act.html')
+
 
 @app.route('/united-states-ranked-health-measure-comparison')
 def us_ranked_health_measure():
     return render_template('united-states-ranked-health-measure-comparison.html')
 
+
 @app.route('/machine-learning-model')
 def ml_model():
     return render_template('machine-learning-model.html')
+
 
 @app.route('/machine-learning-forecast')
 def ml_forecast():
     return render_template('machine-learning-forecast.html')
 
+
 @app.route('/machine-learning-playground')
 def ml_playground():
     return render_template('machine-learning-playground.html')
+
 
 @app.route('/methodology')
 def methodology():
