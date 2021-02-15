@@ -265,7 +265,7 @@ def index():
 
 @app.route('/united-states-mmr-affordable-care-act')
 def us_ins_data():
-    return render_template('united-states-mmr-afordable-care-act.html')
+    return render_template('united-states-mmr-affordable-care-act.html')
 
 
 @app.route('/united-states-ranked-health-measure-comparison')

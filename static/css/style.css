@@ -167,12 +167,16 @@ div #overview {
 h6 {
     margin: 5px;
     text-align: center;
+}
+
+.card h6{
+    margin: 5px;
+    text-align: center;
     font-weight: bold;
 }
 
 .aboutus {
     font-size: small;
-    /* margin-left: 10px; */
     text-align: center;
     display: inline;
 } 
@@ -186,7 +190,6 @@ h6 {
 /* Reference */
 #reference {
     font-size: 12px;
-    /* text-align: justify; */
 }
 
 /* Footer */
