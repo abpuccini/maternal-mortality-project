@@ -264,6 +264,7 @@ def index():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 646dc4a... Merge nav and route changes
@@ -272,6 +273,8 @@ def index():
 
 >>>>>>> 177e3ac... Pull change
 >>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/united-states-maternal-mortality-data')
 def us_mmr_data():
     return render_template('united-states-maternal-mortality-data.html')
@@ -298,19 +301,25 @@ def methodology():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/news-articles')
 def news_articles():
     return render_template('news-articles.html')
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 646dc4a... Merge nav and route changes
 =======
 =======
 >>>>>>> 177e3ac... Pull change
 >>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/about-us')
 def about_us():
     return render_template('about-us.html')
@@ -318,6 +327,7 @@ def about_us():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -328,6 +338,8 @@ def about_us():
 
 >>>>>>> 177e3ac... Pull change
 >>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)
