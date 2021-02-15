@@ -262,6 +262,19 @@ class NonRace(db.Model):
 def index():
     return render_template('index.html')
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 646dc4a... Merge nav and route changes
+=======
+=======
+
+>>>>>>> 177e3ac... Pull change
+>>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/united-states-maternal-mortality-data')
 def us_mmr_data():
     return render_template('united-states-maternal-mortality-data.html')
@@ -286,15 +299,47 @@ def ml_playground():
 def methodology():
     return render_template('methodology.html')
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/news-articles')
 def news_articles():
     return render_template('news-articles.html')
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 646dc4a... Merge nav and route changes
+=======
+=======
+>>>>>>> 177e3ac... Pull change
+>>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/about-us')
 def about_us():
     return render_template('about-us.html')
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 646dc4a... Merge nav and route changes
+=======
+=======
+
+
+>>>>>>> 177e3ac... Pull change
+>>>>>>> 474079f... Pull change
+=======
+>>>>>>> main
 @app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)
