@@ -2,247 +2,255 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <!-- BootStrap CSS -->
-        <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css"/>
-    
-        <!-- AnyChart CSS -->
-        <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css"/>
-        <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"/>
-    
-        <!-- CSS -->
-        <link rel="stylesheet" href="static/css/style.css"/>
-        
-        <!-- Title -->
-        <title>Maternal Mortality</title>
-    </head>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <!--Navigator-->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-            <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css" />
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- AnyChart CSS -->
+    <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" />
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            United States
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/united-states-maternal-mortality-data">MMR Data & The Affordable Care Act</a>
-                            <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health Measure Comparison</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Machine Learning
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/machine-learning-model">Linear Regression Model</a>
-                            <a class="dropdown-item" href="/machine-learning-forecast">Forecast</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/methodology">Methodology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/about-us">About Us</a>
-                    </li>
-                </ul>
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css" />
+
+    <!-- Title -->
+    <title>Maternal Mortality</title>
+</head>
+
+<body>
+    <!--Navigator-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        United States
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/united-states-maternal-mortality-data">MMR Data & The Affordable
+                            Care Act</a>
+                        <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health
+                            Measure Comparison</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Machine Learning
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/machine-learning-model">Models</a>
+                        <a class="dropdown-item" href="/machine-learning-playground">Playground</a>
+                        <a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/news-articles">News and Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/methodology">Methodology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about-us">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Section -->
+    <div id="header" class="container-fluid">
+        <div class="row">
+            <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
+                <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
-        </nav>
-
-        <!-- Top Section -->
-        <div id="header" class="container-fluid">
-            <div class="row">
-                <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
-                    <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                    <h1>Maternal Mortality</h1>
-                    <h6>Explore the website to find out more!</h6>
-                </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                <h1>Maternal Mortality</h1>
+                <h6>Explore the website to find out more!</h6>
             </div>
         </div>
+    </div>
 
-        <!-- Main Section -->
-        <div id="main-container" class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <div id="global"></div>
-                </div>
+    <!-- Main Section -->
+    <div id="main-container" class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div id="global"></div>
             </div>
-            <div class="row">
-                <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <b>Note:</b> Maternal Mortality Ratio (MMR) is the number of deaths due to complications of
-                    pregnancy or childbirth per 100,000 live births. According to UNICEF: MMR < 100 is classified as "Very Low", MMR 100 - 299 classified "Low", MMR 300 - 499 classified "High",
-                    MMR 500 - 999 classified "Very High", MMR > 1000 classified "Extremely High".
-                </span>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h3>Overview</h3>
-                    <hr>
-                    <div id="overview">
-                        <p>
-                            According to the World Health Organization (WHO), maternal mortality is defined as “the death of
-                            a woman while pregnant or within 42 days of termination of pregnancy, irrespective of the
-                            duration and site of the pregnancy, from any cause related to or aggravated by the pregnancy or
-                            its management but not from accidental or incidental causes.”
-                        </p>
-                        <p>
-                            “The number of women and girls who died each year from complications of pregnancy and childbirth
-                            declined from 451,000 in 2000 to 295,000 in 2017. These improvements are particularly remarkable
-                            in light of rapid population growth in many of the countries where maternal deaths are highest.
-                            Still, over 800 women are dying each day from complications in pregnancy and childbirth. And for
-                            every woman who dies, approximately 20 others suffer serious injuries, infections or
-                            disabilities. (Unicef, 2019)”
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <div id="global-bubble"></div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h3>Developed Countries</h3>
-                    <hr>
-                    <div class="overview">
-                        <p>The U.S. has the highest maternal mortality rate among developed countries.
-                            Obstetrician-gynecologists (OB-GYNs) are overrepresented in its maternity care workforce
-                            relative to midwives, and there is an overall shortage of maternity care providers (both
-                            OB-GYNs and midwives) relative to births. In most other countries, midwives outnumber
-                            OB-GYNs by severalfold, and primary care plays a central role in the health system.
-                            Although a large share of its maternal deaths occur postbirth, the U.S. is the only
-                            country not to guarantee access to provider home visits or paid parental leave in the
-                            postpartum period (Tikkanen et al., 2020).
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h3>Causes of Maternal Death</h3>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="well col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h7 class='selection'>Select a Region</h7>
-                    <select id="selDataset" onchange="regionChanged(this.value)"></select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7">
-                    <div id='pie-global'></div>
-                    <span class="caption">
-                        <b>Note:</b> Nearly all (99%) of abortion deaths are due to unsafe abortions. Other direct causes of maternal deaths include obstructed labor and anaemia.
-                    </span>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 d-flex align-items-center">
-                    <p id='pieoverview'>
-                        "The complications leading to maternal death can occur without warning at any time during pregnancy
-                        and childbirth. Most maternal deaths can be prevented if births are attended by skilled health
-                        personnel – doctors, nurses or midwives – who are regularly supervised, have the proper equipment
-                        and supplies, and can refer women in a timely manner to emergency obstetric care when complications
-                        are diagnosed. Complications require prompt access to quality obstetric services equipped with
-                        life-saving drugs, including antibiotics, and the ability to provide blood transfusions needed to
-                        perform Caesarean sections or other surgical interventions (Unicef, 2019)."
+        </div>
+        <div class="row">
+            <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <b>Note:</b> Maternal Mortality Ratio (MMR) is the number of deaths due to complications of
+                pregnancy or childbirth per 100,000 live births. According to UNICEF: MMR < 100 is classified
+                    as "Very Low" , MMR 100 - 299 classified "Low" , MMR 300 - 499 classified "High" , MMR 500 - 999
+                    classified "Very High" , MMR> 1000 classified "Extremely High".
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Overview</h3>
+                <hr>
+                <div id="overview">
+                    <p>
+                        According to the World Health Organization (WHO), maternal mortality is defined as “the death of
+                        a woman while pregnant or within 42 days of termination of pregnancy, irrespective of the
+                        duration and site of the pregnancy, from any cause related to or aggravated by the pregnancy or
+                        its management but not from accidental or incidental causes.”
+                    </p>
+                    <p>
+                        “The number of women and girls who died each year from complications of pregnancy and childbirth
+                        declined from 451,000 in 2000 to 295,000 in 2017. These improvements are particularly remarkable
+                        in light of rapid population growth in many of the countries where maternal deaths are highest.
+                        Still, over 800 women are dying each day from complications in pregnancy and childbirth. And for
+                        every woman who dies, approximately 20 others suffer serious injuries, infections or
+                        disabilities. (Unicef, 2019)”
                     </p>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h3>Reference</h3>
-                    <hr>
-                    <div class="reference">
-                        <p>
-                            Say, L., Chou, D., Gemmill, A., Tunçalp, Ö., Moller, A.-B., Daniels, J., … Alkema, L. (2014, May
-                            5).<a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
-                                target="_blank"><cite> Global causes of maternal death: a WHO systematic
-                                    analysis.</cite></a>
-                            https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext.
-                        </p>
-                        <p>
-                            Tikkanen, Gunja, FitzGerald, & Zephyrin. (2020, November 18). <a
-                                href="https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries"
-                                target="_blank"><cite>Maternal
-                                    mortality and maternity care in the United States compared to 10 other developed
-                                    countries.</cite></a> Commonwealth Fund.
-                            https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries.
-                        </p>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div id="global-bubble"></div>
+            </div>
+        </div>
 
-                        <p>
-                            The World Bank, UNICEF, & WHO. (2019, September). <a
-                                href="https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/"
-                                target="_blank"><cite>Trends
-                                    in maternal mortality.</cite></a>
-                            https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/.
-                        </p>
 
-                        <p>
-                            UNICEF. (2020, July 7). <a
-                                href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
-                                target="_blank"><cite>Maternal
-                                    mortality.</cite></a>
-                            https://data.unicef.org/topic/maternal-health/maternal-mortality/.
-                        </p>
-                    </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Developed Countries</h3>
+                <hr>
+                <div class="overview">
+                    <p>The U.S. has the highest maternal mortality rate among developed countries.
+                        Obstetrician-gynecologists (OB-GYNs) are overrepresented in its maternity care workforce
+                        relative to midwives, and there is an overall shortage of maternity care providers (both
+                        OB-GYNs and midwives) relative to births. In most other countries, midwives outnumber
+                        OB-GYNs by severalfold, and primary care plays a central role in the health system.
+                        Although a large share of its maternal deaths occur postbirth, the U.S. is the only
+                        country not to guarantee access to provider home visits or paid parental leave in the
+                        postpartum period (Tikkanen et al., 2020).
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!--Footer-->
-        <footer>
-            <div class="footer">
-                &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Causes of Maternal Death</h3>
+                <hr>
             </div>
-        </footer>
+        </div>
+        <div class="row">
+            <div class="well col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h7 class='selection'>Select a Region</h7>
+                <select id="selDataset" onchange="regionChanged(this.value)"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7">
+                <div id='pie-global'></div>
+                <span class="caption">
+                    <b>Note:</b> Nearly all (99%) of abortion deaths are due to unsafe abortions. Other direct causes of
+                    maternal deaths include obstructed labor and anaemia.
+                </span>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 d-flex align-items-center">
+                <p id='pieoverview'>
+                    "The complications leading to maternal death can occur without warning at any time during pregnancy
+                    and childbirth. Most maternal deaths can be prevented if births are attended by skilled health
+                    personnel – doctors, nurses or midwives – who are regularly supervised, have the proper equipment
+                    and supplies, and can refer women in a timely manner to emergency obstetric care when complications
+                    are diagnosed. Complications require prompt access to quality obstetric services equipped with
+                    life-saving drugs, including antibiotics, and the ability to provide blood transfusions needed to
+                    perform Caesarean sections or other surgical interventions (Unicef, 2019)."
+                </p>
+            </div>
+        </div>
 
-        <!-- BootStrap JS -->
-        <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
-        <script src="static/js/popper/popper.min.js"></script>
-        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Reference</h3>
+                <hr>
+                <div class="reference">
+                    <p>
+                        Say, L., Chou, D., Gemmill, A., Tunçalp, Ö., Moller, A.-B., Daniels, J., … Alkema, L. (2014, May
+                        5).<a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
+                            target="_blank"><cite> Global causes of maternal death: a WHO systematic
+                                analysis.</cite></a>
+                        https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext.
+                    </p>
+                    <p>
+                        Tikkanen, Gunja, FitzGerald, & Zephyrin. (2020, November 18). <a
+                            href="https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries"
+                            target="_blank"><cite>Maternal
+                                mortality and maternity care in the United States compared to 10 other developed
+                                countries.</cite></a> Commonwealth Fund.
+                        https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries.
+                    </p>
 
-        <!-- AnyChart -->
-        <script src="static/js/anychart/world.js"></script>
-        <script src="static/js/anychart/anychart-base.min.js"></script>
-        <script src="static/js/anychart/anychart-ui.min.js"></script>
-        <script src="static/js/anychart/anychart-exports.min.js"></script>
-        <script src="static/js/anychart/anychart-map.min.js"></script>
-        <script src="static/js/anychart/anychart-data-adapter.min.js"></script>
-        <script src="static/js/anychart/proj4.js"></script>
+                    <p>
+                        The World Bank, UNICEF, & WHO. (2019, September). <a
+                            href="https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/"
+                            target="_blank"><cite>Trends
+                                in maternal mortality.</cite></a>
+                        https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/.
+                    </p>
 
-        <!-- D3 JS -->
-        <script src="static/js/d3/d3.v6.min.js"></script>
+                    <p>
+                        UNICEF. (2020, July 7). <a
+                            href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
+                            target="_blank"><cite>Maternal
+                                mortality.</cite></a>
+                        https://data.unicef.org/topic/maternal-health/maternal-mortality/.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Plot.ly -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
-        <!-- JS -->
-        <script src="static/js/main.js"></script>
-   
-    </body>
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+        </div>
+    </footer>
+
+    <!-- BootStrap JS -->
+    <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="static/js/popper/popper.min.js"></script>
+    <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- AnyChart -->
+    <script src="static/js/anychart/world.js"></script>
+    <script src="static/js/anychart/anychart-base.min.js"></script>
+    <script src="static/js/anychart/anychart-ui.min.js"></script>
+    <script src="static/js/anychart/anychart-exports.min.js"></script>
+    <script src="static/js/anychart/anychart-map.min.js"></script>
+    <script src="static/js/anychart/anychart-data-adapter.min.js"></script>
+    <script src="static/js/anychart/proj4.js"></script>
+
+    <!-- D3 JS -->
+    <script src="static/js/d3/d3.v6.min.js"></script>
+
+    <!-- Plot.ly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- JS -->
+    <script src="static/js/main.js"></script>
+
+</body>
 
 </html>

@@ -2,103 +2,109 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- BootStrap CSS -->
-        <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css"/>
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.bundle.min.css" />
 
-        <!-- AnyChart CSS -->
-        <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css"/>
-        <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css"/>
+    <!-- AnyChart CSS -->
+    <link rel="stylesheet" href="static/css/anychart/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="static/css/style.css"/>
-        <link rel="stylesheet" href="static/css/map.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/> 
-        
-        <!-- Title -->
-        <title>News Articles</title>
-    </head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/map.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
-    <body>
-        <!--Navigator-->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-            <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
+    <!-- Title -->
+    <title>News Articles</title>
+</head>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body>
+    <!--Navigator-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand btn btn-outline-secondary" href="/">Home</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            United States
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/united-states-maternal-mortality-data">MMR Data & The Affordable Care Act</a>
-                            <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health Measure Comparison</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Machine Learning
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/machine-learning-model">Linear Regression Model</a>
-                            <a class="dropdown-item" href="/machine-learning-forecast">Forecast</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/methodology">Methodology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/about-us">About Us</a>
-                    </li>
-                </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        United States
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/united-states-maternal-mortality-data">MMR Data & The Affordable
+                            Care Act</a>
+                        <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health
+                            Measure Comparison</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Machine Learning
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/machine-learning-model">Models</a>
+                        <a class="dropdown-item" href="/machine-learning-playground">Playground</a>
+                        <a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/news-articles">News and Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/methodology">Methodology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about-us">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Section -->
+    <div id="header" class="container-fluid">
+        <div class="row">
+            <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
+                <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
-        </nav>
-
-        <!-- Top Section -->
-        <div id="header" class="container-fluid">
-            <div class="row">
-                <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
-                    <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                    <h1>News Articles</h1>
-                    <h6>News API</h6>
-                </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                <h1>News Articles</h1>
+                <h6>News API</h6>
             </div>
         </div>
+    </div>
 
-        <!-- Main Section -->
-        <div id="main-container" class="container">
-            
-            
+    <!-- Main Section -->
+    <div id="main-container" class="container">
+
+
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
         </div>
+    </footer>
 
-        <!--Footer-->
-        <footer>
-            <div class="footer">
-                &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
-            </div>
-        </footer>
+    <!-- BootStrap JS -->
+    <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="static/js/popper/popper.min.js"></script>
+    <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
 
-        <!-- BootStrap JS -->
-        <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
-        <script src="static/js/popper/popper.min.js"></script>
-        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
-    
-        <!-- JS -->
+    <!-- JS -->
 
-    </body>
+</body>
 
 </html>
