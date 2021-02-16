@@ -1,6 +1,31 @@
 
 # Maternal Mortality: US and Global Perspectives
 
+## Table of Contents
+
+1. [Purpose of Project](#purposeofproject)
+2. [Project Overview](#projectoverview)
+3. [Objective](#objective)
+4. [Data Sources](#datasources)
+5. [Data Processing & ETL](#DataProcessing&ETL)
+    - [Extract](#extract)
+    - [Transform](#transform)
+    - [Load](#load)
+6. [Data Exploration](#DataExploration)
+7. [Statistical Analysis](#StatisticalAnalysis)
+    - [Global](#global)
+    - [United States](#UnitedStates)
+8. [Machine Learning](#machinelearning)
+    - [Purpose](#purpose)
+    - [Model Creation & Selection](#modelcreation&selection)
+    - [User Self-Input](#userself-input)
+    - [10-Year Forecast](#10-yearforecast)
+9. [Flask Web Application](#FlaskWebApplication)
+    - [Home Page](#HomePage)
+10. [Library and Tools](#Libraries&Tools)
+11. [Contributors](#©contributors)
+
+
 ## Purpose of Project
 
 The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
@@ -16,7 +41,7 @@ We are focusing on factors at the state level because maternal mortality rates a
 Our objective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
 For example, Does health insurance coverage affect maternal mortality rates? Does a state’s election of the medicaid expansion affect maternal mortality rates?  Are there any other factors that might affect maternal mortality?
 
-## Data Sources Used
+## Data Sources
 
 The data for this project was sourced from the following sources:
 
@@ -84,7 +109,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 ![Database Visual](Images/QuickDBD_ERD.png)
 
  
-## Data Exploration ##
+## Data Exploration
 
 - The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
 
@@ -92,9 +117,9 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
-### Statistical Analysis
+## Statistical Analysis
 
-#### Global
+### Global
 
 - As the bar charts presented below, **South Sudan** has the highest number of MMR and **Belarus** has the lowest number of MMR.
 
@@ -119,7 +144,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
   <img src="Images/compared_causes.png">
 </p>
 
-#### United States
+### United States
 
 - Overall statistical analysis was performed for selected data sets to visualize the dataframes created and to explore further the information that was cleaned.  We questioned which states might have the highest MMR per specific years identified. We then isolated various years to view what the mortality rate looked like across states.
 
@@ -131,12 +156,29 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 --------------------- | ---------------------
 ![Highest MMR](Images/explore_us_highest_mmr.png)|![Lowest_MMR](Images/explore_us_lowest_mmr.png)
 
+## Machine Learning
+
+### Purpose
+
+Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates in the period of 2009 to 2019.
+
+### Model Creation & Selection
+
+
+### User Self-Input
+
+
+### Predictive Analysis
+
+
+### 10-Year Forecast
+
 
 ## Flask Web Application
 
 Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://maternal-mortality-project.herokuapp.com/)
 
-**Heroku Landing Page**
+### Home Page
 
 - Created the initial landing page to showcase global mortality ratio per 100,000 births. The map shows each country's MMR, ranking and category defined by WHO when users hover over any country on the map. This map was created using the Javascript Library (AnyChart).
 
@@ -189,12 +231,12 @@ the many complications that could lead to death during pregnancy and/or childbir
 ![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
 
-## Libraries & Tools Used
+## Libraries & Tools
 
 Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
 
 
-## © Contributor
+## © Contributors
 
 | Team Member | GitHub | LinkedIn | E-mail Address |
 | :-: | :-: | :-: | :-: |
