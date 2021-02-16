@@ -79,7 +79,7 @@ The data for this project was sourced from the following sources:
 
 Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a unified database.  We then set an object and declared base in SQLAlchemy.  Next  table schemes were created corresponding to the individual CSV files.  We also created an engine and connection to the Postgres database and created the tables. A similar process was followed to create a local database: connection was made to SQLite file, tables were specified to be loaded, created, and binded to the local database.
 
-- To help visualize connections, we created a database diagram via QuickDatabase
+- To help visualize connections and see the composition of dataset, we created a database diagram via QuickDatabase
 
 ![Database Visual](Images/QuickDBD_ERD.png)
 
@@ -96,12 +96,28 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 #### Global
 
-- South Sudan has the highest number of MMR and Belarus has the lowest number of MMR.
+- As the bar charts presented below, **South Sudan** has the highest number of MMR and **Belarus** has the lowest number of MMR.
 
 **Top 10 MMR** | **Bottom 10 MMR**
 --------------------- | ---------------------
 ![Highest MMR](Images/globaltopten.png)|![Lowest_MMR](Images/globalbottomten.png)
 
+
+- Comparing among **developed countries** as the bubble chart presented below, **United States** has the highest nunber of MMR and **Norway** has the lowest number of MMR. According to Maternal mortality and maternity care in the United States compared to 10 other developed countries study by Tikkanen and others, U.S. is the only country that will not guarantee the accessibility to home visit or paid prenatel leave after giving birth. Also, the shortage of maternity care provider affect the rate significantly.
+
+![Compared Developed Countries](Images/compared_deloveled_countries.png)
+
+- Based on **worldwide** causes-of-deaths data presented as pie charts below, *excluding indirect causes*, Haemorrhage has the higher percentage than the other causes. 
+
+<p align="center">
+  <img src="Images/worldwide_causes.png">
+</p>
+
+- Comparing between developed, developing and under-developing (Africa) regions, *excluding indirect causes*, Haemorrhage (green area in chart) is 1.5 to 2 times more in the developing region and under-developing region than developed region. As a result of healthcare accessibility and medical advancement, there is a lower rate of Haemorrhage in developed region as the charts presented below.
+
+<p align="center">
+  <img src="Images/compared_causes.png">
+</p>
 
 #### United States
 
@@ -118,30 +134,42 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Flask Web Application
 
+Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://maternal-mortality-project.herokuapp.com/)
+
 **Heroku Landing Page**
 
-- Created the initial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio.  This map was created using the Javascript Library AnyChart
+- Created the initial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio. This map was created using the Javascript Library (AnyChart).
 
-![Global Mortality Ratio Map](Images/Global_Map.JPG)
+<p align="center">
+  <img alt="Global Mortality Ratio Map" src="Images/global_mmr_map.png">
+</p>
 
--Visualized the Mortality Ratio amongst the developed countries in the world.  Graph shows that the United States has the highest Rate of Maternal Mortality among the developed countries.
+- Visualized the Mortality Ratio amongst the developed countries in the world.  Graph shows that the United States has the highest Rate of Maternal Mortality among the developed countries.
 
-![MMR Plot Graph](Images/MMR_Plot_Map.PNG)
+<p align="center">
+  <img alt="Developed Countries" src="Images/developed_countries_hovered.png">
+</p>
 
 - Visualized the causes of Maternal Mortality as a pie graph that includes a drop down function with the ability to search by regions around the globe.  The pie graph highlights
 the many complications that could lead to death during pregnancy and/or childbirth.
 
-![Maternal Deaths](Images/MD_Causes.JPG)
-
+<p align="center">
+  <img alt="Maternal Deaths" src="Images/causes_region_select.png">
+</p>
 
 **United States: Affordable Care Act Page**
 
-- Created a map of the United States that showcases the Maternal Mortality Ratio of each state across the selected time period, 2009-2019.  This map was created using the Javascript Library AnyChart
+- Created a map of the United States that shows the Maternal Mortality Ratio of each state across the selected time period, 2009-2019. This map was created using the Javascript Library (AnyChart). Also, the slide bar was created in order to allow users to select a year of interest.
 
-![US Map 2009](Images/US_2009.JPG)
-![US Map 2019](Images/US_2019.JPG)
+<p align="center">
+  <img alt="slide bar" src="Images/slide_bar.png">
+</p>
 
-- Visualized the Maternal Mortality Ratio by state.  Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
+**US Map 2009** | **US Map 2019**
+|:-: | :-:|
+| ![US Map 2009](Images/US_2009.JPG) | ![US Map 2019](Images/US_2019.JPG) |
+
+- Visualized the Maternal Mortality Ratio by state. Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
 
 ![State Mortality Rates](Images/State_Comparison.PNG)
 
@@ -161,12 +189,6 @@ the many complications that could lead to death during pregnancy and/or childbir
 ![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
 
-
-Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://maternal-mortality-project.herokuapp.com/)
-
-Source code is available on GitHub: [GitHub Source Code](https://github.com/abpuccini/project2-maternal-mortality)
-
-
 ## Libraries & Tools Used
 
 Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
@@ -174,8 +196,8 @@ Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy |
 
 ## © Contributor
 
-| Team Member |  |  | |
-| :-- | :-: | :-: | - |
+| Team Member | GitHub | LinkedIn | E-mail Address |
+| :-: | :-: | :-: | :-: |
 | <b>Akilah Hunte</b> | <a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Atcharaporn B Puccini </b></a> | <a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/abpuccini/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:b.atcharaporn@gmail.com"><img href="mailto:b.atcharaporn@gmail.com" alt="b.atcharaporn@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Austin Cole </b></a> | <a href="https://github.com/AustinRCole" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/austin-cole-167923b7/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:AustinRCole2@gmail.com"><img href="mailto:AustinRCole2@gmail.com" alt="AustinRCole2@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
