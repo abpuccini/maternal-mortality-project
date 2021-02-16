@@ -154,7 +154,7 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 the many complications that could lead to death during pregnancy and/or childbirth.
 
 <p align="center">
-  <img alt="Maternal Deaths" src="Images/causes_region_select.png" width="200" height="200">
+  <img alt="Maternal Deaths" src="Images/causes_region_select.png" height="200">
 </p>
 
 **United States: Affordable Care Act Page**
