@@ -109,7 +109,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - Based on **worldwide** causes-of-deaths data presented as pie charts below, *excluding indirect causes*, Haemorrhage has the higher percentage than the other causes. 
 
-![Worldwide Causes](Images/compared_deloveled_countries.png)
+![Worldwide Causes](Images/worldwide_causes.png)
 
 - Comparing between developed, developing and under-developing (Africa) regions, *excluding indirect causes*, Haemorrhage (green area in chart) is 1.5 to 2 times more in the developing region and under-developing region than developed region. As a result of healthcare accessibility and medical advancement, there is a lower rate of Haemorrhage in developed region as the charts presented below.
 
