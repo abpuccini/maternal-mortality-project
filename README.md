@@ -3,7 +3,7 @@
 
 ## Purpose of Project
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but, covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
 ## Project Overview
@@ -36,11 +36,11 @@ The data for this project was sourced from the following sources:
 
 - UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts was queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
 - Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by US state for years 2009-19.
+- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by the US state for years 2009-19.
 
 ### **Transform**
 
@@ -103,17 +103,17 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 ![Highest MMR](Images/globaltopten.png)|![Lowest_MMR](Images/globalbottomten.png)
 
 
-- Comparing among **developed countries** as the bubble chart presented below, **United States** has the highest nunber of MMR and **Norway** has the lowest number of MMR. According to Maternal mortality and maternity care in the United States compared to 10 other developed countries study by Tikkanen and others, U.S. is the only country that will not guarantee the accessibility to home visit or paid prenatel leave after giving birth. Also, the shortage of maternity care provider affect the rate significantly.
+- Comparing among **developed countries** as the bubble chart presented below, **United States** has the highest number of MMR and **Norway** has the lowest number of MMR. According to Maternal mortality and maternity care in the United States compared to 10 other developed countries studied by Tikkanen and others, the U.S. is the only country that will not guarantee the accessibility to home visit or paid parental leave after giving birth. Also, the shortage of maternity care providers affects the rate significantly.
 
 ![Compared Developed Countries](Images/compared_deloveled_countries.png)
 
-- Based on **worldwide** causes-of-deaths data presented as pie charts below, *excluding indirect causes*, Haemorrhage has the higher percentage than the other causes. 
+- Based on **worldwide** causes-of-deaths data presented as pie charts below, *excluding indirect causes*, Haemorrhage has a higher percentage than the other causes. 
 
 <p align="center">
-  <img src="Images/worldwide_causes.png">
+  <img src="Images/worldwide_causes.png" >
 </p>
 
-- Comparing between developed, developing and under-developing (Africa) regions, *excluding indirect causes*, Haemorrhage (green area in chart) is 1.5 to 2 times more in the developing region and under-developing region than developed region. As a result of healthcare accessibility and medical advancement, there is a lower rate of Haemorrhage in developed region as the charts presented below.
+- Comparing between developed, developing and under-developing (Africa) regions, *excluding indirect causes*, Haemorrhage (green area in chart) is 1.5 to 2 times more in the developing region and under-developing region than the developed region. As a result of healthcare accessibility and medical advancement, there is a lower rate of Haemorrhage in the developed region as the charts presented below.
 
 <p align="center">
   <img src="Images/compared_causes.png">
@@ -138,7 +138,7 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 
 **Heroku Landing Page**
 
-- Created the initial landing page to showcase global mortality ratio per 100,000 births.  The map shows their ranking according to the Maternal Mortality Ratio. This map was created using the Javascript Library (AnyChart).
+- Created the initial landing page to showcase global mortality ratio per 100,000 births. The map shows each country's MMR, ranking and category defined by WHO when users hover over any country on the map. This map was created using the Javascript Library (AnyChart).
 
 <p align="center">
   <img alt="Global Mortality Ratio Map" src="Images/global_mmr_map.png">
@@ -154,7 +154,7 @@ Web application is deployed on Heroku: [Maternal Mortality Heroku App](https://m
 the many complications that could lead to death during pregnancy and/or childbirth.
 
 <p align="center">
-  <img alt="Maternal Deaths" src="Images/causes_region_select.png">
+  <img alt="Maternal Deaths" src="Images/causes_region_select.png" width="200" height="200">
 </p>
 
 **United States: Affordable Care Act Page**
@@ -167,9 +167,9 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 **US Map 2009** | **US Map 2019**
 |:-: | :-:|
-| ![US Map 2009](Images/US_2009.JPG) | ![US Map 2019](Images/US_2019.JPG) |
+| ![US Map 2009](Images/us_map_2009.png) | ![US Map 2019](Images/us_map_2019.png) |
 
-- Visualized the Maternal Mortality Ratio by state. Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the Distric of Columbia and Puerto Rico*
+- Visualized the Maternal Mortality Ratio by state. Drop down selection was included to allow for exploration of data for all states.  *There is no MMR for the District of Columbia and Puerto Rico*
 
 ![State Mortality Rates](Images/State_Comparison.PNG)
 
@@ -177,7 +177,7 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ![State Mortality Rates](Images/Comparison_of_Medicaid_Coverage.PNG)
 
-- Visualized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack there of) by year.
+- Visualized the Mortality Ratio of States that decided to not expand their medicaid coverage.  Drop down selection was included to allow for exploration of coverage (or lack thereof) by year.
 
 ![State Mortality Rates](Images/MMR_No_Expansion.JPG)
 
