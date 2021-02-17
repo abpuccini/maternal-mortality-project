@@ -7,8 +7,8 @@
 2. [Project Overview](#project-overview)
 3. [Objective](#objective)
 4. [Data Sources](#data-sources)
-5. [Data Processing & ETL](#data-processing-&-etl)
-    - [Extract](#xtract)
+5. [Data Processing & ETL](#data-processing-and-etl)
+    - [Extract](#extract)
     - [Transform](#transform)
     - [Load](#load)
 6. [Data Exploration](#data-exploration)
@@ -17,14 +17,14 @@
     - [United States](#united-states)
 8. [Machine Learning](#machine-learning)
     - [Purpose](#purpose)
-    - [Model Creation & Selection](#model-creation-&-selection)
+    - [Model Creation & Selection](#model-creation-and-selection)
     - [User Self-Input](#user-self-input)
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
     - [United States: Affordable Care Act Page](#united-states:-affordable-care-act-page)
-10. [Library and Tools](#libraries-&-tools)
-11. [Contributors](#©-contributors)
+10. [Library and Tools](#libraries-and-tools)
+11. [Contributors](#contributors)
 
 
 ## Purpose of Project
@@ -56,7 +56,7 @@ The data for this project was sourced from the following sources:
 
 - Medicaid Expansion [Source](https://data.medicaid.gov/Enrollment/State-Medicaid-and-CHIP-Applications-Eligibility-D/n5ce-jxme/data) 
 
-## Data Processing & ETL
+## Data Processing and ETL
 
 ### **Extract**
 
@@ -163,7 +163,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates in the period of 2009 to 2019.
 
-### Model Creation & Selection
+### Model Creation and Selection
 
 
 ### User Self-Input
@@ -242,12 +242,12 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### About Us Page
 
-## Libraries & Tools
+## Libraries and Tools
 
 Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
 
 
-## © Contributors
+## Contributors
 
 | Team Member | GitHub | LinkedIn | E-mail Address |
 | :-: | :-: | :-: | :-: |
@@ -258,3 +258,5 @@ Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy |
 | <a><b>Lee Prout </b></a> | <a href="https://github.com/LeeProut" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/lee-prout-21977948/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:wleeprout@gmail.com"><img href="mailto:wleeprout@gmail.com" alt="wleeprout@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Shay O'Connell </b></a> | <a href="https://github.com/Shayoconnell7" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/shayoconnell7/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:shay.oconnell7@gmail.com"><img href="mailto:shay.oconnell7@gmail.com" alt="shay.oconnell7@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Wesley Lo </b></a> | <a href="https://github.com/wesleylo" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="#"><img href="#" alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:weslo404@gmail.com"><img href="mailto:weslo404@gmail.com" alt="weslo404@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
+
+© UNC Boot Camp 2021 © All Right Reserved ©
