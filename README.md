@@ -7,7 +7,7 @@
 2. [Project Overview](#project-overview)
 3. [Objective](#objective)
 4. [Data Sources](#data-sources)
-5. [Data Processing & ETL](#data-processing-and-etl)
+5. [Data Processing and ETL](#data-processing-and-etl)
     - [Extract](#extract)
     - [Transform](#transform)
     - [Load](#load)
@@ -22,7 +22,11 @@
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
-    - [United States: Affordable Care Act Page](#united-states:-affordable-care-act-page)
+    - [United States: Affordable Care Act Page](#united-states-(affordable-care-act-page))
+    - [United States: Ranked Measured Comparisons Page](#united-states-(ranked-measured-comparisons-page))
+    - []
+    - []
+    - []
 10. [Library and Tools](#libraries-and-tools)
 11. [Contributors](#contributors)
 
@@ -200,7 +204,7 @@ the many complications that could lead to death during pregnancy and/or childbir
   <img alt="Maternal Deaths" src="Images/causes_region_select.png" height="400">
 </p>
 
-### United States: Affordable Care Act Page
+### United States (Affordable Care Act Page)
 
 - Created a map of the United States that shows the Maternal Mortality Ratio of each state across the selected time period, 2009-2019. This map was created using the Javascript Library (AnyChart). Also, the slide bar was created in order to allow users to select a year of interest.
 
@@ -224,9 +228,9 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ![State Mortality Rates](Images/MMR_No_Expansion.JPG)
 
-### United States: Ranked Measured Comparisons Page
+### United States (Ranked Measured Comparisons Page)
 
--Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
+- Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
 
 ![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
@@ -238,9 +242,15 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### News and Articles Page
 
+
+
 ### Methodology Page
 
 ### About Us Page
+
+- Contact information of all the contributors for this project in case users have questions.
+
+
 
 ## Libraries and Tools
 
