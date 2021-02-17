@@ -155,7 +155,9 @@ div #overview {
     -webkit-border-radius: 10px;
     border-radius: 10px; /* future proofing */
     -khtml-border-radius: 10px; /* for old Konqueror browsers */
+    margin-bottom: 10px;
 }
+
 
 .card {
     margin-top: 30px;
@@ -167,17 +169,27 @@ h6 {
     text-align: center;
 }
 
+.card h6{
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .aboutus {
     font-size: small;
-    margin-left: 10px;
     text-align: center;
     display: inline;
 } 
 
+
+.aboutus img {
+    width: 20px;
+    margin: 8px;
+}
+
 /* Reference */
 #reference {
     font-size: 12px;
-    /* text-align: justify; */
 }
 
 /* Footer */
