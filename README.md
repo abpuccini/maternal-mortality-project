@@ -3,8 +3,8 @@
 
 ## Table of Contents
 
-1. [Purpose of Project](##purposeofproject)
-2. [Project Overview](##projectoverview)
+1. [Purpose of Project](#purposeofproject)
+2. [Project Overview](#projectoverview)
 3. [Objective](##objective)
 4. [Data Sources](##datasources)
 5. [Data Processing & ETL](##DataProcessing&ETL)
