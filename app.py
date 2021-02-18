@@ -1,6 +1,7 @@
-from flask import Flask, render_template, jsonify, json
+from flask import Flask, render_template, redirect, jsonify, json, request
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
+import model
 
 
 # Flask set up
@@ -303,14 +304,18 @@ def about_us():
     return render_template('about-us.html')
 
 
-@app.route('/api/forecast', methods=['GET', 'POST'])
+@app.route("/api/forecast", methods=['GET', 'POST'])
 def forecast():
     if request.method == "POST":
-        diabetes = request.form["diabetes"]
-        prem_death = request.form["prem_death"]
-        phys_inac = request.form["phys_inac"]
-        low_birthweight = request.form["low_birthweight"]
-        obesity = request.form["obesity"]
+        diabetes = request.form['diabetes']
+        prem_death = request.form['prem_death']
+        phys_inac = request.form['phys_inac']
+        low_birthweight = request.form['low_birthweight']
+        obesity = request.form['obesity']
+
+        predicted_mmr = model.forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity)
+
+    return redirect('/machine-learning-playground', predicted_mmr=predicted_mmr)
 
 
 @app.route('/api/mmr-global')
