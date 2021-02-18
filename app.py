@@ -305,7 +305,11 @@ def about_us():
 @app.route('/api/forecast', methods=['GET', 'POST'])
 def forecast():
     if request.method == "POST":
-        age = request.form["age"]
+        diabetes = request.form["diabetes"]
+        prem_death = request.form["prem_death"]
+        phys_inac = request.form["phys_inac"]
+        low_birthweight = request.form["low_birthweight"]
+        obesity = request.form["obesity"]
 
 
 @app.route('/api/mmr-global')
