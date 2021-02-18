@@ -22,11 +22,14 @@
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
-    - [United States: Affordable Care Act Page](#united-states-(affordable-care-act-page))
-    - [United States: Ranked Measured Comparisons Page](#united-states-(ranked-measured-comparisons-page))
-    - []
-    - []
-    - []
+    - [United States: Affordable Care Act Page](#united-states-affordable-care-act-page)
+    - [United States: Ranked Measured Comparisons Page](#united-states-ranked-measured-comparisons-page)
+    - [Machine Learning Models Page](#machine-learning-models-page)
+    - [Machine Learning Playground Page](#machine-learning-playground-page)
+    - [Machine Learning 10-Year Forecast Page](#machine-learning-10-Year-Forecast-Page)
+    - [News and Articles Page](#news-and-articles-page)
+    - [Methodology Page](#methodology-page)
+    - [About Us Page](#about-us-page)
 10. [Library and Tools](#libraries-and-tools)
 11. [Contributors](#contributors)
 
@@ -204,7 +207,7 @@ the many complications that could lead to death during pregnancy and/or childbir
   <img alt="Maternal Deaths" src="Images/causes_region_select.png" height="400">
 </p>
 
-### United States (Affordable Care Act Page)
+### United States Affordable Care Act Page
 
 - Created a map of the United States that shows the Maternal Mortality Ratio of each state across the selected time period, 2009-2019. This map was created using the Javascript Library (AnyChart). Also, the slide bar was created in order to allow users to select a year of interest.
 
@@ -228,7 +231,7 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ![State Mortality Rates](Images/MMR_No_Expansion.JPG)
 
-### United States (Ranked Measured Comparisons Page)
+### United States Ranked Measured Comparisons Page
 
 - Visualized how the states with the highest and lowest mortality rates compared against related health care measures.
 
@@ -242,20 +245,47 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### News and Articles Page
 
-
+- This page contains news and articles retrived from News API.  
 
 ### Methodology Page
 
+- This page contains the overview that users might be interested to know about the project.
+
 ### About Us Page
 
-- Contact information of all the contributors for this project in case users have questions.
+- This page contains contact information including Github, LinkedIn and E-mail of all the contributors for this project in case users have questions.
 
-
+<p align="center">
+  <img alt="team" src="Images/team.png" width="500px">
+</p>
 
 ## Libraries and Tools
 
-Python Version 3 | Jupyter Notebook | Pandas | PostgreSQL | Flask | SQLAlchemy | Plotly | Bootstrap | Anychart | Chrome Table Capture
-
+<p>
+<a href="http://www.python.org" target="_blank">Python</a>
+<span> | </span>
+<a href="http://www.javascript.com" target="_blank">Javascript</a>
+<span> | </span>
+<a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
+<span> | </span>
+<a href="https://pandas.pydata.org/" target="_blank">Pandas</a>
+<span> | </span>
+<a href="https://jupyter.org/" target="_blank">Jupyter Notebook</a>
+<span> | </span>
+<a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a>
+<span> | </span>
+<a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a>
+<span> | </span>
+<a href="https://plotly.com/" target="_blank">Plotly</a>
+<span> | </span>
+<a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+<span> | </span>
+<a href="https://www.anychart.com/products/anychart/overview/" target="_blank">AnyChart</a>
+<span> | </span>
+<a href="https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en" target="_blank">Chrome Table Capture</a>
+<span> | </span>
+<a href="https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html" target="_blank">Scikit-Learn</a>
+</p>
 
 ## Contributors
 
