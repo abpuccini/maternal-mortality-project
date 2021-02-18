@@ -80,7 +80,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
                 <h1>Machine Learning Playground</h1>
-                <h6>Predictive Analysis</h6>
+                <h6>Forecast MMR for a Population Given Top-5 Determinate Health Outcomes</h6>
             </div>
         </div>
     </div>
@@ -92,20 +92,52 @@
             <div class="panel-heading">
                 <h1 class="panel-title"><strong>
                         <div align="center">
-                            <font size="+2">Patient Information</font>
+                            <font size="+2">Health Outcome Information</font>
                         </div>
                     </strong></h1>
             </div>
 
             <div class="panel-body">
 
-                <form id="mmr-forecast-form" method="post" class="form-horizontal" action="/api/forecast" role="form"
+                <form id="mmr-forecast-form" method="POST" class="form-horizontal" action="/api/forecast" role="form"
                     name="userInput">
                     <div class="form-group">
-                        <label class="col-sm-5 control-label" for="Age">Age:</label>
+                        <label class="col-sm-5 control-label" for="diabetes">diabetes:</label>
                         <div class="col-sm-5">
                             <input type="number" min=0 step="any" class="form-control" id="diabetes" name="diabetes"
                                 placeholder="Enter diabetes">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label" for="prem_death">prem_death:</label>
+                        <div class="col-sm-5">
+                            <input type="number" min=0 step="any" class="form-control" id="prem_death" name="prem_death"
+                                placeholder="Enter prem_death">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label" for=" phys_inac"> phys_inac:</label>
+                        <div class="col-sm-5">
+                            <input type="number" min=0 step="any" class="form-control" id=" phys_inac" name=" phys_inac"
+                                placeholder="Enter  phys_inac">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label" for=" low_birthweight"> low_birthweight:</label>
+                        <div class="col-sm-5">
+                            <input type="number" min=0 step="any" class="form-control" id=" low_birthweight" name=" low_birthweight"
+                                placeholder="Enter  low_birthweight">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label" for=" obesity"> obesity:</label>
+                        <div class="col-sm-5">
+                            <input type="number" min=0 step="any" class="form-control" id=" obesity" name=" obesity"
+                                placeholder="Enter  obesity">
                         </div>
                     </div>
 
