@@ -99,12 +99,12 @@
 
             <div class="panel-body">
 
-                <form id="mmr-prediction-form" method="post" class="form-horizontal" action="/" role="form"
+                <form id="mmr-forecast-form" method="post" class="form-horizontal" action="/api/forecast" role="form"
                     name="userInput">
                     <div class="form-group">
                         <label class="col-sm-5 control-label" for="Age">Age:</label>
                         <div class="col-sm-5">
-                            <input type="number" min=0 max=125 step="any" class="form-control" id="Age" name="Age"
+                            <input type="number" min=0 max=125 step="any" class="form-control" id="age" name="age"
                                 placeholder="Enter Patient Age">
                         </div>
                     </div>
@@ -214,7 +214,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-9 col-sm-offset-4">
-                            <button class="btn btn-warning" type="submit" value="Reset">Forecast Maternal Mortality
+                            <button class="btn btn-warning" type="submit">Forecast Maternal Mortality
                                 Ratio</button>
                             <!-- <input type="submit" value="Forecast Maternal Mortality Ratio" class="btn btn-default"> -->
                             <button class="btn btn-warning" type="reset" value="Reset">Reset</button>
