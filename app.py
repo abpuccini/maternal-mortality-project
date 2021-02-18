@@ -302,6 +302,11 @@ def news_articles():
 def about_us():
     return render_template('about-us.html')
 
+@app.route('/api/forecast', methods=['GET', 'POST'])
+def forecast:
+    if request.method == "POST":
+        age = request.form["age"]
+
 
 @app.route('/api/mmr-global')
 def getGlobaldata():
