@@ -303,6 +303,16 @@ def about_us():
     return render_template('about-us.html')
 
 
+@app.route('/api/forecast', methods=['GET', 'POST'])
+def forecast():
+    if request.method == "POST":
+        diabetes = request.form["diabetes"]
+        prem_death = request.form["prem_death"]
+        phys_inac = request.form["phys_inac"]
+        low_birthweight = request.form["low_birthweight"]
+        obesity = request.form["obesity"]
+
+
 @app.route('/api/mmr-global')
 def getGlobaldata():
     tasks = db.session.query(Global)
