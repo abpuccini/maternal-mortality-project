@@ -303,7 +303,7 @@ def about_us():
     return render_template('about-us.html')
 
 @app.route('/api/forecast', methods=['GET', 'POST'])
-def forecast:
+def forecast():
     if request.method == "POST":
         age = request.form["age"]
 
