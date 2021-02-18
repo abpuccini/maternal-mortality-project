@@ -120,7 +120,7 @@
                     <div class="form-group">
                         <label class="col-sm-5 control-label" for=" phys_inac"> phys_inac:</label>
                         <div class="col-sm-5">
-                            <input type="number" min=0 step="any" class="form-control" id=" phys_inac" name=" phys_inac"
+                            <input type="number" min=0 step="any" class="form-control" id="phys_inac" name="phys_inac"
                                 placeholder="Enter phys_inac_val">
                         </div>
                     </div>
@@ -128,15 +128,15 @@
                     <div class="form-group">
                         <label class="col-sm-5 control-label" for=" low_birthweight"> low_birthweight:</label>
                         <div class="col-sm-5">
-                            <input type="number" min=0 step="any" class="form-control" id=" low_birthweight" name=" low_birthweight"
-                                placeholder="Enter low_birthweight_val">
+                            <input type="number" min=0 step="any" class="form-control" id="low_birthweight"
+                                name="low_birthweight" placeholder="Enter low_birthweight_val">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-5 control-label" for=" obesity"> obesity:</label>
                         <div class="col-sm-5">
-                            <input type="number" min=0 step="any" class="form-control" id=" obesity" name=" obesity"
+                            <input type="number" min=0 step="any" class="form-control" id="obesity" name="obesity"
                                 placeholder="Enter obesity_val">
                         </div>
                     </div>
@@ -154,6 +154,9 @@
                     </div>
             </div>
             </form>
+        </div>
+        <div>
+            {{ predicted_mmr }}
         </div>
     </div>
 
