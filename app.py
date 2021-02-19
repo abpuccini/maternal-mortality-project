@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, jsonify, json, request
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
-import model
+import forecast
 
 
 # Flask set up
@@ -313,9 +313,9 @@ def forecast():
         low_birthweight = request.form['low_birthweight']
         obesity = request.form['obesity']
 
-        predicted_mmr = model.forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity)
+        predicted_mmr = forecast.forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity)
 
-    return redirect('/machine-learning-playground', predicted_mmr=predicted_mmr)
+    return redirect('/machine-learning-playground', predicted_mmr)
 
 
 @app.route('/api/mmr-global')
