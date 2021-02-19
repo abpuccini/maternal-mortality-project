@@ -271,6 +271,32 @@ class Playground(db.Model):
         self.maternal_mortality_ratio = maternal_mortality_ratio
 
 
+class Forecast(db.Model):
+    __tablename__ = 'ten_year_forecast'
+    __table_args__ = {'extend_existing': True}
+    year = db.Column(db.Integer, primary_key=True)
+    maternal_mortality_ratio = db.Column(db.Float)
+    diabetes_val = db.Column(db.Float)
+    prem_death_val = db.Column(db.Float)
+    phys_inac_val = db.Column(db.Float)
+    low_birthweight_val = db.Column(db.Float)
+    obesity_val = db.Column(db.Float)
+    cardio_death_val = db.Column(db.Float)
+    medicare = db.Column(db.Float)
+    cancer_death_val = db.Column(db.Float)
+    chlamydia_val = db.Column(db.Float)
+    child_pov_val = db.Column(db.Float)
+    smoking_val = db.Column(db.Float)
+    infant_mort_val = db.Column(db.Float)
+    income_ineq_val = db.Column(db.Float)
+    dentists_val = db.Column(db.Float)
+    prem_death_ri_val = db.Column(db.Float)
+    dent_vis_val = db.Column(db.Float)
+    all_outcomes_val = db.Column(db.Float)
+    all_determs_val = db.Column(db.Float)
+    health_stat_fem_val = db.Column(db.Float)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -718,6 +744,39 @@ def getNonRaceData():
         non_race_data.append(item)
 
     return jsonify(non_race_data)
+
+
+@app.route('/api/forecast-non-race-data')
+def getForecastNonRaceData():
+    tasks = db.session.query(Forecast)
+    forecast_data = []
+
+    for task in tasks:
+        item = {
+            'year': task.year,
+            'mmr': task.maternal_mortality_ratio,
+            'diabetes_val': task.diabetes_val,
+            'prem_death_val': task.prem_death_val,
+            'phys_inac_val': task.phys_inac_val,
+            'low_birthweight_val': task.obesity_val,
+            'cardio_death_val': task.cardio_death_val,
+            'medicare': task.medicare,
+            'cancer_death_val': task.cancer_death_val,
+            'chlamydia_val': task.chlamydia_val,
+            'child_pov_val': task.child_pov_val,
+            'smoking_val': task.smoking_val,
+            'infant_mort_val': task.infant_mort_val	,
+            'income_ineq_val': task.income_ineq_val,
+            'dentists_val': task.dentists_val,
+            'prem_death_ri_val': task.prem_death_ri_val,
+            'dent_vis_val': task.dent_vis_val,
+            'all_outcomes_val': task.all_outcomes_val,
+            'all_determs_val': task.all_determs_val,
+            'health_stat_fem_val': task.health_stat_fem_val,
+        }
+        forecast_data.append(item)
+
+    return jsonify(forecast_data)
 
 
 if __name__ == '__main__':
