@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
     <!-- Title -->
-    <title>Machine Learning Playground</title>
+    <title>Machine Learning Model</title>
 </head>
 
 <body>
@@ -79,172 +79,28 @@
                 <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                <h1>Machine Learning Playground</h1>
-                <h6>Forecast MMR for a Population Given Top-5 Determinate Health Outcomes</h6>
+                <h1>Machine Learning Models</h1>
+                <h6>Testing and Comparing Multiple Machine Learning Models!</h6>
             </div>
         </div>
     </div>
 
     <!-- Main Section -->
     <div id="main-container" class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h1 class="panel-title"><strong>
-                                <div align="center">
-                                    <font size="+1">Health Outcome Information</font>
-                                </div>
-                            </strong></h1>
-                    </div>
-
-                    <div class="panel-body">
-
-                        <form id="mmr-forecast-form" method="POST" class="form-horizontal" action="/api/user-forecast"
-                            role="form" name="userInput">
-                            <div class="form-group">
-                                <label class="col-auto control-label" for="diabetes"><b>Diabetes:</b></label>
-                                <div class="col-auto">
-                                    <input type="number" min=0 step="any" class="form-control" id="diabetes"
-                                        name="diabetes" placeholder="Enter Diabetes Value">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-auto control-label" for="prem_death"><b>Premature Death:</b></label>
-                                <div class="col-auto">
-                                    <input type="number" min=0 step="any" class="form-control" id="prem_death"
-                                        name="prem_death" placeholder="Enter Premature Death Value">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-auto control-label" for=" phys_inac"><b>Physical
-                                        Inactivity:</b></label>
-                                <div class="col-auto">
-                                    <input type="number" min=0 step="any" class="form-control" id="phys_inac"
-                                        name="phys_inac" placeholder="Enter Physical Inactivity Value">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-auto control-label" for=" low_birthweight"><b>Low
-                                        Birthweight:</b></label>
-                                <div class="col-auto">
-                                    <input type="number" min=0 step="any" class="form-control" id="low_birthweight"
-                                        name="low_birthweight" placeholder="Enter Low Birthweight Value">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-auto control-label" for="health_stat_fem"><b>Health Status
-                                        Female:</b></label>
-                                <div class="col-auto">
-                                    <input type="number" min=0 step="any" class="form-control" id="health_stat_fem"
-                                        name="health_stat_fem" placeholder="Enter Obesity Value">
-                                </div>
-                            </div>
-
-
-                            <br><br>
-
-                            <div class="form-group">
-                                <div class="col-auto">
-                                    <button class="btn btn-warning" type="submit">Submit</button>
-                                    <button class="btn btn-warning" type="reset" value="Reset">Reset</button>
-                                </div>
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12 d-flex align-items-center">
-                <div id="user_graph"></div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row" id="overview">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Summary</h3>
+                <h3>Overview</h3>
                 <hr>
-                <div id="overview">
-                    <p>
-                        The MMR presented as the graph above is based on average of public health measures from the
-                        years 2009-2019. The interactive form allows users to input their values to explore the effect
-                        of MMR if decreasing or increasing those values. There are
-                    </p>
-                    <table class="table">
-                        <div class="table-responsive">
-                            <table class="table align-middle table-striped table-hover table-borderless w-auto">
-                                <thead>
-                                    <tr>
-                                        <th class="col-auto" scope="col">Healthcare Outcome Indicator</th>
-                                        <th class="col-auto" scope="col">Description</th>
-                                        <th class="col-auto" scope="col">Minimum</th>
-                                        <th class="col-auto" scope="col">Average</th>
-                                        <th class="col-auto" scope="col">Maximum</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Diabetes</th>
-                                        <td class="text-left">Percentage of adults who reported being told they have
-                                            diabetes.</td>
-                                        <td class="text-center">5.3</td>
-                                        <td class="text-center">9.7</td>
-                                        <td class="text-center">16.2</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Premature Death</th>
-                                        <td class="text-left">Number of years of potential life lost before age 75 per
-                                            100000 population.</td>
-                                        <td class="text-center">5,345</td>
-                                        <td class="text-center">7,546</td>
-                                        <td class="text-center">11,485</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Physical Inactivity</th>
-                                        <td class="text-left">Percentage of adults who reported no physical activity or
-                                            exercise other than their job in the past 30 days.</td>
-                                        <td class="text-center">15.7</td>
-                                        <td class="text-center">24.6</td>
-                                        <td class="text-center">38.1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Low Birthweight</th>
-                                        <td class="text-left">Percentage of infants weighing less than 2500 grams.</td>
-                                        <td class="text-center">5.6</td>
-                                        <td class="text-center">8.1</td>
-                                        <td class="text-center">12.3</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">High Health Status - Female/Health Status -
-                                            Female</th>
-                                        <td class="text-left">Percentage of females who reported their health as very
-                                            good or excellent.</td>
-                                        <td class="text-center">39.3</td>
-                                        <td class="text-center">52.1</td>
-                                        <td class="text-center">64.1</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <caption id="reference"><b>Source:</b> All terms and description bases on <a
-                                    href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
-                                    target="_blank">2019 HWC Report (unless otherwise stated in description)</a> --
-                                "It
-                                is
-                                important to note that "The edition
-                                year is not the same as data year(s). The most recent data available are
-                                used. For some
-                                measures, multiple years of data are combined to have sufficient sample
-                                size"<a href="https://www.americashealthrankings.org/about/methodology/rankings"
-                                    target="_blank">(America's Health Rankings, 2021)</a>.
-                            </caption>
-                        </div>
-                    </table>
-                </div>
+                <p>We split our data into two main subsets for training models, one utilizing data about race,
+                    and another using data that did not include race as a feature. We then trained and tested a variety
+                    of models,
+                    before choosing the top-performing models for each subset.</p>
+                <p></p>
+                <p></p>
             </div>
         </div>
     </div>
+
     <!--Footer-->
     <footer>
         <div class="footer">
@@ -252,21 +108,12 @@
         </div>
     </footer>
 
-
-    <!-- D3 JS -->
-    <script src="static/js/d3/d3.v6.min.js"></script>
-
-    <!-- Plot.ly -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <!-- BootStrap JS -->
     <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="static/js/popper/popper.min.js"></script>
     <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
 
     <!-- JS -->
-    <script src="static/js/user-forecast.js"></script>
 
 </body>
 
