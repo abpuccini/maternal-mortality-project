@@ -168,9 +168,16 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ### Purpose
 
-Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates in the period of 2009 to 2019.
+Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates in the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
+
+In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded on the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
+
+We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
+
 
 ### Model Creation and Selection
+
+
 
 
 ### User Self-Input
