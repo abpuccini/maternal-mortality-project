@@ -4,29 +4,26 @@ import pandas as pd
 import numpy as np
 
 
-def forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity):
+def forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem):
 
     # Samples
     data = pd.read_csv(
-        "machine_learning/Resources/non_race_data.csv")
+        "machine_learning/Resources/combined_avg_2009_2019.csv")
     stat_data = data.describe()
-    stat_data = stat_data.loc['mean'][['population', 'employer',
-                                       'non_group', 'medicaid', 'medicare', 'military', 'uninsured',
-                                       'air_pollution_val', 'cancer_death_val', 'cardio_death_val',
-                                       'child_pov_val', 'choles_check_val', 'dent_vis_val', 'dentists_val',
-                                       'diabetes_val', 'drug_deaths_val', 'health_stat_fem_val',
-                                       'immun_child_val', 'income_ineq_val', 'infant_mort_val',
-                                       'infect_dis_val', 'obesity_val', 'phys_inac_val', 'prem_death_val',
-                                       'smoking_val', 'uninsured_val', 'all_determs_val', 'all_outcomes_val',
-                                       'chlamydia_val', 'prem_death_ri_val', 'teen_birth_val',
-                                       'primary_care_val', 'low_birthweight_val']]
+    stat_data = stat_data.loc['mean'][['diabetes_val', 'prem_death_val',
+                                       'phys_inac_val', 'low_birthweight_val', 'obesity_val',
+                                       'cardio_death_val', 'medicare', 'cancer_death_val', 'chlamydia_val',
+                                       'child_pov_val', 'smoking_val', 'infant_mort_val', 'income_ineq_val',
+                                       'dentists_val', 'prem_death_ri_val', 'dent_vis_val', 'all_outcomes_val',
+                                       'all_determs_val', 'health_stat_fem_val']]
 
     health_data = stat_data.copy()
+
     health_data['diabetes_val'] = diabetes
     health_data['prem_death_val'] = prem_death
     health_data['phys_inac_val'] = phys_inac
     health_data['low_birthweight_val'] = low_birthweight
-    health_data['obesity_val'] = obesity
+    health_data['health_stat_fem_val'] = health_stat_fem
 
     # input data to predict MMR
     inputValue = np.array(health_data).reshape(1, -1)
