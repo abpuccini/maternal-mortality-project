@@ -345,29 +345,34 @@ def about_us():
 @app.route("/api/user-forecast", methods=['GET', 'POST'])
 def playgroundForecast():
 
-    tasks = db.session.query(Playground)
-    if request.method == 'GET':
-        old_predicted_mmr = tasks.filter_by(
-            year="user_input").first()
-        old_predicted_mmr.maternal_mortality_ratio = float(1.00)
-        db.session.commit()
+    # tasks = db.session.query(Playground)
 
     if request.method == "POST":
-        diabetes = request.form['diabetes']
-        prem_death = request.form['prem_death']
-        phys_inac = request.form['phys_inac']
-        low_birthweight = request.form['low_birthweight']
-        obesity = request.form['obesity']
+        data = request.get_json()
+        diabetes = float(data['diabetes'])
+        prem_death = float(data['prem_death'])
+        phys_inac = float(data['phys_inac'])
+        low_birthweight = float(data['low_birthweight'])
+        health_stat_fem = float(data['health_stat_fem'])
 
         user_predicted_mmr = user_forecast.forecast_graph(
-            diabetes, prem_death, phys_inac, low_birthweight, obesity)
+            diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem)
 
-        new_predicted_mmr = tasks.filter_by(
-            year="user_input")
-        new_predicted_mmr.maternal_mortality_ratio = user_predicted_mmr
-        db.session.commit()
+        # print(diabetes, user_predicted_mmr)
 
-    return redirect('/machine-learning-playground')
+    #     new_predicted_mmr = tasks.filter_by(year=2020).first()
+    #     new_predicted_mmr.maternal_mortality_ratio = round(
+    #         user_predicted_mmr, 2)
+    #     print(new_predicted_mmr)
+
+    #     db.session.commit()
+
+    # else:
+    #     old_predicted_mmr = tasks.filter_by(year=2020).first()
+    #     old_predicted_mmr.maternal_mortality_ratio = float(0.00)
+    #     db.session.commit()
+
+    return jsonify(user_predicted_mmr)
 
 
 @app.route("/api/user-input")
