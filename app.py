@@ -345,10 +345,9 @@ def about_us():
 @app.route("/api/user-forecast", methods=['GET', 'POST'])
 def playgroundForecast():
 
-    # tasks = db.session.query(Playground)
-
     if request.method == "POST":
         data = request.get_json()
+        print(data)
         diabetes = float(data['diabetes'])
         prem_death = float(data['prem_death'])
         phys_inac = float(data['phys_inac'])
@@ -357,20 +356,6 @@ def playgroundForecast():
 
         user_predicted_mmr = user_forecast.forecast_graph(
             diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem)
-
-        # print(diabetes, user_predicted_mmr)
-
-    #     new_predicted_mmr = tasks.filter_by(year=2020).first()
-    #     new_predicted_mmr.maternal_mortality_ratio = round(
-    #         user_predicted_mmr, 2)
-    #     print(new_predicted_mmr)
-
-    #     db.session.commit()
-
-    # else:
-    #     old_predicted_mmr = tasks.filter_by(year=2020).first()
-    #     old_predicted_mmr.maternal_mortality_ratio = float(0.00)
-    #     db.session.commit()
 
     return jsonify(user_predicted_mmr)
 
