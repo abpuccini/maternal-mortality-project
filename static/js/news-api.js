@@ -1,6 +1,6 @@
 var url = 'http://newsapi.org/v2/everything?' +
           'q=Maternal%20Mortality&' +
-          'from=2021-02-10&' +
+          'from=2021-02-01&' +
           'sortBy=popularity&' +
           'apiKey=e4904827608441bf87d7fecdaccc4fbb';
 
@@ -10,7 +10,7 @@ var list = [];
 fetch(req)
   .then(response => response.json())
   .then(data => {
-    console.log(data.articles)
+    // console.log(data.articles)
     for (i = 0; i < data.articles.length; i++) {
         var title = data.articles[i].title;
         var author = data.articles[i].author;
@@ -20,7 +20,8 @@ fetch(req)
         var publishedAt = data.articles[i].publishedAt;
         var description = data.articles[i].description;
 
-        if(urltoimage != null && author != null && author.length < 91 && description.charAt(0) != '<') { // news article validation
+        if(urltoimage != null && author != null && author.length < 91 && 
+            description.charAt(0) != '<' && description.split(" ")[0] != 'Summary') { // news article validation
             list.push('<div class="news-container">' + 
             '<a target="_blank" href="' + url + 
             '"><h1 class="news-title">' + title + '</h1></a>' +
@@ -34,7 +35,7 @@ fetch(req)
         }
         
     }
-    console.log(list);
+    // console.log(list);
     mydiv = document.getElementById("main-news-container");
     for (i = 0; i < list.length; i++) {
         mydiv.innerHTML += list[i];
