@@ -168,7 +168,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ### Purpose
 
-Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates in the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
+Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates during the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
 
 In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded on the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
 
@@ -177,8 +177,53 @@ We collected health measure data from America’s Health Rankings for 28 measure
 
 ### Model Creation and Selection
 
+To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
+
+**First Dataset- Maternal Mortality Rate Stratified by Race**
+
+This dataset contains MMR data stratified by race.  The races included were:
+    - African American
+    - White, non-hispanic
+    - White, hispanic
+    - Asian or Pacific Islander
+
+Other columns found in this dataset are births and deaths by race, population by race
+
+*Models Selected
+
+Place Holder
+
+- Linear Regression
+- Lasso Regression
+- Logistic Regression
 
 
+*Limitations and Considerations
+
+
+*Processes and Visulzations
+
+
+**Second Dataset- Maternal Mortality Rate without Race**
+
+Other columns found in this dataset are births and deaths by race, population by race
+
+
+*Models Selected
+
+Place Holder
+
+- Linear Regression
+- Lasso Regression
+- Logistic Regression
+
+
+*Limitations and Considerations
+
+
+*Processes and Visulzations
+
+This data
 
 ### User Self-Input
 
