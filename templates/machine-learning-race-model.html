@@ -117,10 +117,10 @@
                                 For our MMR dataset stratified by race and ethnicity, we chose a linear regression model.   
                             </p>
                             <p>
-                                We collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). One limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.  
+                                We collected publicly available United States mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). One limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.  
                             </p>
                             <p>
-                                We knew from our initial research that there are wide ethnic and racial gaps in MMR in the United States. This was apparent in our dataset when viewing MMR for each group. 
+                                We knew from our initial research that there are wide racial and ethnic gaps in MMR in the United States. This was apparent in our dataset when viewing MMR for each group: MMR was at least twice as high for Black or African American women compared to other groups.  
                            </p>
 
                         <!--creating nested row and columns for 4 images-->
@@ -154,14 +154,117 @@
                             </div>
 
                         <!--closing div for nested row and columns for 4 images-->   
-                        </div>   
-                            
+                        </div> 
+
+                        <hr>
+                        
+                        <!--new div class row and column for heatmap explanation and image-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women.   
+                                </p>
+                                <div class="well">
+                                    <a class="mr-5"><img class="img-fluid mx-auto d-block"
+                                            src="../static/img/heatmap_mmr_strat_by_race.png" alt="Heatmap Stratified by Race"></a>
+                                </div>
+
+                            <!--closing div for heatmap column-->   
+                            </div>
+                        <!--closing div for heatmap row-->    
                         </div>
+
+                        <hr>
+
+                        <!--new div class and row for boxplot-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    We knew from earlier exploratory analysis that our data had outliers. We experimented with scaling our data using Standard Scaler, best for outliers, and fit our model again, but the resulting R2 score was slightly lower. Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. Our R2 scores for this model were 0.56 on our testing data, and 0.59 on our training data.  
+                                </p>
+                                <div class="well">
+                                    <a class="mr-5"><img class="img-fluid mx-auto d-block"
+                                            src="../static/img/boxplot_mmr_strat_by_race.png" alt="Boxplot Stratified by Race"></a>
+                                </div>
+                            <!--closing div for boxplot row-->   
+                            </div>   
+                        
+                        <!--closing div for boxplot column-->    
+                        </div>
+
+
+                        <!--new div class and row for Logistic Regression-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Logistic Regression Model</h3>
+                                <h5>dataset stratified by race and ethnicity</h5>
+                            <hr>
+                                <p>
+                                    After doing Linear Regression models, we tried Logistic Regression, converting our y-value (MMR) to categorical.   
+                                </p>
+                                <p>
+                                    We binned our MMR data stratified by race into three categories:
+                                    <ul>
+                                        <li>Low (MMR less than or equal to 20)</li>
+                                        <li>Medium (MMR greater than 20 and less than or equal to 50)</li>
+                                        <li>High (MMR higher than 50)</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    Our R2 scores for this model were 0.59 on our testing data, and 0.75 on our training data. The confusion matrix below shows that identifying MMR data points as "medium" risk was most successful, followed by identifying appropriately for "high" risk.
+                                </p>
+
+                                <div class="well">
+                                    <a class="mr-5"><img class="img-fluid mx-auto d-block"
+                                            src="../static/img/confusion_matrix_strat_by_race.png" alt="Confusion Matrix Stratified by Race"></a>
+                                </div>
+                        
+                        <!--closing div for Logistic Regression row-->   
+                        </div>   
+                        
+                        <!--closing div for Logistic Regression column-->    
+                        </div>
+
+                    
+                        <!--new div for Summary Section-->
+                        <div>
+                            <h3>Summary</h3>
+                            <hr>
+                            <div class="card bg-light text-dark">
+                                <div class="card-body">
+                                    <p>
+                                        When we began researching maternal mortality in the United States we realized how much work there is to do to study and address the problem. For example, in the 1940s, the U.S. and Britain had similar rates of maternal mortality, but today Britain has significantly improved. Experts attribute this to Britain's willingness to study the problem and make calculated improvements(Kaplan, 2019). In the U.S. the effort to standardize reporting across all states was only undertaken recently, with a death certificate pregnancy checkbox being adopted slowly across the U.S., and finally implemented in all states in 2017. 
+                                    </p>
+                                    <p>
+                                        The CDC estimates that 60 percent of maternal deaths in the U.S. are preventable(NMMRC, 2018). We encourage visitors to our app to view the factors that could affect  pregnancy outcomes for women, such as access to care and insurance coverage, and explore how making improvements in these areas could reduce MMR in the U.S. 
+                                    </p>
+                                </div>
+                            </div>
+
+                        <!--closing div for Summary Section-->    
+                        </div>
+
+                        <!--new div row and column for Reference Section-->
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <h3>Reference</h3>
+                                <hr>
+                                <div class="reference">
+
+                                    <p>Kaplan, Emily Kumler. (2019, March 5)<a href="https://www.nytimes.com/2019/03/05/well/family/reducing-maternal-mortality.html?action=click&module=RelatedLinks&pgtype=Article"target="_blank"><em>Reducing Maternal Mortality</em></a>New York Times. 2021 https://www.nytimes.com/2019/03/05/well/family/reducing-maternal-mortality.html?action=click&module=RelatedLinks&pgtype=Article</p>
+
+                                    <p>Report from Nine Maternal Mortality Review Committees. (2018) <a href="https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf"target="_blank"<em>Building U.S. capacity to review and prevent maternal deaths</em></a>2021 https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf</p>
+                                </div>
+
+                            <!--closing div for Reference column-->
+                            </div>
+                        <!--closing div for Reference row-->  
+                        </div>
+
                     </div>
                 </div>
 
                 
-                <p></p>
             </div>
         </div>
     </div>
