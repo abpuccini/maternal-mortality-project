@@ -312,13 +312,14 @@ def us_ranked_health_measure():
     return render_template('united-states-ranked-health-measure-comparison.html')
 
 
-@app.route('/machine-learning-model')
+@app.route('/machine-learning-race-model')
 def ml_model():
-    return render_template('machine-learning-model.html')
+    return render_template('machine-learning-race-model.html')
 
-@app.route('/non-race-model')
+
+@app.route('/machine-learning-non-race-model')
 def non_race_model():
-    return render_template('non-race-model.html')    
+    return render_template('machine-learning-non-race-model.html')
 
 
 @app.route('/machine-learning-forecast')
