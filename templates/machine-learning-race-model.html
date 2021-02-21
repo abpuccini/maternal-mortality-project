@@ -52,13 +52,20 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Machine Learning
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/machine-learning-model">Model 1</a>
-                        <a class="dropdown-item" href="/non-race-model">Model 2</a>
-                        <a class="dropdown-item" href="/machine-learning-playground">Playground</a>
-                        <a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-header">
+                            <span>Models</span>
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-race-model">Model Based Race</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Model Based
+                                Non-Race</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-playground">Playground</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/news-articles">News and Articles</a>
@@ -94,50 +101,11 @@
                 <h3>Overview</h3>
                 <hr>
                 <p>We split our data into two main subsets for training models, one utilizing data about race,
-                    and another using data that did not include race as a feature. We then trained and tested a
-                    variety
+                    and another using data that did not include race as a feature. We then trained and tested a variety
                     of models,
                     before choosing the top-performing models for each subset.</p>
-                <h3>Linear Regression Model</h3>
-                <hr>
-                <div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>This model examines the impact of various features on maternal mortality ratio
-                                irrespective of race. In doing so, correlations were determined using linear regression
-                                analyses and indicated positive and negative relationships.
-                            </p>
-                            <div class="well">
-                                <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                        src="../static/img/LR_Non_Race_heatmap2.png" alt="Heatmap"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Based upon the initial heatmap which included all features, a second more focused heatmap was
-                        developed. The initial correlation results showed specific features with strong positive and
-                        negative correlation as can be seen in heatmap 1. Thus, in heatmap 2 above the analyses indicate
-                        that diabetes and premature death had the strongest positive correlations. Other important
-                        correlations included positive relationships with physical inactivity, obesity, and low birth
-                        weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High
-                        health status, which is the percentage of women who reported that their health is very good or
-                        excellent, had the strongest negative correlation in addition to higher weighted sums of all
-                        determinants and health outcomes from the national average. Dental visits also had a moderately
-                        strong negative correlation with MMR.
-                    </p>
-                    <h3>Synopsis Linear Regression Model - All Features</h3>
-                    <div class="card bg-light text-dark">
-                        <div class="card-body">We used Linear regression analysis, which is supervised machine learning,
-                            because MMR is a continuous outcome. All features except birth and death were compared
-                            against MMR. R-squared for
-                            all the features was 0.54, which suggests that together the features only moderately predict
-                            the MMR outcome. The training and the test scores for the linear regression were 0.54 and
-                            0.36, respectively, which are only moderate, and not particularly for the test. To conclude,
-                            the model is not strong or weak, and for this reason, predictions of MMR with the selected
-                            features would be moderately confident.
-                        </div>
-                    </div>
-
-                </div>
+                <p></p>
+                <p></p>
             </div>
         </div>
     </div>

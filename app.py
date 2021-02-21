@@ -312,13 +312,14 @@ def us_ranked_health_measure():
     return render_template('united-states-ranked-health-measure-comparison.html')
 
 
-@app.route('/machine-learning-model')
+@app.route('/machine-learning-race-model')
 def ml_model():
-    return render_template('machine-learning-model.html')
+    return render_template('machine-learning-race-model.html')
 
-@app.route('/non-race-model')
+
+@app.route('/machine-learning-non-race-model')
 def non_race_model():
-    return render_template('non-race-model.html')    
+    return render_template('machine-learning-non-race-model.html')
 
 
 @app.route('/machine-learning-forecast')
@@ -351,12 +352,12 @@ def playgroundForecast():
 
     if request.method == "POST":
         data = request.get_json()
-        print(data)
-        diabetes = float(data['diabetes'])
-        prem_death = float(data['prem_death'])
-        phys_inac = float(data['phys_inac'])
-        low_birthweight = float(data['low_birthweight'])
-        health_stat_fem = float(data['health_stat_fem'])
+        # print(data)
+        diabetes = float(data['diabetes'] or 9.7)
+        prem_death = float(data['prem_death'] or 7546)
+        phys_inac = float(data['phys_inac'] or 24.6)
+        low_birthweight = float(data['low_birthweight'] or 8.1)
+        health_stat_fem = float(data['health_stat_fem'] or 52.1)
 
         user_predicted_mmr = user_forecast.forecast_graph(
             diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem)

@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+.dropdown-menu .dropdown-header {
+    font-size: 1rem;
+}
+
 /* Header Section*/
 #header {
     margin-top: 55px;

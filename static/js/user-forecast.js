@@ -89,7 +89,7 @@ function user_forecast_graph() {
         // console.log(data);
 
         var user_input_mmr = data;
-        console.log(user_input_mmr);
+        // console.log(user_input_mmr);
 
         // Call data data
         d3.json('/api/user-input').then(function (data) {
@@ -108,11 +108,11 @@ function user_forecast_graph() {
             // console.log(xTick);
 
             mmrUser.pop();
-            console.log(mmrUser);
+            // console.log(mmrUser);
 
             mmrUser.push(user_input_mmr);
 
-            console.log(mmrUser);
+            // console.log(mmrUser);
 
             var avg_mmr = {
                 x: xTick,
