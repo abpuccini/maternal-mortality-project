@@ -316,6 +316,10 @@ def us_ranked_health_measure():
 def ml_model():
     return render_template('machine-learning-model.html')
 
+@app.route('/non-race-model')
+def non_race_model():
+    return render_template('non-race-model.html')    
+
 
 @app.route('/machine-learning-forecast')
 def ml_forecast():
