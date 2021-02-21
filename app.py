@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, json, request
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
 import user_forecast
+import user_forecast_race
 
 
 # Flask set up
@@ -343,6 +344,11 @@ def ml_playground():
     return render_template('machine-learning-playground.html')
 
 
+@app.route('/machine-learning-playground-test')
+def ml_playground_race():
+    return render_template('machine-learning-race-playground-test.html')
+
+
 @app.route('/methodology')
 def methodology():
     return render_template('methodology.html')
@@ -374,6 +380,23 @@ def playgroundForecast():
             diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem)
 
     return jsonify(user_predicted_mmr)
+
+
+# @app.route("/api/user-forecast-race", methods=['GET', 'POST'])
+# def playgroundRaceForecast():
+
+#     if request.method == "POST":
+#         data = request.get_json()
+#         asian = int(data['asian'] or 0)
+#         black = int(data['black'] or 0)
+#         white = int(data['white'] or 0)
+#         hispanic_origin = int(data['hispanic_origin'] or 0)
+#         not_hispanic_origin = int(data['not_hispanic_origin'] or 0)
+
+#         user_pred_mmr_race = user_forecast_race.forecast_graph_race(
+#             asian, black, white, hispanic_origin, not_hispanic_origin)
+
+#     return jsonify(user_pred_mmr_race)
 
 
 @app.route("/api/user-input")
