@@ -100,11 +100,52 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Overview</h3>
                 <hr>
-                <p>We split our data into two main subsets for training models, one utilizing data about race,
+                <p>
+                    We split our data into two main subsets for training models, one utilizing data about race,
                     and another using data that did not include race as a feature. We then trained and tested a variety
                     of models,
-                    before choosing the top-performing models for each subset.</p>
-                <p></p>
+                    before choosing the top-performing models for each subset.
+                </p>
+
+                <h3>Linear Regression Model</h3>
+                <h5>dataset stratified by race and ethnicity</h5>
+                <hr>
+                <div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                For our MMR dataset stratified by race and ethnicity, we chose a linear regression model.   
+                            </p>
+                            <p>
+                                We collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). One limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.  
+                            </p>
+                            <p>
+                                We knew from our initial research that there are wide ethnic and racial gaps in MMR in the United States. This was apparent in our dataset when viewing MMR for each group. 
+                           </p>
+
+                        <!--creating nested row and columns for 4 images-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="well">
+                                    <a class="mr-5"><img class="img-fluid mx-auto d-block"
+                                            src="../static/img/avg_mmr_af_amer.png" alt="Average MMR African American"></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="well">
+                                    <a class="mr-5"><img class="img-fluid mx-auto d-block"
+                                            src="../static/img/avg_mmr_white.png" alt="Average MMR White Not Hispanic"></a>
+                                </div>
+                            </div>
+                        <!--closing div for nested row and columns for 4 images-->   
+                        </div>   
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
                 <p></p>
             </div>
         </div>
