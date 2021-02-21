@@ -89,14 +89,60 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
                 <h1>Machine Learning 10-Year Forecast</h1>
-                <h6>Predictive Analysis</h6>
+                <h6>Forecast MMR 10 Years Later Given ...</h6>
             </div>
         </div>
     </div>
 
     <!-- Main Section -->
     <div id="main-container" class="container">
+        <form id="mmr-prediction-form" method="post" class="form-horizontal" action="/api/user-forecast-race"
+            role="form" name="userInput">
 
+            <div class="form-group">
+                <label class="col-sm-5 control-label" for="Race">Race:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" name="Race" id="Race">
+                        <option name="asian" value="1">Asian or Pacific Islander</option>
+                        <option name="black" value="1">Black or African American</option>
+                        <option name="white" value="1">White</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label" for="HispanicOrigin">Hispanic Origin:</label>
+                <div class="col-sm-5">
+                    <div class="input-group">
+                        <table width="200" height="42">
+                            <tbody>
+                                <tr>
+                                    <td><label><input type="radio" name="hispanic_origin" value="1"
+                                                id="HispanicOrigin_0"> Yes</label></td>
+                                    <td><label><input type="radio" name="not_hispanic_origin" value="1"
+                                                id="HispanicOrigin_1" checked="checked"> No</label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <br><br>
+
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-4">
+                    <button class="btn btn-warning" type="submit" value="Reset">Forecast Maternal Mortality
+                        Ratio</button>
+                    <!-- <input type="submit" value="Forecast Maternal Mortality Ratio" class="btn btn-default"> -->
+                    <button class="btn btn-warning" type="reset" value="Reset">Reset</button>
+                </div>
+            </div>
+    </div>
+    </form>
     </div>
 
     <!--Footer-->
@@ -106,16 +152,12 @@
         </div>
     </footer>
 
-    <!-- D3 JS -->
-    <script src="static/js/d3/d3.v6.min.js"></script>
-
     <!-- BootStrap JS -->
     <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="static/js/popper/popper.min.js"></script>
     <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
 
     <!-- JS -->
-    <script src="static/js/ten_year_forecast.js"></script>
 
 </body>
 

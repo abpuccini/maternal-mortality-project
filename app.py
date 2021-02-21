@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, json, request
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
 import user_forecast
+import user_forecast_race
 
 
 # Flask set up
@@ -266,15 +267,12 @@ class Playground(db.Model):
     year = db.Column(db.String, primary_key=True)
     maternal_mortality_ratio = db.Column(db.Float)
 
-    def __init__(self, year, maternal_mortality_ratio):
-        self.year = year
-        self.maternal_mortality_ratio = maternal_mortality_ratio
-
 
 class Forecast(db.Model):
     __tablename__ = 'ten_year_forecast'
     __table_args__ = {'extend_existing': True}
-    year = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.String, primary_key=True)
+    mmr_prediction = db.Column(db.Float)
     maternal_mortality_ratio = db.Column(db.Float)
     diabetes_val = db.Column(db.Float)
     prem_death_val = db.Column(db.Float)
@@ -295,6 +293,20 @@ class Forecast(db.Model):
     all_outcomes_val = db.Column(db.Float)
     all_determs_val = db.Column(db.Float)
     health_stat_fem_val = db.Column(db.Float)
+    population = db.Column(db.Float)
+    employer = db.Column(db.Float)
+    non_group = db.Column(db.Float)
+    medicaid = db.Column(db.Float)
+    military = db.Column(db.Float)
+    uninsured = db.Column(db.Float)
+    air_pollution_val = db.Column(db.Float)
+    choles_check_val = db.Column(db.Float)
+    drug_deaths_val = db.Column(db.Float)
+    immun_child_val = db.Column(db.Float)
+    infect_dis_val = db.Column(db.Float)
+    uninsured_val = db.Column(db.Float)
+    teen_birth_val = db.Column(db.Float)
+    primary_care_val = db.Column(db.Float)
 
 
 @app.route('/')
@@ -332,6 +344,11 @@ def ml_playground():
     return render_template('machine-learning-playground.html')
 
 
+@app.route('/machine-learning-playground-test')
+def ml_playground_race():
+    return render_template('machine-learning-race-playground-test.html')
+
+
 @app.route('/methodology')
 def methodology():
     return render_template('methodology.html')
@@ -363,6 +380,23 @@ def playgroundForecast():
             diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem)
 
     return jsonify(user_predicted_mmr)
+
+
+# @app.route("/api/user-forecast-race", methods=['GET', 'POST'])
+# def playgroundRaceForecast():
+
+#     if request.method == "POST":
+#         data = request.get_json()
+#         asian = int(data['asian'] or 0)
+#         black = int(data['black'] or 0)
+#         white = int(data['white'] or 0)
+#         hispanic_origin = int(data['hispanic_origin'] or 0)
+#         not_hispanic_origin = int(data['not_hispanic_origin'] or 0)
+
+#         user_pred_mmr_race = user_forecast_race.forecast_graph_race(
+#             asian, black, white, hispanic_origin, not_hispanic_origin)
+
+#     return jsonify(user_pred_mmr_race)
 
 
 @app.route("/api/user-input")
@@ -749,18 +783,20 @@ def getForecastNonRaceData():
     for task in tasks:
         item = {
             'year': task.year,
-            'mmr': task.maternal_mortality_ratio,
+            'mmr_prediction': task.mmr_prediction,
+            'maternal_mortality_ratio': task.maternal_mortality_ratio,
             'diabetes_val': task.diabetes_val,
             'prem_death_val': task.prem_death_val,
             'phys_inac_val': task.phys_inac_val,
-            'low_birthweight_val': task.obesity_val,
+            'low_birthweight_val': task.low_birthweight_val,
+            'obesity_val': task.obesity_val,
             'cardio_death_val': task.cardio_death_val,
             'medicare': task.medicare,
             'cancer_death_val': task.cancer_death_val,
             'chlamydia_val': task.chlamydia_val,
             'child_pov_val': task.child_pov_val,
             'smoking_val': task.smoking_val,
-            'infant_mort_val': task.infant_mort_val	,
+            'infant_mort_val': task.infant_mort_val,
             'income_ineq_val': task.income_ineq_val,
             'dentists_val': task.dentists_val,
             'prem_death_ri_val': task.prem_death_ri_val,
@@ -768,6 +804,20 @@ def getForecastNonRaceData():
             'all_outcomes_val': task.all_outcomes_val,
             'all_determs_val': task.all_determs_val,
             'health_stat_fem_val': task.health_stat_fem_val,
+            'population': task.population,
+            'employer': task.employer,
+            'non_group': task.non_group,
+            'medicaid': task.medicaid,
+            'military': task.military,
+            'uninsured': task.uninsured,
+            'air_pollution_val': task.air_pollution_val,
+            'choles_check_val': task.choles_check_val,
+            'drug_deaths_val': task.drug_deaths_val,
+            'immun_child_val': task.immun_child_val,
+            'infect_dis_val': task.infect_dis_val,
+            'uninsured_val': task.uninsured_val,
+            'teen_birth_val': task.teen_birth_val,
+            'primary_care_val': task.primary_care_val
         }
         forecast_data.append(item)
 
