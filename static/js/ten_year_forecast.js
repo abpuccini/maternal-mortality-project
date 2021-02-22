@@ -27,9 +27,9 @@ function init() {
         // Create Graph
         var act_mmr = {
             x: years,
-            y: actual_mmr.slice(0, 12),
+            y: actual_mmr,
             type: 'scatter',
-            name: 'Average MMR',
+            name: 'Time-Series MMR',
             mode: 'lines+markers',
             line: {
                 color: 'rgb(229, 152, 102)',
@@ -41,7 +41,7 @@ function init() {
             x: years,
             y: model_pred_mmr,
             type: 'scatter',
-            name: 'Predicted MMR',
+            name: 'LR Model Predicted MMR',
             mode: 'lines+markers',
             line: {
                 color: 'rgb(145, 188, 148)',
@@ -53,9 +53,9 @@ function init() {
         var data = [act_mmr, predic_mmr];
 
         var layout = {
-            title: `<b>MMR 10-Year Forecast</b>`,
+            // title: "<b>Maternal Mortality Ratio (MMR) 2009 - 2030</b>",
             yaxis: {
-                title: "<b>Maternal Mortality Ratio</b>"
+                title: "<b>MMR</b>"
             },
             xaxis: {
                 tickvals: years,
@@ -66,11 +66,11 @@ function init() {
             shapes: [
                 {
                     type: 'line',
-                    xref: 'paper',
-                    x0: 0,
-                    y0: 31.34,
-                    x1: 1,
-                    y1: 31.34,
+                    yref: 'paper',
+                    x0: "2020",
+                    y0: 0,
+                    x1: "2020",
+                    y1: 1,
                     line: {
                         color: 'rgb(255, 0, 0)',
                         width: 1,
