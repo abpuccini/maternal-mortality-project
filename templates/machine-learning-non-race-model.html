@@ -206,6 +206,19 @@
                 <img class="img-fluid mx-auto d-block" src="../static/img/Predictions_Barplot_to_2030.png"
                     alt="Association Map">
             </div>
+            <h3>Other Regression Methods - Neural Network/Deep Learning</h3>
+            <div class="card">
+                <div class="card-body">
+                    Given the nature of the data pulled, it was always more likely that a linear regression was the better fit 
+                    for the data but we wanted to attempt a neural network as well to see if anything surprising happened. 
+                    A similar process was used to prepare the data as with the linear regressions, then a base sequential model was created, 
+                    and using KerasRegressor and setting loss to mean squared error, various fits were explored. No matter the data portion
+                    that was input, and any number of hidden layers added, the mean squared error never was seen below 1000, which was much 
+                    worse than the linear models already created.
+                </div>
+                <img class="img-fluid mx-auto d-block" src="../static/img/neural_network_model.png"
+                    alt="Association Map">
+            </div>
         </div>
     </div>
     </div>
