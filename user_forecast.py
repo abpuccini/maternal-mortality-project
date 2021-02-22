@@ -4,11 +4,11 @@ import pandas as pd
 import numpy as np
 
 
-def forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity):
+def forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, health_stat_fem):
 
     # Samples
     data = pd.read_csv(
-        "machine_learning/Resources/non_race_data.csv")
+        "machine_learning/Resources/combined_avg_2009_2019.csv")
     stat_data = data.describe()
     stat_data = stat_data.loc['mean'][['population', 'employer',
                                        'non_group', 'medicaid', 'medicare', 'military', 'uninsured',
@@ -22,11 +22,12 @@ def forecast_graph(diabetes, prem_death, phys_inac, low_birthweight, obesity):
                                        'primary_care_val', 'low_birthweight_val']]
 
     health_data = stat_data.copy()
+
     health_data['diabetes_val'] = diabetes
     health_data['prem_death_val'] = prem_death
     health_data['phys_inac_val'] = phys_inac
     health_data['low_birthweight_val'] = low_birthweight
-    health_data['obesity_val'] = obesity
+    health_data['health_stat_fem_val'] = health_stat_fem
 
     # input data to predict MMR
     inputValue = np.array(health_data).reshape(1, -1)
