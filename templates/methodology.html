@@ -46,11 +46,20 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Machine Learning
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/machine-learning-model">Models</a>
-                        <a class="dropdown-item" href="/machine-learning-playground">Playground</a>
-                        <a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-header">
+                            <span>Models</span>
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-race-model">Model Based Race</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Model Based
+                                Non-Race</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-playground">Playground</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/news-articles">News and Articles</a>
@@ -209,24 +218,36 @@
                         <p class="card-text">
                         <ul>
                             <li>
-                                Data was split into two main subsets for training models, one utilizing data stratified by race, 
+                                Data was split into two main subsets for training models, one utilizing data stratified
+                                by race,
                                 and another using data that did not include any racial breakdowns.
                             </li>
                             <li>
-                                Created and tested a variety of models, including Linear Regression, Neural Network, Ridge,
+                                Created and tested a variety of models, including Linear Regression, Neural Network,
+                                Ridge,
                                 Lasso, and Logistic Regression, for one or both both datasets.
                             </li>
                             <li>
-                                Initially, the model type with the highest R-squared values for both training datasets were the Linear Regression
+                                Initially, the model type with the highest R-squared values for both training datasets
+                                were the Linear Regression
                                 models. We chose to move forward with optimizing those models.
                             </li>
                             <li>
+<<<<<<< HEAD
                                 Created visualizations, performed feature selection, and continued to train and tune the models. For the race-stratified data,
                                 Linear Regression continued to be the highest performing, but for the non-race data, Polynomial Regression based on the initial Linear 
                                 Regression analysis proved to be even more accurate. 
+=======
+                                Created visualizations, performed feature selection, and continued to train and tune the
+                                models. For the race-stratified data,
+                                Linear Regression continued to be the highest performing, but for the non-race data,
+                                Plynomial Regression based on the initial Linear
+                                Regression analysis proved to be even more accurate.
+>>>>>>> 33debe13428dafa82a3160f6178eb3fba8a3919a
                             </li>
                             <li>
-                                Saved the top-preforming models, then used the saved models to run predictions, and for the interactive Playground feature.
+                                Saved the top-preforming models, then used the saved models to run predictions, and for
+                                the interactive Playground feature.
                             </li>
                         </ul>
                         </p>
@@ -244,7 +265,7 @@
                             <li>Built to take user input for several values, selected by
 
                             </li>
-                            <li>Compares the user-input values to 
+                            <li>Compares the user-input values to
 
                             </li>
                             <li>
