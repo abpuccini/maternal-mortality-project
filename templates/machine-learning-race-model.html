@@ -174,19 +174,22 @@
 
                             <!--new div class row and column for heatmap explanation and image-->
                             <div class="row">
-                                <div class="col-md-12">
+                                <!--<div class="col-md-12">-->
+                                <div class="col-md-4 col-sm-12">    
                                     <p>
-                                        In the heatmap below, we can see strong positive correlations (likely to
+                                        In the heatmap, we can see strong positive correlations (likely to
                                         indicate higher MMR) for Black or African American women, and negative
                                         correlations (likely to indicate lower MMR) for White women.
                                     </p>
+                                </div>
+                                <div class="col-md-8 col-sm-12 d-flex align-items-center">    
                                     <div class="well">
                                         <a class="mr-5"><img class="img-fluid mx-auto d-block"
                                                 src="../static/img/heatmap_mmr_strat_by_race.png"
                                                 alt="Heatmap Stratified by Race"></a>
                                     </div>
 
-                                    <!--closing div for heatmap column-->
+                                    <!--closing div for heatmap image column-->
                                 </div>
                                 <!--closing div for heatmap row-->
                             </div>
@@ -219,10 +222,13 @@
 
                             <!--new div class and row for Logistic Regression-->
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12">    
                                     <h3>Logistic Regression Model</h3>
                                     <h5>dataset stratified by race and ethnicity</h5>
                                     <hr>
+                                </div> 
+
+                                <div class="col-md-6 col-sm-12">    
                                     <p>
                                         After doing Linear Regression models, we tried Logistic Regression, converting
                                         our y-value (MMR) to categorical.
@@ -237,21 +243,22 @@
                                     </p>
                                     <p>
                                         Our R2 scores for this model were 0.59 on our testing data, and 0.75 on our
-                                        training data. The confusion matrix below shows that identifying MMR data points
+                                        training data. The confusion matrix shows that identifying MMR data points
                                         as "medium" risk was most successful, followed by identifying appropriately for
                                         "high" risk.
                                     </p>
-
+                                <!--closing div for text on Logistic Regression-->    
+                                </div>
+                                <div class="col-md-6 col-sm-12 d-flex align-items-center">
                                     <div class="well">
                                         <a class="mr-5"><img class="img-fluid mx-auto d-block"
                                                 src="../static/img/confusion_matrix_strat_by_race.png"
                                                 alt="Confusion Matrix Stratified by Race"></a>
                                     </div>
+                                <!--closing div for confusion matrix image-->    
+                                </div>    
 
-                                    <!--closing div for Logistic Regression row-->
-                                </div>
-
-                                <!--closing div for Logistic Regression column-->
+                            <!--closing div for Logistic Regression row-->
                             </div>
 
 
@@ -262,26 +269,10 @@
                                 <div class="card bg-light text-dark">
                                     <div class="card-body">
                                         <p>
-                                            When we began researching maternal mortality in the United States we
-                                            realized how much work there is to do to study and address the problem. For
-                                            example, in the 1940s, the U.S. and Britain had similar rates of maternal
-                                            mortality, but today Britain has significantly improved. Experts attribute
-                                            this to Britain's willingness to study the problem and make calculated
-                                            improvements(Kaplan, 2019). In the U.S. the effort to standardize reporting
-                                            across all states was only undertaken recently, with a death certificate
-                                            pregnancy checkbox being adopted slowly across the U.S., and finally
-                                            implemented in all states in 2017.
-                                        </p>
-                                        <p>
-                                            The CDC estimates that 60 percent of maternal deaths in the U.S. are
-                                            preventable(NMMRC, 2018). We encourage visitors to our app to view the
-                                            factors that could affect pregnancy outcomes for women, such as access to
-                                            care and insurance coverage, and explore how making improvements in these
-                                            areas could reduce MMR in the U.S.
+                                            The CDC estimates that 60 percent of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
                                         </p>
                                     </div>
                                 </div>
-
                                 <!--closing div for Summary Section-->
                             </div>
 
@@ -292,24 +283,21 @@
                                     <hr>
                                     <div class="reference">
 
-                                        <p>Kaplan, Emily Kumler. (2019, March 5)<a
-                                                href="https://www.nytimes.com/2019/03/05/well/family/reducing-maternal-mortality.html?action=click&module=RelatedLinks&pgtype=Article"
-                                                target="_blank"><em>Reducing Maternal Mortality</em></a>New York Times.
-                                            2021
-                                            https://www.nytimes.com/2019/03/05/well/family/reducing-maternal-mortality.html?action=click&module=RelatedLinks&pgtype=Article
+                                        <p>
+                                            Report from Nine Maternal Mortality Review Committees. (2018) <a
+                                            href="https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf"
+                                            target="_blank"><em>Building U.S. capacity to review and prevent
+                                            maternal deaths</em></a>. Review to Action. https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf
                                         </p>
-
-                                        <p>Report from Nine Maternal Mortality Review Committees. (2018) <a
-                                                href="https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf"
-                                                target="_blank" <em>Building U.S. capacity to review and prevent
-                                                maternal deaths</em></a>2021
-                                            https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf
+                                        <p>
+                                            CDC. (2021) <a href="https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Freproductivehealth%2Fmaternalinfanthealth%2Fpregnancy-mortality-surveillance-system.htm"target="_blank"><em>Pregnancy-Related Deaths by Race/Ethnicity</em></a>. Pregnancy Mortality Surveillance System. https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Freproductivehealth%2Fmaternalinfanthealth%2Fpregnancy-mortality-surveillance-system.htm 
                                         </p>
+                                    <!--closing div for reference class-->
                                     </div>
 
-                                    <!--closing div for Reference column-->
+                                <!--closing div for Reference column-->
                                 </div>
-                                <!--closing div for Reference row-->
+                            <!--closing div for Reference row-->
                             </div>
 
                         </div>
