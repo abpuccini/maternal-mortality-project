@@ -309,6 +309,16 @@ class Forecast(db.Model):
     primary_care_val = db.Column(db.Float)
 
 
+class forecastRace(db.Model):
+    __tablename__ = 'ten_year_race_forecast'
+    __table_args__ = {'extend_existing': True}
+    year = db.Column(db.String, primary_key=True)
+    MMR_White = db.Column(db.Float)
+    MMR_Black_or_African_American = db.Column(db.Float)
+    MMR_Asian_or_Pacific_Islander = db.Column(db.Float)
+    MMR_Hispanic_or_Latino = db.Column(db.Float)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -822,6 +832,24 @@ def getForecastNonRaceData():
         forecast_data.append(item)
 
     return jsonify(forecast_data)
+
+
+@app.route('/api/forecast-race-data')
+def getForecastRaceData():
+    tasks = db.session.query(forecastRace)
+    race_forecast_data = []
+
+    for task in tasks:
+        item = {
+            'year': task.year,
+            'mmr_white': task.MMR_White,
+            'mmr_black': task.MMR_Black_or_African_American,
+            'mmr_asian_islander': task.MMR_Asian_or_Pacific_Islander,
+            'mmr_hispanic_origin': task.MMR_Hispanic_or_Latino,
+        }
+        race_forecast_data.append(item)
+
+    return jsonify(race_forecast_data)
 
 
 if __name__ == '__main__':
