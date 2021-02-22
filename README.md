@@ -168,9 +168,9 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ### Purpose
 
-Maternal mortality rate has continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates during the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
+Maternal Mortality Rates have continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates during the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
 
-In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded on the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
+In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
 
 We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
 
@@ -187,21 +187,75 @@ This dataset contains MMR data stratified by race.  The races included were:
     - White, hispanic
     - Asian or Pacific Islander
 
-Other columns found in this dataset are births and deaths by race, population by race
+Other columns found in this dataset are births and deaths by race, population by race, as well as state ID and location
 
-*Models Selected
+*Models Tested*
 
-Place Holder
-
-- Linear Regression
-- Lasso Regression
-- Logistic Regression
+[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression)
 
 
-*Limitations and Considerations
+**Linear Regression**
+
+    - For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
+
+    - In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women. 
+
+![Heat Map](/static/img/heatmap_mmr_strat_by_race.png)
+
+    -We fit a linear regression model and experimented with feature selection after running RFE to identify insignificant variables. However, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+    
+    -We experimented with scaling our data using Standard Scaler, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
+
+    -Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. These are the resulting scores:
+        -MSE: 364.27539582893286
+        -R2 Testing: 0.5550222997732394
+        -R2 Training: 0.587634628814633
 
 
-*Processes and Visulzations
+**Lasso Regression**
+
+    -Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
+    
+    -Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
+
+    -After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
+        -MSE: 0.37425190453114504
+        -R2: 0.6956700138016816
+
+    -The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
+        -MSE: 0.6478563653918986
+        -R2: 0.47318339238591234
+
+
+**Logistic Regression**
+
+After doing Linear Regression models, we tried Logistic Regression, converting our y-value to categorical.
+We binned our mmr data stratified by race into three categories:
+Low (MMR <= 20)
+Medium (MMR > 20 and <= 50)
+High (MMR > 50)
+We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of three bins, so we reverted to using bins that would contain all the data.
+Our scores for this model improved after we removed the birth and death data points: 
+R2 Testing: 0.5979381443298969
+R2 Training: 0.7594501718213058
+It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. 
+Our confusion matrix shows that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
+
+
+
+*Limitations and Considerations*
+
+If a certain group has fewer than 10 deaths for a given state and year, that data is suppressed. 
+One limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
+
+
+We knew from earlier exploratory analysis that our data had outliers.
+
+
+Because our outcome, MMR, is a continuous variable, we needed to run Regression models rather than Classification models.
+
+
+*Processes and Visulzations*
 
 
 **Second Dataset- Maternal Mortality Rate without Race**
@@ -209,21 +263,32 @@ Place Holder
 Other columns found in this dataset are births and deaths by race, population by race
 
 
-*Models Selected
+*Models Tested*
 
-Place Holder
-
-- Linear Regression
-- Lasso Regression
-- Logistic Regression
+[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
 
 
-*Limitations and Considerations
+**Linear Regression**
 
 
-*Processes and Visulzations
+**Lasso Regression**
 
-This data
+
+**Logistic Regression**
+
+
+**Ridge Regression**
+
+
+**Neural Network**
+
+
+*Limitations and Considerations*
+
+
+*Processes and Visulzations*
+
+
 
 ### User Self-Input
 
