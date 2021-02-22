@@ -196,17 +196,17 @@ Other columns found in this dataset are births and deaths by race, population by
 
 **Linear Regression**
 
-    - For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
+- For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
 
-    - In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women. 
+- In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women. 
 
 ![Heat Map](/static/img/heatmap_mmr_strat_by_race.png)
 
-    -We fit a linear regression model and experimented with feature selection after running RFE to identify insignificant variables. However, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+- We fit a linear regression model and experimented with feature selection after running `RFE` to identify insignificant variables. However, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
-    -We experimented with scaling our data using Standard Scaler, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
+- We experimented with scaling our data using `Standard Scaler`, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
 
-    -Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. These are the resulting scores:
+- Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. These are the resulting scores:
         -MSE: 364.27539582893286
         -R2 Testing: 0.5550222997732394
         -R2 Training: 0.587634628814633
@@ -214,32 +214,33 @@ Other columns found in this dataset are births and deaths by race, population by
 
 **Lasso Regression**
 
-    -Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
+- Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
-    -Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
+- Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
-    -After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
+- After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
         -MSE: 0.37425190453114504
         -R2: 0.6956700138016816
 
-    -The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
+- The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
         -MSE: 0.6478563653918986
         -R2: 0.47318339238591234
 
 
 **Logistic Regression**
 
-After doing Linear Regression models, we tried Logistic Regression, converting our y-value to categorical.
-We binned our mmr data stratified by race into three categories:
-Low (MMR <= 20)
-Medium (MMR > 20 and <= 50)
-High (MMR > 50)
-We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of three bins, so we reverted to using bins that would contain all the data.
-Our scores for this model improved after we removed the birth and death data points: 
-R2 Testing: 0.5979381443298969
-R2 Training: 0.7594501718213058
-It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. 
-Our confusion matrix shows that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
+- After applying the Linear Regression models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
+    - Low (MMR <= 20)
+    - Medium (MMR > 20 and <= 50)
+    - High (MMR > 50)
+
+- We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of three bins, so we reverted to using bins that would contain all the data.  Our scores for this model improved after we removed the birth and death data points: 
+    - R2 Testing: 0.5979381443298969
+    - R2 Training: 0.7594501718213058
+
+- It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showsed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
+
+![Confusion Maxtrix](/static/img/)
 
 
 
@@ -271,16 +272,28 @@ Other columns found in this dataset are births and deaths by race, population by
 **Linear Regression**
 
 
+
 **Lasso Regression**
+
 
 
 **Logistic Regression**
 
 
+
 **Ridge Regression**
 
+ 
 
 **Neural Network**
+
+- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a neural network as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
+
+- Next, a base sequential model was created with the same number of neurons as inputs, which in this case were 25, and then using `KerasRegressor`, and setting loss to mean squared error and the optimizer to Adam, and a Kfold of 10.  A variety of models were built using various scaling and testing. 
+
+- After running the model, the mean squared error never fell below 1000 in any testing, including the addition of layers, which was much worse than the linear models that had already been created. 
+
+![Neural Network](/static/img)
 
 
 *Limitations and Considerations*
@@ -297,6 +310,17 @@ Other columns found in this dataset are births and deaths by race, population by
 
 
 ### 10-Year Forecast
+
+The dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates. 
+
+
+A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
+
+
+Maternal mortality rates increased slowly from 2009 to 2019 and based on the forecast continue to increase at the same pace until 2030. 
+
+
+Healthy People 2030’s goal for maternal mortality rate is to reduce it to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
 
 ## Flask Web Application
