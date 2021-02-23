@@ -414,15 +414,12 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ## Machine Learning Models Page ##
 
-
 **Models Based Race**
 
-- 
-
-**Models by Race 1** | **Models by Race 2**
---------------------- | ---------------------
+**Models by Race 1** 
 - Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-race-model) to view our machine learning model by race. 
 
+**Models by Race 2**
 - Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-non-race-model) to view our machine learning model without race. 
 
 - Visualized the MMR data points to show which points were the most successful and what points are appropriately identified for high risk 
