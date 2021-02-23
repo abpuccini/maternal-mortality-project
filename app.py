@@ -313,10 +313,10 @@ class forecastRace(db.Model):
     __tablename__ = 'ten_year_race_forecast'
     __table_args__ = {'extend_existing': True}
     year = db.Column(db.String, primary_key=True)
-    MMR_White = db.Column(db.Float)
-    MMR_Black_or_African_American = db.Column(db.Float)
-    MMR_Asian_or_Pacific_Islander = db.Column(db.Float)
-    MMR_Hispanic_or_Latino = db.Column(db.Float)
+    mmr_white_hispanic = db.Column(db.Float)
+    mmr_white_non_hispanic = db.Column(db.Float)
+    mmr_asian_non_hispanic = db.Column(db.Float)
+    mmr_black_non_hispanic = db.Column(db.Float)
 
 
 @app.route('/')
@@ -842,10 +842,10 @@ def getForecastRaceData():
     for task in tasks:
         item = {
             'year': task.year,
-            'mmr_white': task.MMR_White,
-            'mmr_black': task.MMR_Black_or_African_American,
-            'mmr_asian_islander': task.MMR_Asian_or_Pacific_Islander,
-            'mmr_hispanic_origin': task.MMR_Hispanic_or_Latino,
+            'mmr_white_hispanic': task.mmr_white_hispanic,
+            'mmr_white_non_hispanic': task.mmr_white_non_hispanic,
+            'mmr_asian_non_hispanic': task.mmr_asian_non_hispanic,
+            'mmr_black_non_hispanic': task.mmr_black_non_hispanic
         }
         race_forecast_data.append(item)
 
