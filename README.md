@@ -19,8 +19,8 @@
     - [Purpose](#purpose)
     - [Preprocessing Data](#preprocessing-data)
     - [Model Creation & Selection](#model-creation-and-selection)
-        - [First Dataset](#first-dataset)
-        - [Second Dataset](#second-dataset)
+        - [Maternal Mortality Rate Stratified by Race Dataset](#maternal-mortality-rate-stratified-by-race-dataset)
+        - [Maternal Mortality Rate Not Stratified by Race Dataset](##maternal-mortality-rate-not-stratified-by-race-dataset)
     - [Ten Year Forecast and Predictive Analysis](#ten-year-forecast-and-predictive-analysis)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
@@ -168,7 +168,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Machine Learning
 
-Machine Learning Title: Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates
+**Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates**
 
 ### Purpose
 
@@ -189,9 +189,10 @@ For a complete view of all our machine learning tested models, please click this
 
 To better visualize our data and select the optimal model, we separated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
-### First Dataset 
+<a name="#first-dataset"></a>
 
-**Maternal Mortality Rate Stratified by Race**
+### Maternal Mortality Rate Stratified by Race Dataset
+
 
 This dataset contains MMR data stratified by race.  The races included were:
 
@@ -232,7 +233,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 - Using the [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Lasso_Reg_By_Race_ah.ipynb) Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
-- Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
+- Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selected as the method to scale the data because of outliers previously identified in the dataset
 
 - After fitting and training the model, the data was run through the Lasso Regression model with the following results:
     - MSE: 0.37425190453114504
@@ -254,13 +255,16 @@ Other columns found in this dataset are births and deaths by race, population by
     - R2 Testing: 0.5979381443298969
     - R2 Training: 0.7594501718213058
 
-- It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showsed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
+- It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
 
-![Confusion Maxtrix](/static/img/confusion_matrix_strat_by_race.png)
+<p align="center">
+  <img alt="Confusion Matrix" src="/static/img/confusion_matrix_strat_by_race.png">
+</p>
 
-### Second Dataset
+---
+<a name="#second-dataset"></a>
 
-**Maternal Mortality Rate without Race**
+### Maternal Mortality Rate Not Stratified by Race**
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
@@ -273,7 +277,7 @@ Columns found in this dataset include 28 identified Healthcare Measures, Insuran
 
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
-- First we applied a series of heatmaps to the dataset in order to visulize the correlations within the data comparing various factors. For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
+- First we applied a series of heatmaps to the dataset in order to visualize the correlations within the data comparing various factors. For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
 
 - The results of the **Heatmap 2** indicated that diabetes and premature death had the strongest positive correlations. Other important correlations included positive relationships with physical inactivity, obesity, and low birth weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High health status (which is the percentage of women who reported that their health is very good or excellent) had the strongest negative correlation in addition to higher weighted sums of all determinants and health outcomes from the national average. Dental visits also had a moderately strong negative correlation with MMR. 
 
@@ -281,18 +285,20 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 --------------------- | ---------------------
 ![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
 
-- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome. All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continuous outcome. All features were kept as x-values and MMR was set as the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
-![Table](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/linear_reg_non_race_table_results.JPG)
+<p align="center">
+  <img alt="R-squared Table" src="Images/linear_reg_non_race_table_results.JPG">
+</p>
 
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
 
 ### Polynomial Regression without Race
 
-In the second [notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb) of linear regression without race further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure below, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
+In the second [notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb) of linear regression without race further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure below, it was determined that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial features at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
 
 ![Polynomial Plot](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Polynomial_LR_Fit.png)
 
@@ -309,7 +315,7 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 
 ### Neural Network without Race
 
-- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a [neural network](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/neural_network_austin.ipynb) as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
+- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a [neural network](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/neural_network_austin.ipynb) as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into an array using the `.values` function. 
 
 - Next, a base sequential model was created with the same number of neurons as inputs, which in this case were 25, and then using `KerasRegressor`, and setting loss to mean squared error and the optimizer to Adam, and a Kfold of 10.  A variety of models were built using various scaling and testing. 
 
@@ -320,22 +326,22 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 
 ### Ten Year Forecast and Predictive Analysis
 
-**The Process of Forcasting**
+**The Process of Forecasting**
 
-The data forecasting flowchart below shows the process of data establishment in order to input into machine learning model to predict matermal mortality ratio (MMR) from 2020 to 2030.
+The data forecasting flowchart below shows the process of data establishment in order to input into machine learning models to predict maternal mortality ratio (MMR) from 2020 to 2030.
 
-![Forcasting Tree](/static/img/ML_flowchart-3.png)
+![Forecasting Tree](/static/img/ML_flowchart-3.png)
 
 
 Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
-- In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
+- In order to create the 10-year forecast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
 
 ![Forecast](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/Predictions_Barplot_to_2030.png)
 
 - The results of the 10-year forecast model showed that maternal mortality rates increased slowly from 2009 to 2019 and then would continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce the number to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
-- This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
+- This forecast entirely depends on the variables continuing their current trend for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
 - We also applied time series forecast of the average annual maternal mortality and associated impacts in the United States from 2009 to 2030, for further details see the [forecast notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Forcast_Chahnaz.ipynb). The data forecasting flowchart below shows the process of data establishment in order to input into a machine learning model to predict maternal mortality ratio (MMR) from 2020 to 2030
 ![Forecasting](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/ten_year_forecast_flowchart.png)
@@ -429,14 +435,13 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### Machine Learning Playground Page
 
-- The interactive form picture below allows users to input their values to explore the effect on MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in. Click on the [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to access the playground. 
+- The interactive form picture below allows users to input their values to explore the effect on MMR if decreasing or increasing those values. Table below shows the possible values that users might consider to enter in. Click on the [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to access the playground. 
 
 ### Machine Learning 10-Year Forecast Page
 
-- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030. Click the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast) to access the machine learning forecast page. 
+- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the average MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Additionally, Time-series has predicted the MMR lower than LR by 3% at the year of 2030. Click the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast) to access the machine learning forecast page. 
 
-
-- Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timrframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason of the decresing of MMR for all race and ethnicity.
+- Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timeframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason for the decreasing of MMR for particular race and ethnicity.
 
 ![Forcast Race](/Images/10yr_forc_race_app.JPG)
 
@@ -496,7 +501,7 @@ the many complications that could lead to death during pregnancy and/or childbir
 ## Contributors
 
 | Team Member | GitHub | LinkedIn | E-mail Address |
-| :-: | :-: | :-: | :-: |
+| :- | :-: | :-: | :-: |
 | <b>Akilah Hunte</b> | <a href="https://github.com/Kiki-99" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/akilah-hunte-68070140" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:ahunt173@gmail.com"><img href="mailto:ahunt173@gmail.com" alt="ahunt173@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Atcharaporn B Puccini </b></a> | <a href="https://github.com/abpuccini" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/abpuccini/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:b.atcharaporn@gmail.com"><img href="mailto:b.atcharaporn@gmail.com" alt="b.atcharaporn@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
 | <a><b>Austin Cole </b></a> | <a href="https://github.com/AustinRCole" target="_blank"><img alt="Github" height="30" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" /></a> | <a href="https://www.linkedin.com/in/austin-cole-167923b7/" target="_blank"><img alt="LinkedIn" height="20" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" /></a> | <a href="mailto:AustinRCole2@gmail.com"><img href="mailto:AustinRCole2@gmail.com" alt="AustinRCole2@gmail.com" height="30" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg"/></a> |
