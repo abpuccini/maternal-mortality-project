@@ -425,7 +425,9 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 - Visualized the MMR data points to show which points were the most successful and what points are appropriately identified for high risk 
 
-![Model 3](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/confusion_matrix_strat_by_race.png)
+<p align="center">
+  <img alt="model3" src="static/img/confusion_matrix_strat_by_race.png" />
+</p>
 
 **Models Based Non Race**
 ![Features](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/MMR_Non_Race_Association.png)
