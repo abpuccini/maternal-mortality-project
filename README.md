@@ -209,11 +209,12 @@ Other columns found in this dataset are births and deaths by race, population by
 - We experimented with scaling our data using `Standard Scaler`, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
 
 - Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. These are the resulting scores:
-        -MSE: 364.27539582893286
-        -R2 Testing: 0.5550222997732394
-        -R2 Training: 0.587634628814633
 
-**This model had the highest R-squared value and was the top performing model for this dataset**
+- MSE: 364.27539582893286
+- R2 Testing: 0.5550222997732394
+- R2 Training: 0.587634628814633
+
+***This model had the highest R-squared value and was the top performing model for this dataset***
 
 
 **Lasso Regression**
@@ -223,12 +224,12 @@ Other columns found in this dataset are births and deaths by race, population by
 - Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
 - After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
-        -MSE: 0.37425190453114504
-        -R2: 0.6956700138016816
+    - MSE: 0.37425190453114504
+    - R2: 0.6956700138016816
 
 - The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
-        -MSE: 0.6478563653918986
-        -R2: 0.47318339238591234
+    - MSE: 0.6478563653918986
+    - R2: 0.47318339238591234
 
 
 **Logistic Regression**
@@ -248,18 +249,6 @@ Other columns found in this dataset are births and deaths by race, population by
 
 
 
-**Limitations and Considerations**
-
-- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes.  Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
-
-- Another limitation we discovered from earlier exploratory analysis was that our data had outliers.
-
-- We also took into consideration that because our outcome, MMR, is a continuous variable, we needed to run Regression models rather than Classification models for the machine learning process.
-
-
-**Processes and Visulzations**
-
-
 ### Second Dataset- Maternal Mortality Rate without Race ###
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
@@ -267,7 +256,7 @@ Columns found in this dataset include 28 identified Healthcare Measures, Insuran
 
 **Models Tested**
 
-[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
+[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
 
 
 **Linear Regression**
@@ -326,9 +315,16 @@ Place model here
 
 ### 10-Year Forecast & Predictive Analysis
 
-- In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
+**The Process of Forcasting**
 
-Insert JP link
+The data forecasting flowchart below shows the process of data establishment in order to input into machine learning model to predict matermal mortality ratio (MMR) from 2020 to 2030.
+
+![Forcasting Tress](
+
+
+**10-Year Forecast- Time Series Forecast Analysis
+
+- In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
 
 - The results of the 10-year forecast model showed that maternal mortality rates increased slowly from 2009 to 2019 and then would continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce the number to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
@@ -336,6 +332,16 @@ Insert JP link
 
 
 ![10 Year Predictions](Images/Predictions_Barplot_to_2030.png]
+
+
+**Limitations and Considerations**
+
+- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes.  Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
+
+- Another limitation we discovered from earlier exploratory analysis was that our data had outliers.
+
+- We also took into consideration that because our outcome, MMR, is a continuous variable, we needed to run Regression models rather than Classification models for the machine learning process.
+
 
 
 ## Flask Web Application
