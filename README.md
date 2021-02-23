@@ -18,7 +18,6 @@
 8. [Machine Learning](#machine-learning)
     - [Purpose](#purpose)
     - [Model Creation & Selection](#model-creation-and-selection)
-    - [User Self-Input](#user-self-input)
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
@@ -174,6 +173,8 @@ In order to maximize our chances at creating a smart machine learning model, we 
 
 We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
 
+Insert link to ETL data process
+
 
 ### Model Creation and Selection ###
 
@@ -182,10 +183,11 @@ To better visualize our data and select the optimal model, we seperated our larg
 **First Dataset- Maternal Mortality Rate Stratified by Race**
 
 This dataset contains MMR data stratified by race.  The races included were:
-    - African American
-    - White, non-hispanic
-    - White, hispanic
-    - Asian or Pacific Islander
+
+- African American
+- White, non-hispanic
+- White, hispanic
+- Asian or Pacific Islander
 
 Other columns found in this dataset are births and deaths by race, population by race, as well as state ID and location
 
@@ -260,7 +262,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 ### Second Dataset- Maternal Mortality Rate without Race ###
 
-Columns found in this dataset include identified Healthcare Measures, Insurance Status and MMR not broken down by race
+Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
 
 **Models Tested**
@@ -315,32 +317,25 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 
 **Processes and Visulzations**
 
-- 
+Polynomial Regression
 
-### User Self-Input
+- Further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
 
-
-### Predictive Analysis
-
+Place model here
 
 
+### 10-Year Forecast & Predictive Analysis
 
-### 10-Year Forecast
+- In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
 
-- Taking the linear regression modelThe dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. Maternal mortality rates increased slowly from 2009 to 2019 and based on the forecast continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce it to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. Clearly, the forecast depends on the variables continuing their current trend for the next 10 years. These can obviously change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even just maintained due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
+Insert JP link
 
-The dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates. 
+- The results of the 10-year forecast model showed that maternal mortality rates increased slowly from 2009 to 2019 and then would continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce the number to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
-
-A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
-
-
-Maternal mortality rates increased slowly from 2009 to 2019 and based on the forecast continue to increase at the same pace until 2030. 
+- This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
 
-Healthy People 2030’s goal for maternal mortality rate is to reduce it to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
-
-![10 Year Predictions](/Images/Predictions_Barplot_to_2030.png]
+![10 Year Predictions](Images/Predictions_Barplot_to_2030.png]
 
 
 ## Flask Web Application
@@ -399,6 +394,8 @@ the many complications that could lead to death during pregnancy and/or childbir
 ![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
 ### Machine Learning Models Page
+
+##
 
 ### Machine Learning Playground Page
 
