@@ -100,16 +100,18 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Overview</h3>
                 <hr>
-                <p>We split our data into two main subsets for training models, one utilizing data about race,
-                    and another using data that did not include race as a feature. We then trained and tested a
-                    variety
-                    of models,
-                    before choosing the top-performing models for each subset.</p>
+                <p>After visualizing maternal mortality ratio (MMR) data from the United States and seeing disparities
+                    among states in insurance coverage and health measures, we decided to apply machine learning to the
+                    problem. It was clear from initial research that racial and ethnic disparities existed, so we
+                    collected two datasets: one that utilized MMR data stratified by race, and another that included MMR
+                    data for all races and also included insurance status and 26 different health measures. We then
+                    trained and tested a variety of models before choosing the top-performing models for each subset of
+                    data.</p>
                 <!-- Linear Regression Section -->
                 <h3>Linear Regression Model</h3>
                 <hr>
                 <div class="col-md-12">
-                    <p>This model examines the impact of various features on maternal mortality ratio
+                    <p>This model examines the impact of various features on maternal mortality ratio (MMR)
                         irrespective of race. In doing so, correlations were determined using linear regression
                         analyses and indicated positive and negative relationships.
                     </p>
@@ -154,28 +156,6 @@
                         with the selected features would be moderately confident.</div>
                     <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/ML_flowchart-3.png"
                         alt="ML Flowchart">
-
-                    <!-- <div class="column bg-alt">
-                        <table id="model" class="center mt-2 mb-4">
-                            <tr>
-                                <th>Metric</th>
-                                <th>Results</th>
-                            </tr>
-                            <tr>
-                                <td>R-Squared</td>
-                                <td>0.54</td>
-                            </tr>
-                            <tr>
-                                <td>Training Score</td>
-                                <td>0.54</td>
-                            </tr>
-                            <tr>
-                                <td>Testing Score</td>
-                                <td>0.36</td>
-                            </tr>
-
-                        </table>
-                    </div> -->
                 </div>
             </div>
             <h3>Synopsis Linear Regression Model - Selected Features</h3>
@@ -230,23 +210,38 @@
                     alt="Association Map">
             </div>
         </div>
-    </div>
-    </div>
-    </div>
 
-    <!--Footer-->
-    <footer>
-        <div class="footer">
-            &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+        <!--new div row and column for Reference Section-->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Reference</h3>
+                <hr>
+                <div class="reference">
+                    <p>
+                        Health of Women and Children <a
+                            href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b"
+                            target="_blank"><em>Public Health Impact: Maternal Mortality</em></a> GOALS:
+                        Healthy People 2030’s goal is to reduce the maternal mortality rate to 15.7 maternal deaths
+                        per 100,000 live births. Link:
+                        https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b
+                    </p>
+                </div>
+            </div>
         </div>
-    </footer>
 
-    <!-- BootStrap JS -->
-    <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
-    <script src="static/js/popper/popper.min.js"></script>
-    <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <!--Footer-->
+        <footer>
+            <div class="footer">
+                &copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;
+            </div>
+        </footer>
 
-    <!-- JS -->
+        <!-- BootStrap JS -->
+        <script src="static/js/jquery/jquery-3.5.1.slim.min.js"></script>
+        <script src="static/js/popper/popper.min.js"></script>
+        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+        <!-- JS -->
 
 </body>
 
