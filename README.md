@@ -421,7 +421,9 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 **Models by Race 1** | **Models by Race 2**
 --------------------- | ---------------------
-![Model 1](https://maternal-mortality-project.herokuapp.com/machine-learning-race-model)|![Model 2](https://maternal-mortality-project.herokuapp.com/machine-learning-non-race-model)
+- Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-race-model) to view our machine learning model by race. 
+
+- Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-non-race-model) to view our machine learning model without race. 
 
 - Visualized the MMR data points to show which points were the most successful and what points are appropriately identified for high risk 
 
@@ -432,15 +434,11 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### Machine Learning Playground Page
 
-- The interactive form picture below allows users to input their values to explore the effect of MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in.
-
-![Playground](https://maternal-mortality-project.herokuapp.com/machine-learning-playground)
+- The interactive form picture below allows users to input their values to explore the effect on MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in. Click on the [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to access the playground. 
 
 ### Machine Learning 10-Year Forecast Page
 
-- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030.
-
-![Forcast Non Race](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast)
+- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030. Click the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast) to access the machine learning forecast page. 
 
 
 - Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timrframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason of the decresing of MMR for all race and ethnicity.
@@ -454,11 +452,11 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### Methodology Page
 
-- This page contains the overview that users might be interested to know about the project.
+- This [page](https://maternal-mortality-project.herokuapp.com/methodology) contains the overview that users might be interested to know about the project.
 
 ### About Us Page
 
-- This page contains contact information including Github, LinkedIn and E-mail of all the contributors for this project in case users have questions.
+- This [page](https://maternal-mortality-project.herokuapp.com/about-us) contains contact information including Github, LinkedIn and E-mail of all the contributors for this project in case users have questions.
 
 <p align="center">
   <img alt="team" src="Images/team.png" width="500px">
