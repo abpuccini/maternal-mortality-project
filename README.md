@@ -235,8 +235,8 @@ Other columns found in this dataset are births and deaths by race, population by
 - Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
 - After fitting and training the model, the data was run through the Lasso Regression model with the following results:
-    MSE: 0.37425190453114504
-    R2: 0.6956700138016816
+    - MSE: 0.37425190453114504
+    - R2: 0.6956700138016816
 
 - The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR. After those features were dropped, the model was ran again and the R squared value dropped significantly
     - MSE: 0.6478563653918986
