@@ -21,7 +21,7 @@
     - [Model Creation & Selection](#model-creation-and-selection)
         - [First Dataset](#first-dataset)
         - [Second Dataset](#second-dataset)
-    - [Ten Year Forecast & Predictive Analysis](#ten-year-forecast-&-predictive-analysis)
+    - [Ten Year Forecast and Predictive Analysis](#ten-year-forecast-and-predictive-analysis)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
     - [United States: Affordable Care Act Page](#united-states-affordable-care-act-page)
@@ -274,13 +274,13 @@ Columns found in this dataset include 28 identified Healthcare Measures, Insuran
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
 - First we applied a series of heatmaps to the dataset in order to visulize the correlations within the data comparing various factors. For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
-![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|
 
 - The results of the **Heatmap 2** indicated that diabetes and premature death had the strongest positive correlations. Other important correlations included positive relationships with physical inactivity, obesity, and low birth weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High health status (which is the percentage of women who reported that their health is very good or excellent) had the strongest negative correlation in addition to higher weighted sums of all determinants and health outcomes from the national average. Dental visits also had a moderately strong negative correlation with MMR. 
 
 **Heatmap 1** | **Heatmap 2**
 --------------------- | ---------------------
-![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
+![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
+
 
 
 - A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
@@ -328,7 +328,7 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 ![Poly Regression](/static/img/polynomial_LR_Fit.png)
 
 
-### Ten Year Forecast & Predictive Analysis
+### Ten Year Forecast and Predictive Analysis
 
 **The Process of Forcasting**
 
