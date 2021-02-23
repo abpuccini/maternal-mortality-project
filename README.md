@@ -185,6 +185,8 @@ To learn more about this process of data cleaning and preprocessing visit machin
 
 ### Model Creation and Selection ###
 
+For a complete view of all our tested machine learning tested models please click this [link](https://github.com/abpuccini/maternal-mortality-project/tree/main/machine_learning/model_testing)
+
 To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
 ### First Dataset 
@@ -207,7 +209,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 ### Linear Regression
 
-- For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
+- For the [linear regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/LR_stratified_by_race_lee.ipynb) model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
 
 - In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women. 
 
@@ -228,7 +230,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 ### Lasso Regression
 
-- Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
+- Using the [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Lasso_Reg_By_Race_ah.ipynb) Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
 - Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
@@ -243,7 +245,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 ### Logistic Regression
 
-- After applying the Linear Regression models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
+- After applying the [Linear Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Logistic_Regression_stratified_by_race_lee.ipynb) models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
     - Low (MMR <= 20)
     - Medium (MMR > 20 and <= 50)
     - High (MMR > 50)
@@ -281,8 +283,6 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 --------------------- | ---------------------
 ![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
 
-
-
 - A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
@@ -301,17 +301,17 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 
 ### Lasso Regression without Race
 
-- We applied a Lasso Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
+- We applied a [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/non-race_testing_lasso_abp.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
 
 
 ### Ridge Regression without Race
 
-- We applied a Ridge Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
+- We applied a [Ridge Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/ridge_linear_regression_shay.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
 ### Neural Network without Race
 
-- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a neural network as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
+- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a [neural network](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/neural_network_austin.ipynb) as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
 
 - Next, a base sequential model was created with the same number of neurons as inputs, which in this case were 25, and then using `KerasRegressor`, and setting loss to mean squared error and the optimizer to Adam, and a Kfold of 10.  A variety of models were built using various scaling and testing. 
 
@@ -347,7 +347,12 @@ The data forecasting flowchart below shows the process of data establishment in 
 
 ![Predictions](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Predictions_Barplot_to_2030.png]
 
-- We also applied time series forecast of the average annual of maternal mortality and associated imapcts in the United States from 2009 to 2030
+- We also applied time series forecast of the average annual maternal mortality and associated impacts in the United States from 2009 to 2030, for further details see the [forecast notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Forcast_Chahnaz.ipynb). The data forecasting flowchart below shows the process of data establishment in order to input into a machine learning model to predict maternal mortality ratio (MMR) from 2020 to 2030
+![Forecasting](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/ten_year_forecast_flowchart.png)
+
+- For more information on the ten year MMR forecast in the United States examine the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast).
+
+- The forecast was performed in order to develop a health measure playground, use the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to manipulate the variables and observe the changing outcomes through our API.
 
 
 **Limitations and Considerations**
@@ -495,6 +500,14 @@ the many complications that could lead to death during pregnancy and/or childbir
 <a href="https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en" target="_blank">Chrome Table Capture</a>
 <span> | </span>
 <a href="https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html" target="_blank">Scikit-Learn</a>
+<span> | </span>
+<a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html" target="_blank">Seaborn</a>
+<span> | </span>
+<a href="https://joblib.readthedocs.io/en/latest/" target="_blank">Joblib</a>
+<span> | </span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html" target="_blank">Matplotlib</a>
+<span> | </span>
+<a href="https://ipypublish.readthedocs.io/en/latest/" target="_blank">PyPublish: Features</a>
 </p>
 
 ## Contributors
