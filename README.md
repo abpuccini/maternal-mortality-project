@@ -175,7 +175,7 @@ In order to maximize our chances at creating a smart machine learning model, we 
 We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
 
 
-### Model Creation and Selection
+### Model Creation and Selection ###
 
 To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
@@ -189,7 +189,7 @@ This dataset contains MMR data stratified by race.  The races included were:
 
 Other columns found in this dataset are births and deaths by race, population by race, as well as state ID and location
 
-*Models Tested*
+**Models Tested**
 
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression)
 
@@ -210,6 +210,8 @@ Other columns found in this dataset are births and deaths by race, population by
         -MSE: 364.27539582893286
         -R2 Testing: 0.5550222997732394
         -R2 Training: 0.587634628814633
+
+**This model had the highest R-squared value and was the top performing model for this dataset**
 
 
 **Lasso Regression**
@@ -240,49 +242,64 @@ Other columns found in this dataset are births and deaths by race, population by
 
 - It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showsed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
 
-![Confusion Maxtrix](/static/img/)
+![Confusion Maxtrix](/static/img/confusion_matrix_strat_by_race.png)
 
 
 
-*Limitations and Considerations*
+**Limitations and Considerations**
 
-If a certain group has fewer than 10 deaths for a given state and year, that data is suppressed. 
-One limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
+- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes.  Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
 
+- Another limitation we discovered from earlier exploratory analysis was that our data had outliers.
 
-We knew from earlier exploratory analysis that our data had outliers.
-
-
-Because our outcome, MMR, is a continuous variable, we needed to run Regression models rather than Classification models.
+- We also took into consideration that because our outcome, MMR, is a continuous variable, we needed to run Regression models rather than Classification models for the machine learning process.
 
 
-*Processes and Visulzations*
+**Processes and Visulzations**
 
 
-**Second Dataset- Maternal Mortality Rate without Race**
+### Second Dataset- Maternal Mortality Rate without Race ###
 
-Other columns found in this dataset are births and deaths by race, population by race
+Columns found in this dataset include identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
 
-*Models Tested*
+**Models Tested**
 
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
 
 
 **Linear Regression**
 
+We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
+
+- First we applied a series of heat maps to the dataset in order to visulize the correlations within the data comparing various factors.  For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
+
+- The results of the **Heatmap 2** indicated that diabetes and premature death had the strongest positive correlations. Other important correlations included positive relationships with physical inactivity, obesity, and low birth weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High health status (which is the percentage of women who reported that their health is very good or excellent) had the strongest negative correlation in addition to higher weighted sums of all determinants and health outcomes from the national average. Dental visits also had a moderately strong negative correlation with MMR. 
+
+
+**Heatmap 1** | **Heatmap 2**
+--------------------- | ---------------------
+![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
+
+
+- A linear regression model was then applied to the dataset again becuase MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value.  As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+    
+- R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
+
+![Table](/Images/linear_reg_non_race_table_results.PNG)
+
+
+**This model had the highest R-squared value and was the top performing model for this dataset**
 
 
 **Lasso Regression**
 
-
-
-**Logistic Regression**
-
+- We applied a Lasso Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
 
 
 **Ridge Regression**
 
+- We applied a Ridge Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
 **Neural Network**
@@ -293,15 +310,12 @@ Other columns found in this dataset are births and deaths by race, population by
 
 - After running the model, the mean squared error never fell below 1000 in any testing, including the addition of layers, which was much worse than the linear models that had already been created. 
 
-![Neural Network](/static/img)
+![Neural Network](/static/img/neural_network_model.png)
 
 
-*Limitations and Considerations*
+**Processes and Visulzations**
 
-
-*Processes and Visulzations*
-
-
+- 
 
 ### User Self-Input
 
@@ -309,7 +323,11 @@ Other columns found in this dataset are births and deaths by race, population by
 ### Predictive Analysis
 
 
+
+
 ### 10-Year Forecast
+
+- Taking the linear regression modelThe dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. Maternal mortality rates increased slowly from 2009 to 2019 and based on the forecast continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce it to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. Clearly, the forecast depends on the variables continuing their current trend for the next 10 years. These can obviously change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even just maintained due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
 The dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates. 
 
@@ -321,6 +339,8 @@ Maternal mortality rates increased slowly from 2009 to 2019 and based on the for
 
 
 Healthy People 2030’s goal for maternal mortality rate is to reduce it to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
+
+![10 Year Predictions](/Images/Predictions_Barplot_to_2030.png]
 
 
 ## Flask Web Application
