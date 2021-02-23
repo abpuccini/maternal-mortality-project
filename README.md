@@ -256,7 +256,9 @@ Other columns found in this dataset are births and deaths by race, population by
 
 - It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showsed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
 
-![Confusion Maxtrix](/static/img/confusion_matrix_strat_by_race.png)
+<p align="center">
+  <img alt="Confusion Matrix" src="/static/img/confusion_matrix_strat_by_race.png">
+</p>
 
 ### Second Dataset
 
@@ -285,7 +287,9 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
-![Table](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/linear_reg_non_race_table_results.JPG)
+<p align="center">
+  <img alt="R-squared Table" src="Images/linear_reg_non_race_table_results.JPG">
+</p>
 
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
