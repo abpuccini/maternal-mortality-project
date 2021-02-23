@@ -17,8 +17,11 @@
     - [United States](#united-states)
 8. [Machine Learning](#machine-learning)
     - [Purpose](#purpose)
+    - [Preprocessing Data](#preprocessing-data)
     - [Model Creation & Selection](#model-creation-and-selection)
-    - [10-Year Forecast](#10-year-forecast)
+        - [First Dataset](#first-dataset)
+        - [Second Dataset](#second-dataset)
+    - [Ten Year Forecast and Predictive Analysis](#ten-year-forecast-and-predictive-analysis)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
     - [United States: Affordable Care Act Page](#united-states-affordable-care-act-page)
@@ -35,7 +38,7 @@
 
 ## Purpose of Project
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations). Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
 ## Project Overview
@@ -46,7 +49,7 @@ We are focusing on factors at the state level because maternal mortality rates a
 ## Objective
 
 Our objective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
-For example, Does health insurance coverage affect maternal mortality rates? Does a state’s election of the medicaid expansion affect maternal mortality rates?  Are there any other factors that might affect maternal mortality?
+For example, does health insurance coverage affect maternal mortality rates? Does a state’s election of the Medicaid expansion affect maternal mortality rates? Are there any other factors that might affect maternal mortality?
 
 ## Data Sources
 
@@ -68,11 +71,11 @@ The data for this project was sourced from the following sources:
 
 - UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder: Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+- Kaiser Family Foundation: Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by the US state for years 2009-19.
+- America's Health Rankings United Health Foundation: Pulled report for overall health of women and children for 2019 as well as overall health outcomes by the US state for years 2009-19.
 
 ### **Transform**
 
@@ -84,7 +87,7 @@ The data for this project was sourced from the following sources:
 
 **Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:**
 - Collected data from the Kaiser Family Foundation site for years 2009-2019.
-- Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
+- Used `fillna()` function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
 - Built new Dataframes with an added column for the year.
 - Used pd.concat to combine DataFrames from each year from 2009-2019 and Sorted final dataframe by year and location. 
 - Exported cleaned data to a csv. 
@@ -92,12 +95,12 @@ The data for this project was sourced from the following sources:
 
 **Cleaning Health of Women and Children Data**
 - Downloaded CSV of report data for 2019 
-- Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
+- Used `.str.contains` to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
 - Merged into one big CSV and Exported combined csv
 
 **Cleaning overall Health Outcomes**
 - Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
-- Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
+- Locate “Measure Names” pertinent to our information from `.unique()` list, investigate common entries throughout dataframes over time
 - Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
 - Output dataframes to CSV
 
@@ -120,9 +123,9 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
 
-- It was hypothesized that insurance coverage could affect health, and specifically women's health.  The period of 2009-2019 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
+- It was hypothesized that insurance coverage could affect health, and specifically women's health. The period of 2009-2019 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
 
-- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
+- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system. It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
 ## Statistical Analysis
 
@@ -165,22 +168,30 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Machine Learning
 
+Machine Learning Title: Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates
+
 ### Purpose
 
 Maternal Mortality Rates have continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates during the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
+
+### Preprocessing Data
 
 In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
 
 We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
 
-Insert link to ETL data process
+To learn more about this process of data cleaning and preprocessing visit machine learning [ETL pipline](https://github.com/abpuccini/maternal-mortality-project/tree/main/ETL/ETL-process/Project_3)
 
 
 ### Model Creation and Selection ###
 
-To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
+For a complete view of all our machine learning tested models, please click this [link](https://github.com/abpuccini/maternal-mortality-project/tree/main/machine_learning/model_testing)
 
-**First Dataset- Maternal Mortality Rate Stratified by Race**
+To better visualize our data and select the optimal model, we separated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
+
+### First Dataset 
+
+**Maternal Mortality Rate Stratified by Race**
 
 This dataset contains MMR data stratified by race.  The races included were:
 
@@ -196,9 +207,9 @@ Other columns found in this dataset are births and deaths by race, population by
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression)
 
 
-**Linear Regression**
+### Linear Regression
 
-- For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
+- For the [linear regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/LR_stratified_by_race_lee.ipynb) model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
 
 - In the heatmap below, we can see strong positive correlations (likely to indicate higher MMR) for Black or African American women, and negative correlations (likely to indicate lower MMR) for White women. 
 
@@ -217,29 +228,29 @@ Other columns found in this dataset are births and deaths by race, population by
 ***This model had the highest R-squared value and was the top performing model for this dataset***
 
 
-**Lasso Regression**
+### Lasso Regression
 
-- Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
+- Using the [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Lasso_Reg_By_Race_ah.ipynb) Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
 - Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
-- After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
+- After fitting and training the model, the data was run through the Lasso Regression model with the following results:
     - MSE: 0.37425190453114504
     - R2: 0.6956700138016816
 
-- The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
+- The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR. After those features were dropped, the model was ran again and the R squared value dropped significantly
     - MSE: 0.6478563653918986
     - R2: 0.47318339238591234
 
 
-**Logistic Regression**
+### Logistic Regression
 
-- After applying the Linear Regression models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
+- After applying the [Linear Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Logistic_Regression_stratified_by_race_lee.ipynb) models, we tried Logistic Regression, converting our y-value to categorical and binned our MMR data stratified by race into three categories:
     - Low (MMR <= 20)
     - Medium (MMR > 20 and <= 50)
     - High (MMR > 50)
 
-- We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of three bins, so we reverted to using bins that would contain all the data.  Our scores for this model improved after we removed the birth and death data points: 
+- We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of the three bins, so we reverted to using bins that would contain all the data. Our scores for this model improved after we removed the birth and death data points: 
     - R2 Testing: 0.5979381443298969
     - R2 Training: 0.7594501718213058
 
@@ -247,55 +258,58 @@ Other columns found in this dataset are births and deaths by race, population by
 
 ![Confusion Maxtrix](/static/img/confusion_matrix_strat_by_race.png)
 
+### Second Dataset
 
-
-### Second Dataset- Maternal Mortality Rate without Race ###
+**Maternal Mortality Rate without Race**
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
-
 **Models Tested**
 
-[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
+[Linear Regression without Race](#linear-regression-without-race) | [Polynomial Regression without Race](#polynomial-regression-without-race) | [Lasso Regression without Race](#lasso-regression-without-race) | [Ridge Regression without Race](#ridge-regression-without-race) | [Neural Network without Race](#neural-network-without-race) 
 
 
-**Linear Regression**
+### Linear Regression without Race
 
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
-- First we applied a series of heat maps to the dataset in order to visulize the correlations within the data comparing various factors.  For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
+- First we applied a series of heatmaps to the dataset in order to visulize the correlations within the data comparing various factors. For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
 
 - The results of the **Heatmap 2** indicated that diabetes and premature death had the strongest positive correlations. Other important correlations included positive relationships with physical inactivity, obesity, and low birth weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High health status (which is the percentage of women who reported that their health is very good or excellent) had the strongest negative correlation in addition to higher weighted sums of all determinants and health outcomes from the national average. Dental visits also had a moderately strong negative correlation with MMR. 
-
 
 **Heatmap 1** | **Heatmap 2**
 --------------------- | ---------------------
 ![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
 
-
-- A linear regression model was then applied to the dataset again becuase MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value.  As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome. All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
-![Table](/Images/linear_reg_non_race_table_results.PNG)
+![Table](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/linear_reg_non_race_table_results.JPG)
 
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
 
+### Polynomial Regression without Race
 
-**Lasso Regression**
+In the second [notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb) of linear regression without race further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure below, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
 
-- We applied a Lasso Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
+![Polynomial Plot](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Polynomial_LR_Fit.png)
 
 
-**Ridge Regression**
+### Lasso Regression without Race
 
-- We applied a Ridge Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
+- We applied a [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/non-race_testing_lasso_abp.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
+
+
+### Ridge Regression without Race
+
+- We applied a [Ridge Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/ridge_linear_regression_shay.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
-**Neural Network**
+### Neural Network without Race
 
-- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a neural network as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
+- Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a [neural network](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/neural_network_austin.ipynb) as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
 
 - Next, a base sequential model was created with the same number of neurons as inputs, which in this case were 25, and then using `KerasRegressor`, and setting loss to mean squared error and the optimizer to Adam, and a Kfold of 10.  A variety of models were built using various scaling and testing. 
 
@@ -304,15 +318,7 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 ![Neural Network](/static/img/neural_network_model.png)
 
 
-**Processes and Visulzations**
-
-- Further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
-
-
-![Poly Regression](/static/img/polynomial_LR_Fit.png)
-
-
-### 10-Year Forecast & Predictive Analysis
+### Ten Year Forecast and Predictive Analysis
 
 **The Process of Forcasting**
 
@@ -321,21 +327,27 @@ The data forecasting flowchart below shows the process of data establishment in 
 ![Forcasting Tree](/static/img/ML_flowchart-3.png)
 
 
-**10-Year Forecast- Time Series Forecast Analysis
+Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
 - In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
+
+![Forecast](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/Predictions_Barplot_to_2030.png)
 
 - The results of the 10-year forecast model showed that maternal mortality rates increased slowly from 2009 to 2019 and then would continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce the number to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
 - This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
+- We also applied time series forecast of the average annual maternal mortality and associated impacts in the United States from 2009 to 2030, for further details see the [forecast notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Forcast_Chahnaz.ipynb). The data forecasting flowchart below shows the process of data establishment in order to input into a machine learning model to predict maternal mortality ratio (MMR) from 2020 to 2030
+![Forecasting](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/ten_year_forecast_flowchart.png)
 
-![10 Year Predictions](/Images/Predictions_Barplot_to_2030.png]
+- For more information on the ten year MMR forecast in the United States examine the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast).
+
+- The forecast was performed in order to develop a health measure playground, use the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to manipulate the variables and observe the changing outcomes through our API.
 
 
 **Limitations and Considerations**
 
-- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes.  Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
+- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes. Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
 
 - Another limitation we discovered from earlier exploratory analysis was that our data had outliers.
 
@@ -400,35 +412,28 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ## Machine Learning Models Page ##
 
-
 **Models Based Race**
 
-- 
+**Models by Race 1** 
+- Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-race-model) to view our machine learning model by race. 
 
-**Models by Race 1** | **Models by Race 2**
---------------------- | ---------------------
-![Model 1](/Images/LR_by_race_app.JPG)|![Model 2](/Images/LR2_by_race_app.png)
+**Models by Race 2**
+- Click on this [link](https://maternal-mortality-project.herokuapp.com/machine-learning-non-race-model) to view our machine learning model without race. 
 
+- Visualized the MMR data points to show which points were the most successful and what points are appropriately identified for high risk 
 
-- Visualized the MMR data points to show which points were the most successful and what  points are appropriately identified for high risk 
-
-![Model 3](/Images/LR3_by_race_app.JPG)
-
+![Model 3](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/confusion_matrix_strat_by_race.png)
 
 **Models Based Non Race**
-
+![Features](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/MMR_Non_Race_Association.png)
 
 ### Machine Learning Playground Page
 
-- The interactive form picture below allows users to input their values to explore the effect of MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in.
-
-![Playground](/Images/ml_playground_app.JPG)
+- The interactive form picture below allows users to input their values to explore the effect on MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in. Click on the [link](https://maternal-mortality-project.herokuapp.com/machine-learning-playground) to access the playground. 
 
 ### Machine Learning 10-Year Forecast Page
 
-- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030.
-
-![Forcast Non Race](/Images/10yr_forc_non_race_app.JPG)
+- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030. Click the following [link](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast) to access the machine learning forecast page. 
 
 
 - Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timrframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason of the decresing of MMR for all race and ethnicity.
@@ -438,15 +443,15 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### News and Articles Page
 
-- This page contains news and articles retrived from News API.  
+- This [page](https://maternal-mortality-project.herokuapp.com/news-articles) contains news and articles retrived from News API.  
 
 ### Methodology Page
 
-- This page contains the overview that users might be interested to know about the project.
+- This [page](https://maternal-mortality-project.herokuapp.com/methodology) contains the overview that users might be interested to know about the project.
 
 ### About Us Page
 
-- This page contains contact information including Github, LinkedIn and E-mail of all the contributors for this project in case users have questions.
+- This [page](https://maternal-mortality-project.herokuapp.com/about-us) contains contact information including Github, LinkedIn and E-mail of all the contributors for this project in case users have questions.
 
 <p align="center">
   <img alt="team" src="Images/team.png" width="500px">
@@ -478,6 +483,14 @@ the many complications that could lead to death during pregnancy and/or childbir
 <a href="https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en" target="_blank">Chrome Table Capture</a>
 <span> | </span>
 <a href="https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html" target="_blank">Scikit-Learn</a>
+<span> | </span>
+<a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html" target="_blank">Seaborn</a>
+<span> | </span>
+<a href="https://joblib.readthedocs.io/en/latest/" target="_blank">Joblib</a>
+<span> | </span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html" target="_blank">Matplotlib</a>
+<span> | </span>
+<a href="https://ipypublish.readthedocs.io/en/latest/" target="_blank">PyPublish: Features</a>
 </p>
 
 ## Contributors
