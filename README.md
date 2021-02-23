@@ -205,7 +205,7 @@ Other columns found in this dataset are births and deaths by race, population by
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression)
 
 
-##### Linear Regression
+#### Linear Regression
 
 - For the [linear regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/LR_stratified_by_race_lee.ipynb) model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
 
@@ -226,7 +226,7 @@ Other columns found in this dataset are births and deaths by race, population by
 ***This model had the highest R-squared value and was the top performing model for this dataset***
 
 
-##### Lasso Regression
+#### Lasso Regression
 
 - Using the [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Lasso_Reg_By_Race_ah.ipynb) Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
@@ -241,7 +241,7 @@ Other columns found in this dataset are births and deaths by race, population by
     - R2: 0.47318339238591234
 
 
-##### Logistic Regression
+#### Logistic Regression
 
 - After applying the [Linear Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Logistic_Regression_stratified_by_race_lee.ipynb) models, we tried Logistic Regression, converting our y-value to categorical and binned our MMR data stratified by race into three categories:
     - Low (MMR <= 20)
@@ -261,7 +261,7 @@ Other columns found in this dataset are births and deaths by race, population by
 ---
 <a name="#second-dataset"></a>
 
-#### Maternal Mortality Rate Not Stratified by Race**
+#### Maternal Mortality Rate Not Stratified by Race Dataset
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
@@ -270,7 +270,7 @@ Columns found in this dataset include 28 identified Healthcare Measures, Insuran
 [Linear Regression without Race](#linear-regression-without-race) | [Polynomial Regression without Race](#polynomial-regression-without-race) | [Lasso Regression without Race](#lasso-regression-without-race) | [Ridge Regression without Race](#ridge-regression-without-race) | [Neural Network without Race](#neural-network-without-race) 
 
 
-##### Linear Regression without Race
+#### Linear Regression without Race
 
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
@@ -293,24 +293,24 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
 
-##### Polynomial Regression without Race
+#### Polynomial Regression without Race
 
 In the second [notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb) of linear regression without race further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure below, it was determined that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial features at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
 
 ![Polynomial Plot](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Polynomial_LR_Fit.png)
 
 
-##### Lasso Regression without Race
+#### Lasso Regression without Race
 
 - We applied a [Lasso Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/non-race_testing_lasso_abp.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
 
 
-##### Ridge Regression without Race
+#### Ridge Regression without Race
 
 - We applied a [Ridge Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/ridge_linear_regression_shay.ipynb) model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
-##### Neural Network without Race
+#### Neural Network without Race
 
 - Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a [neural network](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/neural_network_austin.ipynb) as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into an array using the `.values` function. 
 
