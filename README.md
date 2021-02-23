@@ -17,8 +17,10 @@
     - [United States](#united-states)
 8. [Machine Learning](#machine-learning)
     - [Purpose](#purpose)
-    - [Preprocessing Data](#preprocessing_data)
+    - [Preprocessing Data](#preprocessing-data)
     - [Model Creation & Selection](#model-creation-and-selection)
+        - [First Dataset](#first-dataset)
+        - [Second Dataset](#second-dataset)
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
@@ -185,7 +187,9 @@ To learn more about this process of data cleaning and preprocessing visit machin
 
 To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
-**First Dataset- Maternal Mortality Rate Stratified by Race**
+### First Dataset 
+
+**Maternal Mortality Rate Stratified by Race**
 
 This dataset contains MMR data stratified by race.  The races included were:
 
@@ -201,7 +205,7 @@ Other columns found in this dataset are births and deaths by race, population by
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Logistic Regression](#logistic-regression)
 
 
-**Linear Regression**
+### Linear Regression
 
 - For the linear regression model we collected publicly available mortality data from the CDC Wonder site, selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy, childbirth, and the puerperium), which captures maternal deaths owing to obstetrical tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a year following the termination of a pregnancy). 
 
@@ -222,7 +226,7 @@ Other columns found in this dataset are births and deaths by race, population by
 ***This model had the highest R-squared value and was the top performing model for this dataset***
 
 
-**Lasso Regression**
+### Lasso Regression
 
 - Using the Lasso Regression Model, all of the features were selected for the x value, and identified MMR by race as the y value
     
@@ -237,7 +241,7 @@ Other columns found in this dataset are births and deaths by race, population by
     - R2: 0.47318339238591234
 
 
-**Logistic Regression**
+### Logistic Regression
 
 - After applying the Linear Regression models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
     - Low (MMR <= 20)
