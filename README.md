@@ -306,11 +306,10 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 
 **Processes and Visulzations**
 
-Polynomial Regression
-
 - Further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
 
-Place model here
+
+![Poly Regression](/static/img/polynomial_LR_Fit.png)
 
 
 ### 10-Year Forecast & Predictive Analysis
@@ -319,7 +318,7 @@ Place model here
 
 The data forecasting flowchart below shows the process of data establishment in order to input into machine learning model to predict matermal mortality ratio (MMR) from 2020 to 2030.
 
-![Forcasting Tress](
+![Forcasting Tree](/static/img/ML_flowchart-3.png)
 
 
 **10-Year Forecast- Time Series Forecast Analysis
@@ -331,7 +330,7 @@ The data forecasting flowchart below shows the process of data establishment in 
 - This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
 
-![10 Year Predictions](Images/Predictions_Barplot_to_2030.png]
+![10 Year Predictions](/Images/Predictions_Barplot_to_2030.png]
 
 
 **Limitations and Considerations**
@@ -399,13 +398,43 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ![Ranked Healthcare Measures](Images/Infant_Mortality_RHM.JPG)
 
-### Machine Learning Models Page
+## Machine Learning Models Page ##
 
-##
+
+**Models Based Race**
+
+- 
+
+**Models by Race 1** | **Models by Race 2**
+--------------------- | ---------------------
+![Model 1](/Images/LR_by_race_app.JPG)|![Model 2](/Images/LR2_by_race_app.png)
+
+
+- Visualized the MMR data points to show which points were the most successful and what  points are appropriately identified for high risk 
+
+![Model 3](/Images/LR3_by_race_app.JPG)
+
+
+**Models Based Non Race**
+
 
 ### Machine Learning Playground Page
 
+- The interactive form picture below allows users to input their values to explore the effect of MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in.
+
+![Playground](/Images/ml_playground_app.JPG)
+
 ### Machine Learning 10-Year Forecast Page
+
+- Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030.
+
+![Forcast Non Race](/Images/10yr_forc_non_race_app.JPG)
+
+
+- Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timrframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason of the decresing of MMR for all race and ethnicity.
+
+![Forcast Race](/Images/10yr_forc_race_app.JPG)
+
 
 ### News and Articles Page
 
