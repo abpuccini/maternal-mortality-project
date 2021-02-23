@@ -96,212 +96,169 @@
 
     <!-- Main Section -->
     <div id="main-container" class="container">
-        <div class="row" id="overview">
+        <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Overview</h3>
                 <hr>
-                <p>
-                    After visualizing maternal mortality ratio (MMR) data from the United States and seeing disparities among states in insurance coverage and health measures, we decided to apply machine learning to the problem. It was clear from initial research that racial and ethnic disparities existed, so we collected two datasets: one that utilized MMR data stratified by race, and another that included MMR data for all races and also included insurance status and 26 different health measures. We then trained and tested a variety of models before choosing the top-performing models for each subset of data.
-                </p>
-
-                <h3>Linear Regression Model</h3>
-                <h5>dataset stratified by race and ethnicity</h5>
-                <hr>
-                <div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>
-                                For our dataset stratified by race and ethnicity, we chose a linear regression
-                                model.
-                            </p>
-                            <p>
-                                We collected publicly available United States mortality data from the CDC Wonder site,
-                                selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy,
-                                childbirth, and the puerperium), which captures maternal deaths owing to obstetrical
-                                tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a
-                                year following the termination of a pregnancy). One limitation of publicly available
-                                mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result,
-                                only four racial and ethnic groups are represented in our dataset, and some groups are
-                                missing data for some years in our range of 2009-2019.
-                            </p>
-                            <p>
-                                We knew from our initial research that there are wide racial and ethnic gaps in MMR in
-                                the United States. This was apparent in our dataset when viewing MMR for each group: MMR
-                                was at least twice as high for Black or African American women compared to other groups.
-                            </p>
-
-                            <!--creating nested row and columns for 4 images-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/avg_mmr_af_amer.png"
-                                                alt="Average MMR African American"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/avg_mmr_white.png"
-                                                alt="Average MMR White Not Hispanic"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/avg_mmr_hispanic.png"
-                                                alt="Average MMR White Hispanic"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/avg_mmr_asian.png"
-                                                alt="Average MMR Asian or Pacific Islander"></a>
-                                    </div>
-                                </div>
-
-                                <!--closing div for nested row and columns for 4 images-->
-                            </div>
-
-                            <hr>
-
-                            <!--new div class row and column for heatmap explanation and image-->
-                            <div class="row">
-                                <!--<div class="col-md-12">-->
-                                <div class="col-md-4 col-sm-12">    
-                                    <p>
-                                        In the heatmap, we can see strong positive correlations (likely to
-                                        indicate higher MMR) for Black or African American women, and negative
-                                        correlations (likely to indicate lower MMR) for White women.
-                                    </p>
-                                </div>
-                                <div class="col-md-8 col-sm-12 d-flex align-items-center">    
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/heatmap_mmr_strat_by_race.png"
-                                                alt="Heatmap Stratified by Race"></a>
-                                    </div>
-
-                                    <!--closing div for heatmap image column-->
-                                </div>
-                                <!--closing div for heatmap row-->
-                            </div>
-
-                            <hr>
-
-                            <!--new div class and row for boxplot-->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>
-                                        We knew from earlier exploratory analysis that our data had outliers. We
-                                        experimented with scaling our data using Standard Scaler, best for outliers, and
-                                        fit our model again, but the resulting R-squared score was slightly lower. Our highest
-                                        scoring Linear Regression model with the data stratified by race was with
-                                        non-scaled data, using each of our race and hispanic origin categories, and
-                                        population data, stratified by race. Our R-squared scores for this model were 0.56 on
-                                        our testing data, and 0.59 on our training data.
-                                    </p>
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/boxplot_mmr_strat_by_race.png"
-                                                alt="Boxplot Stratified by Race"></a>
-                                    </div>
-                                    <!--closing div for boxplot column-->
-                                </div>
-
-                                <!--closing div for boxplot row-->
-                            </div>
-
-
-                            <!--new div class and row for Logistic Regression-->
-                            <div class="row">
-                                <div class="col-md-12">    
-                                    <h3>Logistic Regression Model</h3>
-                                    <h5>dataset stratified by race and ethnicity</h5>
-                                    <hr>
-                                </div> 
-
-                                <div class="col-md-6 col-sm-12">    
-                                    <p>
-                                        After doing Linear Regression models, we tried Logistic Regression, converting
-                                        our y-value (MMR) to categorical.
-                                    </p>
-                                    <p>
-                                        We binned our MMR data stratified by race into three categories:
-                                    <ul>
-                                        <li>Low (MMR less than or equal to 20)</li>
-                                        <li>Medium (MMR greater than 20 and less than or equal to 50)</li>
-                                        <li>High (MMR greater than 50)</li>
-                                    </ul>
-                                    </p>
-                                    <p>
-                                        Our R-squared scores for this model were 0.59 on our testing data, and 0.75 on our
-                                        training data. The confusion matrix shows that identifying MMR data points
-                                        as "medium" risk was most successful, followed by identifying appropriately for
-                                        "high" risk.
-                                    </p>
-                                <!--closing div for text on Logistic Regression-->    
-                                </div>
-                                <div class="col-md-6 col-sm-12 d-flex align-items-center">
-                                    <div class="well">
-                                        <a class="mr-5"><img class="img-fluid mx-auto d-block"
-                                                src="../static/img/confusion_matrix_strat_by_race.png"
-                                                alt="Confusion Matrix Stratified by Race"></a>
-                                    </div>
-                                <!--closing div for confusion matrix image-->    
-                                </div>    
-
-                            <!--closing div for Logistic Regression row-->
-                            </div>
-
-
-                            <!--new div for Summary Section-->
-                            <div>
-                                <h3>Summary</h3>
-                                <hr>
-                                <div class="card bg-light text-dark">
-                                    <div class="card-body">
-                                        <p>
-                                            The CDC estimates that 60 percent of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
-                                        </p>
-                                    </div>
-                                </div>
-                                <!--closing div for Summary Section-->
-                            </div>
-
-                            <!--new div row and column for Reference Section-->
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                    <h3>Reference</h3>
-                                    <hr>
-                                    <div class="reference">
-
-                                        <p>
-                                            Report from Nine Maternal Mortality Review Committees. (2018) <a
-                                            href="https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf"
-                                            target="_blank"><em>Building U.S. capacity to review and prevent
-                                            maternal deaths</em></a>. Review to Action. https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf
-                                        </p>
-                                        <p>
-                                            CDC. (2021) <a href="https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Freproductivehealth%2Fmaternalinfanthealth%2Fpregnancy-mortality-surveillance-system.htm"target="_blank"><em>Pregnancy-Related Deaths by Race/Ethnicity</em></a>. Pregnancy Mortality Surveillance System. https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Freproductivehealth%2Fmaternalinfanthealth%2Fpregnancy-mortality-surveillance-system.htm 
-                                        </p>
-                                    <!--closing div for reference class-->
-                                    </div>
-
-                                <!--closing div for Reference column-->
-                                </div>
-                            <!--closing div for Reference row-->
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="overview">
+                    <p>
+                        After visualizing maternal mortality ratio (MMR) data from the United States and seeing disparities among states in insurance coverage and health measures, we decided to apply machine learning to the problem. It was clear from initial research that racial and ethnic disparities existed, so we collected two datasets: one that utilized MMR data stratified by race, and another that included MMR data for all races and also included insurance status and 26 different health measures. We then trained and tested a variety of models before choosing the top-performing models for each subset of data.
+                    </p>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Linear Regression Model</h3>
+                <hr>
+                <div class="overview">
+                    <p>
+                        For our dataset stratified by race and ethnicity, we chose a linear regression
+                        model.
+                    </p>
+                    <p>
+                        We collected publicly available United States mortality data from the CDC Wonder site,
+                        selecting for ICD codes A34 (Obstetrical tetanus) and O00 to O99 (Chapter XV Pregnancy,
+                        childbirth, and the puerperium), which captures maternal deaths owing to obstetrical
+                        tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a
+                        year following the termination of a pregnancy). One limitation of publicly available
+                        mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result,
+                        only four racial and ethnic groups are represented in our dataset, and some groups are
+                        missing data for some years in our range of 2009-2019.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <img class="img-fluid" src="../static/img/avg_mmr_af_amer.png" alt="Average MMR African American">
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <img class="img-fluid" src="../static/img/avg_mmr_white.png" alt="Average MMR White Not Hispanic">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <img class="img-fluid" src="../static/img/avg_mmr_hispanic.png" alt="Average MMR White Hispanic">
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <img class="img-fluid" src="../static/img/avg_mmr_asian.png" alt="Average MMR Asian or Pacific Islander">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <p>
+                    We knew from our initial research that there are wide racial and ethnic gaps in MMR in
+                    the United States. This was apparent in our dataset when viewing MMR for each group: MMR
+                    was at least twice as high for Black or African American women compared to other groups.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <img class="img-fluid" src="../static/img/heatmap_mmr_strat_by_race.png" alt="Heatmap Stratified by Race">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <p>
+                    In the heatmap above, we can see strong positive correlations (likely to
+                    indicate higher MMR) for Black or African American women, and negative
+                    correlations (likely to indicate lower MMR) for White women.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <img class="img-fluid" src="../static/img/boxplot_mmr_strat_by_race.png" alt="Boxplot Stratified by Race">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <p>
+                    We knew from earlier exploratory analysis that our data had outliers. We
+                    experimented with scaling our data using Standard Scaler, best for outliers, and
+                    fit our model again, but the resulting R-squared score was slightly lower. Our highest
+                    scoring Linear Regression model with the data stratified by race was with
+                    non-scaled data, using each of our race and hispanic origin categories, and
+                    population data, stratified by race. Our R-squared scores for this model were 0.56 on
+                    our testing data, and 0.59 on our training data.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Logistic Regression Model</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                <p>
+                    After doing Linear Regression models, we tried Logistic Regression, converting
+                    our y-value (MMR) to categorical.
+                </p>
+                <p>
+                    We binned our MMR data stratified by race into three categories:
+                <ul>
+                    <li>Low (MMR less than or equal to 20)</li>
+                    <li>Medium (MMR greater than 20 and less than or equal to 50)</li>
+                    <li>High (MMR greater than 50)</li>
+                </ul>
+                </p>
+                <p>
+                    Our R-squared scores for this model were 0.59 on our testing data, and 0.75 on our
+                    training data. The confusion matrix shows that identifying MMR data points
+                    as "medium" risk was most successful, followed by identifying appropriately for
+                    "high" risk.
+                </p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5"></div>
+                <img class="img-fluid" src="../static/img/confusion_matrix_strat_by_race.png"alt="Confusion Matrix Stratified by Race">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Summary</h3>
+                <hr>
+                <div class="overview">
+                    <p>
+                        The CDC estimates that 60 percent of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
+                    </p>
+                </div>
+            </div>
+        </div>        
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Reference</h3>
+                <hr>
+                <div class="reference">
+                    <p>
+                        Report from Nine Maternal Mortality Review Committees. (2018) <a
+                        href="https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf"
+                        target="_blank"><em>Building U.S. capacity to review and prevent
+                        maternal deaths</em></a>. Review to Action. https://reviewtoaction.org/sites/default/files/national-portal-material/Report%20from%20Nine%20MMRCs%20final_0.pdf
+                    </p>
+                    <p>
+                        CDC. (2021) <a href="https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm"target="_blank"><em>Pregnancy-Related Deaths by Race/Ethnicity</em></a>. Pregnancy Mortality Surveillance System. https://www.cdc.gov/reproductivehealth/maternal-mortality/pregnancy-mortality-surveillance-system.htm
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        
     </div>
 
     <!--Footer-->
