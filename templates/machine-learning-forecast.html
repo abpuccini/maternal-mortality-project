@@ -96,7 +96,64 @@
 
     <!-- Main Section -->
     <div id="main-container" class="container">
-        <div id="forecast_graph"></div>
+
+        <!-- Flowchart -->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>The Process of Forecasting</h3>
+                <hr>
+                <div id="overview">
+                    <p>
+                        The data forecasting flowchart below shows the process of data establishment in order to input
+                        into machine learning model to predict matermal mortality ratio (MMR) from 2020 to 2030.
+                    </p>
+                    <a href="static/img/ten_year_forecast_flowchart.png"><img width="100%"
+                            src="static/img/ten_year_forecast_flowchart.png" /></a>
+                    <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <b>Note:</b> Flowchart of the process of creating the MMR 10-year forecast for both race and
+                        non-race dataset.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 10-year Forecast -->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Dataset Stratified by Non-race and Non-ethnicity Summary</h3>
+                <hr>
+                <article>
+                    As the graph presented below, it shows maternal mortality ratio (MMR) from 2009 to 2030. MMR
+                    from 2009 to 2019 is an average value across the
+                    entire dataset grouped by year. MMR from 2020 to 2030 is calculated by machine learning linear
+                    regression and time-series models based on other factors calculated by time-series model. For both
+                    time-series and linear regression (LR) models predict that
+                    U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26%
+                    increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at
+                    the year of 2030.
+                </article>
+                <div id="forecast_graph_non_race"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Dataset Stratified by Race and Ethnicity Summary</h3>
+                <hr>
+                <article>
+                    As the graph presented below, it shows maternal mortality ratio (MMR) from 2009 to 2030 for each
+                    race and ethnicity. MMR from 2009 to 2030 is an average value across the entire dataset grouped by
+                    year, race and ethnicity. MMR from 2020 to 2030 is calculated by machine learning linear
+                    regression models based on population by race and ethnicity whice is calculated by time-series
+                    model. The line graphs show that MMR for every race and ethnicity will decrease. However, there is
+                    only one factor used to predict MMR; population. The population tends to increase at a reduced rate.
+                    That might be a reason of the decresing of MMR for all race and ethnicity.
+                </article>
+                <div id="forecast_graph_race"></div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
     <!--Footer-->

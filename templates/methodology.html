@@ -228,20 +228,13 @@
                                 Lasso, and Logistic Regression, for one or both both datasets.
                             </li>
                             <li>
-                                Initially, the model type with the highest R-squared values for both training datasets
+                                The model type with the highest R-squared values for both training datasets
                                 were the Linear Regression
                                 models. We chose to move forward with optimizing those models.
                             </li>
                             <li>
-                                Created visualizations, performed feature selection, and continued to train and tune the
-                                models. For the race-stratified data,
-                                Linear Regression continued to be the highest performing, but for the non-race data,
-                                Plynomial Regression based on the initial Linear
-                                Regression analysis proved to be even more accurate.
-                            </li>
-                            <li>
-                                Saved the top-preforming models, then used the saved models to run predictions, and for
-                                the interactive Playground feature.
+                                Created visualizations, performed feature selection, and continued to train and tune the top-performing models. Saved them, 
+                                then used the saved non-race model to run predictions, and for the interactive Playground feature. 
                             </li>
                         </ul>
                         </p>
@@ -256,20 +249,18 @@
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
-                            <li>Built to take user input for several values, selected by
+                            <li>Identified features with the strongest positive or negative correlations to MMR.
 
                             </li>
-                            <li>Compares the user-input values to
-
-                            </li>
-                            <li>
-
+                            <li>Built user-input interface for collecting those values for a population. Compares the user-input values to the predicted
+                                average values for those features.
                             </li>
                             <li>
-
+                                Calculates the predicted MMR based on the user input values and the predicticted average value for the rest of the features.
                             </li>
                             <li>
-
+                                If the user leaves any input fields blank, the average predicted value for that field will be used in the calculations,
+                                and the predictor will still function.
                             </li>
                         </ul>
                         </p>
@@ -284,20 +275,14 @@
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
-                            <li>
-
+                            <li>Created a dataframe for each feature showing its average value by year, then created a time-series model for each.
                             </li>
-                            <li>
-
+                            <li>Forecast data for all features for 2020-2030, stored all predictions in a dataframe together.
                             </li>
-                            <li>
-
+                            <li>Used the predicted feature values with our saved model to calculate MMR preditions for the next ten years.
                             </li>
-                            <li>
-
-                            </li>
-                            <li>
-
+                            <li>Separated MMR by year and used the regression analysis to perform a time series forecast. This determined 
+                                that MMR will increase by 25% between 2020 and 2030.
                             </li>
                         </ul>
                         </p>
@@ -348,29 +333,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">Data Limitation</div>
+                    <div class="card-header">Data Limitations</div>
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
                             <li>
-
+                                If a certain racial group has fewer than 10 deaths for a given state and year, that data is suppressed. 
                             </li>
                             <li>
-
+                                Because the outcome, MMR, is a continuous variable, this data was not a good fit for any Classification models.
+                                Therefor, we primarily tested supervised Regression models, since they were the best fit for this data.  
                             </li>
-                            <li>
-
-                            </li>
-                            <li>
-
-                            </li>
-                            <li>
-
-                            </li>
-                            <li>
-
-                            </li>
-                        </ul>
                         </p>
                     </div>
                 </div>
