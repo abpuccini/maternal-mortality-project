@@ -1,6 +1,6 @@
 // // This unused file is for manually fetching JSON from the NewsAPI
 
-// // We will hardcode HTML instead of fetching JSON from an API or fetching locally.
+// // We will hardcode HTML instead of fetching JSON from an API or fetching JSON locally.
 // // Even with a proxy server, requests from the browser are not allowed on the NewsAPI Developer plan, except from localhost.
 // // NewsAPI fetches up to one month of data on the Developer plan.
 

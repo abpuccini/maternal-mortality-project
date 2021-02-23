@@ -109,10 +109,6 @@ function drawMap(year, mapContainer) {
 
       series.colorScale(scale);
 
-      // create zoom controls
-      var zoomController = anychart.ui.zoom();
-      zoomController.render(map);
-
       // set container id for the chart
       map.container(mapContainer);
       // initiate chart drawing
