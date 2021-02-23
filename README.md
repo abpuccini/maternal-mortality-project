@@ -17,6 +17,7 @@
     - [United States](#united-states)
 8. [Machine Learning](#machine-learning)
     - [Purpose](#purpose)
+    - [Preprocessing Data](#preprocessing_data)
     - [Model Creation & Selection](#model-creation-and-selection)
     - [10-Year Forecast](#10-year-forecast)
 9. [Flask Web Application](#flask-web-application)
@@ -165,15 +166,19 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Machine Learning
 
+Machine Learning Title: Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates
+
 ### Purpose
 
 Maternal Mortality Rates have continued to increase in the United State despite improvements in health care and quality of life. This project examines the impact of various demographic factors, existing health conditions, and differences in access to care on maternal mortality rates during the period of 2009 to 2019 and asks by identifying which factors contribute to an increased MMR, can we create a functional model to predict risk?
+
+### Preprocessing Data
 
 In order to maximize our chances at creating a smart machine learning model, we decided that we needed more data to train it with, so we expanded the data we originally collected by diving deeper into race for MMR, and gathered more healthcare measure data similar to what we used for the Ranked Comparison page featured on our app. 
 
 We collected health measure data from America’s Health Rankings for 28 measures across each state from 2009-2019. We used pandas to select the values we wanted, and created one comprehensive dataframe with all of the measure data across our chosen interval, grouped by state and year. 
 
-Insert link to ETL data process
+To learn more about this process of data cleaning and preprocessing visit machine learning [ETL pipline](https://github.com/abpuccini/maternal-mortality-project/tree/main/ETL/ETL-process/Project_3)
 
 
 ### Model Creation and Selection ###
