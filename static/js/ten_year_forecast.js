@@ -164,7 +164,7 @@ function race_graph() {
         var data = [black, white_his, white_non, asian];
 
         var layout = {
-            title: "<b>MMR 2009 - 2030: Race and Ethnicity</b>",
+            title: "<b>MMR 2009 - 2030: Particular Race and Ethnicity</b>",
             yaxis: {
                 title: "<b>MMR</b>"
             },
