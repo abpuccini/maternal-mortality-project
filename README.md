@@ -21,7 +21,7 @@
     - [Model Creation & Selection](#model-creation-and-selection)
         - [First Dataset](#first-dataset)
         - [Second Dataset](#second-dataset)
-    - [10-Year Forecast](#10-year-forecast)
+    - [Ten Year Forecast & Predictive Analysis](#ten-year-forecast-&-predictive-analysis)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
     - [United States: Affordable Care Act Page](#united-states-affordable-care-act-page)
@@ -266,44 +266,50 @@ Columns found in this dataset include 28 identified Healthcare Measures, Insuran
 
 **Models Tested**
 
-[Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
+[Linear Regression without Race](#linear-regression-without-race) | [Polynomial Regression without Race](#polynomial-regression-without-race) | [Lasso Regression without Race](#lasso-regression-without-race) | [Ridge Regression without Race](#ridge-regression-without-race) | [Neural Network without Race](#neural-network-without-race) 
 
 
-### Linear Regression
+### Linear Regression without Race
 
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
-- First we applied a series of heat maps to the dataset in order to visulize the correlations within the data comparing various factors.  For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
+- First we applied a series of heatmaps to the dataset in order to visulize the correlations within the data comparing various factors. For **Heatmap 1** data was analyzed to determine whether there were any associations between different health measures related to MMR and various kinds of insurance coverage. Each variable was also examined more closely to determine if there was an association with MMR. Factors that had moderate to strong positive or negative correlations to MMR were used to generate a second heatmap. 
+![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|
 
 - The results of the **Heatmap 2** indicated that diabetes and premature death had the strongest positive correlations. Other important correlations included positive relationships with physical inactivity, obesity, and low birth weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High health status (which is the percentage of women who reported that their health is very good or excellent) had the strongest negative correlation in addition to higher weighted sums of all determinants and health outcomes from the national average. Dental visits also had a moderately strong negative correlation with MMR. 
 
-
 **Heatmap 1** | **Heatmap 2**
 --------------------- | ---------------------
-![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
+![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
 
 
-- A linear regression model was then applied to the dataset again becuase MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value.  As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
-![Table](/Images/linear_reg_non_race_table_results.PNG)
+![Table](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/linear_reg_non_race_table_results.JPG)
 
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
 
+### Polynomial Regression without Race
 
-### Lasso Regression
+In the second [notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb) of linear regression without race further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure below, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
+
+![Polynomial Plot](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Polynomial_LR_Fit.png)
+
+
+### Lasso Regression without Race
 
 - We applied a Lasso Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
 
 
-### Ridge Regression**
+### Ridge Regression without Race
 
 - We applied a Ridge Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
-### Neural Network
+### Neural Network without Race
 
 - Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a neural network as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
 
@@ -322,7 +328,7 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 ![Poly Regression](/static/img/polynomial_LR_Fit.png)
 
 
-### 10-Year Forecast & Predictive Analysis
+### Ten Year Forecast & Predictive Analysis
 
 **The Process of Forcasting**
 
@@ -331,7 +337,7 @@ The data forecasting flowchart below shows the process of data establishment in 
 ![Forcasting Tree](/static/img/ML_flowchart-3.png)
 
 
-**10-Year Forecast- Time Series Forecast Analysis
+**10-Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
 - In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
 
@@ -339,8 +345,9 @@ The data forecasting flowchart below shows the process of data establishment in 
 
 - This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
 
+![Predictions](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Predictions_Barplot_to_2030.png]
 
-![10 Year Predictions](/Images/Predictions_Barplot_to_2030.png]
+- We also applied time series forecast of the average annual of maternal mortality and associated imapcts in the United States from 2009 to 2030
 
 
 **Limitations and Considerations**
