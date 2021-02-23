@@ -19,8 +19,8 @@
     - [Purpose](#purpose)
     - [Preprocessing Data](#preprocessing-data)
     - [Model Creation & Selection](#model-creation-and-selection)
-        - [First Dataset](#first-dataset)
-        - [Second Dataset](#second-dataset)
+        - [Maternal Mortality Rate Stratified by Race Dataset](#first-dataset)
+        - [Maternal Mortality Rate Not Stratified by Race Dataset](#second-dataset)
     - [Ten Year Forecast and Predictive Analysis](#ten-year-forecast-and-predictive-analysis)
 9. [Flask Web Application](#flask-web-application)
     - [Home Page](#home-page)
@@ -168,7 +168,7 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 ## Machine Learning
 
-Machine Learning Title: Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates
+**Impact of Demographics, Health Status and Access to Care on Maternal Mortality Rates**
 
 ### Purpose
 
@@ -189,9 +189,10 @@ For a complete view of all our machine learning tested models, please click this
 
 To better visualize our data and select the optimal model, we separated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
-### First Dataset 
+<a name="#first-dataset"></a>
 
-**Maternal Mortality Rate Stratified by Race**
+### Maternal Mortality Rate Stratified by Race Dataset
+
 
 This dataset contains MMR data stratified by race.  The races included were:
 
@@ -260,9 +261,10 @@ Other columns found in this dataset are births and deaths by race, population by
   <img alt="Confusion Matrix" src="/static/img/confusion_matrix_strat_by_race.png">
 </p>
 
-### Second Dataset
+---
+<a name="#second-dataset"></a>
 
-**Maternal Mortality Rate without Race**
+### Maternal Mortality Rate Not Stratified by Race**
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
 
