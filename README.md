@@ -258,17 +258,18 @@ Other columns found in this dataset are births and deaths by race, population by
 
 
 
-### Second Dataset- Maternal Mortality Rate without Race ###
+### Second Dataset
+
+**Maternal Mortality Rate without Race**
 
 Columns found in this dataset include 28 identified Healthcare Measures, Insurance Status and MMR not broken down by race
-
 
 **Models Tested**
 
 [Linear Regression](#linear-regression) | [Lasso Regression](#lasso-regression) | [Ridge Regression](#ridge-regression) | [Neural Network](#neural-network) 
 
 
-**Linear Regression**
+### Linear Regression
 
 We ran a Linear Regression Model on the second dataset that does not contain race as a feature.  We hoped the linear regression model would examine the impact of various features on maternal mortality ratio irrespective of race. In doing so, correlations were determined using linear regression analyses and indicated positive and negative relationships. 
 
@@ -292,17 +293,17 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 **This model had the highest R-squared value and was the top performing model for this dataset**
 
 
-**Lasso Regression**
+### Lasso Regression
 
 - We applied a Lasso Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
 
 
-**Ridge Regression**
+### Ridge Regression**
 
 - We applied a Ridge Regression model to the second dataset without race as a feature.  The results were not promising and the model was abandoned 
  
 
-**Neural Network**
+### Neural Network
 
 - Although it was concluded that Linear Regression Models would be the better fit for our data we wanted decided to apply a neural network as well to see if anything surprising happened.  This was done with the non-race stratified data, and similar to the linear regressions, all health determinant incomes were separated into an X dataframe and MMR was placed into a y dataframe.  An additional step was made to reduce the dataframe into array using the `.values` function. 
 
