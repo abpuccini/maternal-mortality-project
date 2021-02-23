@@ -309,3 +309,8 @@ h6 {
     margin-right: auto;
   }  
 
+/* \Table Style for non-race-model*/
+
+.align-right {
+    justify-content: right;
+}

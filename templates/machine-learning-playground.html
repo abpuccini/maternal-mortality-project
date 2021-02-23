@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
     <!-- Title -->
-    <title>Machine Learning Playground</title>
+    <title>Health Measure Playground</title>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
                         United States
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR & Affordable Care
-                            Act</a>
+                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR Data and Affordable
+                            Care Act</a>
                         <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health
                             Measure Comparison</a>
                     </div>
@@ -56,15 +56,16 @@
                         <li class="dropdown-header">
                             <span>Models</span>
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-race-model">Model Based Race</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Model Based
-                                Non-Race</a>
-                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-race-model">Race Based</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Non-Race Based</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-playground">Playground</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a></li>
+                        <li class="dropdown-header">
+                            <span>Predictions</span>
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-playground">Health Measure Playground</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year US MMR Forecast</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -88,8 +89,8 @@
                 <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                <h1>Machine Learning Playground</h1>
-                <h6>Forecast MMR for a Population Given Top-5 Determinate Health Outcomes</h6>
+                <h1>Health Measure Playground</h1>
+                <h6>Predict MMR for a Population Given Top-5 Determinate Health Measures</h6>
             </div>
         </div>
     </div>
@@ -102,7 +103,7 @@
                     <div class="panel-heading">
                         <h1 class="panel-title"><strong>
                                 <div align="center">
-                                    <font size="+1">Health Outcome Information</font>
+                                    <font size="+1">Health Measure Information</font>
                                 </div>
                             </strong></h1>
                     </div>
@@ -115,7 +116,7 @@
                                 <label class="col-auto control-label" for="diabetes"><b>Diabetes:</b></label>
                                 <div class="col-auto">
                                     <input type="number" min=0 step="any" class="form-control" id="diabetes"
-                                        name="diabetes" placeholder="Enter Value">
+                                        name="diabetes" placeholder="Enter a value (average = 9.7)">
                                 </div>
                             </div>
 
@@ -123,7 +124,7 @@
                                 <label class="col-auto control-label" for="prem_death"><b>Premature Death:</b></label>
                                 <div class="col-auto">
                                     <input type="number" min=0 step="any" class="form-control" id="prem_death"
-                                        name="prem_death" placeholder="Enter Value">
+                                        name="prem_death" placeholder="Enter a value (average = 7,546)">
                                 </div>
                             </div>
 
@@ -132,7 +133,7 @@
                                         Inactivity:</b></label>
                                 <div class="col-auto">
                                     <input type="number" min=0 step="any" class="form-control" id="phys_inac"
-                                        name="phys_inac" placeholder="Enter Value">
+                                        name="phys_inac" placeholder="Enter a value (average = 24.6)">
                                 </div>
                             </div>
 
@@ -141,7 +142,7 @@
                                         Birthweight:</b></label>
                                 <div class="col-auto">
                                     <input type="number" min=0 step="any" class="form-control" id="low_birthweight"
-                                        name="low_birthweight" placeholder="Enter Value">
+                                        name="low_birthweight" placeholder="Enter a value (average = 8.1)">
                                 </div>
                             </div>
 
@@ -150,7 +151,7 @@
                                         Female:</b></label>
                                 <div class="col-auto">
                                     <input type="number" min=0 step="any" class="form-control" id="health_stat_fem"
-                                        name="health_stat_fem" placeholder="Enter Value">
+                                        name="health_stat_fem" placeholder="Enter a value (average = 52.1)">
                                 </div>
                             </div>
 
@@ -159,7 +160,7 @@
 
                             <div class="form-group">
                                 <div class="col-auto">
-                                    <button class="btn btn-warning" type="submit">Start Predicting</button>
+                                    <button class="btn btn-warning" type="submit">Predict MMR</button>
                                     <button class="btn btn-warning" type="reset" value="Reset">Reset</button>
                                 </div>
                             </div>
@@ -206,7 +207,7 @@
                                     <tr>
                                         <th scope="row" class="text-nowrap">Premature Death</th>
                                         <td class="text-left">Number of years of potential life lost before age 75 per
-                                            100000 population.</td>
+                                            100,000 population.</td>
                                         <td class="text-center">5,345</td>
                                         <td class="text-center">7,546</td>
                                         <td class="text-center">11,485</td>

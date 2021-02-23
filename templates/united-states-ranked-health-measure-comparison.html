@@ -35,7 +35,7 @@
                         United States
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR Data & Affordable
+                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR Data and Affordable
                             Care Act</a>
                         <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health
                             Measure Comparison</a>
@@ -50,15 +50,16 @@
                         <li class="dropdown-header">
                             <span>Models</span>
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-race-model">Model Based Race</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Model Based
-                                Non-Race</a>
-                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-race-model">Race Based</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Non-Race Based</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-playground">Playground</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a></li>
+                        <li class="dropdown-header">
+                            <span>Predictions</span>
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-playground">Health Measure Playground</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year US MMR Forecast</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -82,7 +83,7 @@
                 <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                <h1>U.S. Ranked Health
+                <h1>US Ranked Health
                     Measure Comparison</h1>
                 <h6>Compare Factors Contributing to a State's High or Low MMR</h6>
             </div>
@@ -91,16 +92,6 @@
 
     <!-- Main Section -->
     <div id="main-container" class="container">
-        <!--div for selection box, demo box, chart-->
-        <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
-            <div class="d-flex align-items-center justify-content-center"><img alt="question-badge"
-                    class="question-badge" src="static/img/question-badge.png"></div>
-            <div class="d-flex align-items-center justify-content-center text-center">How do states with the highest and
-                lowest maternal mortality rates compare on
-                their rankings for related health measures?</div>
-        </div>
-
-
         <div class="row" id="overview">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Overview</h3>
@@ -119,6 +110,17 @@
                     value are assigned equal ranks." <a
                         href="https://www.americashealthrankings.org/about/methodology/rankings"
                         target="_blank"><em>United Health Foundation</em></a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
+                    <div class="d-flex align-items-center justify-content-center"><img alt="question-badge"
+                            class="question-badge" src="static/img/question-badge.png"></div>
+                    <div class="d-flex align-items-center justify-content-center text-center">How do states with the highest and
+                        lowest maternal mortality rates compare on
+                        their rankings for related health measures?</div>
+                </div>
             </div>
         </div>
         <div class="row">

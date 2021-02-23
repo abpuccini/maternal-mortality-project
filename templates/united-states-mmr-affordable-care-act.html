@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
     <!-- Title -->
-    <title>US MMR Data & the Affordable Care Act</title>
+    <title>US MMR Data and the Affordable Care Act</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                         United States
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR Data & Affordable
+                        <a class="dropdown-item" href="/united-states-mmr-affordable-care-act">MMR Data and Affordable
                             Care Act</a>
                         <a class="dropdown-item" href="/united-states-ranked-health-measure-comparison">Ranked Health
                             Measure Comparison</a>
@@ -56,15 +56,16 @@
                         <li class="dropdown-header">
                             <span>Models</span>
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-race-model">Model Based Race</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Model Based
-                                Non-Race</a>
-                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-race-model">Race Based</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-non-race-model">Non-Race Based</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/machine-learning-playground">Playground</a></li>
-                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year Forecast</a></li>
+                        <li class="dropdown-header">
+                            <span>Predictions</span>
+                        </li>
+                        <li><a class="dropdown-item" href="/machine-learning-playground">Health Measure Playground</a></li>
+                        <li><a class="dropdown-item" href="/machine-learning-forecast">10-Year US MMR Forecast</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -88,8 +89,7 @@
                 <p id="cite">&copy; United Cities and Local Governments Asia Pacific (UCLG ASPAC)</p>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                <h1>U.S. MMR Data & Affordable
-                    Care Act</h1>
+                <h1>US MMR Data and Affordable Care Act</h1>
                 <h6>Explore MMR and Insurance Coverage Data by State From 2009 to 2019</h6>
             </div>
         </div>
@@ -167,14 +167,35 @@
                     </p>
                 </div>
             </div>
-
+            <!-- <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
+                        <div class="d-flex align-items-center justify-content-center"><img alt="question-badge"
+                                class="question-badge" src="static/img/question-badge.png"></div>
+                        <div class="d-flex align-items-center justify-content-center text-center">How has MMR changed and how has access to
+                            insurance coverage changed after the Affordable Care Act?</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <span id="medicaid-caption" class="caption col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9">
+                    <b>Note:</b> In 2014 ACA Insurance Reforms and ACA Marketplace premium subsidies
+                    took effect. Medicaid expansion began in states that opted in.
+                </span>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-center">
+                    <div class="justify-content-center">
+                        <h7 class="selection">Select a State</h7>
+                        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    </div>
+                </div>
+            </div> -->
             <div class="row d-flex justify-content-center">
 
                 <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
                     <div class="question inline-block p-3 rounded d-flex align-items-center justify-content-around">
                         <div class="d-flex align-items-center justify-content-center"><img alt="question-badge"
                                 class="question-badge" src="static/img/question-badge.png"></div>
-                        <div class="d-flex align-items-center justify-content-center text-center">How has access to
+                        <div class="d-flex align-items-center justify-content-center text-center">How has MMR changed and how has access to
                             insurance coverage changed after the Affordable Care Act?</div>
                     </div>
 
