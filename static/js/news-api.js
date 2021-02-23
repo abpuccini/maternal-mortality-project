@@ -1,8 +1,8 @@
-// This unused file is for manually fetching JSON from the NewsAPI
+// // This unused file is for manually fetching JSON from the NewsAPI
 
-// We will hardcode HTML instead of fetching JSON from an API or locally.
-// Even with a proxy server, requests from the browser are not allowed on the NewsAPI Developer plan, except from localhost.
-// NewsAPI fetches up to one month of data on the Developer plan.
+// // We will hardcode HTML instead of fetching JSON from an API or fetching locally.
+// // Even with a proxy server, requests from the browser are not allowed on the NewsAPI Developer plan, except from localhost.
+// // NewsAPI fetches up to one month of data on the Developer plan.
 
 // var data = require('./json/news-api-maternal-mortality-2021-01-23-2021-02-22.json');
 // console.log(data);
