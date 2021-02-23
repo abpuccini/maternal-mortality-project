@@ -38,7 +38,7 @@
 
 ## Purpose of Project
 
-The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations).  Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
+The United States has the highest maternal mortality rate among 11 developed countries, and has seen rising deaths from 1987-2017 [source](https://www.ajmc.com/view/us-ranks-worst-in-maternal-care-mortality-compared-with-10-other-developed-nations). Compared with any other wealthy nation, the United States spends the highest percentage of its gross domestic product on health care.  We discovered that as of 2017, Medicaid coverage was responsible for financing 43% of U.S. births but covered medical services and income eligibility for Medicaid varied by state.  We wanted to explore by state if these variations affect maternal mortality rates.
 
 
 ## Project Overview
@@ -49,7 +49,7 @@ We are focusing on factors at the state level because maternal mortality rates a
 ## Objective
 
 Our objective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
-For example, Does health insurance coverage affect maternal mortality rates? Does a state’s election of the medicaid expansion affect maternal mortality rates?  Are there any other factors that might affect maternal mortality?
+For example, does health insurance coverage affect maternal mortality rates? Does a state’s election of the Medicaid expansion affect maternal mortality rates? Are there any other factors that might affect maternal mortality?
 
 ## Data Sources
 
@@ -71,11 +71,11 @@ The data for this project was sourced from the following sources:
 
 - UNICEF:    Downloaded the latest data for Maternal Mortality Worldwide (2017).
 
-- Centers for Disease Control Wonder:    Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
+- Centers for Disease Control Wonder: Data on maternal deaths from 2009-19 in the US: death counts were queried on specific ICD codes for maternal deaths up to 42 days after delivery and late maternal deaths (defined by the WHO as death of a woman from direct or indirect obstetric causes).
 
-- Kaiser Family Foundation:    Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
+- Kaiser Family Foundation: Pulled health insurance coverage in the US for females aged 19-64 in the years 2009-2019.
 
-- America's Health Rankings United Health Foundation:    Pulled report for overall health of women and children for 2019 as well as overall health outcomes by the US state for years 2009-19.
+- America's Health Rankings United Health Foundation: Pulled report for overall health of women and children for 2019 as well as overall health outcomes by the US state for years 2009-19.
 
 ### **Transform**
 
@@ -87,7 +87,7 @@ The data for this project was sourced from the following sources:
 
 **Cleaning Kaiser Data on Health Insurance Coverage of Females 19-64:**
 - Collected data from the Kaiser Family Foundation site for years 2009-2019.
-- Used fillna() function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
+- Used `fillna()` function to remove NaN after confirming that totals for insurance coverage equaled 100%. and converted values for insurance coverage to percentages.
 - Built new Dataframes with an added column for the year.
 - Used pd.concat to combine DataFrames from each year from 2009-2019 and Sorted final dataframe by year and location. 
 - Exported cleaned data to a csv. 
@@ -95,12 +95,12 @@ The data for this project was sourced from the following sources:
 
 **Cleaning Health of Women and Children Data**
 - Downloaded CSV of report data for 2019 
-- Used .str.contains to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
+- Used `.str.contains` to select each relevant measure, storing as its own variable (For measures where demographic breakdowns were available) separated out that data and exported as their own CSVs
 - Merged into one big CSV and Exported combined csv
 
 **Cleaning overall Health Outcomes**
 - Downloaded individual year CSVs in from years 2009-19 and read CSVs into Jupyter Notebook with Pandas, create individual dataframes
-- Locate “Measure Names” pertinent to our information from .unique() list, investigate common entries throughout dataframes over time
+- Locate “Measure Names” pertinent to our information from `.unique()` list, investigate common entries throughout dataframes over time
 - Replaced Measure Name for select values where name changed over time, select needed columns, reset indexes and used concat in order to combine dataframes
 - Output dataframes to CSV
 
@@ -123,9 +123,9 @@ Within Jupyter Notebook, we exported cleaned CSVs into PostGres as tables in a u
 
 - The US has a unique place within peer countries for outcomes of women's overall and maternal health due to a variety of factors and there are specific challenges related to the US's healthcare system that could lead to difficulties caring for its population, particularly women.
 
-- It was hypothesized that insurance coverage could affect health, and specifically women's health.  The period of 2009-2019 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
+- It was hypothesized that insurance coverage could affect health, and specifically women's health. The period of 2009-2019 was selected due to two specific changes in policy during this time period: in 2010 coverage was allowed for dependents up to age 26 and in 2014 the Affordable Care Act was implemented with expansion of Medicaid coverage made available to the states.
 
-- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system.  It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
+- Other health factors were also considered and investigated in order to evaluate insurance coverage's relative importance within the US health system. It is important to remember there are some differences in reporting over time including between 2003 and 2017, where states were incrementally implementing pregnancy checkbox on death certificates with universal implementation by 2017.
 
 ## Statistical Analysis
 
@@ -185,9 +185,9 @@ To learn more about this process of data cleaning and preprocessing visit machin
 
 ### Model Creation and Selection ###
 
-For a complete view of all our tested machine learning tested models please click this [link](https://github.com/abpuccini/maternal-mortality-project/tree/main/machine_learning/model_testing)
+For a complete view of all our machine learning tested models, please click this [link](https://github.com/abpuccini/maternal-mortality-project/tree/main/machine_learning/model_testing)
 
-To better visualize our data and select the optimal model, we seperated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
+To better visualize our data and select the optimal model, we separated our large comprehensive dataframe into two distinct datasets: Maternal Mortality Stratified by Race & Maternal Mortality without Race:
 
 ### First Dataset 
 
@@ -234,31 +234,29 @@ Other columns found in this dataset are births and deaths by race, population by
     
 - Because the dataset included categorical data, `get.dummies` was applied to the dataframe to transform the columns containing race features which allowed those values to be read when scaling was applied.  `StandardScaler` was selectd as the method to scale the data because of outliers previously identified in the dataset
 
-- After fitting and training the model, the data was ran through the Lasso Regression model with the following results:
-    - MSE: 0.37425190453114504
+- After fitting and training the model, the data was run through the Lasso Regression model with the following results:
+        MSE: 0.37425190453114504
     - R2: 0.6956700138016816
 
-- The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR.  After those features were dropped, the model was re-ran and the R squared value dropped significantly
+- The results of the Lasso Regression were promising with a R squared value higher than 0.5.  However, it was identified that running the model with the death by race and births by race columns skewed the data because those values were already used in calculating the MMR. After those features were dropped, the model was ran again and the R squared value dropped significantly
     - MSE: 0.6478563653918986
     - R2: 0.47318339238591234
 
 
 ### Logistic Regression
 
-- After applying the [Linear Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Logistic_Regression_stratified_by_race_lee.ipynb) models, we tried Logistic Regression, converting our y-value to categorical and binned our mmr data stratified by race into three categories:
+- After applying the [Linear Regression](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Logistic_Regression_stratified_by_race_lee.ipynb) models, we tried Logistic Regression, converting our y-value to categorical and binned our MMR data stratified by race into three categories:
     - Low (MMR <= 20)
     - Medium (MMR > 20 and <= 50)
     - High (MMR > 50)
 
-- We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of three bins, so we reverted to using bins that would contain all the data.  Our scores for this model improved after we removed the birth and death data points: 
+- We also experimented with creating distinction between the bins, adjusting the values for the bins. This created a segment of the data that did not fall into any of the three bins, so we reverted to using bins that would contain all the data. Our scores for this model improved after we removed the birth and death data points: 
     - R2 Testing: 0.5979381443298969
     - R2 Training: 0.7594501718213058
 
 - It’s clear from the initial data that there are wide disparities in MMR by race and ethnicity. We were interested in looking at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care.  The application of a confusion matrix showsed that classifying MMR as "medium" risk was most successful, followed by classifying appropriately for "high" risk.
 
 ![Confusion Maxtrix](/static/img/confusion_matrix_strat_by_race.png)
-
-
 
 ### Second Dataset
 
@@ -283,7 +281,7 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
 --------------------- | ---------------------
 ![Heatmap 1](/Images/LR_Non_Race_heatmap1.png)|![Heatmap 2](/Images/LR_Non_Race_heatmap2.png)
 
-- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome.  All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
+- A [linear regression model](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model1_Chahnaz.ipynb) was then applied to the dataset again because MMR is a continous outcome. All features were kept as x-values and MMR was set a the y-value. As in the dataset featuring race, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
@@ -349,7 +347,7 @@ Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/
 
 **Limitations and Considerations**
 
-- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes.  Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
+- For this dataset, we discovered some limitations to the data being reported.  For example, if a certain race group had fewer than 10 deaths for a given state and year, the data is suppressed for confidentiality purposes. Another limitation of publicly available mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result, only four racial and ethnic groups are represented in our dataset, and some groups are missing data for some years in our range of 2009-2019.
 
 - Another limitation we discovered from earlier exploratory analysis was that our data had outliers.
 
