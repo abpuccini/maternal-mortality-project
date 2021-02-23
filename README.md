@@ -320,14 +320,6 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 ![Neural Network](/static/img/neural_network_model.png)
 
 
-**Processes and Visulzations**
-
-- Further reduction in features resulted in a slightly lowered R-squared (0.43). Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, it was determinded that the data were non-linear. So, a polynomial regression was applied and the features were converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables better than the linear regression model.
-
-
-![Poly Regression](/static/img/polynomial_LR_Fit.png)
-
-
 ### Ten Year Forecast and Predictive Analysis
 
 **The Process of Forcasting**
@@ -337,15 +329,15 @@ The data forecasting flowchart below shows the process of data establishment in 
 ![Forcasting Tree](/static/img/ML_flowchart-3.png)
 
 
-**10-Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
+Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
 - In order to create the 10-year forcast, the dataset was grouped by year and the average annual MMR was calculated for 2009 to 2019 and then used to calculate the average predicted rates for the same corresponding time frame. A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate predictions were then carried out for 2020 to 2030. 
+
+![Forecast](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/Predictions_Barplot_to_2030.png)
 
 - The results of the 10-year forecast model showed that maternal mortality rates increased slowly from 2009 to 2019 and then would continue to increase at the same pace until 2030. Healthy People 2030’s goal for maternal mortality rate is to reduce the number to 15.7 maternal deaths per 100,000 births, however our model suggests that it will actually increase by 25% to approximately 44. 
 
 - This forcast entirely depends on the variables continuing their current trent for the next 10 years. The variables are susceptible to change, and thus, alter the trajectory of the maternal mortality rates. If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even maintain due to effective interventions (e.g., change in dietary habits) then it is possible that the forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity rates, physical inactivity, health status of women, and other factors like dental visits, all of which could drastically impact MMR in the years to come
-
-![Predictions](https://github.com/abpuccini/maternal-mortality-project/blob/main/Images/Predictions_Barplot_to_2030.png]
 
 - We also applied time series forecast of the average annual maternal mortality and associated impacts in the United States from 2009 to 2030, for further details see the [forecast notebook](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Forcast_Chahnaz.ipynb). The data forecasting flowchart below shows the process of data establishment in order to input into a machine learning model to predict maternal mortality ratio (MMR) from 2020 to 2030
 ![Forecasting](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/ten_year_forecast_flowchart.png)
@@ -429,28 +421,26 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 **Models by Race 1** | **Models by Race 2**
 --------------------- | ---------------------
-![Model 1](/Images/LR_by_race_app.JPG)|![Model 2](/Images/LR2_by_race_app.png)
+![Model 1](https://maternal-mortality-project.herokuapp.com/machine-learning-race-model)|![Model 2](https://maternal-mortality-project.herokuapp.com/machine-learning-non-race-model)
 
+- Visualized the MMR data points to show which points were the most successful and what points are appropriately identified for high risk 
 
-- Visualized the MMR data points to show which points were the most successful and what  points are appropriately identified for high risk 
-
-![Model 3](/Images/LR3_by_race_app.JPG)
-
+![Model 3](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/confusion_matrix_strat_by_race.png)
 
 **Models Based Non Race**
-
+![Features](https://github.com/abpuccini/maternal-mortality-project/blob/main/static/img/MMR_Non_Race_Association.png)
 
 ### Machine Learning Playground Page
 
 - The interactive form picture below allows users to input their values to explore the effect of MMR if decreasing or increasing those values. Table below show the possible value that users might consider to enter in.
 
-![Playground](/Images/ml_playground_app.JPG)
+![Playground](https://maternal-mortality-project.herokuapp.com/machine-learning-playground)
 
 ### Machine Learning 10-Year Forecast Page
 
 - Shows the maternal mortality ratio (MMR) from 2009 to 2030 using the averge MMR by year from 2009 to 2019 as well as MMR from 2020 to 2030 that was calculated by machine learning linear regression and time-series models. For both time-series and linear regression (LR) models, they predict that U.S.'s MMR will increase in the future. LR predicts MMR in 2030 at 45.2 which is approximately 26% increased from average MMR 2019. Addition, Time-series has predicted the MMR lower than LR by 3% at the year of 2030.
 
-![Forcast Non Race](/Images/10yr_forc_non_race_app.JPG)
+![Forcast Non Race](https://maternal-mortality-project.herokuapp.com/machine-learning-forecast)
 
 
 - Shows that MMR for every race and ethnicity will decrease over the 2020 to 2030 timrframe. However, there is only one factor used to predict MMR; population. The population tends to increase at a reduced rate. That might be a reason of the decresing of MMR for all race and ethnicity.
@@ -460,7 +450,7 @@ the many complications that could lead to death during pregnancy and/or childbir
 
 ### News and Articles Page
 
-- This page contains news and articles retrived from News API.  
+- This [page](https://maternal-mortality-project.herokuapp.com/news-articles) contains news and articles retrived from News API.  
 
 ### Methodology Page
 
