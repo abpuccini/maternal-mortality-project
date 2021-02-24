@@ -61,8 +61,8 @@ function avg_graph() {
                     '<b>2014</b>', '<b>2015</b>', '<b>2016</b>', '<b>2017</b>', '<b>2018</b>', '<b>2019</b>', "<b>User's Prediction</b>"],
             },
         };
-
-        Plotly.newPlot('user_graph', data, layout);
+        var config = {responsive: true, displayModeBar: false };
+        Plotly.newPlot('user_graph', data, layout, config);
     });
 }
 
@@ -138,7 +138,8 @@ function user_forecast_graph() {
                 },
             };
 
-            Plotly.newPlot('user_graph', data, layout);
+            var config = {responsive: true, displayModeBar: false };
+            Plotly.newPlot('user_graph', data, layout, config);
         });
     })
 }

@@ -79,7 +79,8 @@ function non_race_graph() {
                     },
                 }]
         };
-        Plotly.newPlot('forecast_graph_non_race', data, layout);
+        var config = {responsive: true, displayModeBar: false };
+        Plotly.newPlot('forecast_graph_non_race', data, layout, config);
     });
     // console.log(years, actual_mmr, model_pred_mmr);
 };
@@ -189,6 +190,7 @@ function race_graph() {
                     },
                 }]
         };
-        Plotly.newPlot('forecast_graph_race', data, layout);
+        var config = {responsive: true, displayModeBar: false };
+        Plotly.newPlot('forecast_graph_race', data, layout, config);
     });
 };
