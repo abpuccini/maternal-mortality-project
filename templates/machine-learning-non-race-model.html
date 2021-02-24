@@ -119,15 +119,14 @@
                 <h3>Linear Regression Model</h3>
                 <hr>
                 <p>
-                    We chose linear regression analysis, which is supervised machine learning, for our non-race based dataset because MMR is a continuous outcome. 
-                    We created a model that examines the impact of various factors on maternal mortality ratio (MMR) irrespective of race. We determined correlations 
+                    We chose linear regression analysis, which is supervised machine learning, to create a model that examines the impact of various factors on maternal mortality ratio (MMR) irrespective of race. We determined correlations 
                     using linear regression analyses which indicated both positive and negative relationships.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <img class="img-fluid mx-auto d-block" src="../static/img/LR_Non_Race_heatmap2.png" alt="Heatmap">
+                <img class="img-fluid" src="../static/img/LR_Non_Race_heatmap2.png" alt="Heatmap">
             </div>
         </div>
         <div class="row">
@@ -146,97 +145,106 @@
         </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/MMR_Non_Race_Association.png" alt="Association Map">
+                <img class="img-fluid " src="../static/img/MMR_Non_Race_Association.png" alt="Association Map">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <p>The above figure graphically indicates the degree of positive and negative correlation between the most significant features and MMR. Ultimately the linear regression model training for non-race based data included only factors that had a correlation greater than 0.20, which suggested a moderate or greater association.</p>
+                <p>The above figure graphically indicates the degree of positive and negative correlation that our linear model found between the most significant features and MMR. We applied another linear regression model with non-race based data and included only factors that had a correlation greater than 0.20, which suggest a moderate or greater association. But removing insignificant variables did not improve R-squared values for any other linear regression models.</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h4>Synopsis Linear Regression Model - All Features</h4>
-                <hr>
                 <p>
                     
                     All features except birth and death were compared against MMR. R-squared for all the features was 0.54, 
                     which suggests that together the features only moderately predict the MMR outcome.
-                    The training and the test scores for the linear regression were 0.54 and 0.36, respectively, 
-                    which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, 
-                    and for this reason, predictions of MMR with the selected features would be moderately confident.
-                </p>
-                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/ML_flowchart-3.png" alt="ML Flowchart">
+                    The training and the test scores for the linear regression were 0.54 and 0.36 respectively, 
+                    which are moderately confident fits.
+                </p>   
             </div>
         </div>
-
-
-            
-
+        <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Synopsis Linear Regression Model - Selected Features</h3>
+                <img class="img-fluid" src="../static/img/ML_flowchart-3.png" alt="ML Flowchart">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Polynomial Regression Model</h3>
                 <hr>
-                <p> Further reduction in features resulted in a slightly lowered R-squared (0.43).
-                    Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, 
+                <p> Further reduction in features in our linear models resulted in a slightly lowered R-squared (0.43), and 
+                    by examining the features with the most positive and negative correlation with MMR, depicted in the figure below, 
                     it was determined that the data was non-linear. So, a polynomial regression was applied and the features were 
                     converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and
                     polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables 
                     better than the linear regression model.
                 </p>
-                <img class="img-fluid mx-auto d-block" src="../static/img/Polynomial_LR_Fit.png" alt="Association Map">
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Synopsis Linear Regression Model - Time Series Forecast Analysis</h3>
-                <hr>
-                <p>The dataset was grouped by year and the average annual MMR was calculated for
-                    2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates.
-                    A
-                    regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate
-                    predictions were then carried out for 2020 to 2030. Maternal mortality rates increased slowly
-                    from
-                    2009 to 2019 and based on the forecast continue to increase at the same pace until 2030. <a
-                        href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b">Healthy
-                        People 2030’s</a> goal for maternal mortality rate is to reduce it to 15.7
-                    maternal deaths per 100,000
-                    births, however our model suggests that it will actually increase by 25% to approximately 44.
-                    Clearly, the forecast depends on the variables continuing their current trend for the next 10
-                    years.
-                    These can obviously change, and thus, alter the trajectory of the maternal mortality rates. If
-                    rates
-                    of diabetes, which had the strongest correlation with MMR, were to decrease or even just
-                    maintained
-                    due to effective interventions (e.g., change in dietary habits) then it is possible that the
-                    forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity
-                    rates, physical inactivity, health status of women, and other factors like dental visits, all of
-                    which could drastically impact MMR in the years to come.
-                </p>
-                <img class="img-fluid mx-auto d-block" src="../static/img/Predictions_Barplot_to_2030.png"
-                    alt="Association Map">
+                <img class="img-fluid" src="../static/img/Polynomial_LR_Fit.png" alt="Association Map">
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-            <h3>Other Regression Methods - Neural Network/Deep Learning</h3>
-            <hr>
-            <p>
-                Given the nature of the data pulled, it was always more likely that a linear regression was the
-                better fit
-                for the data but we wanted to attempt a neural network as well to see if anything surprising
-                happened.
-                A similar process was used to prepare the data as with the linear regressions, then a base
-                sequential model was created,
-                and using KerasRegressor and setting loss to mean squared error, various fits were explored. No
-                matter the data portion
-                that was input, and any number of hidden layers added, the mean squared error never was seen below
-                1000, which was much
-                worse than the linear models already created.
-            </p>
-            <img class="img-fluid mx-auto d-block" src="../static/img/neural_network_model.png" alt="Association Map">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                
+            </div>
         </div>
-        <!--new div row and column for Reference Section-->
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-            <h3>Reference</h3>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h3>Time Series Linear Model</h3>
+                    <hr>
+                    <p>The dataset was grouped by year and the average annual MMR was calculated for
+                        2009 to 2019 and then used in the time-series forecast to calculate the average predicted rates.
+                        A regression was performed by year and an R-squared of 0.74 was observed. Maternal mortality rate
+                        predictions were then carried out for 2020 to 2030. Maternal mortality rates increased slowly
+                        from 2009 to 2019, and based on the forecast, rates continue to increase at the same pace until 2030. <a
+                            href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b">Healthy
+                            People 2030’s goal</a> for maternal mortality rate is to reduce to 15.7
+                        maternal deaths per 100,000
+                        births, however our model suggests that in this time MMR will actually increase by 25% to approximately 44.
+                    </p>
+                    <p>
+                        Clearly, the forecast depends on the variables continuing their current trend for the next 10
+                        years. These can obviously change, and thus, alter the trajectory of the maternal mortality rates. If
+                        rates of diabetes, which had the strongest correlation with MMR, were to decrease or even just
+                        maintained due to effective interventions (e.g., change in dietary habits) then it is possible that the
+                        forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity
+                        rates, physical inactivity, health status of women, and other factors like dental visits, all of
+                        which could drastically impact MMR in the years to come.
+                    </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <img class="img-fluid" src="../static/img/Predictions_Barplot_to_2030.png" alt="Association Map">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Other Regression Methods - Neural Network/Deep Learning</h3>
+                <hr>
+                <p>
+                    Given the nature of the data pulled, it was always more likely that a linear regression was the
+                    better fit for the data but we wanted to attempt a neural network as well to see if anything surprising
+                    happened. A similar process was used to prepare the data as with the linear regressions, then a base
+                    sequential model was created, and using KerasRegressor and setting loss to mean squared error, various fits 
+                    were explored. No matter the data portion that was input, and any number of hidden layers added, the mean squared 
+                    error never was seen below 1,000, which was much worse than the linear models already created.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <img class="img-fluid" src="../static/img/neural_network_model.png" alt="Association Map">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>Reference</h3>
             <hr>
             <div class="reference">
                 <p>
@@ -248,7 +256,9 @@
                     https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b
                 </p>
             </div>
+            </div>
         </div>
+ 
     </div>
 
     <!--Footer-->

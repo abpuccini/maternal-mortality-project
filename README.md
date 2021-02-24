@@ -221,7 +221,7 @@ Other columns found in this dataset are births and deaths by race, population by
 
 - We fit a linear regression model and experimented with feature selection after running `RFE` to identify insignificant variables. However, removing the insignificant variables did not improve the R2 value for any of the linear regression models. 
     
-- We experimented with scaling our data using `Standard Scaler`, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
+- We experimented with scaling our data using `StandardScaler`, best for outliers, and fit our model again, but the resulting R2 score was slightly lower: 0.586.
 
 - Our highest scoring Linear Regression model with the data stratified by race was with non-scaled data, using each of our race and hispanic origin categories, and population data, stratified by race. These are the resulting scores:
 
