@@ -114,7 +114,7 @@
                 <hr>
                 <div class="overview">
                     <p>
-                        For our dataset stratified by race and ethnicity, we chose a linear regression
+                        For our dataset stratified by race and ethnicity, we built a linear regression
                         model.
                     </p>
                     <p>
@@ -123,7 +123,7 @@
                         childbirth, and the puerperium), which captures maternal deaths owing to obstetrical
                         tetanus, maternal deaths up to 42 days after delivery, and late maternal deaths (up to a
                         year following the termination of a pregnancy). One limitation of publicly available
-                        mortality data is the CDC Wonder site suppresses counts of nine or fewer. As a result,
+                        mortality data from CDC Wonder site is that the API suppresses (?) counts of nine or fewer. As a result,
                         only four racial and ethnic groups are represented in our dataset, and some groups are
                         missing data for some years in our range of 2009-2019.
                     </p>
@@ -183,10 +183,10 @@
                     We knew from earlier exploratory analysis that our data had outliers. We
                     experimented with scaling our data using StandardScaler, best for outliers, and
                     fit our model again, but the resulting R-squared score was slightly lower. Our highest
-                    scoring linear regression model with the data stratified by race was with
-                    non-scaled data, using each of our race and hispanic origin categories, and
-                    population data, stratified by race. Our R-squared scores for this model were 0.56 on
-                    our testing data, and 0.59 on our training data.
+                    scoring linear regression model with data stratified by race was with
+                    non-scaled data. This model used each of our race and hispanic origin categories and
+                    population data stratified by race. Our R-squared scores for this model were 0.56 on
+                    our testing data and were 0.59 on our training data.
                 </p>
             </div>
         </div>
@@ -202,7 +202,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                 <p>
-                    After doing linear regression models, we tried logistic regression, converting
+                    After running linear regression models, we tried logistic regression, converting
                     our y-value (MMR) to categorical.
                 </p>
                 <p>
@@ -216,7 +216,7 @@
                 <p>
                     Our R-squared scores for this model were 0.59 on our testing data and were 0.75 on our
                     training data. The confusion matrix shows that identifying MMR data points
-                    as "medium" risk was most successful, followed by appropriately identifying for
+                    as "medium" risk was most successful, followed by appropriately identifying data points as
                     "high" risk.
                 </p>
             </div>
@@ -231,7 +231,10 @@
                 <hr>
                 <div class="overview">
                     <p>
-                        The CDC estimates that 60% of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
+                        The CDC estimates that 60% of maternal deaths in the U.S. are preventable (NMMRC, 2018). And the Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). 
+                    </p>
+                    <p>
+                        It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our <a href="/machine-learning-non-race-model">dataset and models</a> that included features such as access to care. We encourage visitors of our website to <a href="/machine-learning-playground#">view the top factors</a> we examined that could affect pregnancy outcomes for women, and <a href="/machine-learning-playground">explore how</a> making improvements in these areas could reduce MMR in the U.S.  
                     </p>
                 </div>
             </div>

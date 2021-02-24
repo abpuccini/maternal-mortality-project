@@ -101,80 +101,92 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Overview</h3>
                 <hr>
-                <p>After visualizing maternal mortality ratio (MMR) data from the United States and seeing disparities
+                <p>
+                    After visualizing maternal mortality ratio (MMR) data from the United States and seeing disparities
                     among states in insurance coverage and health measures, we decided to apply machine learning to the
                     problem. It was clear from initial research that racial and ethnic disparities existed, so we
                     collected two datasets: one that utilized MMR data stratified by race, and another that included MMR
                     data for all races and also included insurance status and 26 different health measures. We then
                     trained and tested a variety of models before choosing the top-performing models for each subset of
-                    data.</p>
-                <!-- Linear Regression Section -->
+                    data.
+                </p>
+            </div>
+        </div>
+
+        <!-- Linear Regression Section -->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Linear Regression Model</h3>
                 <hr>
-
-                <p>This model examines the impact of various features on maternal mortality ratio (MMR)
-                    irrespective of race. In doing so, correlations were determined using linear regression
-                    analyses and indicated positive and negative relationships.
-                </p>
-
-
-                <img class="img-fluid mx-auto d-block" src="../static/img/LR_Non_Race_heatmap2.png" alt="Heatmap">
-                <p>Based upon the initial heatmap which included all features, a second more
-                    focused heatmap was
-                    developed. The initial correlation results showed specific features with strong positive and
-                    negative correlation as can be seen in heatmap 1. Thus, in heatmap 2 above the analyses indicate
-                    that diabetes and premature death had the strongest positive correlations. Other important
-                    correlations included positive relationships with physical inactivity, obesity, and low birth
-                    weight. Interestingly, medicare coverage also had a moderately strong correlation with MMR. High
-                    health status, which is the percentage of women who reported that their health is very good or
-                    excellent, had the strongest negative correlation in addition to higher weighted sums of all
-                    determinants and health outcomes from the national average. Dental visits also had a moderately
-                    strong negative correlation with MMR.
-                </p>
-
-                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/MMR_Non_Race_Association.png"
-                    alt="Association Map">
-                <p>The above figure graphically indicates the degree of positive and
-                    negative
-                    correlation between the most significant features and MMR. Included are only those factors that
-                    had a correlation greater than 0.20 and thus suggested a moderate or greater association.
+                <p>
+                    We chose linear regression analysis, which is supervised machine learning, for our non-race based dataset because MMR is a continuous outcome. 
+                    We created a model that examines the impact of various factors on maternal mortality ratio (MMR) irrespective of race. We determined correlations 
+                    using linear regression analyses which indicated both positive and negative relationships.
                 </p>
             </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Synopsis Linear Regression Model - All Features</h3>
-                <hr>
-                <!-- Left Side Column -->
-                <p>We used Linear regression analysis, which is supervised
-                    machine learning, because MMR is a continuous outcome. All features except birth and
-                    death were compared against MMR. R-squared for
-                    all the features was 0.54, which suggests that together the features only
-                    moderately predict the MMR outcome.
-                    The training and the test scores for the linear regression
-                    were 0.54 and 0.36, respectively, which are only moderate, and not particularly for
-                    the test. To conclude,
-                    the model is not strong or weak, and for this reason, predictions of MMR
-                    with the selected features would be moderately confident.
-                </p>
-                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/ML_flowchart-3.png"
-                    alt="ML Flowchart">
-
+                <img class="img-fluid mx-auto d-block" src="../static/img/LR_Non_Race_heatmap2.png" alt="Heatmap">
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <p>
+                    Based upon an initial heatmap which included all features, a second, more focused heatmap was
+                    developed. In the focused heatmap pictured above, the analyses indicated that diabetes and premature death 
+                    had the strongest positive correlations. Other important correlations included positive relationships 
+                    with physical inactivity, obesity and low birth weight. Interestingly, medicare coverage also had a 
+                    moderately strong correlation with MMR. High health status, which is the percentage of women who reported 
+                    that their health is very good or excellent, had the strongest negative correlation in addition to higher 
+                    weighted sums of all determinants and health outcomes from the national average. Dental visits also had a 
+                    moderately strong negative correlation with MMR.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/MMR_Non_Race_Association.png" alt="Association Map">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <p>The above figure graphically indicates the degree of positive and negative correlation between the most significant features and MMR. Ultimately the linear regression model training for non-race based data included only factors that had a correlation greater than 0.20, which suggested a moderate or greater association.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h4>Synopsis Linear Regression Model - All Features</h4>
+                <hr>
+                <p>
+                    
+                    All features except birth and death were compared against MMR. R-squared for all the features was 0.54, 
+                    which suggests that together the features only moderately predict the MMR outcome.
+                    The training and the test scores for the linear regression were 0.54 and 0.36, respectively, 
+                    which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, 
+                    and for this reason, predictions of MMR with the selected features would be moderately confident.
+                </p>
+                <img class="img-fluid mx-auto my-0 py-0 d-block" src="../static/img/ML_flowchart-3.png" alt="ML Flowchart">
+            </div>
+        </div>
+
+
+            
+
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Synopsis Linear Regression Model - Selected Features</h3>
                 <hr>
-
-                <p> Further reduction in features resulted in a slightly lowered R-squared
-                    (0.43).
-                    Using the features with the most positive and negative correlation
-                    with MMR, as depicted in the figure above, it was determinded that the data
-                    were non-linear. So, a polynomial regression was applied and the features were converted into
-                    polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and
-                    polynomial fit MMR demonstrated that the polynomial regression modeled the MMR
-                    relationship with the variables better than the linear regression model.
+                <p> Further reduction in features resulted in a slightly lowered R-squared (0.43).
+                    Using the features with the most positive and negative correlation with MMR, as depicted in the figure above, 
+                    it was determined that the data was non-linear. So, a polynomial regression was applied and the features were 
+                    converted into polynomial feature at degree 2. Plotting the actual MMR, the linear regression MMR and
+                    polynomial fit MMR demonstrated that the polynomial regression modeled the MMR relationship with the variables 
+                    better than the linear regression model.
                 </p>
                 <img class="img-fluid mx-auto d-block" src="../static/img/Polynomial_LR_Fit.png" alt="Association Map">
-
             </div>
+
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Synopsis Linear Regression Model - Time Series Forecast Analysis</h3>
                 <hr>
