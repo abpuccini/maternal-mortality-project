@@ -159,7 +159,7 @@
                             <br><br>
 
                             <div class="form-group">
-                                <div class="col-auto">
+                                <div id="playground-btns">
                                     <button class="btn btn-warning" type="submit">Predict MMR</button>
                                     <button class="btn btn-warning" type="reset" value="Reset">Reset</button>
                                 </div>
@@ -180,76 +180,78 @@
                     <p>
                         The MMR presented in the graph above is based on averages of public health measures from the
                         years 2009-2019. The interactive form allows users to input their own values for public health 
-                        measure to explore a measure's effect on MMR. The table below shows possible values for health measures
+                        measures to explore a measure's effect on MMR. The table below shows possible values for health measures
                         that users might consider entering.
                     </p>
-                    
-                    <div class="table-responsive">
-                        <table class="table align-middle table-striped table-hover table-borderless w-auto">
-                            <thead>
-                                <tr>
-                                    <th class="col-auto" scope="col">Top Healthcare Outcome Indicator</th>
-                                    <th class="col-auto" scope="col">Description</th>
-                                    <th class="col-auto" scope="col">Minimum</th>
-                                    <th class="col-auto" scope="col">Average</th>
-                                    <th class="col-auto" scope="col">Maximum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="text-nowrap">Diabetes</th>
-                                    <td class="text-left">Percentage of adults who reported being told they have
-                                        diabetes.</td>
-                                    <td class="text-center">5.3</td>
-                                    <td class="text-center">9.7</td>
-                                    <td class="text-center">16.2</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-nowrap">Premature Death</th>
-                                    <td class="text-left">Number of years of potential life lost before age 75 per
-                                        100,000 population.</td>
-                                    <td class="text-center">5,345</td>
-                                    <td class="text-center">7,546</td>
-                                    <td class="text-center">11,485</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-nowrap">Physical Inactivity</th>
-                                    <td class="text-left">Percentage of adults who reported no physical activity or
-                                        exercise other than their job in the past 30 days.</td>
-                                    <td class="text-center">15.7</td>
-                                    <td class="text-center">24.6</td>
-                                    <td class="text-center">38.1</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-nowrap">Low Birthweight</th>
-                                    <td class="text-left">Percentage of infants weighing less than 2,500 grams.</td>
-                                    <td class="text-center">5.6</td>
-                                    <td class="text-center">8.1</td>
-                                    <td class="text-center">12.3</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-nowrap">High Health Status - Female</th>
-                                    <td class="text-left">Percentage of females who reported their health as very
-                                        good or excellent.</td>
-                                    <td class="text-center">39.3</td>
-                                    <td class="text-center">52.1</td>
-                                    <td class="text-center">64.1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="row">
-                            <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <b>Note:</b> All terms and description bases on <a
-                                href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
-                                target="_blank">2019 HWC Report</a> (unless otherwise stated in description). The most recent data available are used. For some measures, multiple years of data are combined to have sufficient sample size <a href="https://www.americashealthrankings.org/about/methodology/rankings"
-                                target="_blank">(America's Health Rankings, 2021)</a>.
-                            </span>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="table-responsive">
+                    <table class="table align-middle table-striped table-hover table-borderless w-auto">
+                        <thead>
+                            <tr>
+                                <th class="col-auto" scope="col">Health Measure</th>
+                                <th class="col-auto" scope="col">Description</th>
+                                <th class="col-auto" scope="col">Minimum</th>
+                                <th class="col-auto" scope="col">Average</th>
+                                <th class="col-auto" scope="col">Maximum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Diabetes</th>
+                                <td class="text-left">Percentage of adults who reported being told they have
+                                    diabetes.</td>
+                                <td class="text-center">5.3</td>
+                                <td class="text-center">9.7</td>
+                                <td class="text-center">16.2</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Premature Death</th>
+                                <td class="text-left">Number of years of potential life lost before age 75 per
+                                    100,000 population.</td>
+                                <td class="text-center">5,345</td>
+                                <td class="text-center">7,546</td>
+                                <td class="text-center">11,485</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Physical Inactivity</th>
+                                <td class="text-left">Percentage of adults who reported no physical activity or
+                                    exercise other than their job in the past 30 days.</td>
+                                <td class="text-center">15.7</td>
+                                <td class="text-center">24.6</td>
+                                <td class="text-center">38.1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Low Birthweight</th>
+                                <td class="text-left">Percentage of infants weighing less than 2,500 grams.</td>
+                                <td class="text-center">5.6</td>
+                                <td class="text-center">8.1</td>
+                                <td class="text-center">12.3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">High Health Status - Female</th>
+                                <td class="text-left">Percentage of females who reported their health as very
+                                    good or excellent.</td>
+                                <td class="text-center">39.3</td>
+                                <td class="text-center">52.1</td>
+                                <td class="text-center">64.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <b>Note:</b> All terms and description bases on <a
+                            href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
+                            target="_blank">2019 HWC Report</a> (unless otherwise stated in description). The most recent data available are used. For some measures, multiple years of data are combined to have sufficient sample size <a href="https://www.americashealthrankings.org/about/methodology/rankings"
+                            target="_blank">(America's Health Rankings, 2021)</a>.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>          
     </div>
     <!--Footer-->
     <footer>

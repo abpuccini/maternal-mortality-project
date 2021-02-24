@@ -328,3 +328,7 @@ h6 {
 #select-measure .selection {
     padding-right: 6px;
 }
+#playground-btns {
+    display: flex;
+    justify-content: space-between;
+}

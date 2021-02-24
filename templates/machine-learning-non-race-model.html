@@ -234,12 +234,10 @@
                 </p>
                 <p>
                     Clearly, the forecast depends on the variables continuing their current trend for the next 10
-                    years. These can obviously change, and thus, alter the trajectory of the maternal mortality rates.
-                    If
-                    rates of diabetes, which had the strongest correlation with MMR, were to decrease or even just
-                    maintained due to effective interventions (e.g., change in dietary habits) then it is possible that
-                    the
-                    forecast would not increase as much from 2020 to 2030. This also applies to changes in obesity
+                    years. But these trends can change and alter the trajectory of maternal mortality rates.
+                    If rates of diabetes, which had the strongest correlation with MMR, were to decrease or even just
+                    maintain due to effective interventions (e.g., change in dietary habits), then it is probable that
+                    the forecasted MMR would not increase as much from 2020 to 2030. This also applies to changes in obesity
                     rates, physical inactivity, health status of women, and other factors like dental visits, all of
                     which could drastically impact MMR in the years to come.
                 </p>
@@ -257,14 +255,11 @@
                 <hr>
                 <p>
                     Given the nature of the data pulled, it was always more likely that a linear regression was the
-                    better fit for the data but we wanted to attempt a neural network as well to see if anything
-                    surprising
-                    happened. A similar process was used to prepare the data as with the linear regressions, then a base
+                    better fit for the data, but we wanted to attempt to model a neural network as well and see if anything
+                    surprising was learned. A similar process was used to prepare the data as with the linear regressions, then a base
                     sequential model was created, and using KerasRegressor and setting loss to mean squared error,
-                    various fits
-                    were explored. No matter the data portion that was input, and any number of hidden layers added, the
-                    mean squared
-                    error never was seen below 1,000, which was much worse than the linear models already created.
+                    various fits were explored. No matter the data portion that was input, and any number of hidden layers added, the
+                    mean squared error never was seen below 1,000, which was a much worse outcome than the linear models already created.
                 </p>
             </div>
         </div>
