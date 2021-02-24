@@ -1,5 +1,6 @@
 
-# Maternal Mortality: US and Global Perspectives
+# <div align="center"> Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk</div> 
+
 
 ## Table of Contents
 
@@ -49,7 +50,12 @@ We are focusing on factors at the state level because maternal mortality rates a
 ## Objective
 
 Our objective is for this dashboard to function in a way that allows for users to see patterns between maternal mortality rates and potential influencing factors.
-For example, does health insurance coverage affect maternal mortality rates? Does a state’s election of the Medicaid expansion affect maternal mortality rates? Are there any other factors that might affect maternal mortality?
+For example:  Does health insurance coverage affect maternal mortality rates?  Does a state’s election of the Medicaid expansion affect maternal mortality rates?  Are there any other factors that might affect maternal mortality?
+
+For our Machine Learning predictions we wanted to answer the following questions:
+
+What factors contribute to the great disparity between MMR for different races in the United States?  Is race alone enough to predict MMR?  Can we identify enough relevant features to predict MMR for the next ten years?  Can we create a dashboard that allows users to explore MMR risk for their community
+
 
 ## Data Sources
 
@@ -286,9 +292,8 @@ We ran a Linear Regression Model on the second dataset that does not contain rac
     
 - R-squared for all the features was 0.54, which suggests that together the features only moderately predict the MMR outcome. The training and the test scores for the linear regression were 0.54 and 0.36, respectively, which are only moderate, and not particularly for the test. To conclude, the model is not strong or weak, and for this reason, predictions of MMR with the selected features would be moderately confident. 
 
-<p align="center">
-  <img alt="R-squared Table" src="Images/linear_reg_non_race_table_results.JPG">
-</p>
+
+![Forecasting Tree](/static/img/ML_flowchart-3.png)
 
 
 **This model had the highest R-squared value and was the top performing model for this dataset**
@@ -324,11 +329,6 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 ### Ten Year Forecast and Predictive Analysis
 
 **The Process of Forecasting**
-
-The data forecasting flowchart below shows the process of data establishment in order to input into machine learning models to predict maternal mortality ratio (MMR) from 2020 to 2030.
-
-![Forecasting Tree](/static/img/ML_flowchart-3.png)
-
 
 Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
