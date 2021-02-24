@@ -304,7 +304,7 @@ function pieCause(region) {
 
     var data = [{
         values: pieDatalist,
-        labels: ['Abortion', 'Embolism', 'Haemorrhage', 'Hypertension', 'Sepsis', 'Other Direct Causes', 'Indirect Causes'],
+        labels: ['Abortion*', 'Embolism', 'Haemorrhage', 'Hypertension', 'Sepsis', 'Other Direct Causes*', 'Indirect Causes'],
         textinfo: "label+percent",
         textposition: "outside",
         type: 'pie',

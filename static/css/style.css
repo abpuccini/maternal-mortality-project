@@ -55,7 +55,8 @@ h3 {
 /* Content */
 div #overview {
     margin-bottom: 20px;
-    text-align: justify;
+    /* text-align: justify; */
+    /* Justify is not great practice for text in graphic design */
 }
 
 /* Global */
