@@ -1,7 +1,6 @@
 
-# <center> <h1>Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk 1</h1> </center> 
+# <center> <h1>Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk</h1> </center> 
 
-Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk
 
 ## Table of Contents
 
