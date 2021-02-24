@@ -244,7 +244,6 @@ h6 {
 .news-img {
     width: 40%;
     height: 20%;
-    align: left;
     float: left;
     margin-right: 1em;
 }
@@ -314,4 +313,13 @@ h6 {
 
 .align-right {
     justify-content: right;
+}
+#select-measure {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#select-measure .selection {
+    padding-right: 6px;
 }

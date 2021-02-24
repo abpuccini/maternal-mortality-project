@@ -94,22 +94,29 @@
     <div id="main-container" class="container">
         <div class="row" id="overview">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Overview</h3>
+                <h3>State MMR Ranking</h3>
                 <hr>
-                <p>The five states with the highest maternal mortality rates as of the 2019 America's Healthcare
-                    Rankings Health of Women and Children (HWC) report were Louisiana, Georgia, Indiana, New Jersey, and
-                    Arkansas. Conversely, the five states with the lowest rates were Alaska, Massachusets, Nevada,
-                    Delaware, and West Virginia. Here you can visualize the maternal mortality rates for those states
-                    alongside their national rankings for potentially related factors.</p>
+                <p>Louisiana, Georgia, Indiana, New Jersey and Arkansas are the five states with the highest maternal mortality rates as of the 2019 America's Healthcare
+                    Rankings Health of Women and Children (HWC) report. The five states with the lowest rates are Alaska, Massachusets, Nevada,
+                    Delaware and West Virginia.</p>
+            </div>
+        </div>
+        <div class="row" id="overview">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <h3>MMR by Ranked Health Measure</h3>
+                <hr>
+                <p>
+                    In the interactive visualization below you can see maternal mortality rates for those states alongside their national rankings for potentially related factors.
+                </p>
                 <p>Use the dropdown menu to choose a ranked measure to compare with the maternal mortality rates for the
                     selected states. We chose to visualize measures from the 2019 HWC Report that we thought might show
                     interesting correlations.</p>
-                <p>Aside from Maternal Mortality Rate, all measures are displayed by their ranking: "The state health
+                <p>Aside from Maternal Mortality Rate, all measures are displayed by their ranking: <q>The state health
                     rankings are a composite index of state-level population health measures. Each measure is ranked by
                     the states’ values, with one being the healthiest value and 50 the least healthy value. Ties in
-                    value are assigned equal ranks." <a
+                    value are assigned equal ranks (<a
                         href="https://www.americashealthrankings.org/about/methodology/rankings"
-                        target="_blank"><em>United Health Foundation</em></a></p>
+                        target="_blank"><em>United Health Foundation</em></a>).</q></p>
             </div>
         </div>
         <div class="row">
@@ -124,8 +131,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="well">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div id="select-measure">
                     <h7 class="selection">Select a Measure</h7>
                     <select id="selDataset" onchange="optionChanged(this.value)"></select>
                 </div>
@@ -145,7 +152,7 @@
                 <hr>
                 <div id="overview">
                     <p>For some of the measures we have visualized, larger numbers were a positive thing, while for
-                        others, smaller numbers were a positive thing (see measure notes below). Therefor, instead of
+                        others, smaller numbers were a positive thing (see measure notes below). Therefore, instead of
                         looking at the raw numbers, we chose to look at their rankings relative to other states. For
                         this method,
                         lower numbers means higher rank ('better' performance on a given measure), and higher numbers
@@ -162,7 +169,8 @@
                         to draw any significant conclusions about the connection between any measure and MMR.</p>
                     <p>For some measures, like Health Outcomes - Women, we were surprised to see that the states with
                         higher MMR actually trended as lower ranked. This leads us to believe that there are
-                        likely other factors at play that are not obvious within this limited dataset</p>
+                        likely other factors at play that are not obvious within this limited dataset.</p>
+                    <p><q>It’s important to note that the rankings are a relative measure of health. Not all changes in rank translate into actual declines or improvements in health (<a href="https://www.americashealthrankings.org/about/methodology/rankings">HWC</a>).</q></p>
                 </div>
             </div>
         </div>
@@ -170,159 +178,143 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Definitions</h3>
                 <hr>
-                <div id="overview">
-                    <table class="table">
-                        <div class="table-responsive">
-                            <table class="table align-middle table-striped table-hover table-borderless w-auto">
-                                <thead>
-                                    <tr>
-                                        <th class="col-auto" scope="col">Term</th>
-                                        <th class="col-auto" scope="col">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Maternal Mortality Ratio</th>
-                                        <td class="text-justify">Number of deaths from any cause related to or
-                                            aggravated by
-                                            pregnancy or its management (excluding accidental or incidental causes)
-                                            during
-                                            pregnancy
-                                            and
-                                            childbirth or within one year of termination of pregnancy, irrespective of
-                                            the
-                                            duration
-                                            and site
-                                            of the pregnancy, per 100,000 live births (5-year estimate).</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Adequate Health Insurance</th>
-                                        <td class="text-justify">Percentage of insured children ages 0-17 whose health
-                                            plan
-                                            has either no or reasonable out-of-pocket costs; offers benefits or covered
-                                            services that meet
-                                            the children’s needs; and allows them to see needed health care providers
-                                            (2-year estimate).</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Adequate Prenatal Care</th>
-                                        <td class="text-justify">Percentage of live births in which the mother received
-                                            prenatal care beginning in the first four months of pregnancy with the
-                                            appropriate number of
-                                            visits for the infant's gestational age.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Avoided Care due to Cost</th>
-                                        <td class="text-justify">Percentage of women ages 18-44 who reported a time in
-                                            the
-                                            past 12 months when they needed to see a doctor but could not because of
-                                            cost.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Dedicated Health Care Provider - Women</th>
-                                        <td class="text-justify">Percentage of women ages 18-44 who reported
-                                            having one or more people they think of as their personal doctor or health
-                                            care provider.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Developmental Screening</th>
-                                        <td class="text-justify">Percentage of children 9-35 months whose parent
-                                            completed a
-                                            standardized developmental screening tool in the past 12 months (2-year
-                                            estimate).</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Health Outcomes - Women</th>
-                                        <td class="text-justify">Sum of weighted z-scores of all ranked health outcomes
-                                            measures for women.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Infant Mortality</th>
-                                        <td class="text-justify">Number of infant deaths (before age 1) per 1,000 live
-                                            births.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Maternity Practices in Infant Nutrition and
-                                            Care</th>
-                                        <td class="text-justify">Maternity Practices in Infant and
-                                            Nutrition Care survey score based on seven birth facility policies and
-                                            practices, with higher
-                                            scores denoting better maternity care policies and practices.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Mortality - Women</th>
-                                        <td class="text-justify">Number of deaths per 100,000 women ages 20-44.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Policy - Women</th>
-                                        <td class="text-justify">Weighted sum of the number of standard deviations each
-                                            Policy measure
-                                            is from the national average.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Overall - Women</th>
-                                        <td class="text-justify">Weighted sum of the number of standard deviations each
-                                            Women measure
-                                            is from the national average.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Prenatal Care Before Third Trimester</th>
-                                        <td class="text-justify">Percentage of live births in which the mother
-                                            began prenatal care between the first and sixth month of pregnancy.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Publicly-Funded Women's Health Services</th>
-                                        <td class="text-justify">Percentage of likely need for contraceptive
-                                            services among women with a family income 250% below the federal poverty
-                                            level and women younger
-                                            than 20 met by publicly-funded clinics.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Receiving Public Assistance</th>
-                                        <td class="text-justify">Assistance programs that provide either cash assistance
-                                            or in-kind benefits to individuals and families from any governmental
-                                            entity<a
-                                                href="https://www.census.gov/topics/income-poverty/public-assistance/about.html">(US
-                                                Census,
-                                                2021).</a>.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Uninsured Women</th>
-                                        <td class="text-justify">Percentage of women ages 19-44 not covered by private
-                                            or public
-                                            health insurance.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">Well-Woman Visit</th>
-                                        <td class="text-justify">Percentage of women ages 18-44 with a preventive
-                                            medical visit in
-                                            the past year.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-nowrap">WIC Coverage</th>
-                                        <td class="text-justify">The Special Supplemental Nutrition Program for Women,
-                                            Infants, and Children (WIC) provides federal grants to states for
-                                            supplemental foods, health care referrals, and nutrition education for
-                                            low-income pregnant, breastfeeding, and non-breastfeeding postpartum women,
-                                            and to infants and children up to age five who are found to be at
-                                            nutritional risk <a href="https://www.fns.usda.gov/wic">(USDA,
-                                                2021).</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <caption id="reference"><b>Source:</b> All terms and description bases on <a
-                                    href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
-                                    target="_blank">2019 HWC Report (unless otherwise stated in description)</a> -- "It
-                                is
-                                important to note that "The edition
-                                year is not the same as data year(s). The most recent data available are
-                                used. For some
-                                measures, multiple years of data are combined to have sufficient sample
-                                size"<a href="https://www.americashealthrankings.org/about/methodology/rankings"
-                                    target="_blank">(America's Health Rankings, 2021)</a>.
-                            </caption>
-                        </div>
+                <div class="table-responsive">
+                    <table class="table align-middle table-striped table-hover table-borderless w-auto">
+                        <thead>
+                            <tr>
+                                <th class="col-auto" scope="col">Term</th>
+                                <th class="col-auto" scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Maternal Mortality Ratio</th>
+                                <td class="text-justify">Number of deaths from any cause related to or aggravated 
+                                    by pregnancy or its management (excluding accidental or incidental causes)
+                                    during pregnancy and childbirth or within one year of termination of pregnancy, 
+                                    irrespective of the duration and site of the pregnancy, per 100,000 live births (5-year estimate).</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Adequate Health Insurance</th>
+                                <td class="text-justify">Percentage of insured children ages 0-17 whose health
+                                    plan has either no or reasonable out-of-pocket costs; offers benefits or covered
+                                    services that meet the children’s needs; and allows them to see needed health care 
+                                    providers (2-year estimate).</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Adequate Prenatal Care</th>
+                                <td class="text-justify">Percentage of live births in which the mother received
+                                    prenatal care beginning in the first four months of pregnancy with the
+                                    appropriate number of
+                                    visits for the infant's gestational age.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Avoided Care due to Cost</th>
+                                <td class="text-justify">Percentage of women ages 18-44 who reported a time in
+                                    the
+                                    past 12 months when they needed to see a doctor but could not because of
+                                    cost.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Dedicated Health Care Provider - Women</th>
+                                <td class="text-justify">Percentage of women ages 18-44 who reported
+                                    having one or more people they think of as their personal doctor or health
+                                    care provider.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Developmental Screening</th>
+                                <td class="text-justify">Percentage of children 9-35 months whose parent
+                                    completed a
+                                    standardized developmental screening tool in the past 12 months (2-year
+                                    estimate).</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Health Outcomes - Women</th>
+                                <td class="text-justify">Sum of weighted z-scores of all ranked health outcomes
+                                    measures for women.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Infant Mortality</th>
+                                <td class="text-justify">Number of infant deaths (before age 1) per 1,000 live
+                                    births.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Maternity Practices in Infant Nutrition and
+                                    Care</th>
+                                <td class="text-justify">Maternity Practices in Infant and
+                                    Nutrition Care survey score based on seven birth facility policies and
+                                    practices, with higher
+                                    scores denoting better maternity care policies and practices.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Mortality - Women</th>
+                                <td class="text-justify">Number of deaths per 100,000 women ages 20-44.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Policy - Women</th>
+                                <td class="text-justify">Weighted sum of the number of standard deviations each
+                                    Policy measure
+                                    is from the national average.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Overall - Women</th>
+                                <td class="text-justify">Weighted sum of the number of standard deviations each
+                                    Women measure
+                                    is from the national average.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Prenatal Care Before Third Trimester</th>
+                                <td class="text-justify">Percentage of live births in which the mother
+                                    began prenatal care between the first and sixth month of pregnancy.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Publicly-Funded Women's Health Services</th>
+                                <td class="text-justify">Percentage of likely need for contraceptive
+                                    services among women with a family income 250% below the federal poverty
+                                    level and women younger
+                                    than 20 met by publicly-funded clinics.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Receiving Public Assistance</th>
+                                <td class="text-justify">Assistance programs that provide either cash assistance
+                                    or in-kind benefits to individuals and families from any governmental
+                                    entity<a
+                                        href="https://www.census.gov/topics/income-poverty/public-assistance/about.html">(US
+                                        Census,
+                                        2021).</a>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Uninsured Women</th>
+                                <td class="text-justify">Percentage of women ages 19-44 not covered by private
+                                    or public
+                                    health insurance.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">Well-Woman Visit</th>
+                                <td class="text-justify">Percentage of women ages 18-44 with a preventive
+                                    medical visit in
+                                    the past year.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-nowrap">WIC Coverage</th>
+                                <td class="text-justify">The Special Supplemental Nutrition Program for Women,
+                                    Infants, and Children (WIC) provides federal grants to states for
+                                    supplemental foods, health care referrals, and nutrition education for
+                                    low-income pregnant, breastfeeding, and non-breastfeeding postpartum women,
+                                    and to infants and children up to age five who are found to be at
+                                    nutritional risk <a href="https://www.fns.usda.gov/wic">(USDA,
+                                        2021).</a></td>
+                            </tr>
+                        </tbody>
                     </table>
+                    <div class="row">
+                        <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <b>Note:</b> All terms and description bases on <a
+                            href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
+                            target="_blank">2019 HWC Report</a> (unless otherwise stated in description). The most recent data available are used. For some measures, multiple years of data are combined to have sufficient sample size <a href="https://www.americashealthrankings.org/about/methodology/rankings"
+                            target="_blank">(America's Health Rankings, 2021)</a>.
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -334,13 +326,13 @@
                     <div class="reference">
                         <p>United Health Foundation<a
                                 href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_a/state/ALL?edition-year=2019"
-                                target="_blank"><em>2019 Health of Women and Children Report: Maternal Mortality
+                                target="_blank"><em> 2019 Health of Women and Children Report: Maternal Mortality
                                     Rate</em></a>.
                             America's Health Rankings analysis of CDC WONDER Online Database, Underlying Cause of Death,
                             Multiple Cause of Death files (2013-2017)</p>
                         <p>United Health Foundation<a
                                 href="https://www.americashealthrankings.org/explore/health-of-women-and-children"
-                                target="_blank"><em>2019 Health of Women and Children Report</em></a>.
+                                target="_blank"><em> 2019 Health of Women and Children Report</em></a>.
                             America's Health Rankings, Accessed January 2021</p>
                     </div>
                 </div>
