@@ -33,8 +33,8 @@ function GlobalMap() {
                     .padding([10, 0, 30, 0])
                     .text(
                         '<b style="color:#696969">Global Maternal Mortality Ratio</b><br/>' +
-                        '<span style="color:#929292; font-size: 12px;">Maternal deaths per 100,000 live births<br/>' +
-                        '<span  style="color:#929292; font-size: 10px;">(Data source: Unicef, 2017)</span>'
+                        '<span style="color:#929292; font-size: 12px;">Maternal Deaths per 100,000 Live Births<br/>' +
+                        '<span  style="color:#929292; font-size: 10px;">(Data Source: UNICEF, 2017)</span>'
                     );
 
                 // Create world map
@@ -225,7 +225,7 @@ function bubbleGlobal() {
 
         // Apply parameter to the layout
         var layout = {
-            title: `<b>MMR Among Developed Countries</b>`,
+            title: `<b>MMR: Developed Countries</b>`,
             showlegend: false,
             yaxis: {
                 title: "<b>MMR</b>"

@@ -51,9 +51,9 @@ function avg_graph() {
         var data = [avg_mmr];
 
         var layout = {
-            title: `<b>Average MMR based on Average Health Outcome</b>`,
+            title: `<b>Average MMR: Average Health Measures</b>`,
             yaxis: {
-                title: "<b>Maternal Mortality Ratio</b>"
+                title: "<b>MMR</b>"
             },
             xaxis: {
                 tickvals: xTick,
@@ -127,9 +127,9 @@ function user_forecast_graph() {
             var data = [avg_mmr];
 
             var layout = {
-                title: `<b>Average MMR based on Average Health Outcome</b>`,
+                title: `<b>Predicted MMR: Health Measures</b>`,
                 yaxis: {
-                    title: "<b>Maternal Mortality Ratio</b>"
+                    title: "<b>MMR</b>"
                 },
                 xaxis: {
                     tickvals: xTick,

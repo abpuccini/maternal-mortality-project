@@ -54,7 +54,7 @@ function non_race_graph() {
         var data = [act_mmr, predic_mmr];
 
         var layout = {
-            title: "<b>MMR 2009 - 2030: All Race and Ethnicity</b>",
+            title: "<b>Forecasted US MMR 2009–2030: All Races and Ethnicities</b>",
             yaxis: {
                 title: "<b>MMR</b>"
             },
@@ -165,7 +165,7 @@ function race_graph() {
         var data = [black, white_his, white_non, asian];
 
         var layout = {
-            title: "<b>MMR 2009 - 2030: Particular Race and Ethnicity</b>",
+            title: "<b>Forecasted US MMR 2009–2030: Particular Race and Ethnicity</b>",
             yaxis: {
                 title: "<b>MMR</b>"
             },

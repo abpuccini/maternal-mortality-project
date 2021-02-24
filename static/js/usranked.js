@@ -370,9 +370,9 @@ function buildPlot(measure) {
 
   // show chosen measure compared to 5 top MMR states
   var trace1 = {
-    x: getTopmmr(),
-    y: getTop(),
-    name: "States with Highest Maternal Mortality Rates",
+    x: getTop(),
+    y: getTopmmr(),
+    name: "States With Highest MMR",
     type: "scatter",
     mode: "markers",
     line: {
@@ -384,9 +384,9 @@ function buildPlot(measure) {
 
   // show chosen measure compared to 5 bottom MMR states
   var trace2 = {
-    x: getBottommmr(),
-    y: getBottom(),
-    name: "States with Lowest Maternal Mortality Rates",
+    x: getBottom(),
+    y: getBottommmr(),
+    name: "States With Lowest MMR",
     type: "scatter",
     mode: "markers",
     line: {
@@ -402,16 +402,13 @@ function buildPlot(measure) {
 
   // set the layout
   var layout = {
-    autosize: false,
-    width: 1200,
-    height: 600,
-    yaxis: {
+    xaxis: {
       title: `<b>${full_called_measure}</b>`
     },
-    xaxis: {
-      title: "<b>Maternal Mortality Ratio</b>"
+    yaxis: {
+      title: "<b>MMR</b>"
     },
-    title: `<b>${full_called_measure} compared with Maternal Mortality Rates</b>`,
+    title: `<b>MMR: ${full_called_measure}</b>`,
   };
 
 

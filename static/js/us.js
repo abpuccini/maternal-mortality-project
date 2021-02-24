@@ -95,7 +95,7 @@ function buildPlot(state) {
   var data = [trace];
 
   var layout = {
-    title: `<b>${state} Maternal Mortality Ratio</b>`,
+    title: `<b>${state} MMR 2009–2019</b>`,
     yaxis: {
       title: "<b>MMR</b>"
     },
@@ -188,7 +188,7 @@ function insChart(state) {
   var data = [trace3, trace6];
 
   var layout = {
-    title: `<b>${state} Health Insurance Coverage<br>Females 19-64</b>`,
+    title: `<b>${state} Health Insurance Coverage 2009–2019: Females 19–64`,
     yaxis: {
       title: "<b>Percentage</b>",
     },
@@ -285,7 +285,7 @@ function state1Chart(year) {
   var data = [trace1];
 
   var layout = {
-    title: "<b>Maternal Mortality Ratio Among States<br>With No Medicaid Expansion",
+    title: "<b>MMR: States With No Medicaid Expansion",
     showlegend: false,
     yaxis: {
       title: "<b>MMR</b>",
