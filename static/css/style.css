@@ -137,6 +137,11 @@ div #overview {
     margin-top: 20px;
 }
 
+/* News */
+.card-img-top {
+    width: auto;
+    height: 150px;
+}
 
 /* Methodology */
 .card-header {

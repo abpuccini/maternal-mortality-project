@@ -392,23 +392,6 @@ def playgroundForecast():
     return jsonify(user_predicted_mmr)
 
 
-# @app.route("/api/user-forecast-race", methods=['GET', 'POST'])
-# def playgroundRaceForecast():
-
-#     if request.method == "POST":
-#         data = request.get_json()
-#         asian = int(data['asian'] or 0)
-#         black = int(data['black'] or 0)
-#         white = int(data['white'] or 0)
-#         hispanic_origin = int(data['hispanic_origin'] or 0)
-#         not_hispanic_origin = int(data['not_hispanic_origin'] or 0)
-
-#         user_pred_mmr_race = user_forecast_race.forecast_graph_race(
-#             asian, black, white, hispanic_origin, not_hispanic_origin)
-
-#     return jsonify(user_pred_mmr_race)
-
-
 @app.route("/api/user-input")
 def userInput():
     tasks = db.session.query(Playground)
