@@ -181,9 +181,9 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <p>
                     We knew from earlier exploratory analysis that our data had outliers. We
-                    experimented with scaling our data using Standard Scaler, best for outliers, and
+                    experimented with scaling our data using StandardScaler, best for outliers, and
                     fit our model again, but the resulting R-squared score was slightly lower. Our highest
-                    scoring Linear Regression model with the data stratified by race was with
+                    scoring linear regression model with the data stratified by race was with
                     non-scaled data, using each of our race and hispanic origin categories, and
                     population data, stratified by race. Our R-squared scores for this model were 0.56 on
                     our testing data, and 0.59 on our training data.
@@ -202,7 +202,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                 <p>
-                    After doing Linear Regression models, we tried Logistic Regression, converting
+                    After doing linear regression models, we tried logistic regression, converting
                     our y-value (MMR) to categorical.
                 </p>
                 <p>
@@ -214,9 +214,9 @@
                 </ul>
                 </p>
                 <p>
-                    Our R-squared scores for this model were 0.59 on our testing data, and 0.75 on our
+                    Our R-squared scores for this model were 0.59 on our testing data and were 0.75 on our
                     training data. The confusion matrix shows that identifying MMR data points
-                    as "medium" risk was most successful, followed by identifying appropriately for
+                    as "medium" risk was most successful, followed by appropriately identifying for
                     "high" risk.
                 </p>
             </div>
@@ -231,7 +231,7 @@
                 <hr>
                 <div class="overview">
                     <p>
-                        The CDC estimates that 60 percent of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
+                        The CDC estimates that 60% of maternal deaths in the U.S. are preventable (NMMRC, 2018). It was clear from the data we gathered that there are wide disparities in MMR by race and ethnicity. The Pregnancy Mortality Surveillance System reports that the variability in the risk of death by race and ethnicity may be due to several factors including access to care, quality of care, prevalence of chronic diseases, structural racism, and implicit biases (PMSS, 2021). We were interested in looking closely at possible factors that could be contributing to that disparity, so we moved forward with our dataset and models that included features such as access to care. We encourage visitors to our app to view the factors we examined that could affect  pregnancy outcomes for women, and explore how making improvements in these areas could reduce MMR in the U.S.  
                     </p>
                 </div>
             </div>
