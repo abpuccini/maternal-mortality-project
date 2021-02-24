@@ -1,5 +1,7 @@
 
-# Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk
+# <center> <h1>Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk 1</h1> </center> 
+
+Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk
 
 ## Table of Contents
 
@@ -328,10 +330,6 @@ In the second [notebook](https://github.com/abpuccini/maternal-mortality-project
 ### Ten Year Forecast and Predictive Analysis
 
 **The Process of Forecasting**
-
-The data forecasting flowchart below shows the process of data establishment in order to input into machine learning models to predict maternal mortality ratio (MMR) from 2020 to 2030.
-
-![Forecasting Tree](/static/img/ML_flowchart-3.png)
 
 Ten Year Forecast- [Time Series Forecast Analysis](https://github.com/abpuccini/maternal-mortality-project/blob/main/machine_learning/model_testing/Linear_Regression_Non_Race_Model2_Chahnaz.ipynb)
 
