@@ -1,5 +1,5 @@
 
-# <center> <h1>Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk</h1> </center> 
+# <div align="center"> Maternal Mortality: US and Global Perspectives & Using Machine Learning to Predict Risk</div> 
 
 
 ## Table of Contents
