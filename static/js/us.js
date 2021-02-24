@@ -95,7 +95,8 @@ function buildPlot(state) {
   var data = [trace];
 
   var layout = {
-    title: `<b>${state} MMR 2009–2019</b>`,
+    // TODO: Dynamically adjust date range
+    title: `<b>${state} MMR 2009–2019</b>`, 
     yaxis: {
       title: "<b>MMR</b>"
     },
