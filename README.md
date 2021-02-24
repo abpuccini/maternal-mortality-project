@@ -54,7 +54,10 @@ For example:  Does health insurance coverage affect maternal mortality rates?  D
 
 For our Machine Learning predictions we wanted to answer the following questions:
 
-What factors contribute to the great disparity between MMR for different races in the United States?  Is race alone enough to predict MMR?  Can we identify enough relevant features to predict MMR for the next ten years?  Can we create a dashboard that allows users to explore MMR risk for their community
+  * What factors contribute to the great disparity between MMR for different races in the United States?  
+  * Is race alone enough to predict MMR?  
+  * Can we identify enough relevant features to predict MMR for the next ten years?  
+  * Can we create a dashboard that allows users to explore MMR risk for their community
 
 
 ## Data Sources
