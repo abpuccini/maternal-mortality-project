@@ -12,6 +12,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/footnote.css" />
 
     <!-- Title -->
     <title>US Ranked Health Measure Comparison</title>
@@ -76,7 +77,7 @@
     </nav>
 
     <!-- Top Section -->
-    <div id="header" class="container-fluid">
+    <div id="top-header" class="container-fluid">
         <div class="row">
             <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
@@ -97,8 +98,8 @@
                 <h3>State MMR Ranking</h3>
                 <hr>
                 <p>Louisiana, Georgia, Indiana, New Jersey and Arkansas are the five U.S. states with the highest maternal mortality ratios as of the 2019 America's Healthcare
-                    Rankings Health of Women and Children (HWC) report. The five states with the lowest MMRs are Alaska, Massachusets, Nevada,
-                    Delaware and West Virginia.</p>
+                    Rankings Health of Women and Children (HWC) report. The five states with the lowest MMRs are Alaska, Massachusetts, Nevada,
+                    Delaware and West Virginia.<a href="#UHF-1" aria-describedby="footnote-label" id="UHF-1-ref"></a></p>
             </div>
         </div>
         <div class="row" id="overview">
@@ -113,9 +114,7 @@
                 <p><q>The state health
                     rankings are a composite index of state-level population health measures. Each measure is ranked by
                     the states’ values, with one being the healthiest value and 50 the least healthy value. Ties in
-                    value are assigned equal ranks.</q> (<a
-                    href="https://www.americashealthrankings.org/about/methodology/rankings"
-                    target="_blank">United Health Foundation</a>)</p>
+                    value are assigned equal ranks.</q><a href="#UHF-2" aria-describedby="footnote-label" id="UHF-2-ref"></a></p>
             </div>
         </div>
         <div class="row">
@@ -164,10 +163,10 @@
                     <p>
                         For some measures (e.g., Health Outcomes - Women) we were surprised to see that the states with
                         higher MMR scored as having the healthiest outcomes. This leads us to believe that there are
-                        likely <a href="/machine-learning-race-model#main-container">other factors at play</a> that are not obvious within this limited dataset.
+                        likely <a href="/machine-learning-race-model">other factors at play</a> that are not obvious within this limited dataset.
                     </p>
                     <p>
-                        <q>It’s important to note that the rankings are a relative measure of health. Not all changes in rank translate into actual declines or improvements in health (<a href="https://www.americashealthrankings.org/about/methodology/rankings">HWC</a>).</q>
+                        <q>It’s important to note that the rankings are a relative measure of health. Not all changes in rank translate into actual declines or improvements in health.</q><a href="#UHF-3" aria-describedby="footnote-label" id="UHF-3-ref"></a>
                     </p>
                 </div>
             </div>
@@ -278,10 +277,7 @@
                         <th>Receiving Public Assistance</th>
                         <td>Assistance programs that provide either cash assistance
                             or in-kind benefits to individuals and families from any governmental
-                            entity (<a
-                                href="https://www.census.gov/topics/income-poverty/public-assistance/about.html">US
-                                Census,
-                                2021</a>).</td>
+                            entity.<a href="#Census" aria-describedby="footnote-label" id="Census-ref"></a></td>
                     </tr>
                     <tr>
                         <th>Uninsured Women</th>
@@ -302,18 +298,16 @@
                             supplemental foods, health care referrals, and nutrition education for
                             low-income pregnant, breastfeeding, and non-breastfeeding postpartum women,
                             and to infants and children up to age five who are found to be at
-                            nutritional risk (<a href="https://www.fns.usda.gov/wic">USDA,
-                                2021</a>).</td>
+                            nutritional risk.<a href="#USDA" aria-describedby="footnote-label" id="USDA-ref"></a></td>
                     </tr>
                 </tbody>
             </table>
         </div>                    
         <div class="row">
             <span class="caption col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <b>Note:</b> All terms and description bases on <a
+                <b>Note:</b> Terms and descriptions are based on <a
                 href="https://www.americashealthrankings.org/learn/reports/2019-health-of-women-and-children-report"
-                target="_blank">2019 HWC Report</a> (unless otherwise stated in description). The most recent data available are used. For some measures, multiple years of data are combined to have sufficient sample size <a href="https://www.americashealthrankings.org/about/methodology/rankings"
-                target="_blank">(America's Health Rankings, 2021)</a>.
+                target="_blank">2019 HWC report</a>. The most recent data available are used. For some measures, multiple years of data are combined to have sufficient sample size.<a href="#UHF-6" aria-describedby="footnote-label" id="UHF-6-ref"></a>
             </span>
         </div>
                
@@ -321,17 +315,36 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Reference</h3>
                 <hr>
-                <div class="reference">
-                    <p>United Health Foundation<a
-                            href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_a/state/ALL?edition-year=2019"
-                            target="_blank"><em> 2019 Health of Women and Children Report: Maternal Mortality
-                                Rate</em></a>.
-                        America's Health Rankings analysis of CDC WONDER Online Database, Underlying Cause of Death,
-                        Multiple Cause of Death files (2013-2017)</p>
-                    <p>United Health Foundation<a
-                            href="https://www.americashealthrankings.org/explore/health-of-women-and-children"
-                            target="_blank"><em> 2019 Health of Women and Children Report</em></a>.
-                        America's Health Rankings, Accessed January 2021</p>
+                <div id="reference">
+                    <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
+                    <ol>
+                    <li id="UHF-1">United Health Foundation<a
+                        href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_a/state/ALL?edition-year=2019"
+                        target="_blank"><em> 2019 Health of Women and Children Report: Maternal Mortality
+                            Rate</em></a>.
+                    America's Health Rankings analysis of CDC WONDER Online Database, Underlying Cause of Death,
+                    Multiple Cause of Death files (2013-2017) <a href="#UHF-1-ref" aria-label="Back to content">↩</a></li>
+
+                    <li id="UHF-2">United Health Foundation<a
+                        href="https://www.americashealthrankings.org/about/methodology/rankings"
+                        target="_blank"><em> 2019 Health of Women and Children Report</em></a>.
+                    America's Health Rankings, Accessed January 2021 <a href="#UHF-2-ref" aria-label="Back to content">↩</a></li>
+
+                    <li id="UHF-3">United Health Foundation<a
+                        href="https://www.americashealthrankings.org/about/methodology/rankings"
+                        target="_blank"><em> 2019 Health of Women and Children Report</em></a>.
+                    America's Health Rankings, Accessed January 2021 <a href="#UHF-3-ref" aria-label="Back to content">↩</a></li>
+
+                    <li id="Census">https://www.census.gov/topics/income-poverty/public-assistance/about.html <a href="#Census-ref" aria-label="Back to content">↩</a></li>
+
+                    <li id="USDA">https://www.fns.usda.gov/wic <a href="#USDA-ref" aria-label="Back to content">↩</a></li>
+
+                    <li id="UHF-6">United Health Foundation<a
+                        href="https://www.americashealthrankings.org/about/methodology/rankings"
+                        target="_blank"><em> 2019 Health of Women and Children Report</em></a>.
+                    America's Health Rankings, Accessed January 2021 <a href="#UHF-6-ref" aria-label="Back to content">↩</a></li>
+                </ol>
+                    
                 </div>
             </div>
         </div>

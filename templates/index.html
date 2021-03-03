@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link rel="stylesheet" href="static/css/footnote.css"/>
 
     <!-- Title -->
     <title>Maternal Mortality</title>
@@ -80,7 +81,7 @@
     </nav>
 
     <!-- Top Section -->
-    <div id="header" class="container-fluid">
+    <div id="top-header" class="container-fluid">
         <div class="row">
             <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
@@ -111,7 +112,7 @@
                 <hr>
                 <div id="overview">
                     <p>
-                        The World Health Organization defines maternal mortality as <q>the death of a woman while pregnant or within 42 days of termination of pregnancy, irrespective of the duration and site of the pregnancy, from any cause related to or aggravated by the pregnancy or its management but not from accidental or incidental causes.</q>
+                        The World Health Organization defines maternal mortality as <q>the death of a woman while pregnant or within 42 days of termination of pregnancy, irrespective of the duration and site of the pregnancy, from any cause related to or aggravated by the pregnancy or its management but not from accidental or incidental causes.</q><a href="#WHO" aria-describedby="footnote-label" id="WHO-ref"></a>
                     </p>
                     <p>
                         <q>The number of women and girls who died each year from complications of pregnancy and childbirth
@@ -119,7 +120,7 @@
                         in light of rapid population growth in many of the countries where maternal deaths are highest.
                         Still, over 800 women are dying each day from complications in pregnancy and childbirth. And for
                         every woman who dies, approximately 20 others suffer serious injuries, infections or
-                        disabilities (Unicef, 2019).</q>
+                        disabilities.</q><a href="#UNICEF-2" aria-describedby="footnote-label" id="UNICEF-2-ref"></a>
                     </p>
                 </div>
             </div>
@@ -130,14 +131,14 @@
                 <h3>Maternal Healthcare in Developed Countries</h3>
                 <hr>
                 <div class="overview">
-                    <p>The <a href="/united-states-mmr-affordable-care-act#main-container">United States has the highest maternal mortality ratio</a> among developed countries. 
+                    <p>The <a href="/united-states-mmr-affordable-care-act#top-header">United States has the highest maternal mortality ratio</a> among developed countries. 
                         Obstetrician-gynecologists (OB-GYNs) are overrepresented in the U.S. maternity care workforce
                         relative to midwives, and there is an overall shortage of maternity care providers (both
                         OB-GYNs and midwives) relative to births. In most other countries, midwives outnumber
                         OB-GYNs severalfold, and primary care plays a central role in these country's health systems.
                         Although a large share of its maternal deaths occur postbirth, the U.S. is the only developed
                         country to not guarantee access to provider home visits or paid parental leave in the
-                        postpartum period (Tikkanen et al., 2020).
+                        postpartum period.<a href="#Tikkanen" aria-describedby="footnote-label" id="Tikkanen-ref"></a>
                     </p>
                 </div>
             </div>
@@ -176,7 +177,7 @@
                     and supplies, and can refer women in a timely manner to emergency obstetric care when complications
                     are diagnosed. Complications require prompt access to quality obstetric services equipped with
                     life-saving drugs, including antibiotics, and the ability to provide blood transfusions needed to
-                    perform Caesarean sections or other surgical interventions (Unicef, 2019).</q>
+                    perform Caesarean sections or other surgical interventions.</q><a href="#UNICEF-4" aria-describedby="footnote-label" id="UNICEF-4-ref"></a>
                 </p>
             </div>
         </div>
@@ -185,39 +186,32 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Reference</h3>
                 <hr>
-                <div class="reference">
-                    <p>
-                        Say, L., Chou, D., Gemmill, A., Tunçalp, Ö., Moller, A.-B., Daniels, J., … Alkema, L. (2014, May
-                        5).<a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext"
-                            target="_blank"><cite> Global causes of maternal death: a WHO systematic
-                                analysis.</cite></a>
-                        https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70227-X/fulltext.
-                    </p>
-                    <p>
-                        Tikkanen, Gunja, FitzGerald, & Zephyrin. (2020, November 18). <a
+                <div id="reference">
+                    <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
+                    <ol>
+                        <li id="WHO">https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4622 <a href="#WHO-ref" aria-label="Back to content">↩</a></li>
+                        
+                        <li id="UNICEF-2">UNICEF. (2020, July 7). <a
+                            href="https://data.unicef.org/topic/maternal-health/maternal-mortality"
+                            target="_blank"><cite>Maternal
+                                mortality.</cite></a>
+                        https://data.unicef.org/topic/maternal-health/maternal-mortality. <a href="#UNICEF-2-ref" aria-label="Back to content">↩</a></li>
+                
+                        <li id="Tikkanen">Tikkanen, Gunja, FitzGerald, & Zephyrin. (2020, November 18). <a
                             href="https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries"
                             target="_blank"><cite>Maternal
                                 mortality and maternity care in the United States compared to 10 other developed
                                 countries.</cite></a> Commonwealth Fund.
                         https://www.commonwealthfund.org/publications/issue-briefs/2020/nov/maternal-mortality-maternity-care-us-compared-10-countries.
-                    </p>
-
-                    <p>
-                        The World Bank, UNICEF, & WHO. (2019, September). <a
-                            href="https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/"
-                            target="_blank"><cite>Trends
-                                in maternal mortality.</cite></a>
-                        https://data.unicef.org/resources/trends-maternal-mortality-2000-2017/.
-                    </p>
-
-                    <p>
-                        UNICEF. (2020, July 7). <a
-                            href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
+ <a href="#Tikkanen-ref" aria-label="Back to content">↩</a></li>
+                        <li id="UNICEF-4">UNICEF. (2020, July 7). <a
+                            href="https://data.unicef.org/topic/maternal-health/maternal-mortality"
                             target="_blank"><cite>Maternal
                                 mortality.</cite></a>
-                        https://data.unicef.org/topic/maternal-health/maternal-mortality/.
-                    </p>
+                        https://data.unicef.org/topic/maternal-health/maternal-mortality. <a href="#UNICEF-4-ref" aria-label="Back to content">↩</a></li>
+                    </ol>
                 </div>
+                
             </div>
         </div>
     </div>

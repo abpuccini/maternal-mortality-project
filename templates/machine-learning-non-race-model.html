@@ -16,6 +16,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/footnote.css" />
     <link rel="stylesheet" href="static/css/map.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
 
@@ -83,7 +84,7 @@
     </nav>
 
     <!-- Top Section -->
-    <div id="header" class="container-fluid">
+    <div id="top-header" class="container-fluid">
         <div class="row">
             <!-- Image Source: https://uclg-aspac.org/en/how-central-java-reduced-maternal-mortality-health-jateng-gayeng-nginceng-wong-meteng/ -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" id="header-bg">
@@ -229,7 +230,7 @@
                         href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b">Healthy
                         People 2030’s goal</a> for maternal mortality rate is to reduce to 15.7
                     maternal deaths per 100,000
-                    births, however our model suggests that in this time MMR will actually increase by 25% to
+                    births,<a href="#HWC" aria-describedby="footnote-label" id="HWC-ref"></a> however our model suggests that in this time MMR will actually increase by 25% to
                     approximately 44.
                 </p>
                 <p>
@@ -290,15 +291,17 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>Reference</h3>
                 <hr>
-                <div class="reference">
-                    <p>
-                        Health of Women and Children <a
-                            href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b"
-                            target="_blank"><em>Public Health Impact: Maternal Mortality</em></a> GOALS:
-                        Healthy People 2030’s goal is to reduce the maternal mortality rate to 15.7 maternal deaths
-                        per 100,000 live births. Link:
-                        https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b
-                    </p>
+                <div id="reference">
+                    <h2 class="visually-hidden" id="footnote-label">Footnotes</h2>
+                    <ol>
+                    <li id="HWC">Health of Women and Children <a
+                        href="https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b"
+                        target="_blank"><em>Public Health Impact: Maternal Mortality</em></a> GOALS:
+                    Healthy People 2030’s goal is to reduce the maternal mortality rate to 15.7 maternal deaths
+                    per 100,000 live births. Link:
+                    https://www.americashealthrankings.org/explore/health-of-women-and-children/measure/maternal_mortality_b <a href="#HWC-ref" aria-label="Back to content">↩</a></li>
+                    
+                    
                 </div>
             </div>
         </div>
