@@ -124,16 +124,19 @@
         <!-- 10-year Forecast -->
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Summary — Race Based Data Forecast</h3>
+                <h3>Race Based Forecast</h3>
                 <hr>
                 <p>
                     The graph below shows a forecast of maternal mortality ratio (MMR) from 2009 to 2030 for each
                     race and ethnicity. MMR from 2009 to 2030 is an average value across the entire dataset grouped by
-                    year, race and ethnicity. MMR from 2020 to 2030 is calculated by machine learning linear
-                    regression models based on population by race and ethnicity which is calculated by a time series
-                    model. The line graphs show that MMR for every race and ethnicity will decrease over time. However,
-                    the model uses only a single factor, population by race, to predict MMR. The population tends to increase at a
-                    reduced rate, which explains the decreasing of MMR for each race and ethnicity.
+                    year, race and ethnicity. MMR from 2020 to 2030 is calculated through linear
+                    regression models based on population by race and ethnicity (calculated by a time series
+                    model).
+                </p>
+                <p>
+                    The line graphs show that MMR for every race and ethnicity will decrease over time. However,
+                    the linear regression models use only a single factor, population by race, to predict MMR. Population by race tends to increase at a
+                    reduced rate, which can attribute to the forecasted decreasing MMR for each race and ethnicity.
                 </p>
                 <div id="forecast_graph_race"></div>
             </div>
@@ -141,18 +144,20 @@
 
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <h3>Summary — Non-Race Based Data Forecast</h3>
+                <h3>Non-Race Based Forecast</h3>
                 <hr>
                 <p>
                     The graph below shows a forecast of MMR from 2009 to 2030. MMR
                     from 2009 to 2019 is an average value across the
                     entire dataset grouped by year. MMR from 2020 to 2030 is calculated by machine learning linear
-                    regression and time series models based on health outcome, insurance coverage and
-                    population factors which are calculated by time series models. Both
-                    time series and linear regression models predict that U.S. MMR will increase in the future.
-                    Linear regression models predict MMR in 2030 to be 45.2, which is approximately 26%
-                    increased from average MMR 2019. However, the time series model predicts the U.S.'s MMR 3% lower by
-                    the year of 2030.
+                    regression models and time series models based on health outcome, insurance coverage and
+                    population factors.
+                </p>
+                <p>
+                    Both linear regression and time series models predict that U.S. MMR will increase in the future.
+                    Linear regression models predict MMR in 2030 to be 45.2 which is approximately a 26%
+                    increase from average MMR in 2019. However, the time series models predict U.S. MMR to be 3% lower than the linear regression prediction by
+                    2030.
                 </p>
                 <div id="forecast_graph_non_race"></div>
             </div>
@@ -163,17 +168,14 @@
                 <h3>Conclusion</h3>
                 <hr>
                 <p>
-                    The future prediction for each year for both data stratified or not stratified by race and ethnicity
-                    shows the negative and positive straight line, repectively because the predictions are calculated by
-                    linear regression models. The models have moderate accuracy of prediction (mentioned in the race and
-                    non-race model page). Therefore, the outcome of model predictions are unsatisfactory.
+                    The future forecasts for data stratified or not stratified by race and ethnicity
+                    show differing results because the predictions are calculated by different
+                    linear regression models. The models have moderate accuracy of prediction (mentioned in the <a href="/machine-learning-race-model">race</a> and
+                    <a href="/machine-learning-non-race-model">non-race</a> model pages). Therefore, the resulting model predictions are moderately satisfactory.
                 </p>
                 <p>
-                    If there are additional resources and sufficient time, more data from different sources; for
-                    example, household income, number of maternal healthcare professionals, will be collected in order
-                    to find any correlation to maternal deaths. Additionally, if more data is collected the possibility
-                    of finding the most significant factor will be higher. Eventually, there will be a policy in order
-                    to decrease the maternal mortality event from happening in the future.
+                    If there were additional resources and sufficient time, we would like to collect more data from different sources (i.e., household income, number of maternal healthcare professionals) 
+                    to find stronger correlation.
                 </p>
             </div>
         </div>

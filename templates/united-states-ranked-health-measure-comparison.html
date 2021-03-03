@@ -96,8 +96,8 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <h3>State MMR Ranking</h3>
                 <hr>
-                <p>Louisiana, Georgia, Indiana, New Jersey and Arkansas are the five U.S. states with the highest maternal mortality rates as of the 2019 America's Healthcare
-                    Rankings Health of Women and Children (HWC) report. The five states with the lowest rates are Alaska, Massachusets, Nevada,
+                <p>Louisiana, Georgia, Indiana, New Jersey and Arkansas are the five U.S. states with the highest maternal mortality ratios as of the 2019 America's Healthcare
+                    Rankings Health of Women and Children (HWC) report. The five states with the lowest MMRs are Alaska, Massachusets, Nevada,
                     Delaware and West Virginia.</p>
             </div>
         </div>
@@ -106,17 +106,16 @@
                 <h3>MMR by Ranked Health Measure</h3>
                 <hr>
                 <p>
-                    In the interactive visualization below you can see maternal mortality rates for the ten states with highest and lowest MMR alongside their national rankings for potentially related factors.
+                    In the interactive visualization below you can see maternal mortality ratios for the ten states with the highest and lowest MMRs alongside their national rankings for potentially related factors.
                 </p>
-                <p>Use the dropdown menu to choose a ranked health measure to compare with the maternal mortality rates for the
-                    selected states. We chose to visualize measures from the 2019 HWC Report that we thought might show
+                <p>Use the drop-down list to compare MMRs for the ten states with a chosen a ranked health measure. We chose to selectively include measures from the 2019 HWC report which we thought might show
                     interesting correlations.</p>
-                <p>Aside from Maternal Mortality Rate, all measures are displayed by their ranking. <q>The state health
+                <p><q>The state health
                     rankings are a composite index of state-level population health measures. Each measure is ranked by
                     the states’ values, with one being the healthiest value and 50 the least healthy value. Ties in
-                    value are assigned equal ranks (<a
-                        href="https://www.americashealthrankings.org/about/methodology/rankings"
-                        target="_blank"><em>United Health Foundation</em></a>).</q></p>
+                    value are assigned equal ranks.</q> (<a
+                    href="https://www.americashealthrankings.org/about/methodology/rankings"
+                    target="_blank">United Health Foundation</a>)</p>
             </div>
         </div>
         <div class="row">
@@ -152,22 +151,19 @@
                 <hr>
                 <div id="overview">
                     <p>
-                        For some of the health measures we have visualized, larger numbers show a positive outcome, while for
-                        other measures, smaller numbers show a positive outcome (see measure definitions below). Therefore, instead of
-                        looking at the raw numbers, we chose to look at measure rankings relative to other states. For
-                        this method, lower numbers mean higher rank (better performance on a given measure), and higher numbers
-                        mean lower rank (worse performance).
+                        In the initial, raw health measure data that we collected, health measures were difficult to compare against each other;
+                        larger numbers showed a positive outcome for some measures, but smaller numbers showed a positive outcome for other measures (see measure definitions below).
+                        For clarity, we chose to visualize health measure rankings relative to other states. In our method, lower numbers mean higher rank (better performance on a given measure), 
+                        and higher numbers mean lower rank (worse performance).
                     </p>
                     <p>
-                        What we were hoping to accomplish with these visualizations is simply establishing if there
-                        appear to be any correlations or trends warranting further investigation. For many measures, there are not any
-                        clear trends we could discern, but for others there was some clumping, wherein the high MMR states and low
-                        MMR states were grouped more closely with themselves in their rankings. More in-depth data gathering and
-                        analysis would be necessary to draw any significant conclusions about the connection between any measure and MMR.
+                        We hoped to visualize and establish whether any correlations appeared to warrant further investigation. For most measures, there were not any
+                        clear trends we could discern. For some measures, data for high MMR states clumped together, and data for low MMR states clumped together. 
+                        More in-depth data gathering and analysis would be necessary to draw stronger conclusions about the connection between any measure and MMR.
                     </p>
                     <p>
-                        For some measures, like Health Outcomes - Women, we were surprised to see that the states with
-                        higher MMR actually trended as lower ranked. This leads us to believe that there are
+                        For some measures (e.g., Health Outcomes - Women) we were surprised to see that the states with
+                        higher MMR scored as having the healthiest outcomes. This leads us to believe that there are
                         likely <a href="/machine-learning-race-model#main-container">other factors at play</a> that are not obvious within this limited dataset.
                     </p>
                     <p>
@@ -213,7 +209,7 @@
                             visits for the infant's gestational age.</td>
                     </tr>
                     <tr>
-                        <th>Avoided Care due to Cost</th>
+                        <th>Avoided Care Due to Cost</th>
                         <td>Percentage of women ages 18-44 who reported a time in
                             the
                             past 12 months when they needed to see a doctor but could not because of

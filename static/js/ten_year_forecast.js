@@ -26,18 +26,6 @@ function non_race_graph() {
             model_pred_mmr.push(m_pred_mmr);
         });
         // Create Graph
-        var act_mmr = {
-            x: years,
-            y: actual_mmr,
-            type: 'scatter',
-            name: 'Time-Series MMR',
-            mode: 'lines+markers',
-            line: {
-                color: 'rgb(229, 152, 102)',
-                size: 12
-            }
-        };
-
         var predic_mmr = {
             x: years,
             y: model_pred_mmr,
@@ -50,8 +38,22 @@ function non_race_graph() {
             }
         };
 
+        var act_mmr = {
+            x: years,
+            y: actual_mmr,
+            type: 'scatter',
+            name: 'Time-Series MMR',
+            mode: 'lines+markers',
+            line: {
+                color: 'rgb(229, 152, 102)',
+                size: 12
+            }
+        };
 
-        var data = [act_mmr, predic_mmr];
+        
+
+
+        var data = [predic_mmr, act_mmr];
 
         var layout = {
             title: "<b>Forecasted US MMR 2009–2030: All Races and Ethnicities</b>",
@@ -87,8 +89,8 @@ function non_race_graph() {
 
 // Initialize arrays to hold data
 var race_year = [];
-var white_his_mmr = [];
 var white_non_mmr = [];
+var white_his_mmr = [];
 var black_mmr = [];
 var asian_mmr = [];
 
@@ -100,8 +102,8 @@ function race_graph() {
         // Get forecast data
         data.forEach(item => {
             year = item.year;
-            white_his = item.mmr_white_hispanic;
             white_non = item.mmr_white_non_hispanic;
+            white_his = item.mmr_white_hispanic;
             black = item.mmr_black_non_hispanic;
             asian = item.mmr_asian_non_hispanic;
             race_year.push(year);
@@ -112,18 +114,6 @@ function race_graph() {
         });
 
         // Create Graph
-        var white_his = {
-            x: race_year,
-            y: white_his_mmr,
-            type: 'scatter',
-            name: 'White - Hispanic Origin',
-            mode: 'lines+markers',
-            line: {
-                color: 'rgb(138, 186, 172)',
-                size: 12
-            }
-        };
-
         var white_non = {
             x: race_year,
             y: white_non_mmr,
@@ -132,6 +122,17 @@ function race_graph() {
             mode: 'lines+markers',
             line: {
                 color: 'rgb(199, 85, 104)',
+                size: 12
+            }
+        };
+        var white_his = {
+            x: race_year,
+            y: white_his_mmr,
+            type: 'scatter',
+            name: 'White - Hispanic Origin',
+            mode: 'lines+markers',
+            line: {
+                color: 'rgb(138, 186, 172)',
                 size: 12
             }
         };
@@ -162,7 +163,7 @@ function race_graph() {
 
 
 
-        var data = [black, white_his, white_non, asian];
+        var data = [black, white_non, white_his, asian];
 
         var layout = {
             title: "<b>Forecasted US MMR 2009–2030: Particular Race and Ethnicity</b>",

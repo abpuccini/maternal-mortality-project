@@ -408,11 +408,11 @@ function buildPlot(measure) {
     yaxis: {
       title: "<b>MMR</b>"
     },
-    title: `<b>MMR: ${full_called_measure}</b>`,
+    title: `<b>MMR: State Ranked ${full_called_measure}</b>`
   };
 
 
   // build the plot!
-  var config = {responsive: true, displayModeBar: false };
+  var config = {responsive: true, displayModeBar: false};
   Plotly.newPlot('rankedplot', data, layout, config);
 };

@@ -521,6 +521,8 @@ def getHWCkey():
     key_hwc_data = []
 
     for task in tasks:
+        if task.measure_name == "Avoided Care due to Cost":
+            task.measure_name = "Avoided Care Due to Cost"
         item = {
             'measure_name': task.measure_name,
             'abbreviation': task.abbreviation,
